@@ -1,0 +1,10 @@
+# FOLDER
+node_modules/
+vendor/
+.idea/
+src/
+
+
+# FILE
+profidoc-template.iml
+npm-debug.log
