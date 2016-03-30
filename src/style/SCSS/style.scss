@@ -1,0 +1,30 @@
+///
+/// IMPORT BLOCK
+///
+@import "_mixin/mixin";
+@import "_function/function";
+
+///
+/// VARIABLE BLOCK
+///
+$width_all  : return-value(dimension, all);
+
+
+///
+/// MAIN BLOCK
+///
+body,
+html{
+  @include mixinDimensions($width_all);
+
+  margin: 0;
+  overflow: hidden;
+}
+
+.animated {
+  animation-duration: .5s;
+  animation-fill-mode: both;
+}
+.animated.infinite {
+  animation-iteration-count: infinite;
+}
