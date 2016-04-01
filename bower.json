@@ -15,8 +15,5 @@
     "vendor/bower",
     "test",
     "tests"
-  ],
-  "dependencies": {
-    "jquery": "^2.2.0"
-  }
+  ]
 }

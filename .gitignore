@@ -2,8 +2,9 @@
 node_modules/
 vendor/
 .idea/
+config/
+src/image/
 
 
 # FILE
 profdoc.iml
-npm-debug.log
