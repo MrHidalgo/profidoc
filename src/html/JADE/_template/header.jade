@@ -1,10 +1,17 @@
-
+- var headerTitle   = 'подготовка документов on-line';
+- var headerSlogan  = 'всего за 15 минут';
 
 header#header.header
     // NAVIGATION [logo, lang, sign in, registration, slogan, phone]
     include _dop/nav
 
     .header-container
+        p= headerTitle
+        h1= headerSlogan
+
+        .header-row-input
+            input(type='text', placeholder='Введите e-mail для начала работы')
+            button(type='submit') Начать работу
 
 
 

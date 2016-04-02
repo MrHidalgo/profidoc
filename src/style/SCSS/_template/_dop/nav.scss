@@ -51,7 +51,6 @@ section.navigation{
 
 
     .header-row{
-      padding: 0 render-pixel(15);
       min-height: render-pixel(71);
       @include mixinCenteredBLockFlex(row, center, space-between);
 
@@ -77,6 +76,7 @@ section.navigation{
               content: '';
               display: inline-block;
               @include sprite($sprite-header-phone);
+              vertical-align: middle;
               margin-right: render-pixel(10);
             }
           }
@@ -88,11 +88,12 @@ section.navigation{
 
         a{
           color: $color-white;
-          padding: render-pixel(6) render-pixel(18) render-pixel(6) render-pixel(18);
+          padding: render-pixel(6) render-pixel(15) render-pixel(6) render-pixel(10);
         }
 
         a.active{
           @include mixinBorder('all', 1px, $color-white);
+          padding: render-pixel(6) render-pixel(18) render-pixel(6) render-pixel(18);
         }
       }// /-.header-row-btn
     }// /-.header-row
