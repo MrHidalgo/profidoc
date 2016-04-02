@@ -1,0 +1,162 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$sprite-doc-construct-name: 'sprite-doc-construct';
+$sprite-doc-construct-x: 71px;
+$sprite-doc-construct-y: 81px;
+$sprite-doc-construct-offset-x: -71px;
+$sprite-doc-construct-offset-y: -81px;
+$sprite-doc-construct-width: 23px;
+$sprite-doc-construct-height: 25px;
+$sprite-doc-construct-total-width: 177px;
+$sprite-doc-construct-total-height: 200px;
+$sprite-doc-construct-image: 'sprite.png';
+$sprite-doc-construct: (71px, 81px, -71px, -81px, 23px, 25px, 177px, 200px, 'sprite.png', 'sprite-doc-construct', );
+$sprite-doc-document-name: 'sprite-doc-document';
+$sprite-doc-document-x: 155px;
+$sprite-doc-document-y: 172px;
+$sprite-doc-document-offset-x: -155px;
+$sprite-doc-document-offset-y: -172px;
+$sprite-doc-document-width: 22px;
+$sprite-doc-document-height: 28px;
+$sprite-doc-document-total-width: 177px;
+$sprite-doc-document-total-height: 200px;
+$sprite-doc-document-image: 'sprite.png';
+$sprite-doc-document: (155px, 172px, -155px, -172px, 22px, 28px, 177px, 200px, 'sprite.png', 'sprite-doc-document', );
+$sprite-doc-homework-name: 'sprite-doc-homework';
+$sprite-doc-homework-x: 21px;
+$sprite-doc-homework-y: 21px;
+$sprite-doc-homework-offset-x: -21px;
+$sprite-doc-homework-offset-y: -21px;
+$sprite-doc-homework-width: 17px;
+$sprite-doc-homework-height: 26px;
+$sprite-doc-homework-total-width: 177px;
+$sprite-doc-homework-total-height: 200px;
+$sprite-doc-homework-image: 'sprite.png';
+$sprite-doc-homework: (21px, 21px, -21px, -21px, 17px, 26px, 177px, 200px, 'sprite.png', 'sprite-doc-homework', );
+$sprite-doc-register-name: 'sprite-doc-register';
+$sprite-doc-register-x: 127px;
+$sprite-doc-register-y: 141px;
+$sprite-doc-register-offset-x: -127px;
+$sprite-doc-register-offset-y: -141px;
+$sprite-doc-register-width: 23px;
+$sprite-doc-register-height: 26px;
+$sprite-doc-register-total-width: 177px;
+$sprite-doc-register-total-height: 200px;
+$sprite-doc-register-image: 'sprite.png';
+$sprite-doc-register: (127px, 141px, -127px, -141px, 23px, 26px, 177px, 200px, 'sprite.png', 'sprite-doc-register', );
+$sprite-doc-security-name: 'sprite-doc-security';
+$sprite-doc-security-x: 43px;
+$sprite-doc-security-y: 52px;
+$sprite-doc-security-offset-x: -43px;
+$sprite-doc-security-offset-y: -52px;
+$sprite-doc-security-width: 23px;
+$sprite-doc-security-height: 24px;
+$sprite-doc-security-total-width: 177px;
+$sprite-doc-security-total-height: 200px;
+$sprite-doc-security-image: 'sprite.png';
+$sprite-doc-security: (43px, 52px, -43px, -52px, 23px, 24px, 177px, 200px, 'sprite.png', 'sprite-doc-security', );
+$sprite-doc-sign-name: 'sprite-doc-sign';
+$sprite-doc-sign-x: 99px;
+$sprite-doc-sign-y: 111px;
+$sprite-doc-sign-offset-x: -99px;
+$sprite-doc-sign-offset-y: -111px;
+$sprite-doc-sign-width: 23px;
+$sprite-doc-sign-height: 25px;
+$sprite-doc-sign-total-width: 177px;
+$sprite-doc-sign-total-height: 200px;
+$sprite-doc-sign-image: 'sprite.png';
+$sprite-doc-sign: (99px, 111px, -99px, -111px, 23px, 25px, 177px, 200px, 'sprite.png', 'sprite-doc-sign', );
+$sprite-header-phone-name: 'sprite-header-phone';
+$sprite-header-phone-x: 0px;
+$sprite-header-phone-y: 0px;
+$sprite-header-phone-offset-x: 0px;
+$sprite-header-phone-offset-y: 0px;
+$sprite-header-phone-width: 16px;
+$sprite-header-phone-height: 16px;
+$sprite-header-phone-total-width: 177px;
+$sprite-header-phone-total-height: 200px;
+$sprite-header-phone-image: 'sprite.png';
+$sprite-header-phone: (0px, 0px, 0px, 0px, 16px, 16px, 177px, 200px, 'sprite.png', 'sprite-header-phone', );
+$spritesheet-width: 177px;
+$spritesheet-height: 200px;
+$spritesheet-image: 'sprite.png';
+$spritesheet-sprites: ($sprite-doc-construct, $sprite-doc-document, $sprite-doc-homework, $sprite-doc-register, $sprite-doc-security, $sprite-doc-sign, $sprite-header-phone, );
+$spritesheet: (177px, 200px, 'sprite.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
