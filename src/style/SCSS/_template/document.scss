@@ -1,0 +1,168 @@
+///
+/// IMPORT BLOCK
+///
+@import "../_mixin/mixin";
+@import "../_function/function";
+@import "../../../../dist/style/_sprite/sprite";
+@import "_dop/nav";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all        : return-value(dimension, all);
+
+$color-white          : return-value(color, white);
+$color-lightBlack     : return-value(color, lightBlack);
+$color-borderGray     : return-value(color, borderGray);
+$color-documentBord   : return-value(color, documentBord);
+$color-documentOrange : return-value(color, documentOrange);
+$color-documentDblue  : return-value(color, documentDblue);
+$color-documentDgreen : return-value(color, documentDgreen);
+$color-documentLgray  : return-value(color, documentLgray);
+$color-documentSer    : return-value(color, documentSer);
+
+
+///
+/// WHICH DOCUMENT SECTION
+///
+section.document{
+  background-color: $color-white;
+  @include mixinDimensions('min', $width-all, render-pixel(655));
+
+  .document-container{
+    @include mixinMaxWidthPosition(10.7, 50, 0);
+
+    &:after,
+    &:before{
+      display: table;
+      content: '';
+    }
+
+    &:after{
+      clear: both;
+    }
+
+    >h2{
+      margin-top: 0;
+      font: 300 render-pixel(39) $font;
+      color: $color-lightBlack;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+
+    .document-row{
+      width: $width-all;
+
+      &:after,
+      &:before{
+        display: table;
+        content: '';
+      }
+
+
+      &:after{
+        clear: both;
+      }
+
+
+      div[class^='row-block-']{
+        position: relative;
+        float: left;
+        @include mixinDimensions('normal', $width-all/3.2, render-pixel(230));
+        @include mixinBorder('all', 1px, $color-borderGray);
+        margin: render-pixel(10);
+        padding: render-pixel(15);
+
+
+        .row-title-block{
+          margin-bottom: render-pixel(15);
+          height: render-pixel(50);
+
+          >span{
+            display: inline-block;
+
+
+            &:first-of-type{
+              @include mixinDimensions('normal', render-pixel(35));
+              border-radius: .3em;
+              margin-right: render-pixel(15);
+            }
+
+
+            &:nth-of-type(2),
+            &:nth-of-type(4n+1){
+              vertical-align: middle;
+            }
+
+
+            &:last-of-type{
+              color: $color-documentDblue;
+              font: 600 render-pixel(18) $font;
+            }
+          }
+
+
+          @each $className, $color, $iconName in (0, $color-documentBord, $sprite-doc-sign),
+                  (1, $color-documentOrange, $sprite-doc-homework),
+                  (2, $color-documentDblue, $sprite-doc-register),
+                  (3, $color-documentDgreen, $sprite-doc-construct),
+                  (4, $color-documentLgray, $sprite-doc-document),
+                  (5, $color-documentSer, $sprite-doc-security),{
+
+            span.icon-block-#{$className}{
+              background-color: $color;
+              text-align: center;
+              line-height: 3;
+
+              &:before{
+                content: '';
+                display: inline-block;
+                @include sprite($iconName);
+              }
+            }
+          }
+        }// /-.row-title-block
+
+
+        >p{
+          font: 400 render-pixel(14) $font;
+          margin-bottom: render-pixel(15);
+          line-height: 1.5;
+        }
+
+
+        .row-btn-price{
+          position: absolute;
+          width: calc(100% - 30px);
+          bottom: render-pixel(15);
+          left: render-pixel(15);
+          @include mixinCenteredBLockFlex(row, center, space-between);
+          //width: $width-all;
+
+
+          span{
+            font-size: render-pixel(14);
+
+            span.price{
+              font-size: render-pixel(24);
+            }// /-span.price
+          } // /-span
+
+
+          >a{
+            //display: inline-block;
+            @include mixinDimensions('normal', 145px, 34px);
+            background-color: $color-navBlue;
+            color: $color-white;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: render-pixel(10);
+            line-height: 3.4;
+          }
+        }// /-row-btn-price
+      }// /-div[class^='row-block-']
+    }// /-.document-row
+  }// /-.document-container
+}// /-section.document
