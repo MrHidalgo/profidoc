@@ -1,0 +1,15 @@
+- var stepsTitle    = '<span class="other-color">3 простых шага</span> к созданию документов';
+- var stepsText     = ['Зарегестрируйся', 'Выбери документ и введи данные', 'Сделай оплату', 'Скачай документы'];
+- var stepsTime     = ['<span class="steps-number">2</span> <br/>минуты', '<span class="steps-number">10</span> <br/>минут', '<span class="steps-number">3</span> <br/>минуты', ''];
+
+section#steps.steps
+    .steps-container
+        h2!= stepsTitle
+
+        .steps-row
+            - for (var i = 0; i < 4; i++)
+                div(class='steps-icon-#{i}')
+                    i(class='icon-#{i}')
+                    span.steps-time!= stepsTime[i]
+
+                    p= stepsText[i]

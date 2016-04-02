@@ -1,0 +1,130 @@
+///
+/// IMPORT BLOCK
+///
+@import "../_mixin/mixin";
+@import "../_function/function";
+@import "../../../../dist/style/_sprite/sprite";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all        : return-value(dimension, all);
+
+$color-white      : return-value(color, white);
+$color-yellow     : return-value(color, yellow);
+
+$imageBg          : '../image/steps-bg.png';
+
+///
+/// STEPS SECTION
+///
+section.steps{
+  @include mixinDimensions('min', $width-all, render-pixel(566));
+  background: $color-white url($imageBg) no-repeat center fixed;
+  background-size: cover;
+
+
+  .steps-container{
+    @include mixinMaxWidthPosition(10.7, 50, 0);
+
+    &:after,
+    &:before{
+      display: table;
+      content: '';
+    }
+
+    &:after{
+      clear: both;
+    }
+
+    >h2{
+      margin-bottom: render-pixel(20);
+      font-weight: 300;
+      font-size: render-pixel(39);
+      text-transform: uppercase;
+      text-align: center;
+
+      >.other-color{
+        font-weight: 600;
+        color: $color-yellow;
+      }
+    }// /-h2
+
+
+    .steps-row{
+      @include mixinCenteredBLockFlex(row, center, space-between);
+      &:after,
+      &:before{
+        display: table;
+        content: '';
+      }
+
+      &:after{
+        clear: both;
+      }
+
+
+      div[class^='steps-icon-']{
+        position: relative;
+        display: inline-block;
+        margin: render-pixel(10);
+        @include mixinDimensions('normal', render-pixel(200));
+        @include mixinBorder('all', 1px, $color-white);
+        border-radius: $width-all;
+        text-align: center;
+
+        >p{
+          position: absolute;
+          @include mixinDimensions('normal', $width-all, render-pixel(10px));
+          bottom: render-pixel(-50);
+          font-size: render-pixel(21);
+        }
+
+        &:last-of-type{
+          border: none;
+
+          &:after{
+            display: none;
+          }
+        }
+
+        &:after{
+          content: '';
+          position: absolute;
+          right: render-pixel(-56);
+          top: 47%;
+          @include sprite($sprite-steps-arrow);
+        }
+
+        .steps-time{
+          position: absolute;
+          right: render-pixel(-45);
+          bottom: render-pixel(-10);
+          color: $color-yellow;
+          font-size: render-pixel(21);
+          line-height: 1;
+
+          .steps-number{
+            font-size: render-pixel(32);
+            font-weight: 600;
+          }// /-steps-number
+        }// /-steps-time
+
+        @each $className, $image in
+                        (0, $sprite-steps-register),
+                        (1, $sprite-steps-choose),
+                        (2, $sprite-steps-pay),
+                        (3, $sprite-steps-fin) {
+
+          i.icon-#{$className}{
+            display: block;
+            margin: 0 auto;
+            @include sprite($image);
+            @include mixinCenteredBLockAbsolute(0,0,0,0);
+          }
+        }
+      }// /-div[class^='steps-icon-']
+    }// /-steps-row
+  }// /-.steps-container
+}// /-section.steps

@@ -148,7 +148,7 @@ var mainConfig                 = {
         imgName     : 'sprite.png',
         cssName     : 'sprite.scss',
         cssFormat   : 'scss',
-        algorithm   : 'diagonal',
+        algorithm   : 'binary-tree',
         padding     : 5,
         cssVarMap   : function(sprite) {
             sprite.name = 'sprite-' + sprite.name

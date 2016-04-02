@@ -4,7 +4,6 @@
 @import "../_mixin/mixin";
 @import "../_function/function";
 @import "../../../../dist/style/_sprite/sprite";
-@import "_dop/nav";
 
 
 ///
@@ -13,6 +12,7 @@
 $width-all        : return-value(dimension, all);
 
 $color-white          : return-value(color, white);
+$color-navBlue        : return-value(color, navBlue);
 $color-lightBlack     : return-value(color, lightBlack);
 $color-borderGray     : return-value(color, borderGray);
 $color-documentBord   : return-value(color, documentBord);
@@ -45,7 +45,8 @@ section.document{
 
     >h2{
       margin-top: 0;
-      font: 300 render-pixel(39) $font;
+      font-weight: 300;
+      font-size: render-pixel(39);
       color: $color-lightBlack;
       text-transform: uppercase;
       text-align: center;
@@ -99,7 +100,8 @@ section.document{
 
             &:last-of-type{
               color: $color-documentDblue;
-              font: 600 render-pixel(18) $font;
+              font-weight: 600;
+              font-size: render-pixel(18);
             }
           }
 
@@ -127,7 +129,8 @@ section.document{
 
 
         >p{
-          font: 400 render-pixel(14) $font;
+          font-weight: 400;
+          font-size: render-pixel(14);
           margin-bottom: render-pixel(15);
           line-height: 1.5;
         }
