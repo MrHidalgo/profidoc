@@ -1,3 +1,5 @@
+@import "../_function/function";
+
 ////
 /// @group  Mixin
 ////
@@ -18,9 +20,13 @@
 ///     @include mixinDimensions(100%, 50%);
 ///   }
 ///
-@mixin mixinDimensions($width, $height:$width) {
+@mixin mixinDimensions($options, $width, $height:$width) {
   width : $width;
-  height: $height;
+  @if( $options == 'min') {
+    min-height: $height;
+  } @else{
+    height: $height;
+  }
 }
 
 ///
@@ -319,4 +325,14 @@
       @content
     }
   }
+}
+
+
+///
+///
+///
+@mixin mixinMaxWidthPosition($widthPoint, $paddingPoint1, $paddingPoint2, $paddingPoint3, $paddingPoint4) {
+  max-width: render-pixel(100 * $widthPoint);
+  padding: render-pixel($paddingPoint1) render-pixel($paddingPoint2) render-pixel($paddingPoint3) render-pixel($paddingPoint4);
+  margin: 0 auto;
 }

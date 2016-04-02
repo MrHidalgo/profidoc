@@ -7,21 +7,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- TITLE-->
-    <title></title>
+    <title>ProfiDOC</title>
     <!-- LINK CSS-->
     <link href="style/style.min.css" rel="stylesheet">
+    <link href="style/header.min.css" rel="stylesheet">
     <!-- ANIMATE-->
     <link href="style/animate.min.css" rel="stylesheet">
     <!-- FONTS-->
-    <link href="" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries-->
     <!-- WARNING: Respond.js doesn't work if you view the page via file://--><!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
   </head>
   <body>
+    <!-- HEADER SECTION-->
+    <header id="header" class="header">
+      <!-- NAVIGATION [logo, lang, sign in, registration, slogan, phone]-->
+      <section id="navigation" class="navigation">
+        <!-- TOP SECTION-->
+        <div class="navigation-container">
+          <!-- lang-->
+          <div class="header-lang"><a href="#rus" class="active">рус</a><a href="#ukr">укр</a>
+          </div>
+          <!-- logo, sign in, registration, slogan, phone-->
+          <div class="header-row"><img src="./image/header-logotype.png">
+            <div class="header-row-phone">
+              <p>Всеукраинский сервис подготовки документов</p>
+              <p>0 (800) 000-00-00</p>
+            </div>
+            <div class="header-row-btn"><a href="#signin" class="active">Войти</a><a href="#registration">Регистрация</a></div>
+          </div>
+        </div>
+        <!-- NAV-->
+        <nav class="nav">
+          <div class="nav-container">
+            <ul class="nav-list">
+              <li><a href="#register">Регистрация ООО/СПД</a></li>
+              <li><a href="#change">Изменение в ООО</a></li>
+              <li><a href="#agreement">Конструктор договоров</a></li>
+              <li><a href="#document">Конструктор документов</a></li>
+              <li><a href="#inspection">Проверка контрагента</a></li>
+              <li><a href="#about">О ресурсе</a></li>
+            </ul>
+          </div>
+        </nav>
+      </section>
+      <div class="header-container"></div>
+    </header>
     <!-- FOOTER SECTION [script..]-->
     <script src="script/jquery.min.js"></script>
     <script src="script/jquery.viewportchecker.min.js"></script>
+    <script src="script/script.min.js"></script>
   </body>
 </html>

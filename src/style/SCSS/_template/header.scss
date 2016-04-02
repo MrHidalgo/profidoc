@@ -1,0 +1,36 @@
+///
+/// IMPORT BLOCK
+///
+@import "../_mixin/mixin";
+@import "../_function/function";
+@import "_dop/nav";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all        : return-value(dimension, all);
+
+$color-white      : return-value(color, white);
+
+$font             : 'Open Sans';
+
+$imageBackground  : '../image/header-bg.png';
+
+
+///
+/// HEADER BLOCK
+///
+header.header{
+  position: relative;
+  min-height: render-pixel(552);
+  background: $color-white url($imageBackground) no-repeat center;
+  background-position-y: render-pixel(-200);
+  background-size: cover;
+  background-attachment: fixed;
+
+
+  .header-container{
+
+  }// /-.header-container
+}// /-header.header

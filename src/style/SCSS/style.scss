@@ -9,7 +9,10 @@
 /// VARIABLE BLOCK
 ///
 $width-all    : return-value(dimension, all);
+
 $color-white  : return-value(color, white);
+
+$font         : 'Open Sans';
 
 
 ///
@@ -17,7 +20,7 @@ $color-white  : return-value(color, white);
 ///
 body,
 html{
-  @include mixinDimensions($width-all);
+  @include mixinDimensions('normal', $width-all);
 }
 
 html {
@@ -30,7 +33,8 @@ body{
   overflow-x: hidden;
 
   line-height: 1.42857143;
-  font-weight: normal;
+  //font-weight: normal;
+  font-family: $font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -52,6 +56,9 @@ h1{
 }
 
 ul{
+  margin: 0;
+  padding: 0;
+
   li{
     list-style: none;
   }
@@ -59,6 +66,7 @@ ul{
 
 a{
   outline: none;
+  text-decoration: none;
 
   &:focus {
     outline: none;

@@ -74,7 +74,7 @@ var mainConfig                 = {
             interlaced  :   true
         },
         compress : {
-            quality     : '65-80',
+            quality     : '99',
             speed       : 3
         }
     },

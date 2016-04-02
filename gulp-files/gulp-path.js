@@ -22,7 +22,7 @@ var path = {
         // HTML
         html        :   './src/html/HTML/**.html',
         // SCSS & SASS
-        scss        :   './src/style/SCSS/**.scss',
+        scss        :   './src/style/SCSS/style.scss',
         scssFont    :   './src/style/SCSS/_fonts/**.scss',
         // LESS
         less        :   './src/style/LESS/**.less',

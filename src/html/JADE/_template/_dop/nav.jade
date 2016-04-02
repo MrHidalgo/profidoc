@@ -1,0 +1,37 @@
+- var menuItem      = ['Регистрация ООО/СПД', 'Изменение в ООО', 'Конструктор договоров', 'Конструктор документов', 'Проверка контрагента', 'О ресурсе'];
+- var menuHash      = ['#register', '#change', '#agreement', '#document', '#inspection', '#about'];
+- var langName      = ['рус', 'укр'];
+- var langHash      = ['#rus', '#ukr'];
+- var phoneText     = 'Всеукраинский сервис подготовки документов';
+- var phoneNumber   = '0 (800) 000-00-00';
+
+section#navigation.navigation
+    // TOP SECTION
+    .navigation-container
+        // lang
+        .header-lang
+            - for(var val = 0; val < 2; val++)
+                if (val == 0)
+                    a(href= langHash[val], class='active')= langName[val]
+                else
+                    a(href= langHash[val])= langName[val]
+
+        // logo, sign in, registration, slogan, phone
+        .header-row
+            img(src='./image/header-logotype.png')
+
+            .header-row-phone
+                p= phoneText
+                p= phoneNumber
+
+            .header-row-btn
+                a(href='#signin', class='active') Войти
+                a(href='#registration') Регистрация
+
+    // NAV
+    nav.nav
+        .nav-container
+            ul.nav-list
+                - for(var i = 0; i < 6; i++)
+                    li: a(href= menuHash[i])= menuItem[i]
+
