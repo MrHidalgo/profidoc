@@ -1,0 +1,98 @@
+///
+/// IMPORT BLOCK
+///
+@import "../_mixin/mixin";
+@import "../_function/function";
+@import "../../../../dist/style/_sprite/sprite";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all        : return-value(dimension, all);
+
+$color-white      : return-value(color, white);
+$color-navBlue    : return-value(color, navBlue);
+
+$imageBg          : '../image/uniq-bg.png';
+
+///
+/// UNIQUENESS SECTION
+///
+section.uniqueness{
+  @include mixinDimensions('min', $width-all, render-pixel(750));
+  background: $color-white url($imageBg) no-repeat center fixed;
+  background-size: cover;
+
+
+  .uniqueness-container{
+    @include mixinMaxWidthPosition(10.7, 25, 0);
+
+
+    .uniqueness-row{
+      height: render-pixel(750);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-flow: row wrap;
+      align-content: center;
+
+
+      div[class^='uniqueness-block-']{
+        position: relative;
+        background: $color-white;
+        margin: render-pixel(10);
+        padding: render-pixel(15);
+        box-shadow: 0 0 3px 1px rgba(0,0,0,0.1);
+        @include mixinDimensions('normal', render-pixel(332), render-pixel(220));
+
+
+        .uniqueness--block-title{
+          position: absolute;
+          top: render-pixel(15);
+          left: render-pixel(15);
+          @include mixinDimensions('normal', calc(100% - 15px), render-pixel(57));
+
+          .title{
+            position: absolute;
+            right: 0;
+            background: $color-navBlue;
+            font-size: render-pixel(18);
+            color: $color-white;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.5;
+            @include mixinDimensions('normal', render-pixel(219), $width-all);
+          }
+
+          @each $className, $image in (0, $sprite-uniq-1),
+                  (1, $sprite-uniq-2),
+                  (2, $sprite-uniq-3),
+                  (3, $sprite-uniq-4),
+                  (4, $sprite-uniq-5),
+                  (5, $sprite-uniq-6),
+                  (6, $sprite-uniq-7),
+                  (7, $sprite-uniq-8),
+                  (8, $sprite-uniq-9) {
+
+            i.icon-#{$className}{
+              display: inline-block;
+              @include sprite($image);
+              vertical-align: middle;
+              //margin-right: render-pixel(30);
+            }
+          }
+        }// /-uniqueness--block-title
+
+        >p{
+          position: relative;
+          top: calc(100% - 110px);
+          font-weight: 300;
+          font-size: render-pixel(14);
+          text-align: justify;
+          line-height: 1.5;
+        }
+      }// /-div[class^='uniqueness-block-']
+    }// /-.uniqueness-row
+  }// /-.uniqueness-container
+}// /-section#uniqueness.uniqueness
