@@ -1,0 +1,13 @@
+- var exampleTitle  = 'Примеры документов';
+- var exampleImage  = ['./image/example-1.png','./image/example-2.png','./image/example-3.png','./image/example-4.png','./image/example-5.png'];
+- var exampleText   = ['Документы для <br/> регистрации ООО','Документы для <br/> регистрации СПД','Договора','Документы <br/> (Доверенность)','Проверка <br/> контрагента'];
+
+section#example.example
+    .example-container
+        h2= exampleTitle
+
+        .owl-carousel.owl-theme
+            - for(var i = 0; i < 5; i++)
+                .internal-block
+                    img(src= exampleImage[i])
+                    p!= exampleText[i]

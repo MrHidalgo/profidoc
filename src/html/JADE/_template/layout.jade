@@ -7,27 +7,31 @@ html
     body
 
         // HEADER SECTION
-        block header
+        //block header
             include header
 
         // WHICH DOCUMENT...?
-        block document
+        //block document
             include document
 
         // 3 STEPS
-        block steps
+        //block steps
             include steps
 
         // VIDEO SECTION
-        section#video.video
+        //section#video.video
             .video-container
                 h2 Видео
                 .video-block
                 h2!= 'уникальность и преимущества <span>profidoc</span>'
 
         // UNIQUENESS SECTION
-        block uniqueness
+        //block uniqueness
             include uniqueness
+
+        // EXAMPLE
+        block example
+            include example
 
         // FOOTER SECTION [script..]
         include foot

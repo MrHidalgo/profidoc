@@ -1,0 +1,62 @@
+///
+/// IMPORT BLOCK
+///
+@import "../_mixin/mixin";
+@import "../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all        : return-value(dimension, all);
+
+$color-white      : return-value(color, white);
+$color-lightBlack : return-value(color, lightBlack);
+$color-navBlue    : return-value(color, navBlue);
+
+
+///
+/// EXAMPLE SESTION
+///
+section.example{
+  @include mixinDimensions('min', $width-all, render-pixel(518));
+
+
+  .example-container{
+    @include mixinMaxWidthPosition(10.7, 50, 15, 25);
+    @include mixinBorder(bottom, 1px, $color-navBlue);
+
+    >h2{
+      margin-top: 0;
+      font-weight: 300;
+      font-size: render-pixel(39);
+      color: $color-lightBlack;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .owl-carousel{
+      padding: render-pixel(50) 0 render-pixel(25);
+    }// /-owl-carousel
+
+
+    .internal-block{
+      text-align: center;
+
+      img{
+        cursor: pointer;
+        transition: .5s;
+
+        &:hover{
+          transform: scale(1.05);
+          transition: .5s;
+        }
+      }// /-img
+
+      p{
+        font-size: render-pixel(14);
+        font-weight: 500;
+      }
+    }// /-.internal-block
+  }
+}// /-section#example.example
