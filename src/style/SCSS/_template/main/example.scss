@@ -41,11 +41,11 @@ section.example{
 
       img{
         cursor: pointer;
-        transition: .5s;
+        transition: all .5s ease-in-out;
 
         &:hover{
           transform: scale(1.05);
-          transition: .5s;
+          transition: all .5s ease-in-out;
         }
       }// /-img
 

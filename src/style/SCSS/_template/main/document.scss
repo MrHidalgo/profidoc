@@ -138,7 +138,6 @@ section.document{
           bottom: render-pixel(15);
           left: render-pixel(15);
           @include mixinCenteredBLockFlex(row, center, space-between);
-          //width: $width-all;
 
 
           span{
@@ -151,7 +150,6 @@ section.document{
 
 
           >a{
-            //display: inline-block;
             @include mixinDimensions('normal', 145px, 34px);
             background-color: $color-navBlue;
             color: $color-white;
