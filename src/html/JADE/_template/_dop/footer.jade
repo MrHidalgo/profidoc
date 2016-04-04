@@ -1,0 +1,63 @@
+- var footerHeader  = ['ProfiDoc', ' О РЕСУРСЕ', 'ПРОДУКТЫ', 'УСЛОВИЯ'];
+- var footerSocial  = ['facebook', 'vkontakte', 'youtube'];
+- var footerAbout   = ['Бонусная система', 'Возможность', 'Безопасность', 'Отзывы', 'Новости'];
+- var footerProduct = ['Регистрация ООО', 'Регистрация СПД', 'Регистрация "под ключ"', 'Внесение изменений', 'Конструктор договоров', 'Конструктор документов'];
+- var footerList    = ['Пользовательское <br/> соглашение', 'Политика <br/> конфиденциальности'];
+
+- var aboutHash     = ['bonus-system', 'chance', 'security', 'testimonials', 'news'];
+- var productHash   = ['register-company', 'join-sap', 'register-turnkey', 'alteration', 'contacts-designer', 'designer-document'];
+- var listHash      = ['terms-of-use', 'privacy-policy'];
+
+mixin firstBlock
+    p Все права защищены 2016
+
+    p Присоединяйтесь:
+    ul.social-icon
+        -for(var j = 0; j < 3; j++)
+            li(class= footerSocial[j]): a(href='#' + footerSocial[i])
+
+mixin secondBlock
+    ul.about
+        - for(var i = 0; i < 5; i++)
+            li: a(href='#' + aboutHash[i])= footerAbout[i]
+
+mixin thirdBlock
+    ul.product
+        - for(var i = 0; i < 6; i++)
+            li: a(href='#' + productHash[i])= footerProduct[i]
+
+mixin fourthBlock
+    ul.list
+        - for(var i = 0; i < 2; i++)
+            li: a(href='#' + listHash[i])!= footerList[i]
+
+
+footer#footer.footer
+    .footer-header
+        .footer-container
+            ul.list-title
+                - for(var i = 0; i < 4; i++)
+                    li.item= footerHeader[i]
+
+
+    .footer-section
+        .footer-container
+            - for (var i = 0; i < 4; i++)
+                div(class='footer-block-#{i}')
+                    case i
+                        when 0
+                            +firstBlock
+                        when 1
+                            +secondBlock
+                        when 2
+                            +thirdBlock
+                        when 3
+                            +fourthBlock
+                        default
+                            p Jade error
+
+        .footer-row
+            span!= '<strong>ТЕХПОДДЕРЖКА:</strong> +38 (044) 000-00-00 &nbsp; &nbsp; <strong>E-mail:</strong> 12345@gmail.com'
+            span Время работы службы поддержки: Пн - Пт: 10:00 - 18:00
+
+

@@ -170,7 +170,7 @@ function imageSprites(taskName, pathName){
                     configuration.mainConfig.sprites
                 ));
 
-        spriteData.img.pipe(gulp.dest('./dist/style/'));
+        spriteData.img.pipe(gulp.dest('./dist/image/'));
         spriteData.css.pipe(gulp.dest('./dist/style/_sprite/'));
     });
 }

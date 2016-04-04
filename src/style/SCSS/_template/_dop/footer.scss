@@ -1,0 +1,141 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+@import "../../../../../dist/style/_sprite/sprite";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all        : return-value(dimension, all);
+
+$color-white      : return-value(color, white);
+$color-footerBg   : return-value(color, footerBg);
+$color-navBlue    : return-value(color, navBlue);
+
+
+///
+/// FOOTER BLOCK
+///
+footer.footer{
+  position: relative;
+  background-color: $color-footerBg;
+  @include mixinDimensions('min', $width-all, render-pixel(450));
+
+  .footer-header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $color-navBlue;
+    @include mixinDimensions('min', $width-all, render-pixel(65));
+
+
+    .footer-container{
+      @include mixinMaxWidthPosition(10.7, 0, 15);
+      min-height: render-pixel(65);
+
+      ul.list-title{
+        @include mixinCenteredBLockFlex(row, center, center);
+        color: $color-white;
+
+        li{
+          width: 260px;
+        }
+
+
+        li{
+          display: inline-block;
+
+          &:first-of-type{
+            font-size: render-pixel(45);
+          }
+
+          &:nth-of-type(2),
+          &:nth-of-type(3),
+          &:nth-of-type(4){
+            line-height: 1.5;
+            font-size: render-pixel(20);
+          }
+        }
+      }// /-ul.list-title
+    }// /-.footer-container
+  }// /-.footer-header
+
+
+  .footer-section{
+    position: absolute;
+    top: render-pixel(65);
+    left: 0;
+    width: $width-all;
+    height: auto;
+    color: $color-white;
+
+
+    .footer-container{
+      @include mixinMaxWidthPosition(10.7, 15, 15);
+      height: $width-all;
+      @include mixinBorder(bottom, 1px, $color-white);
+      @include mixinCenteredBLockFlex(row, baseline, center);
+
+      .footer-block-0{
+        p{
+          &:first-of-type{
+            font-size: render-pixel(14);
+            margin-bottom: render-pixel(50);
+          }
+
+          &:last-of-type{
+            margin: render-pixel(30) 0 render-pixel(10);
+            font-size: render-pixel(17);
+          }
+        }
+      }
+
+      [class^='footer-block-']{
+        width: 260px;
+        font-size: render-pixel(15);
+
+        li{
+          a{
+            color: $color-white;
+            line-height: 2;
+          }
+        }
+
+        @each $className, $iconName in
+                        (facebook, $sprite-footer-social-0),
+                        (vkontakte, $sprite-footer-social-1),
+                        (youtube, $sprite-footer-social-2) {
+          .social-icon{
+            li.#{$className}{
+              display: inline-block;
+
+              a{
+                &:before{
+                  content: '';
+                  display: inline-block;
+                  @include sprite($iconName);
+                  margin-right: render-pixel(10);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .footer-row{
+      //width: 100%;
+      @include mixinMaxWidthPosition(10.7, 25, 15);
+      @include mixinCenteredBLockFlex(row, center, center);
+
+
+      span{
+        font-size: render-pixel(15);
+        width: $width-all/2;
+      }
+    }// /-.footer-row
+  }// /-.footer-section
+}// /-footer
