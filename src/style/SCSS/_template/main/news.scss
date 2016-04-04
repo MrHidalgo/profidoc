@@ -1,0 +1,232 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+@import "../../_extend/extend";
+@import "../../../../../dist/style/_sprite/sprite";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all        : return-value(dimension, all);
+
+$color-white      : return-value(color, white);
+$color-lightBlack : return-value(color, lightBlack);
+$color-newsBg     : return-value(color, newsBg);
+$color-newsText   : return-value(color, newsText);
+
+$font             : 'Open Sans';
+
+$imageNew0        : '../../image/news-bg-0.png';
+$imageNew1        : '../../image/news-bg-1.png';
+$imageNew2        : '../../image/news-bg-2.png';
+$imageNew3        : '../../image/news-bg-3.png';
+
+
+///
+///  MIXIN FOR REPEAT BLOCK
+///
+@mixin headerImage($opt, $height, $imageName){
+  .header{
+    @if($opt == 'all'){
+      height: $height;
+    } @else {
+      height: render-pixel($height);
+    }
+
+    overflow: hidden;
+
+    &:before{
+      content: '';
+      display: inline-block;
+      @include mixinDimensions('normal', $width-all);
+      background: url($imageName) no-repeat center;
+      background-size: cover;
+      transition: all .5s ease-in-out;
+    }
+
+    &:hover:before{
+      transform: scale(1.025);
+      transition: all .5s ease-in-out;
+    }
+  }// /-.header
+}// /- mixin headerImage
+
+
+@mixin sectionNewsDescription() {
+  .section{
+    padding: render-pixel(10) render-pixel(20);
+
+    p{
+      color: $color-newsText;
+      font-family: $font;
+
+      &:first-of-type{
+        font-weight: 500;
+        font-size: render-pixel(25);
+        text-transform: uppercase;
+        margin-bottom: render-pixel(5);
+      }// /-&:first-of-type
+
+      &:last-of-type{
+        font-weight: 400;
+        font-size: render-pixel(14);
+      }// /-&:last-of-type
+    }
+  }// /-.section
+}// /-sectionNewsDescription
+
+
+@mixin footerNews() {
+  .footer{
+    position: absolute;
+    bottom: render-pixel(5);
+    left: 0;
+    width: $width-all;
+    padding: render-pixel(10) render-pixel(20);
+    color: $color-newsText;
+    @include mixinCenteredBLockFlex(row, center, space-between);
+
+
+    .data{
+      font-size: render-pixel(14);;
+    }
+
+    .read-like{
+      font-size: render-pixel(20);
+
+      .like{
+        margin-right: render-pixel(5);
+
+        &:before{
+          content: '';
+          display: inline-block;
+          @include sprite($sprite-news-like);
+          vertical-align: middle;
+          margin: 0 render-pixel(5);
+        }
+      }
+
+      .read{
+        &:before{
+          content: '';
+          display: inline-block;
+          @include sprite($sprite-news-read);
+          vertical-align: middle;
+          margin: 0 render-pixel(5);
+        }
+      }
+    }
+  }// /-footer
+}// /-footerNews
+
+
+///
+/// NEW SECTION
+///
+section.news{
+  @include mixinDimensions('min', $width-all, render-pixel(870));
+
+
+  .news-container{
+    @include mixinMaxWidthPosition(10.7, 25, 15);
+
+    >h2{
+      @extend %paragraph;
+    }
+
+
+    .news-row{
+      padding-top: render-pixel(25);
+      @include mixinCenteredBLockFlex(row, center, space-between);
+
+
+      .news-row-left{
+        @include mixinDimensions('normal', render-pixel(710), render-pixel(670));
+        margin-right: render-pixel(10);
+
+
+        .top{
+          height: render-pixel(386);
+          margin-bottom: render-pixel(18);
+          @include mixinCenteredBLockFlex(row, inherit, space-between);
+
+
+          .top-left,
+          .top-right{
+            position: relative;
+            width: render-pixel(355);
+          }// /-.top-left-right
+
+
+          .top-left{
+            margin-right: render-pixel(10);
+            background: $color-newsBg;
+
+            @include headerImage('px', 246, $imageNew0);
+
+            @include sectionNewsDescription();
+
+            @include footerNews();
+          }// /-.top-left
+
+          .top-right{
+            margin-left: render-pixel(10);
+            background: $color-newsBg;
+
+            @include headerImage('px', 246, $imageNew1);
+
+            @include sectionNewsDescription();
+
+            @include footerNews();
+          }// /-.top-right
+        }// /-.top
+
+
+        .bottom{
+          height: render-pixel(266);
+          margin-top: render-pixel(18);
+          @include mixinCenteredBLockFlex(row, inherit, space-between);
+
+
+          .bottom-left,
+          .bottom-right{
+            width: render-pixel(355);
+            background: $color-newsBg;
+          }// /-.bottom-left, .bottom-right
+
+
+          .bottom-left{
+            position: relative;
+            @include sectionNewsDescription();
+
+            @include footerNews();
+          }// /-.bottom-left
+
+
+          .bottom-right{
+            @include headerImage('px', 266, $imageNew3);
+            padding-left: render-pixel(10);
+          }// /-.bottom-right
+        }
+      }// /-.news-row-left
+
+
+      .news-row-right{
+        position: relative;
+        @include mixinDimensions('normal', render-pixel(330), render-pixel(670));
+        margin-left: render-pixel(10);
+        background: $color-newsBg;
+
+        @include headerImage('px', 521, $imageNew2);
+
+        @include sectionNewsDescription();
+
+        @include footerNews();
+
+      }// /-.news-row-right
+    }// /-.news-row
+  }// /-.news-container
+}// /-section.news

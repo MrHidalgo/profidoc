@@ -1,9 +1,10 @@
 ///
 /// IMPORT BLOCK
 ///
-@import "../_mixin/mixin";
-@import "../_function/function";
-@import "../../../../dist/style/_sprite/sprite";
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+@import "../../_extend/extend";
+@import "../../../../../dist/style/_sprite/sprite";
 
 
 ///
@@ -44,12 +45,7 @@ section.document{
     }
 
     >h2{
-      margin-top: 0;
-      font-weight: 300;
-      font-size: render-pixel(39);
-      color: $color-lightBlack;
-      text-transform: uppercase;
-      text-align: center;
+      @extend %paragraph;
     }
 
 

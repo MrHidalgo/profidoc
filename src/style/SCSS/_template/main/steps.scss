@@ -1,9 +1,10 @@
 ///
 /// IMPORT BLOCK
 ///
-@import "../_mixin/mixin";
-@import "../_function/function";
-@import "../../../../dist/style/_sprite/sprite";
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+@import "../../_extend/extend";
+@import "../../../../../dist/style/_sprite/sprite";
 
 
 ///
@@ -40,10 +41,7 @@ section.steps{
 
     >h2{
       margin-bottom: render-pixel(20);
-      font-weight: 300;
-      font-size: render-pixel(39);
-      text-transform: uppercase;
-      text-align: center;
+      @extend %paragraph;
 
       >.other-color{
         font-weight: 600;

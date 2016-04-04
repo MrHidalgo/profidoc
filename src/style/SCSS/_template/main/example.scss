@@ -1,8 +1,9 @@
 ///
 /// IMPORT BLOCK
 ///
-@import "../_mixin/mixin";
-@import "../_function/function";
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+@import "../../_extend/extend";
 
 
 ///
@@ -27,12 +28,7 @@ section.example{
     @include mixinBorder(bottom, 1px, $color-navBlue);
 
     >h2{
-      margin-top: 0;
-      font-weight: 300;
-      font-size: render-pixel(39);
-      color: $color-lightBlack;
-      text-transform: uppercase;
-      text-align: center;
+      @extend %paragraph;
     }
 
     .owl-carousel{

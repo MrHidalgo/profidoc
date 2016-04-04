@@ -14,7 +14,7 @@ $('.header-lang a').click( function(e) {
 $(document).ready(function(){
     $('.owl-carousel').owlCarousel(
         {
-            loop:true,
+            // loop:true,
             margin:10,
             // nav:true,
             responsiveClass:true,
@@ -32,3 +32,13 @@ $(document).ready(function(){
         }
     );
 });
+
+
+/*
+* SPLIT TEXT NEWS
+*/
+function less(nWords){
+        var txtNews = $('p.description').text().substring(0, nWords).trim();
+    return txtNews + '...';
+}
+$('p.description').html(less(65));

@@ -1,0 +1,25 @@
+///
+/// IMPORT BLOCK
+///
+@import "../_mixin/mixin";
+@import "../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all        : return-value(dimension, all);
+$color-lightBlack : return-value(color, lightBlack);
+
+
+///
+/// [Paragraph]
+///
+%paragraph{
+  margin-top: 0;
+  font-weight: 300;
+  font-size: render-pixel(39);
+  color: $color-lightBlack;
+  text-transform: uppercase;
+  text-align: center;
+}

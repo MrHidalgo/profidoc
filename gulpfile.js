@@ -57,7 +57,7 @@ task.htmlMainTask('jade', commands.buildJade, path.src.jade);
  OPTIONS:
     - style || font;
  ==============================*/
-task.styleMainTask('style', commands.buildScss, [path.src.scss, './src/style/SCSS/_template/**.scss']);
+task.styleMainTask('style', commands.buildScss, [path.src.scss, './src/style/SCSS/_template/**/**.scss']);
 
 
 /*
