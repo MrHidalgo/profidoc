@@ -72,6 +72,27 @@ function htmlMainTask(opt, taskName, pathName) {
     });
 };
 
+function htmlMainTaskPage(opt, taskName, pathName) {
+    return gulp.task(taskName, function() {
+        var ifHtml = opt === 'html',
+            ifJade = opt === 'jade';
+
+        gulp.src(
+            pathName
+            )
+            .pipe(plumber(
+                configuration.mainConfig.errorPlumber
+            ))
+            .pipe(_if(ifHtml, template.htmlOptions()))
+            .pipe(_if(ifJade, template.jadeOptions()))
+            .pipe(template.reloadTemplate())
+            .pipe(
+                gulp.dest('./dist/page/')
+            )
+            .on(commands.error, reportError)
+    });
+};
+
 /*
  STYLE FUNCTION:
      opt:
@@ -179,6 +200,7 @@ function imageSprites(taskName, pathName){
 
 module.exports.reportError          =   reportError;
 module.exports.htmlMainTask         =   htmlMainTask;
+module.exports.htmlMainTaskPage     =   htmlMainTaskPage;
 module.exports.styleMainTask        =   styleMainTask;
 module.exports.mainImageTask        =   mainImageTask;
 module.exports.mainScriptTask       =   mainScriptTask;

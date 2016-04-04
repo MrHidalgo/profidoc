@@ -13,6 +13,7 @@ var commands = {
     buildMain       :   'main',
 
     buildJade       :   'build:jade',
+    buildJadePage   :   'build:jadePage',
 
     buildHtml       :   'build:html',
 

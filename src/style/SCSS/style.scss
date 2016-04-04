@@ -3,6 +3,7 @@
 ///
 @import "_mixin/mixin";
 @import "_function/function";
+@import "_template/_dop/nav";
 @import "_template/_dop/footer";
 
 
@@ -76,43 +77,6 @@ a{
     outline: none;
   }
 }
-
-
-///
-/// VIDEO BLOCK
-///
-section.video{
-  @include mixinDimensions('min', $width-all, render-pixel(704));
-  background-color: $color-white;
-
-  .video-container{
-    @include mixinMaxWidthPosition(10.7, 50, 0);
-
-    h2{
-      margin-bottom: render-pixel(20);
-      font-weight: 300;
-      font-size: render-pixel(39);
-      text-transform: uppercase;
-      text-align: center;
-
-      &:last-of-type{
-        margin-top: render-pixel(20);
-        margin-bottom: 0;
-      }
-
-      >span{
-        font-weight: 600;
-        color: $color-yellow;
-      }
-    }// /-h2
-
-    .video-block{
-      @include mixinDimensions('min', $width-all - 5, render-pixel(454));
-      background-color: $color-borderGray;
-      margin: 0 auto;
-    }// /-.video-block
-  }// /-.video-container
-}// /-section.video
 
 
 ///

@@ -94,6 +94,7 @@ var mainConfig                 = {
     build                       : {
         arr : [
             commands.buildJade,
+            commands.buildJadePage,
             commands.buildScss,
             commands.buildScript
         ]

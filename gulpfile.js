@@ -46,6 +46,7 @@ gulp.task(commands.bowerJquery, function() {
  - html || jade;
  ==============================*/
 task.htmlMainTask('jade', commands.buildJade, path.src.jade);
+task.htmlMainTaskPage('jade', commands.buildJadePage, './src/html/JADE/_page/**.jade');
 
 
 /*

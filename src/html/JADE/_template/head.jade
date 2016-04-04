@@ -1,36 +1,30 @@
--var fontOpenSans = 'https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800';
+include ../_mixin/mixin
 
-head
-    // META TAGS
-    meta(charset=8)
-    meta(http-equiv="X-UA-Compatible" content="IE=edge")
-    meta(name="viewport" content="width=device-width, initial-scale=1")
+-
+    var arrFontName = [
+        'https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800'
+    ];
 
-    // TITLE
-    title ProfiDOC
+-
+    var arrStyleName = [
+        'style/style.min.css',
+        'style/main/header.min.css',
+        'style/main/header.min.css',
+        'style/main/document.min.css',
+        'style/main/steps.min.css',
+        'style/main/uniqueness.min.css',
+        'style/main/example.min.css',
+        'style/main/news.min.css',
+        'style/main/video.min.css'
+    ];
 
-    // LINK CSS
-    link(href="style/style.min.css" rel="stylesheet")
-    link(href="style/main/header.min.css" rel="stylesheet")
-    link(href="style/main/document.min.css" rel="stylesheet")
-    link(href="style/main/steps.min.css" rel="stylesheet")
-    link(href="style/main/uniqueness.min.css" rel="stylesheet")
-    link(href="style/main/example.min.css" rel="stylesheet")
-    link(href="style/main/news.min.css" rel="stylesheet")
+-
+    var arrDopFiles = [
+        'style/_dop/animate.min.css',
+        'style/_dop/owl.carousel.min.css',
+        'style/_dop/owl.theme.default.css',
+        ''
+    ];
 
-    // ANIMATE
-    link(href="style/_dop/animate.min.css" rel="stylesheet")
 
-    // SLIDER
-    link(href="style/_dop/owl.carousel.min.css" rel="stylesheet")
-    link(href="style/_dop/owl.theme.default.css" rel="stylesheet")
-
-    // FONTS
-    link(href=fontOpenSans rel='stylesheet')
-
-    // HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
-    // WARNING: Respond.js doesn't work if you view the page via file://
-    <!--[if lt IE 9]>
-    script(src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js")
-    script(src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js")
-    <![endif]-->
++htmlTemplateHEAD('ProfiDoc', arrFontName, arrStyleName, arrDopFiles)

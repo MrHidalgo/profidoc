@@ -1,0 +1,32 @@
+include ../_mixin/mixin
+
+-
+    var arrFontName = [
+        'https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800'
+    ];
+
+    var arrStyleName = [
+        '../style/style.min.css',
+        '../style/scope/scope.min.css'
+    ];
+
+    var scriptName = [
+        '../script/jquery.min.js',
+        '../script/script.min.js',
+        '../script/owl.carousel.min.js'
+    ];
+
+doctype html
+html
+    head
+        +htmlTemplateHEAD('Возможности', arrFontName, arrStyleName, false)
+
+    body
+
+        include ../_template/_dop/nav
+
+
+        include ../_template/_dop/footer
+
+        +htmlTemplateFOOT(scriptName)
+
