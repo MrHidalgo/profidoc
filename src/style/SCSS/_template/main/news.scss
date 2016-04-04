@@ -64,10 +64,15 @@ $imageNew3        : '../../image/news-bg-3.png';
       font-family: $font;
 
       &:first-of-type{
+        height: 35px;
+        width: 270px;
         font-weight: 500;
         font-size: render-pixel(25);
         text-transform: uppercase;
         margin-bottom: render-pixel(5);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }// /-&:first-of-type
 
       &:last-of-type{
