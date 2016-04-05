@@ -44,12 +44,13 @@ $imageNew3        : '../../image/news-bg-3.png';
       @include mixinDimensions('normal', $width-all);
       background: url($imageName) no-repeat center;
       background-size: cover;
-      transition: all .5s ease-in-out;
+      transform: scale(1);
+      transition: all .35s ease-in-out;
     }
 
     &:hover:before{
       transform: scale(1.025);
-      transition: all .5s ease-in-out;
+      transition: all .35s ease-in-out;
     }
   }// /-.header
 }// /- mixin headerImage

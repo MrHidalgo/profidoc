@@ -101,6 +101,11 @@ footer.footer{
           a{
             color: $color-white;
             line-height: 2;
+
+            &:hover:before{
+              transform: rotateY(360deg);
+              transition: all .5s ease-in-out;
+            }
           }
         }
 
