@@ -54,7 +54,9 @@ header.header{
 
     .header-row-input{
       display: flex;
-      @include mixinDimensions('noramal', render-pixel(890), render-pixel(60));
+      //@include mixinDimensions('noramal', render-pixel(890), render-pixel(60));
+      height: render-pixel(60);
+      max-width: render-pixel(890);
       margin: 0 auto;
 
       >*{
@@ -84,3 +86,86 @@ header.header{
     }// /-.header-row-input
   }// /-.header-container
 }// /-header.header
+
+
+///
+/// MEDIA QUERIES
+///
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  header#header.header{
+    .header-container{
+      p{
+        font-size: render-pixel(30);
+      }
+
+      h1{
+        font-size: render-pixel(50);
+      }
+
+      .header-row-input{
+        display: block;
+        height: auto;
+
+        input{
+          font-size: render-pixel(16);
+          width: $width-all;
+          border-bottom-right-radius: .3em;
+          border-top-right-radius: .3em;
+          margin-bottom: render-pixel(10);
+          text-overflow: ellipsis;
+        }
+
+        button{
+          width: render-pixel(150);
+          font-size: render-pixel(16);
+          border-bottom-left-radius: .3em;
+          border-top-left-radius: .3em;
+        }
+      }// /-header-row-input
+    }// /-header-container
+  }// /-header#header.header
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  header#header.header{
+    background-position-y: 0;
+
+    .header-container{
+      padding-top: render-pixel(25);
+    }// /-.header-container
+  }// /-header#header.header
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  header#header.header{
+    .header-container{
+      p{
+        font-size: render-pixel(40);
+      }
+
+      h1{
+        font-size: render-pixel(60);
+      }
+
+      .header-row-input{
+
+        input{
+          font-size: render-pixel(17);
+          width: calc(100% - 150px);
+          text-overflow: ellipsis;
+        }
+
+        button{
+          width: render-pixel(150);
+          font-size: render-pixel(17);
+        }
+      }// /-header-row-input
+    }// /-header-container
+  }// /-header#header.header
+}
+
+@media screen and (min-width: 768px) and (max-width: 1070px) {
+  header#header.header{
+    background-position-y: 0;
+  }// /-header#header.header
+}

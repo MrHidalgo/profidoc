@@ -95,3 +95,105 @@ section.uniqueness{
     }// /-.uniqueness-row
   }// /-.uniqueness-container
 }// /-section#uniqueness.uniqueness
+
+
+///
+/// MEDIA QUERIES
+///
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  section#uniqueness.uniqueness {
+    .uniqueness-container {
+      &:after,
+      &:before{
+        display: table;
+        content: '';
+      }
+
+      &:after{
+        clear: both;
+      }
+
+      .uniqueness-row{
+        display: block;
+        min-height: render-pixel(750);
+        height: auto;
+        padding: render-pixel(15);
+
+        &:after,
+        &:before{
+          display: table;
+          content: '';
+        }
+
+        &:after{
+          clear: both;
+        }
+
+        [class^='uniqueness-block-']{
+          width: $width-all;
+          height: render-pixel(240);
+          display: inline-block;
+          margin: render-pixel(15) 0;
+
+          p{
+            top: calc(100% - 130px);
+          }
+
+          .uniqueness--block-title{
+            .title{
+              width: render-pixel(185);
+              font-size: render-pixel(17);
+              line-height: 1.6;
+            }
+          }// /-.uniqueness--block-title
+        }
+      }
+    }// /-.uniqueness-container
+  }// /-section#uniqueness.uniqueness
+}
+
+@media screen and (min-width: 768px) and (max-width: 1070px) {
+  section#uniqueness.uniqueness{
+    .uniqueness-container{
+
+      &:after,
+      &:before{
+        display: table;
+        content: '';
+      }
+
+      &:after{
+        clear: both;
+      }
+
+      .uniqueness-row{
+        padding: render-pixel(15);
+        display: block;
+        min-height: render-pixel(750);
+        height: auto;
+
+        &:after,
+        &:before{
+          display: table;
+          content: '';
+        }
+
+        &:after{
+          clear: both;
+        }
+
+        [class^='uniqueness-block-']{
+          width: $width-all/2;
+          display: inline-block;
+          float: left;
+          margin: 0;
+          border: 1px solid $color-navBlue;
+
+          &:last-of-type{
+            width: $width-all;
+          }
+        }
+      }// /-.uniqueness-row
+    }// /-.uniqueness-container
+  }// /-section#uniqueness.uniqueness
+}

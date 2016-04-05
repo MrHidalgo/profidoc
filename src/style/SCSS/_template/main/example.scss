@@ -56,3 +56,17 @@ section.example{
     }// /-.internal-block
   }
 }// /-section#example.example
+
+
+///
+/// MEDIA QUERIES
+///
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  section#example.example{
+    .example-container{
+      h2{
+        font-size: render-pixel(30);
+      }
+    }// /-.example-container
+  }// /-section#example.example
+}

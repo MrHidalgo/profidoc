@@ -32,33 +32,51 @@ section#news.news
 
         .news-row
             .news-row-left
-                    .top
-                        .top-left
-                            .header
-                            +sectionText
+                .top
+                    .top-left
+                        .header
+                        +sectionText
 
-                            +footerInfo
+                        +footerInfo
 
-                        .top-right
-                            .header
-                            +sectionText
+                    .top-right
+                        .header
+                        +sectionText
 
-                            +footerInfo
+                        +footerInfo
 
-                    .bottom
-                        .bottom-left
-                            +sectionText
+                .bottom
+                    .bottom-left
+                        +sectionText
 
-                            +footerInfo
+                        +footerInfo
 
-                        .bottom-right
-                            .header
+                    .bottom-right
+                        .header
 
 
 
             .news-row-right
-                    .header
+                .header
 
-                    +sectionText
+                +sectionText
 
-                    +footerInfo
+                +footerInfo
+
+                .bottom
+                    .bottom-left
+                        +sectionText
+
+                        +footerInfo
+
+                    .bottom-right
+                        .header
+
+            .news-small-device
+                - for (var i = 0; i < 4; i++)
+                    div(class='block-#{i}')
+                        .header
+
+                        +sectionText
+
+                        +footerInfo

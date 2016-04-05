@@ -3,7 +3,6 @@
 ///
 @import "../../_mixin/mixin";
 @import "../../_function/function";
-@import "../_dop/footer";
 
 
 ///
@@ -51,3 +50,17 @@ section.video{
     }// /-.video-block
   }// /-.video-container
 }// /-section.video
+
+
+///
+/// MEDIA QUERIES
+///
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  section#video.video{
+    .video-container{
+      h2{
+        font-size: render-pixel(30);
+      }
+    }// /-.video-container
+  }// /-section#video.video
+}
