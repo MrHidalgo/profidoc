@@ -74,7 +74,7 @@ footer.footer{
 
 
     .footer-container{
-      @include mixinMaxWidthPosition(10.7, 15, 15);
+      @include mixinMaxWidthPosition(10.7, 35, 15, 15);
       height: $width-all;
       @include mixinBorder(bottom, 1px, $color-white);
       @include mixinCenteredBLockFlex(row, baseline, center);
@@ -129,7 +129,7 @@ footer.footer{
     .footer-row{
       //width: 100%;
       @include mixinMaxWidthPosition(10.7, 25, 15);
-      @include mixinCenteredBLockFlex(row, center, center);
+      @include mixinCenteredBLockFlex(row, flex-start, center);
 
 
       span{

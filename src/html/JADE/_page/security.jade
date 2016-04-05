@@ -7,7 +7,7 @@ include ../_mixin/mixin
 
     var arrStyleName = [
         '../style/style.min.css',
-        '../style/scope/scope.min.css'
+        '../style/security/security.min.css'
     ];
 
     var scriptName = [
@@ -18,7 +18,7 @@ include ../_mixin/mixin
 doctype html
 html
     head
-        +htmlTemplateHEAD('Возможности', arrFontName, arrStyleName, false)
+        +htmlTemplateHEAD('Безопасность', arrFontName, arrStyleName, false)
 
     body
 
@@ -26,9 +26,8 @@ html
 
         // CONTENT BLOCK
         block content
-            include ../_template/scope/content
+            include ../_template/security/content
 
         include ../_template/_dop/footer
 
         +htmlTemplateFOOT(scriptName)
-
