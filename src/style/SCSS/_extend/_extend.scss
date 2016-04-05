@@ -9,7 +9,9 @@
 /// VARIABLE BLOCK
 ///
 $width-all        : return-value(dimension, all);
+
 $color-lightBlack : return-value(color, lightBlack);
+$color-footerBg   : return-value(color, footerBg);
 
 
 ///
@@ -22,4 +24,20 @@ $color-lightBlack : return-value(color, lightBlack);
   color: $color-lightBlack;
   text-transform: uppercase;
   text-align: center;
+}
+
+
+///
+/// INTERNAL PROJECT FILE [background color, footer bottom]
+///
+%internalPage{
+  section#navigation{
+    background-color: $color-footerBg;
+  }// /-section#navigation
+
+  //footer#footer{
+  //  //position: absolute;
+  //  //left: 0;
+  //  //bottom: 0;
+  //}// /-footer#footer
 }

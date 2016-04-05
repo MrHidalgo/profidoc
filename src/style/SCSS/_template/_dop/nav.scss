@@ -28,7 +28,7 @@ section.navigation{
 
 
   .navigation-container{
-    @include mixinMaxWidthPosition(10.7, 0, 15, 10, 15);
+    @include mixinMaxWidthPosition(10.7, 0, 0, 10, 0);
 
     .header-lang{
       height: render-pixel(46);

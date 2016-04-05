@@ -44,3 +44,13 @@ mixin htmlTemplateFOOT(arrScript)
         each val in arrScript
             if (val.length > 0)
                 script(src= val)
+
+
+
+//
+//  BREADCRUMBS
+//
+mixin breadcrumbsPanel(arrLink, arrHash, arrLine)
+    ul.bread-list
+        each val, index in arrLink
+            li: a(href= arrHash[index])!= val + '&nbsp;' +  arrLine[index]
