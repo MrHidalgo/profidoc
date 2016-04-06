@@ -1,5 +1,15 @@
 ## *PROFIDOC* front-end part
 
+
+<hr>
+<br>
+
+___.com             - [главная]
+___.com/scope       - [возможности]
+___.com/security    - [безопасность]
+___.com/about       - [о проекте]
+
+
 <hr>
 <br>
 
