@@ -4,11 +4,12 @@
 <hr>
 <br>
 
-___.com             - [главная]
-___.com/scope       - [возможности]
-___.com/security    - [безопасность]
-___.com/about       - [о проекте]
+Sitemap hash:
 
+    profidoc.com             - [главная]
+    profidoc.com/scope       - [возможности]
+    profidoc.com/security    - [безопасность]
+    profidoc.com/about       - [о проекте]
 
 <hr>
 <br>
