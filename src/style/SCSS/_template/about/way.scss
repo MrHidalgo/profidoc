@@ -1,0 +1,94 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all            : return-value(dimension, all);
+
+$color-white          : return-value(color, white);
+$color-black          : return-value(color, black);
+$color-lightenYellow  : return-value(color, lightenYellow);
+$color-yellow         : return-value(color, yellow);
+$color-wayGrayCircle  : return-value(color, wayGrayCircle);
+$color-navBlue        : return-value(color, navBlue);
+
+$imageBg              : '../../image/about-bg.png';
+
+
+///
+/// WAY SECTION
+///
+section.way{
+  width: $width-all;
+  min-height: render-pixel(360);
+  background: url($imageBg) no-repeat center fixed;
+  background-size: cover;
+
+
+  .way-container{
+    @include mixinMaxWidthPosition(10.7, 25, 0);
+
+
+    h2{
+      font-weight: 500;
+      text-align: center;
+      color: $color-lightenYellow;
+      font-size: render-pixel(30);
+      margin-bottom: render-pixel(25);
+      @include mixinTextShadow(render-pixel(1.8), render-pixel(1.8), render-pixel(1), $color-black);
+
+      span{
+        font-size: render-pixel(22);
+        font-weight: 600;
+      }
+    }
+
+
+    .way-row{
+      height: calc(100% - 60px);
+      @include mixinCenteredBLockFlex(row, center, center);
+      padding: render-pixel(30) 0;
+
+      [class^='block-']{
+        width: $width-all / 3;
+        text-align: center;
+
+        .number{
+          font-weight: 600;
+          font-size: render-pixel(41);
+          padding: render-pixel(2) render-pixel(8);
+          border-radius: $width-all;
+          background-color: $color-wayGrayCircle;
+          cursor: pointer;
+          transition: all .3s ease-in-out;
+        }// /-.number
+
+        p{
+          color: darken($color-white, 10%);
+          margin-top: render-pixel(20);
+          font-size: render-pixel(22);
+          text-transform: uppercase;
+          font-weight: 600;
+          transition: all .3s ease-in-out;
+          @include mixinTextShadow(render-pixel(1.5), render-pixel(1.5), render-pixel(0.8), $color-black);
+        }
+
+
+        &:hover .number{
+          transition: all .3s ease-in-out;
+          background-color: $color-yellow;
+        }
+
+        &:hover p{
+          transition: all .3s ease-in-out;
+          color: $color-navBlue;
+        }
+      }// /-[class^='block-']
+    }// /-.way-row
+  }// /-.way-container
+}// /-section.way

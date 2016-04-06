@@ -1,0 +1,19 @@
+-
+    var wayTitle = [
+        'Создание <br/> бизнеса',
+        'конструктор <br/>  договоров',
+        'проверка <br/> контрагента'
+    ];
+
+    var wayNumber = ['1', '2', '3'];
+
+
+section#way.way
+    .way-container
+        h2!=  '<span>3</span>' + '&nbsp;ключевых направления:'
+
+        .way-row
+            - for (var i = 0; i < 3; i++)
+                div(class='block-#{i}')
+                    span.number= wayNumber[i]
+                    p!= wayTitle[i]

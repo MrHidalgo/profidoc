@@ -7,14 +7,16 @@ include ../_mixin/mixin
 
     var arrStyleName = [
         '../style/style.min.css',
-        '../style/about/about.min.css',
-        '../style/_dop/breadcrumbs.min.css'
+        '../style/_dop/breadcrumbs.min.css',
+        '../style/about/titleSlogan.min.css',
+        '../style/about/way.min.css'
     ];
 
     var scriptName = [
         '../script/jquery.min.js',
         '../script/script.min.js'
     ];
+
 
 doctype html
 html
@@ -32,7 +34,7 @@ html
 
         // ABOUT BLOCK
         block about
-            include ../_template/about/about
+            include ../_template/about/titleSlogan
 
         // WAY BLOCK
         block way
