@@ -3,6 +3,14 @@ var	express	    =	require('express'),
 
 app.set('port',	(process.env.PORT	||	4000));
 
+
+// MAIN PAGE
+app.use('/',	        express.static('./dist/',
+    {
+        'index' : 'index.html'
+    }
+));
+
 // SCOPE PAGE
 app.use('/scope',	    express.static('./dist/page/',
     {
@@ -17,12 +25,13 @@ app.use('/security',	express.static('./dist/page/',
     }
 ));
 
-// MAIN PAGE
-app.use('/',	        express.static('./dist/',
+// ABOUT PAGE
+app.use('/about',	express.static('./dist/page/',
     {
-        'index' : 'index.html'
+        'index' : 'about.html'
     }
 ));
+
 
 
 app.listen(app.get('port'),	function()	{

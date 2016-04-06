@@ -1,0 +1,68 @@
+include ../_mixin/mixin
+
+-
+    var arrFontName = [
+        'https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800'
+    ];
+
+    var arrStyleName = [
+        '../style/style.min.css',
+        '../style/about/about.min.css',
+        '../style/_dop/breadcrumbs.min.css'
+    ];
+
+    var scriptName = [
+        '../script/jquery.min.js',
+        '../script/script.min.js'
+    ];
+
+doctype html
+html
+    head
+        +htmlTemplateHEAD('О проекте', arrFontName, arrStyleName, false)
+
+    body
+
+        // NAVIGATION MENU
+        include ../_template/_dop/nav
+
+        // CONTENT BLOCK
+        block breadcrumbs
+            include ../_template/about/breadcrumbs
+
+        // ABOUT BLOCK
+        block about
+            include ../_template/about/about
+
+        // WAY BLOCK
+        block way
+            include ../_template/about/way
+
+        // WORK BLOCK
+        block work
+            include ../_template/about/work
+
+        // SECURITY BLOCK
+        block security
+            include ../_template/about/security
+
+        // CREATE BLOCK
+        block create
+            include ../_template/about/create
+
+        // MAPS BLOCK
+        block map
+            include ../_template/about/map
+
+        // TRAINING BLOCK
+        block training
+            include ../_template/about/training
+
+        // try BLOCK
+        block try
+            include ../_template/about/try
+
+        // FOOTER MENU
+        include ../_template/_dop/footer
+
+        +htmlTemplateFOOT(scriptName)

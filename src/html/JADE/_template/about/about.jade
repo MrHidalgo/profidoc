@@ -1,0 +1,21 @@
+- var aboutSlogan = 'Всеукраинский он-лайн сервис <br/> профессиональной подготовки юридических <br/> документов';
+
+
+section#about.about
+    .about-container
+        .about-row-header
+            .row-header-left
+                img(src='../image/header-logotype.png', class='img-ewsponsive')
+
+            .row-header-right
+                span.year 2016
+                span.year-text &nbsp; Год основания
+
+        .about-row-section
+            .row-section-left
+                p!= aboutSlogan
+
+            .row-section-right
+                p!= '<span>13 </span>' + 'инструментов для создания и ликвидации бизнеса'
+                p!= '<span>1000 + </span>' + 'договоров в конструкторе'
+                p!= '<span>10 </span>' + 'источников проверки контрагента и оценки рисков'

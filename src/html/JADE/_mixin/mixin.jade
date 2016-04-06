@@ -3,7 +3,7 @@
 //
 mixin htmlTemplateHEAD(title, arrFont, arrStyle, arrDop)
     // META TAGS
-    meta(charset=8)
+    meta(charset= 'utf-8')
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(name="viewport" content="width=device-width, initial-scale=1")
 
@@ -46,9 +46,18 @@ mixin htmlTemplateFOOT(arrScript)
                 script(src= val)
 
 
+//
+//  BREADCRUMBS MAIN
+//
+mixin breadcrumbsMain(classIdName, title)
+    section(id = classIdName, class= classIdName)
+        div(class= classIdName + '-container')
+            div(class= classIdName + '-header')
+                h2= title
+                +breadcrumbsPanel(linkName, linkHash, linkLine)
 
 //
-//  BREADCRUMBS
+//  BREADCRUMBS LIST
 //
 mixin breadcrumbsPanel(arrLink, arrHash, arrLine)
     ul.bread-list

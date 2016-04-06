@@ -28,16 +28,10 @@ $color-footerBg   : return-value(color, footerBg);
 
 
 ///
-/// INTERNAL PROJECT FILE [background color, footer bottom]
+/// INTERNAL PROJECT FILE [background color, footer bottom
 ///
 %internalPage{
   section#navigation{
     background-color: $color-footerBg;
   }// /-section#navigation
-
-  //footer#footer{
-  //  //position: absolute;
-  //  //left: 0;
-  //  //bottom: 0;
-  //}// /-footer#footer
 }

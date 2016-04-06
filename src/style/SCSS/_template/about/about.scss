@@ -1,0 +1,199 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+@import "../../_extend/extend";
+@import "../../../../../dist/style/_sprite/sprite";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all            : return-value(dimension, all);
+
+$color-white          : return-value(color, white);
+$color-black          : return-value(color, black);
+$color-lightGrayText  : return-value(color, lightGrayText);
+$color-darkenBlueText : return-value(color, darkenBlueText);
+$color-lightenBlueText: return-value(color, lightenBlueText);
+
+
+/// [navigation, footer]
+body{
+  @extend %internalPage;
+}
+
+
+///
+/// ABOUT SECTION
+///
+section.about{
+  min-height: render-pixel(290);
+
+  .about-container{
+    @include mixinMaxWidthPosition(10.7, 25, 0);
+
+    .about-row-header{
+      @include mixinCenteredBLockFlex(row, center, center);
+
+
+      .row-header-left,
+      .row-header-right{
+        width: $width-all / 2;
+        text-align: center;
+      }
+
+      .row-header-left{
+        >img{
+          max-width: $width-all;
+        }
+      }// /-.row-header-left
+
+
+      .row-header-right{
+        span{
+          color: $color-lightGrayText;
+
+          &:first-of-type{
+            font-size: render-pixel(55);
+            font-weight: 700;
+            vertical-align: middle;
+          }
+
+          &:last-of-type{
+            font-weight: 500;
+            color: darken($color-lightGrayText, 20%);
+            vertical-align: middle;
+          }
+        }
+      }// /-.row-header-right
+    }// /-.about-row-header
+
+
+    .about-row-section{
+      padding: render-pixel(15) 0;
+      @include mixinCenteredBLockFlex(row, baseline, center);
+
+
+      .row-section-left,
+      .row-section-right{
+        width: $width-all / 2;
+      }
+
+
+      .row-section-left{
+        text-align: center;
+        color: $color-darkenBlueText;
+        line-height: 1.5;
+      }// /-.row-section-left
+
+
+      .row-section-right{
+        text-align: right;
+
+        p{
+          color: lighten($color-footerBg, 15%);
+          vertical-align: middle;
+
+          span{
+            color: $color-lightenBlueText;
+            font-size: render-pixel(55);
+            font-weight: 600;
+            vertical-align: middle;
+          }
+        }
+      }// /-.row-section-right
+    }// /-.about-row-section
+  }// /-.about-container
+}// /-section#about.about
+
+
+///
+/// MEDIA
+///
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  section#about.about {
+    .about-container {
+
+      .about-row-header{
+        .row-header-right{
+          span.year{
+            font-size: render-pixel(30) !important;
+          }
+        }// /-.row-header-right
+      }// /-.about-row-header
+
+
+      .about-row-section{
+
+        .row-section-right{
+          p{
+            span{
+              font-size: render-pixel(30) !important;
+            }
+          }
+        }// /-.row-section-right
+      }// /-.about-row-section
+    }// /-.about-container
+  }// /-section#about.about
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  section#about.about {
+    .about-container {
+      padding: render-pixel(15);
+
+      .about-row-header{
+        .row-header-right{
+          span.year{
+            display: block;
+            font-size: render-pixel(40);
+          }
+        }// /-.row-header-right
+      }// /-.about-row-header
+
+
+      .about-row-section{
+        flex-direction: column;
+
+        .row-section-left,
+        .row-section-right{
+          width: $width-all;
+        }
+
+        .row-section-left{
+          margin: render-pixel(15) 0;
+        }
+
+        .row-section-right{
+          p{
+            span{
+              font-size: render-pixel(40);
+            }
+          }
+        }// /-.row-section-right
+      }// /-.about-row-section
+    }// /-.about-container
+  }// /-section#about.about
+}
+
+@media screen and (min-width: 768px) and (max-width: 1070px) {
+  section#about.about{
+    .about-container{
+      .about-row-section{
+        padding: render-pixel(15);
+        flex-direction: column;
+
+        .row-section-left,
+        .row-section-right{
+          width: $width-all;
+        }
+
+        .row-section-left{
+          margin-bottom: render-pixel(15);
+        }
+      }// /-.about-row-section
+    }// /-.about-container
+  }// /-section#about.about
+}
