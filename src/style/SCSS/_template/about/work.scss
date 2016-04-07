@@ -1,0 +1,147 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all            : return-value(dimension, all);
+
+$color-white          : return-value(color, white);
+$color-black          : return-value(color, black);
+$color-borderGray     : return-value(color, borderGray);
+$color-workBlueText   : return-value(color, workBlueText);
+$color-yellow         : return-value(color, yellow);
+
+$imageClockIcon       : '../../image/about-clock.png';
+
+
+///
+/// WORK SECTION
+///
+section.work{
+  min-height: render-pixel(200);
+
+
+  .work-container{
+    @include mixinCenteredBLockFlex(row, flex-start, center);
+    @include mixinMaxWidthPosition(10.7, 35, 0);
+    @include mixinBorder(bottom, 1px, $color-borderGray);
+
+    .work-row-left,
+    .work-row-right{
+      width: $width-all / 2;
+      text-align: center;
+
+      p.title{
+        font-size: render-pixel(20);
+        margin-bottom: render-pixel(5);
+      }
+    }
+
+
+    .work-row-left{
+      p.data,
+      p.time{
+        font-size: render-pixel(33);
+        color: $color-workBlueText;
+      }
+
+      p.time{
+        font-weight: 600;
+
+        &:before{
+          content: '';
+          display: inline-block;
+          @include mixinDimensions('normal', render-pixel(20));
+          background: url($imageClockIcon) no-repeat center;
+          background-size: contain;
+          vertical-align: middle;
+          margin-right: render-pixel(20);
+        }
+      }
+    }// /-.work-row-left
+
+
+    .work-row-right{
+      p.data{
+        color: $color-yellow;
+        font-weight: 600;
+        font-size: render-pixel(75);
+      }// /-p.data
+    }// /-.work-row-right
+  }// /-.work-container
+}// /-section.work
+
+
+///
+/// MEDIA QUERIES
+///
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  section#work.work{
+    .work-container {
+      padding: render-pixel(25) render-pixel(15);
+      flex-direction: column;
+
+      .work-row-left,
+      .work-row-right{
+        width: $width-all;
+        margin: render-pixel(20) 0;
+
+        p.title{
+          font-size: render-pixel(19);
+        }
+      }
+
+      .work-row-left {
+        p.data,
+        p.time {
+          font-size: render-pixel(26);
+        }
+
+        p.time{
+          &:before{
+            margin-right: render-pixel(10);
+          }
+        }
+      }// /-.work-row-left
+    }// /-.work-container
+  }// /-section#work.work
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  section#work.work{
+    .work-container{
+
+      .work-row-left,
+      .work-row-right{
+        p.title{
+          font-size: render-pixel(18);
+        }
+      }
+
+      .work-row-left {
+        p.data,
+        p.time {
+          font-size: render-pixel(26);
+        }
+
+        p.time{
+          &:before{
+            margin-right: render-pixel(10);
+          }
+        }
+      }// /-.work-row-left
+
+
+      .work-row-right{
+        p.data{
+          font-size: render-pixel(65);
+        }// /-p.data
+      }// /-.work-row-right
+    } // /-.work-container
+  }// /-section#work.work
+}

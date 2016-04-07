@@ -1,0 +1,14 @@
+- var imageSecurity = '../image/scope-6.png';
+
+- var securityTitle = 'Политика конфиденциальности при подготовке документов в сервисе «ProfiDoc»';
+- var securityText  = 'Наша компания с уважением и со всей серьёзностью подходит к защите личных и корпоративных данных пользователей сервиса. Для каждого клиента создаётся личный кабинет, доступ к которому имеет только он. Все данные хранятся на защищённых серверах в дата-центрах.';
+
+
+section#security.security
+    .security-container
+        .security-row-left
+            img(src= imageSecurity, class='img-responsive')
+
+        .security-row-right
+            p= securityTitle
+            p!= securityText + ' <a href="#">Подробнее</a>'

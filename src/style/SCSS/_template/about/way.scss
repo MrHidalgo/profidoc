@@ -40,7 +40,7 @@ section.way{
       color: $color-lightenYellow;
       font-size: render-pixel(30);
       margin-bottom: render-pixel(25);
-      @include mixinTextShadow(render-pixel(1.8), render-pixel(1.8), render-pixel(1), $color-black);
+      @include mixinTextShadow(render-pixel(1.8), render-pixel(1.8), render-pixel(1), lighten($color-black, 18%));
 
       span{
         font-size: render-pixel(22);
@@ -92,3 +92,40 @@ section.way{
     }// /-.way-row
   }// /-.way-container
 }// /-section.way
+
+
+///
+/// MEDIA QUERIES
+///
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  section#way.way {
+    .way-container {
+      .way-row {
+        flex-direction: column;
+
+        [class^='block-']{
+          width: $width-all;
+          margin: render-pixel(15) 0;
+        }// /-[class^='block-']
+      }///-.way-row
+    }// /-.way-container
+  }// /-section#way.way
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  section#way.way{
+    .way-container{
+      .way-row{
+        [class^='block-']{
+          .number {
+            font-size: render-pixel(35);
+          }
+
+          p{
+            font-size: render-pixel(18);
+          }
+        }// /-[class^='block-']
+      }// /-.way-row
+    }// /-.way-container
+  }// /-section#way.way
+}
