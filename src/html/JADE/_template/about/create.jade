@@ -1,0 +1,73 @@
+-
+    var createTitle     = 'За последний месяц в сервисе «ProfiDoc» создано:';
+    var createTitleInfo = 'комплектов документов <br/> и договоров для бизнеса';
+    var createSubTitle  = [
+        'Для регистрации бизнеса',
+        'Для ведения бизнеса',
+        'Для безопасности бизнеса'
+    ];
+
+    var createStatNumber = [
+        '2 867', '1 250', '839', '324'
+    ];
+    var createStatNumber1 = [
+        '7 445', '5 893'
+    ];
+    var createStatNumber2 = [
+        '548'
+    ];
+
+    var createStatText = [
+        'внесение изменений в ООО',
+        'регистрация ООО',
+        'регистрация ФОП',
+        'ликвидация ФОП'
+    ];
+    var createStatText1 = [
+        'договоров',
+        'документа <br/> (доверенности, приказы, акты и др.)'
+    ];
+    var createStatText2 = [
+        'проверок контрагентов'
+    ];
+
+
+mixin statisticInfo(subTitle, i, count, numberBlock, textBlock)
+    p.sub-title= subTitle[i]
+
+    div(class='create-row-statistic-#{i}')
+        .create-row-internal
+            - for(var j = 0; j < count; j++)
+                div(class='container-#{j}')
+                    div(class='block-left-#{j}')
+                        span.internal-slider
+
+                    div(class='block-center-#{j}')
+                        span.number!= numberBlock[j]
+
+                    div(class='block-right-#{j}')
+                        span.text!= textBlock[j]
+
+
+
+section#create.create
+    .create-container
+        h2.title= createTitle
+
+        .create-row
+            .create-row-left
+                span 5 645
+
+            .create-row-right
+                span!= createTitleInfo
+
+        - for(var i = 0; i < 3; i++)
+            case i
+                when 0
+                    +statisticInfo(createSubTitle, i, 4, createStatNumber, createStatText)
+                when 1
+                    +statisticInfo(createSubTitle, i, 2, createStatNumber1, createStatText1)
+                when 2
+                    +statisticInfo(createSubTitle, i, 1, createStatNumber2, createStatText2)
+                default
+                    p.error Case JADE not work

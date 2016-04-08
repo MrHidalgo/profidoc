@@ -1,0 +1,40 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all          : return-value(dimension, all);
+
+$color-white        : return-value(color, white);
+$color-black        : return-value(color, black);
+
+$imageMap           : '../../image/about-maps.png';
+
+
+///
+/// MAPS BLOCK
+///
+section.map{
+  .map-container{
+    @include mixinMaxWidthPosition(10.7, 25, 15);
+
+
+    h2{
+      font-weight: 600;
+      font-size: render-pixel(22);
+      text-transform: uppercase;
+      text-align: center;
+      margin: render-pixel(25) 0;
+    }
+
+
+    .img-responsive{
+      max-width: $width-all;
+    }
+  }
+}// /section#map.map

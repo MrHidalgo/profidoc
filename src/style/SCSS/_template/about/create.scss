@@ -1,0 +1,345 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all              : return-value(dimension, all);
+
+$color-white            : return-value(color, white);
+$color-black            : return-value(color, black);
+$color-workBlueText     : return-value(color, workBlueText);
+$color-scopeBorder      : return-value(color, scopeBorder);
+
+/// gradient color
+$color-gradientBlue1    : return-value(color, gradientBlue1);
+$color-gradientBlue2    : return-value(color, gradientBlue2);
+$color-gradientBlue3    : return-value(color, gradientBlue3);
+$color-gradientBlue4    : return-value(color, gradientBlue4);
+
+$color-gradientYellow1  : return-value(color, gradientYellow1);
+$color-gradientYellow2  : return-value(color, gradientYellow2);
+$color-gradientYellow3  : return-value(color, gradientYellow3);
+$color-gradientYellow4  : return-value(color, gradientYellow4);
+
+$color-gradientOrange1  : return-value(color, gradientOrange1);
+$color-gradientOrange2  : return-value(color, gradientOrange2);
+$color-gradientOrange3  : return-value(color, gradientOrange3);
+$color-gradientOrange4  : return-value(color, gradientOrange4);
+
+$color-gradientGreen1   : return-value(color, gradientGreen1);
+$color-gradientGreen2   : return-value(color, gradientGreen2);
+$color-gradientGreen3   : return-value(color, gradientGreen3);
+$color-gradientGreen4   : return-value(color, gradientGreen4);
+
+
+///
+/// MIXIN GRADIENT
+///
+@mixin gradientBg ($color1, $color2, $color3, $color4) {
+  background: $color1;
+  background: -moz-linear-gradient(top,  $color1 0%, $color2 50%, $color3 51%, $color4 100%);
+  background: -webkit-linear-gradient(top,  $color1 0%,$color2 50%,$color3 51%,$color4 100%);
+  background: linear-gradient(to bottom,  $color1 0%,$color2 50%,$color3 51%,$color4 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color4',GradientType=0 );
+}
+
+///
+/// CREATE SECTION
+///
+section.create{
+  min-height: render-pixel(100);
+
+  .create-container{
+    @include mixinMaxWidthPosition(10.7, 25, 0);
+    @include mixinBorder(bottom, 1px, $color-scopeBorder);
+
+
+    h2.title{
+      font-weight: 500;
+      text-align: center;
+      font-size: render-pixel(27);
+      margin-bottom: render-pixel(15);
+    }// /-h2.title
+
+
+    p.sub-title{
+      font-weight: 600;
+      font-size: render-pixel(22);
+      text-transform: uppercase;
+      text-align: center;
+      margin: render-pixel(25) 0;
+    }// /-p.sub-title
+
+
+    .create-row{
+      padding-bottom: render-pixel(25);
+      @include mixinCenteredBLockFlex(row, center, center);
+
+      .create-row-left,
+      .create-row-right{
+        width: $width-all / 2;
+        padding: 0 render-pixel(15);
+      }
+
+
+      .create-row-left{
+        text-align: right;
+
+        span{
+          color: darken($color-workBlueText, 3%);
+          font-size: render-pixel(83);
+          font-weight: 600;
+        }
+      }// /-.create-row-left
+
+
+      .create-row-right{
+        span{
+          font-size: render-pixel(20);
+        }
+      }// /-.create-row-right
+    }// /-.create-row
+
+
+    [class^='create-row-statistic-']{
+      .create-row-internal{
+        min-height: render-pixel(50);
+
+        [class^='container-']{
+          @include mixinCenteredBLockFlex(row, center, space-between);
+
+          [class^='block-left-']{
+            display: inherit;
+            width: $width-all - 60;
+          }// /-block-left-
+        }// /- [class^='container-']
+      }// /-.create-row-internal
+    }// /-[class^='create-row-statistic-']
+
+
+    .create-row-statistic-0{
+      .create-row-internal{
+        @each $className, $width, $color0, $color1, $color2, $color3 in
+                        (0, 425, $color-gradientBlue1, $color-gradientBlue2, $color-gradientBlue3, $color-gradientBlue4),
+                        (1, 324, $color-gradientYellow1, $color-gradientYellow2, $color-gradientYellow3, $color-gradientYellow4),
+                        (2, 248, $color-gradientOrange1, $color-gradientOrange2, $color-gradientOrange3, $color-gradientOrange4),
+                        (3, 109, $color-gradientGreen1, $color-gradientGreen2, $color-gradientGreen3, $color-gradientGreen4) {
+          [class^='block-left-#{$className}'] {
+            .internal-slider{
+              border-radius: .3em;
+              margin: render-pixel(15) 0;
+              @include mixinDimensions('normal', render-pixel($width) ,render-pixel(47));
+              @include gradientBg($color0, $color1, $color2, $color3);
+            }
+          }
+        }
+      }// /-.create-row-internal
+
+
+
+      .create-row-internal{
+        @each $className, $textColor in
+                        (0, $color-workBlueText),
+                        (1, $color-gradientYellow3),
+                        (2, $color-gradientOrange3),
+                        (3, $color-gradientGreen3) {
+          [class^='block-center-#{$className}']{
+            text-align: right;
+            width: $width-all - 75;
+            padding-right: render-pixel(15);
+
+            span.number{
+              color: $textColor;
+              font-size: render-pixel(63);
+              font-weight: 600;
+            }
+          }
+        }
+
+
+        [class^='block-right-']{
+          width: $width-all - 65;
+          font-size: render-pixel(19);
+          padding-left: render-pixel(15);
+        }
+      }// /-.create-row-internal
+    }// /-create-row-statistic-0
+
+
+    .create-row-statistic-1{
+      .create-row-internal{
+        @each $className, $width, $color0, $color1, $color2, $color3 in
+                        (0, 425, $color-gradientBlue1, $color-gradientBlue2, $color-gradientBlue3, $color-gradientBlue4),
+                        (1, 324, $color-gradientYellow1, $color-gradientYellow2, $color-gradientYellow3, $color-gradientYellow4) {
+          [class^='block-left-#{$className}'] {
+            .internal-slider{
+              border-radius: .3em;
+              margin: render-pixel(15) 0;
+              @include mixinDimensions('normal', render-pixel($width) ,render-pixel(47));
+              @include gradientBg($color0, $color1, $color2, $color3);
+            }
+          }
+        }
+      }// /-.create-row-internal
+
+
+
+      .create-row-internal{
+        @each $className, $textColor in
+                        (0, $color-workBlueText),
+                        (1, $color-gradientYellow3) {
+          [class^='block-center-#{$className}']{
+            text-align: right;
+            width: $width-all - 75;
+            padding-right: render-pixel(15);
+
+            span.number{
+              color: $textColor;
+              font-size: render-pixel(63);
+              font-weight: 600;
+            }
+          }
+        }
+
+
+        [class^='block-right-']{
+          width: $width-all - 65;
+          font-size: render-pixel(19);
+          padding-left: render-pixel(15);
+        }
+      }// /-.create-row-internal
+    }// /-create-row-statistic-1
+
+
+    .create-row-statistic-2{
+      .create-row-internal{
+        @each $className, $width, $color0, $color1, $color2, $color3 in
+                        (0, 152, $color-gradientGreen1, $color-gradientGreen2, $color-gradientGreen3, $color-gradientGreen4),
+                        (1, 324, $color-gradientYellow1, $color-gradientYellow2, $color-gradientYellow3, $color-gradientYellow4) {
+          [class^='block-left-#{$className}'] {
+            .internal-slider{
+              border-radius: .3em;
+              margin: render-pixel(15) 0;
+              @include mixinDimensions('normal', render-pixel($width) ,render-pixel(47));
+              @include gradientBg($color0, $color1, $color2, $color3);
+            }
+          }
+        }
+      }// /-.create-row-internal
+
+
+
+      .create-row-internal{
+        @each $className, $textColor in
+                        (0, $color-gradientGreen3),
+                        (1, $color-gradientYellow3) {
+          [class^='block-center-#{$className}']{
+            text-align: right;
+            width: $width-all - 75;
+            padding-right: render-pixel(15);
+
+            span.number{
+              color: $textColor;
+              font-size: render-pixel(63);
+              font-weight: 600;
+            }
+          }
+        }
+
+
+        [class^='block-right-']{
+          width: $width-all - 65;
+          font-size: render-pixel(19);
+          padding-left: render-pixel(15);
+        }
+      }// /-.create-row-internal
+    }// /-create-row-statistic-2
+
+  }// /-.create-container
+}// /-section.create
+
+
+///
+/// MEDIA QUERIES
+///
+@media screen and (min-width: 320px) and (max-width: 480px){
+  section#create.create{
+    .create-container{
+      .create-row{
+        text-align: center;
+        flex-direction: column;
+
+        .create-row-left{
+          width: $width-all;
+          text-align: center;
+
+          span{
+            font-size: render-pixel(65);
+          }
+        }// /-create-row-left
+
+
+        .create-row-right{
+          width: $width-all;
+        }// /-.create-row-right
+      }// /-.create-row
+    }// /-.create-container
+  }// /-section#create.create
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px){
+  section#create.create{
+    .create-container {
+      [class^='create-row-statistic-'] {
+        .create-row-internal {
+          [class^='container-'] {
+            flex-direction: column;
+            @include mixinBorder(bottom, 1px, $color-scopeBorder);
+            margin: render-pixel(15) 0;
+
+            >*{
+              width: $width-all;
+            }
+
+            [class^='block-right-'] {
+              text-align: right;
+              margin-bottom: render-pixel(15);
+            }
+          }// /-[class^='container-']
+        }// /-.create-row-internal
+      }// /-[class^='create-row-statistic-']
+    }// /-.create-container
+  }// /-section#create.create
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  section#create.create {
+    .create-container {
+      [class^='create-row-statistic-']{
+        .create-row-internal{
+         [class^='container-']{
+           [class^='block-center-']{
+             .number{
+               font-size: render-pixel(50);
+             }
+           }
+         }
+        }
+      }// /-create-row-statistic-
+    }// /-.create-container
+  }// /-section#create.create
+}
+
+@media screen and (min-width: 320px) and (max-width: 1070px){
+  section#create.create{
+    .create-container{
+      padding-left: render-pixel(15);
+      padding-right: render-pixel(15);
+    }// /-.create-container
+  }// /-section#create.create
+}
