@@ -1,0 +1,53 @@
+-
+    var trainTitle  = 'Программа подготовки документов';
+    var trainSlogan = 'для регистрации юридических лиц и внесения изменений в организацию без посредников';
+
+    var trainPar    = [
+        'Вы вводите данные',
+        'Сервис автоматически готовит документы',
+        'Всё!'
+    ];
+
+    var trainText   = [
+        'В специальном мастере вы указываете сведения, необходимые для заполнения документов. На всём пути ввода данных присутствуют подсказки, которые помогут не ошибиться.',
+        'Сервис мгновенно подставляет введённые данные в нужные документы. Все документы соответствуют законодательству Украины и прошли неоднократную юридическую экспертизу.',
+        'Вам остаётся лишь скачать и распечатать документы. '
+    ];
+
+    var trainImage = [
+        '../image/about-0.png',
+        '../image/about-1.png',
+        '../image/about-2.png'
+    ];
+
+    var trainImage1 = [
+        '../image/about-3.png',
+        '../image/about-4.png',
+        '../image/about-5.png'
+    ];
+
+
+section#training.training
+    .training-container
+        h1.title= trainTitle
+        p.slogan= trainSlogan
+
+        .training-row
+            - for (var i = 0; i < 3; i++)
+                div(class='training-row-section-#{i}')
+                    .training-row-section-left
+                        if i === 0
+                            - for(var j = 0; j < 3; j++)
+                                span
+                                    img(src= trainImage[j], class='img-#{i}')
+                        else if i == 1
+                            - for(var j = 0; j < 3; j++)
+                                span
+                                    img(src= trainImage1[j], class='img-#{i}')
+                        else
+                            span
+                                img(src= '../image/about-6.png', class='img-#{i}')
+
+                    .training-row-section-right
+                        p.main= trainPar[i]
+                        p.text= trainText[i]

@@ -1,0 +1,137 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all          : return-value(dimension, all);
+
+$color-white        : return-value(color, white);
+$color-black        : return-value(color, black);
+$color-lightGrayText  : return-value(color, lightGrayText);
+
+
+///
+/// TRAINING BLOCK
+///
+section.training{
+  min-height: render-pixel(680);
+
+  .training-container{
+    @include mixinMaxWidthPosition(10.7, 25, 15);
+
+    >h1,
+    >p{
+      margin-bottom: render-pixel(20);
+    }
+
+    h1{
+      font-size: render-pixel(35);
+      font-weight: 300;
+      text-align: center;
+    }
+
+    p{
+      color: darken($color-lightGrayText, 45%);
+    }
+
+
+    .training-row{
+
+      .training-row-section-2{
+        .training-row-section-left{
+          span{
+            width: $width-all;
+            text-align: right;
+            padding-right: render-pixel(60);
+          }
+        }
+      }// -training-row-section-2
+
+      .training-row-section{
+
+        &-right{
+          display: block;
+          flex-direction: column !important;
+        }
+
+        &-left{
+          align-items: center !important;
+          justify-content: space-around !important;
+
+          span{
+            text-align: center;
+            width: $width-all / 3;
+          }
+        }
+      }// /-.training-row-section
+
+      [class^='training-row-section-']{
+        margin: render-pixel(20) 0;
+        @include mixinCenteredBLockFlex(row, flex-start, center);
+
+
+        .training-row-section-left,
+        .training-row-section-right{
+          width: $width-all / 2;
+        }
+
+        .training-row-section-right{
+          .main{
+            color: $color-black;
+            margin-bottom: render-pixel(10);
+
+            font: {
+              size: render-pixel(26);
+              weight: 600;
+            }
+          }
+
+          .text{
+            color: lighten($color-black, 10%);
+            line-height: 1.5;
+          }
+        }
+      }
+    }// /-.training-row
+  }// /-.training-container
+}// /-section.training
+
+
+
+///
+/// MEDIA QUERIES
+///
+@media screen and (min-width: 320px) and (max-width: 767px){
+  section#training.training{
+    .training-container{
+      .training-row{
+        [class^='training-row-section-']{
+          flex-direction: column;
+
+          .training-row-section-left,
+          .training-row-section-right{
+            width: $width-all;
+          }
+
+        }// /-[class^='training-row-section-']
+
+
+        .training-row-section-2{
+          .training-row-section-left{
+            span{
+              //width: $width-all;
+              text-align: center;
+              padding-right: 0;
+            }
+          }
+        }// -training-row-section-2
+
+      }// /-.training-row
+    }// /-.training-container
+  } // /-section#training.training
+}

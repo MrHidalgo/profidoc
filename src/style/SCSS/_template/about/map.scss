@@ -12,6 +12,7 @@ $width-all          : return-value(dimension, all);
 
 $color-white        : return-value(color, white);
 $color-black        : return-value(color, black);
+$color-scopeBorder  : return-value(color, scopeBorder);
 
 $imageMap           : '../../image/about-maps.png';
 
@@ -22,6 +23,7 @@ $imageMap           : '../../image/about-maps.png';
 section.map{
   .map-container{
     @include mixinMaxWidthPosition(10.7, 25, 15);
+    @include mixinBorder(bottom, 1px, $color-scopeBorder);
 
 
     h2{
