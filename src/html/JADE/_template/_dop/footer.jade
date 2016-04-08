@@ -1,12 +1,64 @@
-- var footerHeader  = ['ProfiDoc', ' О РЕСУРСЕ', 'ПРОДУКТЫ', 'УСЛОВИЯ'];
-- var footerSocial  = ['facebook', 'vkontakte', 'youtube'];
-- var footerAbout   = ['Бонусная система', 'Возможность', 'Безопасность', 'Отзывы', 'Новости'];
-- var footerProduct = ['Регистрация ООО', 'Регистрация СПД', 'Регистрация "под ключ"', 'Внесение изменений', 'Конструктор договоров', 'Конструктор документов'];
-- var footerList    = ['Пользовательское <br/> соглашение', 'Политика <br/> конфиденциальности'];
+-
+    var footerHeader  = [
+        'ProfiDoc',
+        ' О РЕСУРСЕ',
+        'ПРОДУКТЫ',
+        'УСЛОВИЯ'
+    ];
 
-- var aboutHash     = ['bonus-system', '/scope', '/security', 'testimonials', 'news'];
-- var productHash   = ['register-company', 'join-sap', 'register-turnkey', 'alteration', 'contacts-designer', 'designer-document'];
-- var listHash      = ['terms-of-use', 'privacy-policy'];
+    var footerSocial  = ['facebook', 'vkontakte', 'youtube'];
+
+    var footerAbout   = [
+        'О РЕСУРСЕ',
+        'Бонусная система',
+        'Возможность',
+        'Безопасность',
+        'Отзывы',
+        'Новости'
+    ];
+
+    var footerProduct = [
+        'ПРОДУКТЫ',
+        'Регистрация ООО',
+        'Регистрация СПД',
+        'Регистрация "под ключ"',
+        'Внесение изменений',
+        'Конструктор договоров',
+        'Конструктор документов'
+    ];
+
+    var footerList    = [
+        'УСЛОВИЯ',
+        'Пользовательское <br/> соглашение',
+        'Политика <br/> конфиденциальности'
+    ];
+
+    var aboutHash     = [
+        '#',
+        'bonus-system',
+        '/scope',
+        '/security',
+        'testimonials',
+        'news'
+    ];
+
+    var productHash   = [
+        '#',
+        'register-company',
+        'join-sap',
+        'register-turnkey',
+        'alteration',
+        'contacts-designer',
+        'designer-document'
+    ];
+
+    var listHash      = [
+        '#',
+        'terms-of-use',
+        'privacy-policy'
+    ];
+
+
 
 mixin firstBlock
     p Все права защищены 2016
@@ -18,17 +70,17 @@ mixin firstBlock
 
 mixin secondBlock
     ul.about
-        - for(var i = 0; i < 5; i++)
+        - for(var i = 0; i < 6; i++)
             li: a(href= aboutHash[i])= footerAbout[i]
 
 mixin thirdBlock
     ul.product
-        - for(var i = 0; i < 6; i++)
+        - for(var i = 0; i < 7; i++)
             li: a(href='#' + productHash[i])= footerProduct[i]
 
 mixin fourthBlock
     ul.list
-        - for(var i = 0; i < 2; i++)
+        - for(var i = 0; i < 3  ; i++)
             li: a(href='#' + listHash[i])!= footerList[i]
 
 
