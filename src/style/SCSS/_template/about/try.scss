@@ -8,10 +8,13 @@
 ///
 /// VARIABLE BLOCK
 ///
-$width-all          : return-value(dimension, all);
+$width-all              : return-value(dimension, all);
 
-$color-white        : return-value(color, white);
-$color-black        : return-value(color, black);
+$color-white            : return-value(color, white);
+$color-black            : return-value(color, black);
+$color-lightGrayText    : return-value(color, lightGrayText);
+$color-workBlueText     : return-value(color, workBlueText);
+$color-gradientYellow3  : return-value(color, gradientYellow3);
 
 
 
@@ -22,8 +25,53 @@ section.try{
   min-height: render-pixel(100px);
 
   .try-container{
-    @include mixinMaxWidthPosition(10.7, 25, 15);
+    @include mixinMaxWidthPosition(10.7, 50, 15);
     @include mixinCenteredBLockFlex(column, center, center);
+
+    h2{
+      margin-bottom: render-pixel(20);
+
+      font: {
+        size: render-pixel(30);
+        weight: 500;
+      }
+    }
+
+    span{
+      margin: render-pixel(10) 0;
+
+      font: {
+        size: render-pixel(22);
+      }
+      color: darken($color-lightGrayText, 45%);
+
+      >a{
+        pointer-events: none;
+        color: $color-workBlueText;
+        font-weight: 600;
+        padding: render-pixel(3) render-pixel(7);
+        border-radius: 0.3em;
+        margin-left: render-pixel(10);
+        @include mixinBorder('all', 1px, $color-workBlueText);
+      }
+    }// /-span
+
+
+    a.try-btn-main{
+      display: block;
+      background: $color-gradientYellow3;
+      margin: render-pixel(30) 0;
+      @include mixinDimensions('normal', render-pixel(234), render-pixel(54));
+
+      font: {
+        size: render-pixel(19);
+        weight: 600;
+      }
+      color: $color-white;
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 3.3;
+    }// /-a
   }
 }// /-section#try.try
 
@@ -38,13 +86,18 @@ section.try{
       padding-left: render-pixel(15);
       padding-right: render-pixel(15);
 
-      >h2,
-      >span{
+      h2,
+      span{
         margin-bottom: render-pixel(20);
       }
 
       h2{
         text-align: center;
+      }
+
+      span{
+        text-align: center;
+        line-height: 2.5;
       }
     }// /-.try-container
   }// /-section#try.try

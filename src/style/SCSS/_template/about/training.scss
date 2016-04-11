@@ -13,6 +13,7 @@ $width-all          : return-value(dimension, all);
 $color-white        : return-value(color, white);
 $color-black        : return-value(color, black);
 $color-lightGrayText  : return-value(color, lightGrayText);
+$color-scopeBorder  : return-value(color, scopeBorder);
 
 
 ///
@@ -23,6 +24,7 @@ section.training{
 
   .training-container{
     @include mixinMaxWidthPosition(10.7, 25, 15);
+    @include mixinBorder(bottom, 1px, $color-scopeBorder);
 
     >h1,
     >p{
