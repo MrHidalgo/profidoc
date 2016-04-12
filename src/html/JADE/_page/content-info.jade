@@ -1,0 +1,47 @@
+include ../_mixin/mixin
+
+-
+    var arrFontName = [
+        'https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800'
+    ];
+
+    var arrStyleName = [
+        '../style/style.min.css',
+        '../style/content-info/about-program.min.css',
+        '../style/content-info/menu.min.css',
+        '../style/content-info/content-footer.min.css'
+    ]
+
+    var scriptName = [
+        '../script/jquery.min.js',
+        '../script/script.min.js'
+    ];
+
+
+doctype html
+html
+    head
+        +htmlTemplateHEAD('О программе', arrFontName, arrStyleName, false)
+
+    body
+
+        // NAVIGATION MENU
+        include ../_template/_dop/nav
+
+
+        block navigation
+            include ../_template/content-info/navigation
+
+
+        block dynamic-content
+            div#content.content
+
+
+        block content-footer
+            include ../_template/content-info/content-footer
+
+
+        // FOOTER MENU
+        include ../_template/_dop/footer
+
+        +htmlTemplateFOOT(scriptName)

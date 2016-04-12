@@ -1,0 +1,100 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+@import "../../_extend/extend";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all              : return-value(dimension, all);
+
+$color-white            : return-value(color, white);
+$color-black            : return-value(color, black);
+$color-bgGray           : return-value(color, bgGray);
+$color-gradientYellow3  : return-value(color, gradientYellow3);
+
+
+///
+/// CONTENT FOOTER SECTION
+///
+section.content-footer{
+  min-height: render-pixel(100);
+
+  .content-footer-row{
+    .content-footer-block{
+
+
+      &:first-of-type{
+        min-height: render-pixel(215);
+        background: $color-bgGray;
+        text-align: center;
+
+
+        .content-footer-container{
+          @include mixinMaxWidthPosition(10.7, 50, 15);
+
+          h1{
+            margin-bottom: render-pixel(15);
+
+            font: {
+              size: render-pixel(35);
+              weight: 300;
+            }
+
+            span{
+              font-weight: 600;
+            }
+          }// /-h1
+
+
+          a{
+            display: block;
+            background: $color-gradientYellow3;
+            margin: 0 auto;
+            text-transform: uppercase;
+            color: $color-white;
+            font-weight: 500;
+            line-height: 2.3;
+            @include mixinDimensions('normal', render-pixel(225), render-pixel(35));
+          }
+        }// /-.content-footer-container
+      }// /-&:first-of-type
+
+
+      &:last-of-type{
+        .content-footer-container{
+          @include mixinMaxWidthPosition(10.7, 50, 0);
+          @include mixinCenteredBLockFlex(row, baseline, center);
+
+
+          .content-footer-left,
+          .content-footer-right{
+            header{
+              //display: inline-block;
+              height: 50px;
+            }
+          }
+
+
+          .content-footer-left{
+            width: calc(100% - 342px);
+            margin-right: render-pixel(15);
+
+            header{
+              @include mixinCenteredBLockFlex(row, center, space-between);
+            }
+          }// /-.content-footer-left
+
+
+          .content-footer-right{
+            width: render-pixel(342);
+            margin-left: render-pixel(15);
+          }// /-.content-footer-right
+        }// /-.content-footer-container
+      }// /-&:last-of-type
+    }// /-.content-footer-block
+  }// /-.content-footer-row
+}// /-section.content-footer

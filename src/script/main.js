@@ -42,3 +42,14 @@ function less(nWords){
     return txtNews + '...';
 }
 $('p.description').html(less(65));
+
+
+/*
+*   ACTIVE MENU CONTENT INFO
+*/
+$('.menu-list li a').click( function (e) {
+    e.preventDefault();
+
+    $('.menu-list li a').removeClass('active');
+    $(this).addClass('active');
+});

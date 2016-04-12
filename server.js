@@ -32,6 +32,13 @@ app.use('/about',	express.static('./dist/page/',
     }
 ));
 
+// CONTENT INFO PAGE
+app.use('/about-program',	express.static('./dist/page/',
+    {
+        'index' : 'content-info.html'
+    }
+));
+
 
 
 app.listen(app.get('port'),	function()	{

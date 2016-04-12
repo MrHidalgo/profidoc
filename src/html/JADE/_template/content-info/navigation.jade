@@ -1,0 +1,15 @@
+-
+    var contentMainMenu = [
+        'О программе',
+        'Копить бонусные гравны',
+        'Тратить бонусные гривны',
+        'Правила участия'
+    ];
+
+
+section#menu.menu
+    .menu-container
+        ul.menu-list
+            - for(var i = 0; i < 4; i++)
+                li: a(href='javascript: void(0);')= contentMainMenu[i]
+

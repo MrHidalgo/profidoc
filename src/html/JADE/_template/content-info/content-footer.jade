@@ -1,0 +1,40 @@
+-
+    var contentFooterData = [
+        '2 марта 2016',
+        '28 февраля 2016',
+        '25 февраля 2016'
+    ];
+
+section#content-footer.content-footer
+    .content-footer-row
+        .content-footer-block
+            .content-footer-container
+                h1!= 'Начните зарабатывать баллы' + '<span> прямо сейчас!</span>'
+                a(href='javascript: void(0);') Стать участником
+
+        .content-footer-block
+            .content-footer-container
+                .content-footer-left
+                    header
+                        h2 Часто задаваемые вопросы
+                        p задать вопрос
+
+                    section
+                        .accordion
+                            - for (var i = 0; i < 7; i++)
+                                a(class='accordion-section-title', href='#accordion-#{i}')= 'title'
+                                div(id='accordion-#{i}', class='accordion-section-content')
+                                    span= 'Content acc'
+
+                .content-footer-right
+                    header
+                        h2 Идеи для бизнеса
+
+                    section
+                        ul.list-idea
+                            - for(var i = 0; i < 3; i++)
+                                li(class='list-idea-#{i}')
+                                    p.list-description= 'Idea for business description'
+                                    span.list-data= contentFooterData[i]
+
+                        a(href='#', class='btn-all-idea') Все идеи

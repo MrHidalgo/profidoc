@@ -1,0 +1,80 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+@import "../../_extend/extend";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all            : return-value(dimension, all);
+
+$color-white          : return-value(color, white);
+$color-black          : return-value(color, black);
+$color-workBlueText   : return-value(color, workBlueText);
+
+
+///
+/// MENU SECTION
+///
+section.menu{
+  min-height: render-pixel(10);
+
+
+  .menu-container{
+    @include mixinMaxWidthPosition(10.7, 30, 0);
+
+
+    ul.menu-list{
+      text-align: center;
+
+
+      li{
+        display: inline-block;
+        margin: -.19em;
+
+        a{
+          transition: .3s;
+          padding: render-pixel(2) render-pixel(15);
+          @include mixinBorder('all', 1px, $color-workBlueText);
+
+          font: {
+            size: render-pixel(16.5);
+            weight: 400;
+          }
+          color: $color-black;
+
+
+          &:hover{
+            transition: .3s;
+            color: $color-white;
+            background-color: $color-workBlueText;
+          }
+        }
+
+        a.active{
+          color: $color-white;
+          background-color: $color-workBlueText;
+        }
+
+
+        &:first-of-type{
+          a{
+            border-top-left-radius: .2em;
+            border-bottom-left-radius: .2em;
+          }
+        }
+
+        &:last-of-type{
+          a{
+            border-top-right-radius: .2em;
+            border-bottom-right-radius: .2em;
+          }
+        }
+      }
+    }// /-ul.menu-list
+  }// /-.menu-container
+}// /-section.menu
+
