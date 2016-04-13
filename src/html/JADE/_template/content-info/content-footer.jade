@@ -5,6 +5,24 @@
         '25 февраля 2016'
     ];
 
+    var contentFooterAccTitle = [
+        'Можно ли конвертировать накопленные баллы в реальные деньги?',
+        'Не могу привязать свою организацию, что мне делать?',
+        'Если у меня более одной организации, могу ли я объединить их балансы в один?',
+        '2 месяца назад всё оплатили, а бонусов все еще нет на счете. Что делать?',
+        'Можно ли конвертировать накопленные баллы в реальные деньги?',
+        'Не могу привязать свою организацию, что мне делать?',
+        'Что делать если не приходит подписка на издание после оплаты?'
+    ];
+
+    var contentFooterAccContent = 'Пожалуйста, обратитесь в службу поддержки участников программы ProfiDoc. Нужно указать последний счет, таким образом Вы сможете привязать организацию к своему аккаунту.Оператор, уточнив детали, начислит баллы вручную. Спасибо за терпение.';
+
+    var contentFooterRightContent =  [
+        'Бесплатный доступ к записи «Как провести и оформить инвентаризацию в бухгалтерском и налоговом учете» для новых участников.',
+        'Бесплатный доступ к записи «Как провести и оформить инвентаризацию в бухгалтерском и налоговом учете» для новых участников.',
+        'Бесплатный доступ к записи «Как провести и оформить инвентаризацию в бухгалтерском и налоговом учете» для новых участников ProfiDoc.'
+    ];
+
 section#content-footer.content-footer
     .content-footer-row
         .content-footer-block
@@ -17,14 +35,15 @@ section#content-footer.content-footer
                 .content-footer-left
                     header
                         h2 Часто задаваемые вопросы
-                        p задать вопрос
+                        a(href='javascript: void(0);') задать вопрос
 
                     section
                         .accordion
                             - for (var i = 0; i < 7; i++)
-                                a(class='accordion-section-title', href='#accordion-#{i}')= 'title'
-                                div(id='accordion-#{i}', class='accordion-section-content')
-                                    span= 'Content acc'
+                                .accordion-section
+                                    a(class='accordion-section-title', href='#accordion-#{i}')= contentFooterAccTitle[i]
+                                    div(id='accordion-#{i}', class='accordion-section-content')
+                                        span= contentFooterAccContent
 
                 .content-footer-right
                     header
@@ -34,7 +53,7 @@ section#content-footer.content-footer
                         ul.list-idea
                             - for(var i = 0; i < 3; i++)
                                 li(class='list-idea-#{i}')
-                                    p.list-description= 'Idea for business description'
+                                    p.list-description= contentFooterRightContent[i]
                                     span.list-data= contentFooterData[i]
 
-                        a(href='#', class='btn-all-idea') Все идеи
+                        a(href='javascript: void(0);', class='btn-all-idea') Все идеи

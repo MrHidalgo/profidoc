@@ -15,6 +15,8 @@ $color-white            : return-value(color, white);
 $color-black            : return-value(color, black);
 $color-bgGray           : return-value(color, bgGray);
 $color-gradientYellow3  : return-value(color, gradientYellow3);
+$color-workBlueText     : return-value(color, workBlueText);
+$color-lightBlack       : return-value(color, lightBlack);
 
 
 ///
@@ -33,7 +35,7 @@ section.content-footer{
         text-align: center;
 
 
-        .content-footer-container{
+        .content-footer-container {
           @include mixinMaxWidthPosition(10.7, 50, 15);
 
           h1{
@@ -84,7 +86,46 @@ section.content-footer{
             margin-right: render-pixel(15);
 
             header{
+              padding-left: render-pixel(15);
+              padding-right: render-pixel(15);
               @include mixinCenteredBLockFlex(row, center, space-between);
+
+
+              h2{
+                color: darken($color-workBlueText, 5%);
+                font: {
+                  size: render-pixel(27);
+                  weight: 600;
+                }
+              }
+            }
+
+
+            section{
+
+              .accordion{
+                overflow: hidden;
+
+                .accordion-section-title.active{
+                }
+
+                .accordion-section-title {
+                  display: block;
+                  width: $width-all;
+                  margin: render-pixel(10) 0;
+                  border-radius: render-pixel(15);
+                  background: $color-white;
+                  transition: all linear 0.15s;
+                  font-size: render-pixel(20);
+                  color: $color-black;
+                  text-decoration: none;
+                }// /-accordion-section-title
+
+                .accordion-section-content {
+                  display: none;
+                  padding: render-pixel(15) render-pixel(15) render-pixel(15) render-pixel(5);
+                }
+              }// /-accordion
             }
           }// /-.content-footer-left
 
@@ -92,6 +133,65 @@ section.content-footer{
           .content-footer-right{
             width: render-pixel(342);
             margin-left: render-pixel(15);
+
+
+            header{
+              padding-left: render-pixel(20);
+              padding-right: render-pixel(20);
+            }
+
+
+            section{
+
+              .list-idea{
+
+                [class^='list-idea-'] {
+                  cursor: pointer;
+                  min-height: render-pixel(160);
+                  padding: render-pixel(20);
+                  margin: render-pixel(15) 0;
+                  font: {
+                    size: render-pixel(14);
+                  }
+                  transition: .3s;
+                  @include mixinBorder('all', 1px, transparent);
+
+                  p{
+                    color: $color-workBlueText;
+                    line-height: 1.5;
+                    transition: .3s;
+                    margin-bottom: render-pixel(15);
+                  }
+
+                  span{
+                    color: lighten($color-lightBlack, 10%);
+                  }
+                }// /-list-idea-
+
+                li{
+                  &:hover{
+                    @include mixinBorder('all', 1px, darken($color-bgGray, 5%));
+                    transition: .3s;
+
+                    p{
+                      transition: .3s;
+                      color: $color-black;
+                    }
+                  }
+                }
+              }// /-list-idea
+
+
+              .btn-all-idea{
+                display: block;
+                background: darken($color-workBlueText, 5%);
+                color: $color-white;
+                text-align: center;
+                line-height: 2;
+                margin-left: render-pixel(20);
+                @include mixinDimensions('normal', render-pixel(145), render-pixel(35));
+              }
+            }// /-section
           }// /-.content-footer-right
         }// /-.content-footer-container
       }// /-&:last-of-type
