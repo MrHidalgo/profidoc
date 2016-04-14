@@ -41,7 +41,7 @@ section#content-footer.content-footer
                         .accordion
                             - for (var i = 0; i < 7; i++)
                                 .accordion-section
-                                    a(class='accordion-section-title', href='#accordion-#{i}')= contentFooterAccTitle[i]
+                                    a(class='accordion-section-title', href='#accordion-#{i}')!= contentFooterAccTitle[i] + '<span></span>'
                                     div(id='accordion-#{i}', class='accordion-section-content')
                                         span= contentFooterAccContent
 

@@ -17,6 +17,11 @@ $color-bgGray           : return-value(color, bgGray);
 $color-gradientYellow3  : return-value(color, gradientYellow3);
 $color-workBlueText     : return-value(color, workBlueText);
 $color-lightBlack       : return-value(color, lightBlack);
+$color-gradientYellow2  : return-value(color, gradientYellow2);
+$color-gradientYellow3  : return-value(color, gradientYellow3);
+
+$image-arrow            : '../../image/contentPage-arrow.png';
+$image-mail             : '../../image/contentPage-mail.png';
 
 
 ///
@@ -98,32 +103,101 @@ section.content-footer{
                   weight: 600;
                 }
               }
+
+
+              a{
+                margin-top: render-pixel(4.5);
+                text-transform: uppercase;
+                font: {
+                  size: render-pixel(15);
+                  weight: 500;
+                }
+                color: darken($color-workBlueText, 5%);
+
+                &:before{
+                  content: '';
+                  display: inline-block;
+                  @include mixinDimensions('normal', render-pixel(25), render-pixel(17));
+                  background: url($image-mail) no-repeat center;
+                  background-size: contain;
+                  margin-right: render-pixel(10);
+                  margin-top: render-pixel(-2px);
+                  vertical-align: middle;
+                }
+              }
             }
 
 
             section{
 
               .accordion{
-                overflow: hidden;
+                //overflow: hidden;
+                margin-top: render-pixel(9);
 
                 .accordion-section-title.active{
                 }
 
                 .accordion-section-title {
-                  display: block;
+                  @include mixinCenteredBLockFlex(row, center, space-between);
                   width: $width-all;
-                  margin: render-pixel(10) 0;
-                  border-radius: render-pixel(15);
+                  min-height: render-pixel(47);
+                  margin: render-pixel(4) 0;
+                  padding: 0 render-pixel(15);
                   background: $color-white;
                   transition: all linear 0.15s;
-                  font-size: render-pixel(20);
+                  font-size: render-pixel(16);
+                  font-weight: 600;
                   color: $color-black;
                   text-decoration: none;
+                  @include mixinBorder('all', 1px, darken($color-bgGray, 5%));
+
+
+                  span{
+                    display: inline-block;
+                    margin: 0 render-pixel(10);
+                    @include mixinDimensions('normal', render-pixel(34));
+                    @include mixinLinerGradient(lighten($color-gradientYellow2, 5%), darken($color-gradientYellow2, 5%));
+                    transition: .5s;
+
+                    &:before{
+                      content: '';
+                      display: block;
+                      @include mixinDimensions('normal', render-pixel(16), render-pixel(8));
+                      background: url($image-arrow) no-repeat center;
+                      background-size: contain;
+                      margin: 40% auto;
+                      transition: .5s;
+                    }
+                  }
                 }// /-accordion-section-title
+
+
+                .accordion-section-title.active{
+                  background: lighten($color-workBlueText, 45%);
+                  color: #486778;
+
+                  span{
+                    transition: .5s;
+
+                    &:before{
+                      transform: rotateX(-180deg);
+                      transition: .5s;
+                    }
+                  }
+                }
+
 
                 .accordion-section-content {
                   display: none;
-                  padding: render-pixel(15) render-pixel(15) render-pixel(15) render-pixel(5);
+                  padding: render-pixel(15) render-pixel(55) render-pixel(15) render-pixel(15);
+                  @include mixinBorder('all', 1px, darken($color-bgGray, 5%));
+                  margin-top: render-pixel(-5);
+                  font: {
+                    size: render-pixel(14);
+                    //weight: 600;
+                  }
+                  color: lighten($color-black, 40%);
+                  line-height: 1.6;
                 }
               }// /-accordion
             }
@@ -146,6 +220,12 @@ section.content-footer{
               .list-idea{
 
                 [class^='list-idea-'] {
+
+                  &:first-of-type{
+                    margin-top: 0;
+                  }
+
+
                   cursor: pointer;
                   min-height: render-pixel(160);
                   padding: render-pixel(20);
