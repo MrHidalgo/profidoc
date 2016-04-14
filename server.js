@@ -33,7 +33,7 @@ app.use('/about',	express.static('./dist/page/',
 ));
 
 // CONTENT INFO PAGE
-app.use('/about-program',	express.static('./dist/page/',
+app.use('/content',	express.static('./dist/page/',
     {
         'index' : 'content-info.html'
     }

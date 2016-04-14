@@ -63,6 +63,42 @@ $( function () {
 
 
 /*
+*   Ajax menu 
+*/
+$('#rules-participation').click( function() {
+   $.ajax(
+       {
+           url : 'rules.html',
+           cache : false,
+           success : function(html) {
+               document.title = 'Правила участия';
+               window.location.hash = 'rules';
+               $('#content').html(html);
+           }
+       }
+   );
+});
+
+$(document).ready( function() {
+    var winHash = window.location.hash;
+
+    if(winHash === '#rules') {
+        $.ajax(
+            {
+                url : 'rules.html',
+                cache : false,
+                success : function(html) {
+                    document.title = 'Правила участия';
+                    window.location.hash = 'rules';
+                    $('#content').html(html);
+                }
+            }
+        );
+    }
+});
+
+
+/*
 *   SLIDER
 */
 $( function () {

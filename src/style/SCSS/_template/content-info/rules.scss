@@ -1,0 +1,58 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+@import "../../_extend/extend";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all            : return-value(dimension, all);
+
+$color-white          : return-value(color, white);
+$color-black          : return-value(color, black);
+
+
+///
+/// RULES SECTION
+///
+section.rules{
+
+  .rules-container{
+    @include mixinMaxWidthPosition(10.7, 30, 0);
+
+
+    h1{
+      font: {
+        size: render-pixel(36);
+        weight: 300;
+      }
+      text-align: center;
+      text-transform: uppercase;
+    }// /-h1
+
+
+    p.rules-title{
+      font-weight: 600;
+      margin: render-pixel(30) 0;
+    }
+
+
+    ul{
+      li{
+        line-height: 1.5;
+        margin: render-pixel(15) 0;
+      }
+    }// /-ul
+
+    ul.rules-list{
+      margin-left: render-pixel(20);
+    }
+
+    ul.rules-internal-list{
+      margin-left: render-pixel(40);
+    }
+  }// /-.rules-container
+}// /-section.rules

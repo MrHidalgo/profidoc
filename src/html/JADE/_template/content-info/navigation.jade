@@ -6,10 +6,26 @@
         'Правила участия'
     ];
 
+    var contentMainMenuHash = [
+        'about-program',
+        'buy-bonus',
+        'spend-bonus',
+        'rules'
+    ];
+
+    var contentMainMenuID = [
+        'about-program',
+        'buy-bonus',
+        'spend-bonus',
+        'rules-participation'
+    ];
+
+
+
 
 section#menu.menu
     .menu-container
         ul.menu-list
             - for(var i = 0; i < 4; i++)
-                li: a(href='javascript: void(0);')= contentMainMenu[i]
+                li: a(href='/' + contentMainMenuHash[i], id='#{contentMainMenuID[i]}')= contentMainMenu[i]
 
