@@ -6,10 +6,14 @@
 
 Sitemap hash:
 
-    profidoc.com             - [главная]
-    profidoc.com/scope       - [возможности]
-    profidoc.com/security    - [безопасность]
-    profidoc.com/about       - [о проекте]
+    profidoc.com                            - [главная]
+    profidoc.com/scope                      - [возможности]
+    profidoc.com/security                   - [безопасность]
+    profidoc.com/about                      - [о проекте]
+    profidoc.com/content/#about-program     - [о программе]
+    profidoc.com/content/#buy-bonus         - [копить бонусные гравны]
+    profidoc.com/content/#spend-bonus       - [тратить бонусные гривны]
+    profidoc.com/content/#rules             - [правила участия]
 
 <hr>
 <br>
