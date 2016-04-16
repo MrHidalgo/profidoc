@@ -14,36 +14,9 @@ Sitemap hash:
     profidoc.com/content/#buy-bonus         - [копить бонусные гравны]
     profidoc.com/content/#spend-bonus       - [тратить бонусные гривны]
     profidoc.com/content/#rules             - [правила участия]
+    profidoc.com/registration               - [регистрация ООО и ФОП "под ключ"]
+    profidoc.com/content-page               - [контентная страница ]
+    profidoc.com/news-details               - [страница конкретной новости ]
 
 <hr>
 <br>
-
-Use technology :
-- SASS/SCSS;
-- JADE;
-- native js, jquery;
-- gulp, bower;
-- nodejs (express) server, local...(nginx config, ngrok);
-- documentation:
-    - sass/scss;
-    - js;
-
-<br>
-<hr>
-<br>
-
-The resulting files:
-
-    ./dist
-
-Working files directory :
-
-    ./src
-
-Gulp files :
-
-    ./gulp-files
-
-Documentation:
-
-    ./docs

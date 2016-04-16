@@ -39,6 +39,27 @@ app.use('/content',	express.static('./dist/page/',
     }
 ));
 
+// REGISTRATION PAGE
+app.use('/registration',	express.static('./dist/page/',
+    {
+        'index' : 'registration.html'
+    }
+));
+
+// CONTENT PAGE
+app.use('/content-page',	express.static('./dist/page/',
+    {
+        'index' : 'content-page.html'
+    }
+));
+
+// NEWS DETAILS PAGE
+app.use('/news-details',	express.static('./dist/page/',
+    {
+        'index' : 'news-details.html'
+    }
+));
+
 
 
 app.listen(app.get('port'),	function()	{
