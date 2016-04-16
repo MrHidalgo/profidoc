@@ -104,6 +104,7 @@ mixin blockBonus(opt, imageArr, titleArr, descriptionArr, priceArr)
                     a(href='javascript: void(0);', class='btn-exchange') обменять
 
 
+
 section#spend-bonus.spend-bonus
     .spend-bonus-container
         h1 Используйте бонусные гривны
@@ -124,10 +125,12 @@ section#spend-bonus.spend-bonus
 
                 include ../_template/main/document
 
+
             div(class='internal-spend-bonus-row', data-js='exchange')
                 p!= 'Обменивайте бонусные гривны на подарочные карты или электронный код покупки в магазине. <br/> <span> 1 бонусная грн. = 1 реальной грн.</span>'
 
                 +blockBonus(0, imageSrsEx, titleSrsEx, descriptionSrsEx, priceSrsEx)
+
 
             div(class='internal-spend-bonus-row', data-js='get')
                 p!= 'Читайте популярные издания за наш счет. Обменивайте бонусные гривны на подписку.  <span> 1 бонусная грн. = 1 реальной грн.</span>'
