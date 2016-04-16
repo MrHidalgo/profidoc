@@ -1,0 +1,51 @@
+-
+    var buyImage = [
+        '../image/content-about-s-0.png',
+        '../image/content-about-s-1.png',
+        '../image/content-about-s-2.png',
+        '../image/content-about-s-3.png',
+        '../image/content-about-s-4.png',
+        '../image/content-about-s-5.png'
+    ];
+
+    var buyText = [
+        'При регистрации',
+        'За покупки в системе ProfiDoc',
+        'За продление подписки',
+        'За размещение рендеров в любых социальных сетях при помощи кнопки «Поделиться»',
+        'За отзывы зарегистрированных пользователей ',
+        'За добавление идей для бизнеса'
+    ];
+
+    var buyPrice = [
+        '+ 100 грн',
+        '+ 10 грн',
+        '+ 50 грн',
+        '+ 20 грн',
+        '+ 25 грн',
+        '+ 10 грн'
+    ];
+
+
+
+section#buy-bonus.buy-bonus
+    .buy-bonus-container
+        h1= 'Копить бонусные гравны'
+
+        .about-program-row-buy
+
+            .internal-block
+                .internal-block-row
+                    - for(var i = 0; i < 6; i++)
+                        div(class='block-#{i}')
+                            .left
+                                img(src= buyImage[i], class='img-responsive')
+
+                            .right
+                                .top
+                                    p= buyText[i]
+                                .bottom
+                                    p= buyPrice[i]
+
+                .internal-block-row
+                    p!= 'Бонусная программа работает по всей Украине. <br/> Для каждого продукта /действия предусмотрено свое количество бонусов.'

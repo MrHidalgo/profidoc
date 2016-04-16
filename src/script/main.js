@@ -65,36 +65,59 @@ $( function () {
 /*
 *   Ajax menu 
 */
-$('#rules-participation').click( function() {
-   $.ajax(
-       {
-           url : 'rules.html',
-           cache : false,
-           success : function(html) {
-               document.title = 'Правила участия';
-               window.location.hash = 'rules';
-               $('#content').html(html);
-           }
-       }
-   );
+function ajaxReplaceContent(hashValue) {
+
+    var objTitle = {
+        'about-program' : 'О программе',
+        'buy-bonus'     : 'Копить бонусные гравны',
+        'spend-bonus'   : 'Тратить бонусные гривны',
+        'rules'         : 'Правила участия'
+    };
+
+    $.ajax(
+        {
+            url : hashValue + '.html',
+            cache : false,
+            success : function(html) {
+                if(hashValue in objTitle){
+                    document.title = objTitle[hashValue];
+                }
+                window.location.hash = hashValue;
+                $('#content').html(html);
+            }
+        }
+    );
+}
+
+
+/* click item menu */
+$('.menu-list li a').click( function (e) {
+    e.preventDefault();
+    var hashVal = $(this).attr('href').substr(1);
+
+    ajaxReplaceContent(hashVal);
 });
 
-$(document).ready( function() {
-    var winHash = window.location.hash;
 
-    if(winHash === '#rules') {
-        $.ajax(
-            {
-                url : 'rules.html',
-                cache : false,
-                success : function(html) {
-                    document.title = 'Правила участия';
-                    window.location.hash = 'rules';
-                    $('#content').html(html);
-                }
-            }
-        );
+/* reload page */
+$(document).ready( function() {
+    var winHash     = window.location.hash.substr(1),
+        valueActive = $('.menu-list li a'),
+        arr         = [];
+
+    for(var i = 0; i < valueActive.length; i++){
+        arr.push($(valueActive[i]).attr('href').substr(1));
     }
+
+    if(winHash === 'about-program' || winHash === 'buy-bonus' || winHash === 'spend-bonus' || winHash === 'rules') {
+        ajaxReplaceContent(winHash);
+
+        for(var j = 0; j < arr.length; j++) {
+            if(winHash === arr[j]) {
+                $(valueActive).filter('[href="/' + winHash + '"]').addClass('active');
+            }
+        }
+    };
 });
 
 
@@ -102,23 +125,27 @@ $(document).ready( function() {
 *   SLIDER
 */
 $( function () {
-    $('.owl-carousel').owlCarousel(
-        {
-            // loop:true,
-            margin:10,
-            // nav:true,
-            responsiveClass:true,
-            responsive:{
-                0:{
-                    items:2
-                },
-                768:{
-                    items:3
-                },
-                1000:{
-                    items:5
+    var owlCarousel = $('.owl-carousel');
+
+    if(owlCarousel.length > 0){
+        owlCarousel.owlCarousel(
+            {
+                // loop:true,
+                margin:10,
+                // nav:true,
+                responsiveClass:true,
+                responsive:{
+                    0:{
+                        items:2
+                    },
+                    768:{
+                        items:3
+                    },
+                    1000:{
+                        items:5
+                    }
                 }
             }
-        }
-    );
+        );
+    }
 });

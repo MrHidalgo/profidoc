@@ -1,0 +1,118 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all            : return-value(dimension, all);
+
+$color-white          : return-value(color, white);
+$color-black          : return-value(color, black);
+$color-borderGray     : return-value(color, borderGray);
+$color-gradientYellow3: return-value(color, gradientYellow3);
+
+
+///
+/// BUY SECTION
+///
+section.buy-bonus{
+  .buy-bonus-container{
+    h1{
+      margin-bottom: render-pixel(15);
+
+      font: {
+        size: render-pixel(36);
+        weight: 300;
+      }
+      text-transform: uppercase;
+      text-align: center;
+    }// /-h1
+
+
+    .about-program-row{
+      &-buy{
+
+        .internal-block{
+          @include mixinBorder('all', 1px, $color-borderGray);
+
+
+          .internal-block-row{
+
+            &:first-of-type{
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-flow: row wrap;
+              align-content: center;
+
+              [class^='block-']{
+                width: $width-all/3;
+                padding: render-pixel(25) render-pixel(15);
+                @include mixinCenteredBLockFlex(row, flex-start, center);
+
+                .left,
+                .right{
+                  display: inline-block;
+                }
+
+                .left{
+                  width: render-pixel(50);
+                }
+
+                .right{
+                  width: calc(100% - 50px);
+
+                  .top{
+                    p{
+                      text-align: left;
+                      min-height: render-pixel(75);
+                      margin-bottom: render-pixel(10);
+                    }
+                  }// /-top
+
+                  .bottom{
+                    p{
+                      position: relative;
+                      background: $color-gradientYellow3;
+                      border-radius: .3em;
+                      color: $color-white;
+                      font-weight: 600;
+                      line-height: 1.9;
+                      text-align: center;
+                      @include mixinDimensions('normal', render-pixel(100), render-pixel(30));
+
+                      &:after{
+                        content: "";
+                        position: absolute;
+                        bottom: $width-all;
+                        left: $width-all/2;
+                        margin-left: render-pixel(-6);
+                        border-width: render-pixel(6);
+                        border-style: solid;
+                        border-color: transparent transparent $color-gradientYellow3 transparent;
+                      }
+                    }
+                  }// /-.bottom
+                }
+              }
+            }// /-&:first-of-type
+
+
+            &:last-of-type{
+              text-align: center;
+              padding: render-pixel(20) 0;
+
+              p{
+                margin-bottom: render-pixel(10);
+              }// /-p
+            } // /-&:last-of-type
+          }// /-.internal-block-row
+        }
+      }// /-&-buy
+    }// /-.about-program-row
+  }// /-.buy-bonus-container
+}// /-section#buy-bonus.buy-bonus

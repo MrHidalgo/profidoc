@@ -14,7 +14,23 @@ $width-all            : return-value(dimension, all);
 $color-white          : return-value(color, white);
 $color-black          : return-value(color, black);
 $color-borderGray     : return-value(color, borderGray);
+$color-workBlueText   : return-value(color, workBlueText);
+$color-gradientYellow3: return-value(color, gradientYellow3);
 
+
+$imageMainUser0       : '../../image/content-about-ub-0.png';
+$imageMainUser1       : '../../image/content-about-ub-1.png';
+$imageMainUser2       : '../../image/content-about-ub-2.png';
+$imageMainUser3       : '../../image/content-about-ub-3.png';
+$imageMainUser4       : '../../image/content-about-ub-4.png';
+$imageMainUser5       : '../../image/content-about-ub-5.png';
+
+$imageHoverUser0      : '../../image/content-about-uh-0.png';
+$imageHoverUser1      : '../../image/content-about-uh-1.png';
+$imageHoverUser2      : '../../image/content-about-uh-2.png';
+$imageHoverUser3      : '../../image/content-about-uh-3.png';
+$imageHoverUser4      : '../../image/content-about-uh-4.png';
+$imageHoverUser5      : '../../image/content-about-uh-5.png';
 
 /// [navigation, footer]
 body{
@@ -25,6 +41,281 @@ body{
 ///
 /// CONTENT SECTION AJAX
 ///
-div.content{
-  min-height: render-pixel(100);
-}
+section.about-program{
+  .about-program-container{
+
+
+    h1{
+      margin-bottom: render-pixel(15);
+
+      font: {
+        size: render-pixel(36);
+        weight: 300;
+      }
+      text-transform: uppercase;
+      text-align: center;
+    }// /-h1
+
+    p{
+      text-align: center;
+      line-height: 1.6;
+    }
+
+
+    [class^='about-program-row-']{
+      padding: render-pixel(25);
+
+      .img-responsive{
+        max-width: $width-all;
+        height: auto;
+      }// /-img-responsive
+
+    }
+
+
+    .about-program-row{
+
+      &-gift{
+        padding: render-pixel(30) 0 render-pixel(50);
+        @include mixinCenteredBLockFlex(row, center, space-between);
+
+        [class^='block-gift-']{
+          width: $width-all/3;
+          text-align: center;
+          padding: render-pixel(5);
+
+          h4{
+            height: render-pixel(55);
+            font: {
+              size: render-pixel(19.5);
+              weight: 400;
+            }
+            color: $color-workBlueText;
+          }
+
+          img{
+            cursor: pointer;
+            transition: all .3s ease-in;
+
+            &:hover{
+              transform: scale(1.025);
+              transition: all .3s ease-in;
+            }
+          }
+        }// /-block-gift-
+      }// /-gift
+
+
+      &-user,
+      &-buy,
+      &-spend{
+        h2{
+          @extend h1;
+
+          span{
+            font-weight: 600;
+          }
+        }
+
+        p{
+          span{
+            color: $color-workBlueText;
+            font-weight: 600;
+          }
+        }
+      }
+
+
+      &-user{
+        .internal-block{
+          padding: render-pixel(20);
+          @include mixinCenteredBLockFlex(row, center, space-between);
+
+
+          @each $className, $imageNameMain, $imageNameHover in
+                          (0, $imageMainUser0, $imageHoverUser0),
+                          (1, $imageMainUser1, $imageHoverUser1),
+                          (2, $imageMainUser2, $imageHoverUser2),
+                          (3, $imageMainUser3, $imageHoverUser3),
+                          (4, $imageMainUser4, $imageHoverUser4),
+                          (5, $imageMainUser5, $imageHoverUser5)
+          {
+            .block-user-#{$className} {
+
+              i{
+                display: block;
+                border-radius: $width-all;
+                background: transparent;
+                cursor: pointer;
+                transition: .3s;
+                @include mixinBorder('all', 1px, $color-borderGray);
+                @include mixinDimensions('normal', render-pixel(150));
+                @include mixinCenteredBLockFlex(row, center, center);
+
+                &:before{
+                  content: '';
+                  display: inline-block;
+                  @include mixinDimensions('normal', render-pixel(79));
+                  background: url($imageNameMain) no-repeat center;
+                  background-size: contain;
+                  transition: .3s;
+                }
+
+                &:hover:before{
+                  transition: .3s;
+                  background: url($imageNameHover) no-repeat center;
+                  background-size: contain;
+                }
+
+                &:hover{
+                  @include mixinBorder('all', 1px, transparent);
+                  transition: .3s;
+                }
+              }
+            }
+          }
+
+
+          [class^='block-user-']{
+            width: render-pixel(178);
+            @include mixinCenteredBLockFlex(column, center, center);
+
+            p{
+              padding: render-pixel(20) 0;
+              height: render-pixel(55);
+              font: {
+                size: render-pixel(19.5);
+                weight: 400;
+              }
+              color: $color-workBlueText;
+            }
+          }
+        }
+      }// /-&-user
+
+
+      &-buy{
+
+        .internal-block{
+          @include mixinBorder('all', 1px, $color-borderGray);
+
+
+          .internal-block-row{
+
+            &:first-of-type{
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-flow: row wrap;
+              align-content: center;
+
+              [class^='block-']{
+                width: $width-all/3;
+                padding: render-pixel(25) render-pixel(15);
+                @include mixinCenteredBLockFlex(row, flex-start, center);
+
+                .left,
+                .right{
+                  display: inline-block;
+                }
+
+                .left{
+                  width: render-pixel(50);
+                }
+
+                .right{
+                  width: calc(100% - 50px);
+
+                  .top{
+                    p{
+                      text-align: left;
+                      min-height: render-pixel(75);
+                      margin-bottom: render-pixel(10);
+                    }
+                  }// /-top
+
+                  .bottom{
+                    p{
+                      position: relative;
+                      background: $color-gradientYellow3;
+                      border-radius: .3em;
+                      color: $color-white;
+                      font-weight: 600;
+                      line-height: 1.9;
+                      @include mixinDimensions('normal', render-pixel(100), render-pixel(30));
+
+                      &:after{
+                        content: "";
+                        position: absolute;
+                        bottom: $width-all;
+                        left: $width-all/2;
+                        margin-left: render-pixel(-6);
+                        border-width: render-pixel(6);
+                        border-style: solid;
+                        border-color: transparent transparent $color-gradientYellow3 transparent;
+                      }
+                    }
+                  }// /-.bottom
+                }
+              }
+            }// /-&:first-of-type
+
+
+            &:last-of-type{
+              text-align: center;
+              padding: render-pixel(20) 0;
+
+              p{
+                margin-bottom: render-pixel(10);
+
+                span{
+                  font-weight: 600;
+                  color: $color-workBlueText;
+                }
+              }// /-p
+
+              a.btn-buy-product{
+                display: block;
+                background: $color-gradientYellow3;
+                margin: 0 auto render-pixel(10);
+                color: $color-white;
+                font-weight: 600;
+                line-height: 2.3;
+                @include mixinDimensions('normal', render-pixel(225), render-pixel(35));
+              }// /-btn-buy-product
+            } // /-&:last-of-type
+          }// /-.internal-block-row
+        }
+      }// /-&-buy
+
+
+      &-spend{
+        .internal-block{
+          padding-top: render-pixel(25);
+          @include mixinBorder('all', 1px, $color-borderGray);
+
+
+          .internal-block-row{
+            padding: render-pixel(40);
+            @include mixinCenteredBLockFlex(row, center, space-between);
+
+            [class^='block-spend-']{
+              text-align: center;
+
+              p{
+                padding: render-pixel(20) 0;
+                height: render-pixel(55);
+                font: {
+                  size: render-pixel(19.5);
+                  weight: 400;
+                }
+                color: $color-workBlueText;
+              }
+            }
+          }// /-.internal-block-row
+        }
+      }// /-&-spend
+
+    }// /-.about-program-row
+  }// /-.about-program-container
+}// /-section.about-program

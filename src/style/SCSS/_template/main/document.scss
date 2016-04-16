@@ -95,6 +95,7 @@ section.document{
 
 
             &:last-of-type{
+              min-height: render-pixel(50);
               color: $color-documentDblue;
               font-weight: 600;
               font-size: render-pixel(18);
@@ -113,6 +114,7 @@ section.document{
               background-color: $color;
               text-align: center;
               line-height: 3;
+              vertical-align: inherit;
 
               &:before{
                 content: '';

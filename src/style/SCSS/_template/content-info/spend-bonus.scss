@@ -1,0 +1,119 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+@import "../main/document";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all              : return-value(dimension, all);
+
+$color-white            : return-value(color, white);
+$color-black            : return-value(color, black);
+$color-workBlueText     : return-value(color, workBlueText);
+$color-borderGray     : return-value(color, borderGray);
+
+
+///
+/// SPEND BLOCK
+///
+section.spend-bonus{
+  .spend-bonus-container{
+
+
+    h1{
+      margin-bottom: render-pixel(15);
+
+      font: {
+        size: render-pixel(36);
+        weight: 300;
+      }
+      text-transform: uppercase;
+      text-align: center;
+    }// /-h1
+
+
+    .spend-bonus-row{
+
+      &:first-of-type{
+        margin-bottom: render-pixel(50);
+
+        ul.spend-menu-list{
+          text-align: center;
+
+          li{
+            display: inline-block;
+
+            span.spend-btn-menu{
+              cursor: pointer;
+              color: $color-black;
+              margin: 0 render-pixel(10);
+              padding: render-pixel(5) 0;
+              transition: .3s ease-in-out;
+            }
+
+            span.active{
+              display: inline-block;
+              color: $color-workBlueText;
+              @include mixinBorder(bottom, 1px, $color-workBlueText);
+              transition: .3s ease-in-out;
+            }
+          }
+        }// /-ul.spend-menu-list
+      }// /-&:first-of-type
+
+
+      &:last-of-type{
+        @include mixinBorder(top, 1px, $color-borderGray);
+
+
+        .internal-spend-bonus-row{
+          display: none;
+
+          &.active{
+            display: block;
+
+            p{
+              text-align: center;
+              font: {
+                weight: 300;
+                size: render-pixel(18);
+              }
+              padding: render-pixel(10) 0;
+
+              span{
+                color: $color-workBlueText;
+              }
+            }
+          }
+        }// /-internal-spend-bonus-row
+
+
+      [data-js^='in-system']{
+        section#document.document{
+          min-height: render-pixel(100);
+
+          .document-container{
+            h2{
+              display: none;
+            }
+
+            .document-row{
+              [class^='row-block-']{
+                p{
+                  font-size: .875em;
+                  text-align: left;
+                }
+              }
+            }// /-.document-row
+          }
+        }// /-section#document.document
+      }// /- [data-js^='in-system']
+
+      }// /-&:last-of-type
+    }// /-.spend-bonus-row
+  }// /-.spend-bonus-container
+}// /-section.spend-bonus

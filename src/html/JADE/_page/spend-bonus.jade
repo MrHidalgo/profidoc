@@ -1,0 +1,57 @@
+-
+    var spendMenu = [
+        'В системе ProfiDoc',
+        'Обменять на подарочные карты',
+        'Получить электронные издания'
+    ];
+
+    var spendJs = [
+        'in-system',
+        'exchange',
+        'get'
+    ];
+
+
+section#spend-bonus.spend-bonus
+    .spend-bonus-container
+        h1 Используйте бонусные гривны
+
+        // menu
+        .spend-bonus-row
+            ul.spend-menu-list
+                - for (var i = 0; i < 3; i++)
+                    if(i == 0)
+                        li: span(class='spend-btn-menu active', data-js= spendJs[i])= spendMenu[i]
+                    else
+                        li: span(class='spend-btn-menu', data-js= spendJs[i])= spendMenu[i]
+
+
+        .spend-bonus-row
+            div(class='internal-spend-bonus-row active', data-js='in-system')
+                p!= 'Расчитывайтесь бонусными гривнами внутри сервиса при создании документов. <br/> <span> 1 бонусная грн. = 1 реальной грн.</span>'
+
+                include ../_template/main/document
+
+            div(class='internal-spend-bonus-row', data-js='exchange')
+                p!= 'Обменяй бонусные гривны на подарочные карты или электронный код покупки в магазине. <br/> <span> 1 бонусная грн. = 1 реальной грн.</span>'
+
+            div(class='internal-spend-bonus-row', data-js='get')
+                p!= 'Читайте популярные издания за наш счет. Обменивайте бонусные гривны на подписку. <br/> <span> 1 бонусная грн. = 1 реальной грн.</span>'
+
+
+script(type='text/javascript').
+    $('.spend-menu-list li span').click(function (e) {
+        e.preventDefault();
+
+        var dataValueBtn = $(this).attr('data-js');
+
+        $('.spend-menu-list li span').removeClass('active');
+
+        $('.internal-spend-bonus-row').removeClass('active');
+
+
+        $(this).addClass('active');
+
+        $('.internal-spend-bonus-row').filter('[data-js="' + dataValueBtn + '"]').addClass('active');
+    });
+

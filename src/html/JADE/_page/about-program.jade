@@ -1,0 +1,147 @@
+-
+    var aboutGiftImage = [
+        '../image/content-about-0.png',
+        '../image/content-about-1.png',
+        '../image/content-about-2.png'
+    ];
+
+    var aboutGiftTitle = [
+        'Регистрируйтесь',
+        'Зарабатывайте <br/> бонусные гривны',
+        'Обмениваем <br/> бонусные гривны'
+    ];
+
+    var aboutGiftText = [
+        'Уникальная возможность получать дополнительные скидки просто за использование',
+        'Уникальная возможность получать дополнительные скидки просто за использование',
+        'Уникальная возможность получать дополнительные скидки просто за использование'
+    ];
+
+-
+    var aboutTitleText = [
+        'Кто может стать <span>участником</span>',
+        'Как <span>заработать</span> баллы',
+        'Как <span>потратить</span> балы'
+    ];
+
+    var aboutSloganText = [
+        'Присоединиться к программе может каждый, кто использует в работе программы СКБ контур. <br/> Разумеется, участие совершенно бесплатно!',
+        '',
+        'Использовать бонусные гривны можно внутри сервиса <span>ProfiDoc</span> при следующих покупках, <br/> а также заказав подарочные карты или подписку на электронные издания.'
+    ];
+
+
+-
+    var userText = [
+        'Собственник <br/> бизнеса',
+        'Руководитель',
+        'Бухгалтер',
+        'Юрист',
+        'Менеджер',
+        'Пользователь <br/> ProfiDoc'
+    ];
+
+
+-
+    var buyImage = [
+        '../image/content-about-s-0.png',
+        '../image/content-about-s-1.png',
+        '../image/content-about-s-2.png',
+        '../image/content-about-s-3.png',
+        '../image/content-about-s-4.png',
+        '../image/content-about-s-5.png'
+    ];
+
+    var buyText = [
+        'При регистрации',
+        'За покупки в системе ProfiDoc',
+        'За продление подписки',
+        'За размещение рендеров в любых социальных сетях при помощи кнопки «Поделиться»',
+        'За отзывы зарегистрированных пользователей ',
+        'За добавление идей для бизнеса'
+    ];
+
+    var buyPrice = [
+        '+ 100 грн',
+        '+ 10 грн',
+        '+ 50 грн',
+        '+ 20 грн',
+        '+ 25 грн',
+        '+ 10 грн'
+    ];
+
+
+-
+    var spendImage = [
+        '../image/content-about-b-0.png',
+        '../image/content-about-b-1.png',
+        '../image/content-about-b-2.png'
+    ];
+
+    var spendText = [
+        'Последующие покупки',
+        'Заказ подарочных карт',
+        'Подписка на <br/> электронные издания'
+    ];
+
+
+mixin aboutTitleBlock(paragraphText, sloganText)
+    h2!= paragraphText
+    p!= sloganText
+
+
+section#about-program.about-program
+    .about-program-container
+        h1= 'Программа привилегий'
+        p!= 'Уникальная возможность получать дополнительные скидки просто за использование сервисов ProfiDOC. <br/> Присоединяйтесь к программе, накапливайте бонусные гривны и получайте бонусы'
+
+        .about-program-row-gift
+            - for (var i = 0; i < aboutGiftImage.length; i++)
+                div(class='block-gift-#{i}')
+                    img(src= aboutGiftImage[i], class='img-responsive')
+                    h4!= aboutGiftTitle[i]
+                    p= aboutGiftText[i]
+
+
+        .about-program-row-user
+            +aboutTitleBlock(aboutTitleText[0], aboutSloganText[0])
+
+            .internal-block
+                - for(var i = 0; i < 6; i++)
+                    div(class='block-user-#{i}')
+                        i(class='img-responsive')
+                        p!= userText[i]
+
+
+        .about-program-row-buy
+            +aboutTitleBlock(aboutTitleText[1], aboutSloganText[1])
+
+            .internal-block
+                .internal-block-row
+                    - for(var i = 0; i < 6; i++)
+                        div(class='block-#{i}')
+                            .left
+                                img(src= buyImage[i], class='img-responsive')
+
+                            .right
+                                .top
+                                    p= buyText[i]
+                                .bottom
+                                    p= buyPrice[i]
+
+                .internal-block-row
+                    p!= 'Бонусная программа работает по всей Украине. Для каждого продукта /действия предусмотрено свое количество бонусов. <br/> Список сервисов, за приобретение которых на баланс участника начисляются баллы, можно посмотреть в разделе <br/> <span>«Копить баллы».</span>'
+                    a(href='javascript: void(0);', class='btn-buy-product')= 'Подобрать продукт'
+
+
+        .about-program-row-spend
+            +aboutTitleBlock(aboutTitleText[2])
+
+            .internal-block
+                p!= aboutSloganText[2]
+
+                .internal-block-row
+                    - for(var i = 0; i < 3; i++)
+                        div(class='block-spend-#{i}')
+                            img(src= spendImage[i], class='img-responsive')
+                            p!= spendText[i]

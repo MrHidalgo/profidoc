@@ -79,6 +79,11 @@ a{
 }
 
 
+#content{
+  @include mixinMaxWidthPosition(10.7, 30, 0);
+}
+
+
 ///
 /// ANIMATION CLASS
 ///

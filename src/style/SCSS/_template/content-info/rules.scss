@@ -21,7 +21,6 @@ $color-black          : return-value(color, black);
 section.rules{
 
   .rules-container{
-    @include mixinMaxWidthPosition(10.7, 30, 0);
 
 
     h1{
