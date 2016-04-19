@@ -78,3 +78,19 @@ section.menu{
   }// /-.menu-container
 }// /-section.menu
 
+
+///
+/// MEDIA QUERIES
+///
+@media screen and (min-width: 320px) and (max-width: 991px) {
+  section#menu.menu{
+    .menu-container{
+      ul.menu-list{
+        li{
+          display: block;
+          margin: render-pixel(20) 0;
+        }
+      }// /-ul.menu-list
+    }// /-.menu-container
+  }// /-section#menu.menu
+}

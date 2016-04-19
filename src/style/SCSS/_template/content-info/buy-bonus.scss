@@ -44,10 +44,7 @@ section.buy-bonus{
 
             &:first-of-type{
               display: flex;
-              align-items: center;
-              justify-content: center;
               flex-flow: row wrap;
-              align-content: center;
 
               [class^='block-']{
                 width: $width-all/3;
@@ -116,3 +113,28 @@ section.buy-bonus{
     }// /-.about-program-row
   }// /-.buy-bonus-container
 }// /-section#buy-bonus.buy-bonus
+
+
+///
+/// MEDIA QUERIES
+///
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  section#buy-bonus.buy-bonus{
+    .buy-bonus-container{
+      .about-program-row-buy{
+        .internal-block{
+          margin: 0 render-pixel(15);
+
+          .internal-block-row{
+            display: block;
+
+            [class^='block-']{
+              width: $width-all;
+              @include mixinBorder(bottom, 1px, $color-borderGray);
+            }
+          }// /-.internal-block-row
+        }// /-.internal-block
+      }// /- .about-program-row-buy
+    }// /-.buy-bonus-container
+  }// /-section#buy-bonus.buy-bonus
+}

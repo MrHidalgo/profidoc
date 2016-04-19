@@ -1,0 +1,49 @@
+include ../_mixin/mixin
+
+-
+    var arrFontName = [
+        'https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800'
+    ];
+
+    var arrStyleName = [
+        '../style/style.min.css',
+        '../style/_dop/breadcrumbs.min.css',
+        '../style/registration/registration.min.css'
+    ];
+
+    var scriptName = [
+        '../script/jquery.min.js',
+        '../script/script.min.js'
+    ];
+
+doctype html
+html
+    head
+        +htmlTemplateHEAD('Регистрация ООО и ФОП "под ключ"', arrFontName, arrStyleName, false)
+
+    body
+
+        include ../_template/_dop/nav
+
+        // BREADCRUMBS BLOCK
+        block breadcrumbs
+            include ../_template/registration/breadcrumbs
+
+
+        block info
+            include ../_template/registration/info
+
+        block why
+            include ../_template/registration/why
+
+        block get
+            include ../_template/registration/get
+
+        block some
+            include ../_template/registration/some
+
+
+        include ../_template/_dop/footer
+
+        +htmlTemplateFOOT(scriptName)
+

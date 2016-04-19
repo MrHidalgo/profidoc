@@ -1,0 +1,42 @@
+include ../_mixin/mixin
+
+-
+    var arrFontName = [
+        'https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800'
+    ];
+
+    var arrStyleName = [
+        '../style/style.min.css',
+        '../style/_dop/breadcrumbs.min.css',
+        '../style/news-details/news-details.min.css',
+        '../style/news-details/right-panel.min.css',
+        '../style/news-details/left-panel.min.css'
+    ];
+
+    var scriptName = [
+        '../script/jquery.min.js',
+        '../script/script.min.js'
+    ];
+
+doctype html
+html
+    head
+        +htmlTemplateHEAD('Страница конкретной новости', arrFontName, arrStyleName, false)
+
+    body
+
+        include ../_template/_dop/nav
+
+        // BREADCRUMBS BLOCK
+        block breadcrumbs
+            include ../_template/news-details/breadcrumbs
+
+
+        block content
+            include ../_template/news-details/content
+
+
+        include ../_template/_dop/footer
+
+        +htmlTemplateFOOT(scriptName)
+

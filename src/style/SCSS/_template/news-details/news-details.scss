@@ -1,0 +1,33 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+@import "../../_extend/extend";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all          : return-value(dimension, all);
+
+$color-white        : return-value(color, white);
+$color-black        : return-value(color, black);
+$color-footerBg     : return-value(color, footerBg);
+$color-scopeBorder  : return-value(color, scopeBorder);
+
+
+/// [navigation, footer]
+body{
+  @extend %internalPage;
+}
+
+
+///
+/// MAIN SECTION
+///
+section.content{
+  min-height: render-pixel(100);
+  padding: render-pixel(50) 0;
+  @include mixinCenteredBLockFlex(row, flex-start, center);
+}// /-section.content

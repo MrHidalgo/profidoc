@@ -48,7 +48,7 @@ $( function () {
     $('.accordion-section-title').click(function(e) {
         var currentAttrValue = $(this).attr('href');
 
-        if($(e.target).is('.active')) {
+        if($(e.target).closest('a').hasClass('active')) {
             close_accordion_section();
         }else {
             close_accordion_section();

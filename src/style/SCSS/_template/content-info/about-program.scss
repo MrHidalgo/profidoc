@@ -204,10 +204,7 @@ section.about-program{
 
             &:first-of-type{
               display: flex;
-              align-items: center;
-              justify-content: center;
               flex-flow: row wrap;
-              align-content: center;
 
               [class^='block-']{
                 width: $width-all/3;
@@ -319,3 +316,44 @@ section.about-program{
     }// /-.about-program-row
   }// /-.about-program-container
 }// /-section.about-program
+
+
+///
+/// MEDIA QUERIES
+///
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  section#about-program.about-program{
+    .about-program-container{
+      .about-program-row-buy{
+        .internal-block{
+          .internal-block-row{
+            display: block;
+
+            [class^='block-']{
+              width: $width-all;
+              @include mixinBorder(bottom, 1px, $color-borderGray);
+            }
+          }// /-.internal-block-row
+        }// /-.internal-block
+      }// /-.about-program-row-buy
+    }// /-.about-program-container
+  }// /-section#about-program.about-program
+
+
+  section#buy-bonus.buy-bonus{
+    .buy-bonus-container{
+      .about-program-row-buy{
+        .internal-block{
+          .internal-block-row{
+            display: block;
+
+            [class^='block-']{
+              width: $width-all;
+              @include mixinBorder(bottom, 1px, $color-borderGray);
+            }
+          }// /-.internal-block-row
+        }// /-.internal-block
+      }// /- .about-program-row-buy
+    }// /-.buy-bonus-container
+  }// /-section#buy-bonus.buy-bonus
+}

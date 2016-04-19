@@ -1,0 +1,41 @@
+-
+    var logotype = '../image/header-logotype.png';
+    var infoImage = '../image/registration-form.png';
+
+    var infoTextTop = [
+        '- это не только сервис для подготовки документов для регистрации ООО и ИП, но и',
+        'cеть профессиональных регистраторов,',
+        'готовых прийти на помощь в любой момент.'
+    ];
+
+    var infoBottomList = [
+        '- полное консультирование по регистрации ООО;',
+        '- подготовка документов;',
+        '- полное сопровождение клиента;',
+        '- получение документов в регистрирующем органе;',
+        '- изготовление печати;',
+        '- получение кодов статистики;',
+        '- резервирование счета без посещения банка.'
+    ];
+
+section#info.info
+    .info-container
+        .info-row
+            .info-row-top-left
+                img(src= logotype, class='img-responsive')
+
+            .info-row-top-right
+                - for(var i = 0; i < infoTextTop.length; i++)
+                    p!= infoTextTop[i]
+
+        .info-row
+            .info-row-bottom-left
+                img(src= infoImage, class='img-responsive')
+
+            .info-row-bottom-right
+                p!= 'Стоимость регистрации бизнеса в вашем городе <span>5 000</span> грн.*'
+                p!= 'Данная цена включает в себя:'
+
+                ul.info-bottom-list
+                    - for(var i = 0; i < infoBottomList.length; i++)
+                        li!= infoBottomList[i]

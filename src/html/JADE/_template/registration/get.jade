@@ -1,0 +1,25 @@
+-
+    var getTitle = 'Оставляя заявку, вы получите*:';
+
+    var getList = [
+        'качественную юридическую поддержку практически в любом городе Украины',
+        'регистрацию ООО или ИП «под ключ» в самые сжатые сроки',
+        'юридический адрес',
+        'полное юридическое и бухгалтерское сопровождение',
+        'необходимые лицензии и разрешения',
+        'скидки до 15% от услуг по регистрации партнёров сервиса',
+        '* полный перечень доступных услуг уточняйте у регистратора'
+    ];
+
+section#get.get
+    .get-container
+        h2= getTitle
+
+        .get-row
+            ul.get-list
+                - for(var i = 0; i < getList.length; i++)
+                    li: span= getList[i]
+
+        .get-row
+            img(src= '../image/registration-map.png', class='img-responsive')
+            img(src= '../image/registration-form.png', class='img-responsive')

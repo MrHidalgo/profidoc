@@ -1,0 +1,27 @@
+-
+    var whyTitle = 'Зачем обращаться к регистратору?';
+
+    var whyImage = [
+        '../image/registration-why0.png',
+        '../image/registration-why1.png',
+        '../image/registration-why2.png'
+    ];
+
+    var whyText = [
+        'Быстрая регистрация <br/> ООО, ФОП',
+        'Экономия времени',
+        'Регистрация в ПФУ, <br/> ФСС, ФОМС'
+    ];
+
+
+section#why.why
+    .why-container
+        h2= whyTitle
+
+        .why-row
+            - for(var i = 0; i < whyImage.length; i++)
+                div(class='why-block-#{i}')
+                    .img-block
+                        img(src= whyImage[i], class='img-responsive')
+
+                    p!= whyText[i]

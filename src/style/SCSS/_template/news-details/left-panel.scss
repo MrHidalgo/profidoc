@@ -1,0 +1,122 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all            : return-value(dimension, all);
+
+$color-white          : return-value(color, white);
+$color-black          : return-value(color, black);
+$color-darkenBlueText : return-value(color, darkenBlueText);
+$color-borderGray     : return-value(color, borderGray);
+
+
+///
+/// RIGHT PANEL SECTION
+///
+section.left-panel{
+  width: calc(100% - 290px);
+  margin-right: render-pixel(20);
+
+
+  .left-panel-container{
+    >p{
+      font: {
+        size: render-pixel(15.5);
+        weight: 400;
+      }
+      color: lighten($color-darkenBlueText, 25%);
+      margin-bottom: render-pixel(30);
+
+
+      span{
+        color: lighten($color-black, 35%);
+        font-weight: 300;
+        margin-right: render-pixel(50);
+      }
+    }
+
+    .left-panel-row{
+      margin-bottom: render-pixel(20);
+
+      &-news{
+        p{
+          margin-bottom: render-pixel(20);
+          font-size: render-pixel(13);
+          line-height: 2;
+        }
+
+        .img-responsive{
+          max-width: $width-all;
+          height: auto;
+          margin-bottom: render-pixel(20);
+        }
+      }// /-&-news
+
+
+      &-soc{
+        margin-bottom: render-pixel(20);
+        @include mixinBorder(bottom, 1px, $color-borderGray);
+
+        p{
+          font-size: render-pixel(16.5);
+          color: lighten($color-black, 35%);
+        }
+
+        ul.soc-list{
+          padding: render-pixel(20) 0;
+          @include mixinCenteredBLockFlex(row, center, flex-start);
+
+          li{
+            a{
+              padding-right: render-pixel(10);
+            }
+          }
+        }// /-ul.soc-list
+      }// /-&-soc
+
+
+      &-more{
+        padding-bottom: render-pixel(30);
+        @include mixinBorder(bottom, 1px, $color-borderGray);
+
+        >p{
+          font: {
+            size: render-pixel(19.5);
+            weight: 500;
+          }
+          text-transform: uppercase;
+          margin-bottom: render-pixel(20);
+        }// /-p
+
+
+        ul.more-list{
+          @include mixinCenteredBLockFlex(row, flex-start, center);
+
+          li{
+            width: $width-all/3;
+            padding-right: render-pixel(10);
+
+            .btn-more-news{
+              text-decoration: underline;
+              font-size: render-pixel(15.5);
+              color: lighten($color-darkenBlueText, 25%);
+              font-weight: 600;
+            }
+
+            p{
+              padding-top: render-pixel(15);
+              font-size: render-pixel(13);
+              line-height: 1.5;
+            }
+          }
+        }// /-ul.more-list
+      }// /-&-more
+    }// /-.left-panel-row
+  }// /-.left-panel-container
+}// /-section.right-panel

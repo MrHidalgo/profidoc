@@ -1,0 +1,64 @@
+-
+    var freeList = [
+        'Подготовка документов',
+        'Подбор кодов ОКВЭД',
+        'Открытие расчетного счета',
+        'Консультация по регистрации бизнеса ',
+        'Консультация по налогообложению',
+        'Месяц бухгалтерского обслуживания ',
+        'Проверка документов',
+        'Подготовка документов',
+        'Подбор кодов ОКВЭД'
+    ];
+
+
+    var categoryList = [
+        'Категория один',
+        'Категория один',
+        'Категория один',
+        'Категория один',
+        'Категория один',
+        'Категория один'
+    ];
+
+
+section#right-panel.right-panel
+    .right-panel-container
+        .right-panel-row-search
+            input(type='search', class='search-input', id='search', required)
+            label(for='search')
+
+        .right-panel-row-subscribe
+            header
+                p!= '<span>Подпишитесь</span> и регулярно <br/> получайте полезные статьи'
+
+            section
+                form(name='subscribe', action='')
+                    div.field-name
+                        input(type='text', class='name-input', id='name', placeholder='Имя', required)
+                        p(class='help-block help-block-error') error
+
+                    div.field-email
+                        input(type='email', class='email-input', id='email', placeholder='E-mail', required)
+                        p(class='help-block help-block-error') warning
+
+                    button(type='submit', class='btn-subscribe') подписаться
+        hr
+
+        .right-panel-row-category
+            p.title Категории
+
+            ul.category-list
+                - for(var i = 0; i < categoryList.length; i++)
+                    li
+                        a(href='javascript: void(0);', class='list-item')= categoryList[i]
+
+        hr
+
+        .right-panel-row-free
+            p.title Бесплатно
+
+            ul.free-list
+                - for(var i = 0; i < freeList.length; i++)
+                    li: a(href='javascript: void(0);', class='list-item')= freeList[i]
+
