@@ -74,6 +74,13 @@ app.use('/idea',	express.static('./dist/page/',
     }
 ));
 
+// IDEA FOR BUSINESS ALL
+app.use('/idea/all',	express.static('./dist/page/',
+    {
+        'index' : 'idea-all.html'
+    }
+));
+
 // IDEA FOR BUSINESS DETAILS
 app.use('/idea/details',	express.static('./dist/page/',
     {

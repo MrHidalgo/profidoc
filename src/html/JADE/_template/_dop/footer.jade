@@ -44,9 +44,9 @@
 
     var productHash   = [
         '#',
-        'register-company',
-        'join-sap',
-        'register-turnkey',
+        '/registration',
+        '/registration',
+        '/registration',
         'alteration',
         'contacts-designer',
         'designer-document'
@@ -76,7 +76,7 @@ mixin secondBlock
 mixin thirdBlock
     ul.product
         - for(var i = 0; i < 7; i++)
-            li: a(href='#' + productHash[i])= footerProduct[i]
+            li: a(href= productHash[i])= footerProduct[i]
 
 mixin fourthBlock
     ul.list
