@@ -121,6 +121,15 @@ $(document).ready( function() {
 });
 
 
+/* GO TO HOME PAGE LOGO */
+$( function () {
+    $('.img-nav').on('click', function (e) {
+        window.location = '/';
+        e.preventDefault();
+    });
+});
+
+
 /*
 *   SLIDER
 */

@@ -35,11 +35,11 @@
 
     var aboutHash     = [
         '#',
-        'bonus-system',
+        '/content/#about-program',
         '/scope',
         '/security',
-        'testimonials',
-        'news'
+        '/reviews',
+        '/news'
     ];
 
     var productHash   = [
@@ -54,8 +54,8 @@
 
     var listHash      = [
         '#',
-        'terms-of-use',
-        'privacy-policy'
+        '/terms',
+        '/privacy'
     ];
 
 
@@ -81,7 +81,7 @@ mixin thirdBlock
 mixin fourthBlock
     ul.list
         - for(var i = 0; i < 3  ; i++)
-            li: a(href='#' + listHash[i])!= footerList[i]
+            li: a(href= listHash[i])!= footerList[i]
 
 
 footer#footer.footer

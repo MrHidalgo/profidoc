@@ -60,6 +60,57 @@ app.use('/news-details',	express.static('./dist/page/',
     }
 ));
 
+// CHECK
+app.use('/check',	express.static('./dist/page/',
+    {
+        'index' : 'check.html'
+    }
+));
+
+// IDEA FOR BUSINESS
+app.use('/idea',	express.static('./dist/page/',
+    {
+        'index' : 'idea.html'
+    }
+));
+
+// IDEA FOR BUSINESS DETAILS
+app.use('/idea/details',	express.static('./dist/page/',
+    {
+        'index' : 'idea-details.html'
+    }
+));
+
+// REVIEWS
+app.use('/reviews',	express.static('./dist/page/',
+    {
+        'index' : 'reviews.html'
+    }
+));
+
+// NEWS
+app.use('/news',	express.static('./dist/page/',
+    {
+        'index' : 'news.html'
+    }
+));
+
+// IDEA FOR BUSINESS ALL
+app.use('/terms',	express.static('./dist/page/',
+    {
+        'index' : 'terms.html'
+    }
+));
+
+// IDEA FOR BUSINESS ALL
+app.use('/privacy',	express.static('./dist/page/',
+    {
+        'index' : 'privacy.html'
+    }
+));
+
+
+
 
 
 app.listen(app.get('port'),	function()	{
