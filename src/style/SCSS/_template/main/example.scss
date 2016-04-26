@@ -17,7 +17,7 @@ $color-navBlue    : return-value(color, navBlue);
 
 
 ///
-/// EXAMPLE SESTION
+/// EXAMPLE SECTION
 ///
 section.example{
   @include mixinDimensions('min', $width-all, render-pixel(518));

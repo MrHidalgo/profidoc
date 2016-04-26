@@ -1,0 +1,46 @@
+-
+    var chanceImage = [
+        '../image/check-chance-0.png',
+        '../image/check-chance-1.png',
+        '../image/check-chance-2.png',
+        '../image/check-chance-3.png',
+        '../image/check-chance-4.png',
+        '../image/check-chance-5.png',
+        '../image/check-chance-6.png',
+        '../image/check-chance-7.png',
+        '../image/check-chance-8.png',
+        '../image/check-chance-9.png',
+        '../image/check-chance-10.png',
+        '../image/check-chance-11.png'
+    ];
+
+    var chanceText = [
+        'Регистрационные <br/> и контактные данные',
+        'Сведения о директоре <br/> и бухгалтере',
+        'Корпоративная структура <br/> и связанные компании',
+        'Обслуживающие <br/> банки и счета',
+        'Финансовое состояние',
+        'Проблемы с налоговой',
+        'Наличие недвижимости <br/> и движемого имущества',
+        'Судебные дела <br/> и банкротства',
+        'Долги, аресты <br/> и обременения',
+        'Наличие лицензий',
+        'Внешнеэкономическая <br/> деятельность',
+        'Проверка иностранных <br/> компаний контрагентов'
+    ];
+
+section#chance.chance
+    .chance-container-info
+        h2 Возможности
+
+        .chance-row
+            - for(var i = 0; i < chanceText.length; i++)
+                div(class='block-#{i}')
+                    .img-block
+                        img(src= chanceImage[i], class='img-responsive')
+                    p!= chanceText[i]
+
+    .chance-container-learn
+        .chance-row
+            p!= 'Узнайте о своём контрагенте'
+            a(href='#', class='btn-learn') Заказать проверку

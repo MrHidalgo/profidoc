@@ -1,0 +1,164 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all              : return-value(dimension, all);
+
+$color-white            : return-value(color, white);
+$color-black            : return-value(color, black);
+$color-scopeBorder      : return-value(color, scopeBorder);
+$color-yellow           : return-value(color, yellow);
+
+$image-choose0          : '../../image/check-tarif-0.png';
+
+
+///
+/// TARIFF SECTION
+///
+section.tariff{
+  .tariff-container{
+    @include mixinMaxWidthPosition(10.7, 50, 0);
+
+    h2{
+      text-transform: uppercase;
+      text-align: center;
+      font: {
+        size: render-pixel(25);
+        weight: 400;
+      }
+      padding-bottom: render-pixel(15);
+      @include mixinBorder(bottom, 1px, $color-scopeBorder);
+    }// /-h2
+
+
+    .tariff-row{
+      //padding: render-pixel(15) 0;
+
+
+      table{
+        border-collapse: collapse;
+
+        thead{
+          tr{
+            height: render-pixel(100);
+            @include mixinBorder(bottom, 1px, $color-scopeBorder);
+
+            th{
+              font: {
+                size: render-pixel(19);
+                weight: 400;
+              }
+            }
+          }
+        }
+
+        tbody{
+          tr{
+
+            td{
+              .img-choose{
+                display: block;
+                @include mixinDimensions('', render-pixel(8));
+                background: url($image-choose0) no-repeat center;
+                background-size: contain;
+                margin: 0 auto;
+              }
+            }
+
+
+            &:nth-of-type(1),
+            &:nth-of-type(7),
+            &:nth-of-type(19),
+            &:nth-of-type(24){
+              height: render-pixel(50);
+
+              td{
+                font: {
+                  size: render-pixel(19);
+                  weight: 400;
+                }
+                padding-left: 0;
+              }
+            }// /-main title
+
+
+            td{
+              font: {
+                size: render-pixel(12.5);
+                weight: 400;
+              }
+              padding-left: render-pixel(20);
+
+              &:nth-of-type(n + 2){
+                text-align: center;
+              }
+            }// /- subtitle
+
+
+            &:nth-of-type(24){
+              height: render-pixel(50) !important;
+
+              td{
+                font-size: render-pixel(18);
+                vertical-align: middle !important;
+              }
+            }// /- country
+
+
+            &:nth-of-type(25){
+              height: render-pixel(70) !important;
+
+              td{
+                font-size: render-pixel(18);
+                vertical-align: middle;
+
+                span{
+                  font-size: render-pixel(22);
+                }
+              }
+            }// /- price
+
+
+            &:nth-of-type(26){
+              height: render-pixel(90);
+
+              td{
+                a{
+                  display: block;
+                  background: $color-yellow;
+                  text-transform: uppercase;
+                  color: $color-white;
+                  font: {
+                    size: 16px;
+                    weight: 600;
+                  }
+                  margin: 0 auto;
+                  line-height: 2.9;
+                  @include mixinDimensions('', render-pixel(115), render-pixel(46));
+                }
+              }
+            }// /-btn order
+
+
+
+            &:nth-of-type(6),
+            &:nth-of-type(18),
+            &:nth-of-type(23),
+            &:nth-of-type(24),
+            &:nth-of-type(25){
+              @include mixinBorder(bottom, 1px, $color-scopeBorder);
+              height: render-pixel(50);
+              vertical-align: baseline;
+            }// /-border container
+          }
+        }
+      }// /-table
+    }// /-.tariff-row
+  }// /-.tariff-container
+}// /-section.tariff

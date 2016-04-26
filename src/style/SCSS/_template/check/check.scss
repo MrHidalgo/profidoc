@@ -19,3 +19,8 @@ $color-black        : return-value(color, black);
 body{
   @extend %internalPage;
 }
+
+.img-responsive{
+  max-width: $width-all;
+  height: auto;
+}

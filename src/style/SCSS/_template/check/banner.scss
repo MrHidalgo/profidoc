@@ -1,0 +1,108 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all              : return-value(dimension, all);
+
+$color-white            : return-value(color, white);
+$color-black            : return-value(color, black);
+$color-darkenBlueText1  : return-value(color, darkenBlueText1);
+$color-yellow           : return-value(color, yellow);
+
+$image-bg           : '../../image/check-banner.png';
+
+
+///
+/// BANNER SECTION
+///
+section.banner{
+  margin: render-pixel(10) 0;
+  background: url($image-bg) no-repeat center;
+  background-size: cover;
+  @include mixinDimensions('min', $width-all, render-pixel(413));
+
+
+  .banner-container{
+    @include mixinMaxWidthPosition(10.7, 30, 0);
+
+
+    .banner-row{
+      width: render-pixel(529);
+
+      .container{
+        &-text{
+          padding: render-pixel(20);
+          color: $color-white;
+          background-color: rgba($color-darkenBlueText1, 0.65);
+          @include mixinDimensions('', render-pixel(529), auto);
+
+          h1{
+            margin-bottom: render-pixel(20);
+            text-transform: uppercase;
+            font: {
+              weight: 400;
+            }
+          }// /-h1
+
+          p{
+            font-size: render-pixel(15);
+          }
+        }
+
+        &-btn{
+          text-align: center;
+          margin-top: render-pixel(10);
+          @include mixinCenteredBLockFlex(row, center, space-between);
+
+          *{
+            color: $color-white;
+          }
+
+          .btn-order{
+            text-transform: uppercase;
+            font: {
+              size: render-pixel(16.5);
+              weight: 600;
+            }
+            line-height: 3.2;
+            background: $color-yellow;
+            box-shadow: 2px 2px 0 0 rgba(0,0,0,.5);
+            @include mixinDimensions('', render-pixel(279), render-pixel(48));
+          }
+
+          .btn-container{
+            font: {
+              size: render-pixel(18);
+            }
+            background: $color-darkenBlueText1;
+            line-height: 2.2;
+            @include mixinDimensions('', render-pixel(200), render-pixel(46));
+
+            *{
+              font-weight: 400;
+            }
+
+            >span{
+             font: {
+               size: render-pixel(21);
+             }
+            }
+
+            .btn-price{
+              text-decoration: underline;
+              font: {
+                size: render-pixel(12.5);
+              }
+            }// /-btn-price
+          }// /-.btn-container
+        }
+      }
+    }// /-.banner-row
+  }// /-.banner-container
+}// /-section.banner

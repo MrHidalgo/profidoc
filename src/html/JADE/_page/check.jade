@@ -8,11 +8,19 @@ include ../_mixin/mixin
     var arrStyleName = [
         '../style/style.min.css',
         '../style/_dop/breadcrumbs.min.css',
-        '../style/check/check.min.css'
-    ]
+        '../style/_dop/owl.carousel.min.css',
+        '../style/_dop/owl.theme.default.css',
+        '../style/check/check.min.css',
+        '../style/check/banner.min.css',
+        '../style/check/chance.min.css',
+        '../style/check/tariff.min.css',
+        '../style/check/client.min.css',
+        '../style/check/review.min.css'
+    ];
 
     var scriptName = [
         '../script/jquery.min.js',
+        '../script/owl.carousel.min.js',
         '../script/script.min.js'
     ];
 
@@ -33,6 +41,22 @@ html
         // BREADCRUMBS BLOCK
         block breadcrumbs
             include ../_template/check/breadcrumbs
+
+
+        // BANNER
+        include ../_template/check/banner
+
+        // CHANCE
+        include ../_template/check/chance
+
+        // TARIFF
+        include ../_template/check/tarif
+
+        // CLIENT
+        include ../_template/check/client
+
+        // REVIEWS
+        include ../_template/check/review
 
 
         // FOOTER MENU

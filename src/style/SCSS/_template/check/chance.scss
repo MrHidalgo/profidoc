@@ -1,0 +1,107 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all              : return-value(dimension, all);
+
+$color-white            : return-value(color, white);
+$color-black            : return-value(color, black);
+$color-scopeBorder      : return-value(color, scopeBorder);
+$color-bgGray           : return-value(color, bgGray);
+$color-yellow           : return-value(color, yellow);
+$color-darkenBlueText0  : return-value(color, darkenBlueText0);
+
+
+///
+/// CHANCE SECTION
+///
+section.chance{
+
+  .chance-container{
+
+    &-info{
+      @include mixinMaxWidthPosition(10.7, 30, 0);
+    }
+
+
+    &-info{
+      h2{
+        text-transform: uppercase;
+        text-align: center;
+        font: {
+          size: render-pixel(25);
+          weight: 400;
+        }
+        padding-bottom: render-pixel(15);
+        @include mixinBorder(bottom, 1px, $color-scopeBorder);
+      }
+
+      .chance-row{
+        padding: render-pixel(25);
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-flow: row wrap;
+        align-content: center;
+
+        [class^='block-']{
+          width: $width-all/4;
+          text-align: center;
+          padding: render-pixel(35) render-pixel(15);
+
+          .img-block{
+            min-height: render-pixel(100);
+          }// /-img-block
+
+
+          p{
+            color: $color-darkenBlueText0;
+            font: {
+              size: render-pixel(17);
+            }
+          }
+        }
+      }
+    }// /-info
+
+
+    &-learn{
+      text-align: center;
+      background: $color-bgGray;
+      min-height: render-pixel(188);
+
+      .chance-row{
+        min-height: render-pixel(188);
+        @include mixinCenteredBLockFlex(column, center, center);
+        @include mixinMaxWidthPosition(10.7, 30, 0);
+
+
+        p{
+          font: {
+            size: render-pixel(27);
+          }
+          margin-bottom: render-pixel(20);
+        }
+
+        a.btn-learn{
+          display: block;
+          background: $color-yellow;
+          color: $color-white;
+          text-transform: uppercase;
+          line-height: 2.8;
+          font: {
+            size: render-pixel(16.5);
+            weight: 600;
+          }
+          @include mixinDimensions('', render-pixel(260), render-pixel(46));
+        }// /-btn-learn
+      }
+    }// /-learn
+  }// /-.chance-container
+}// /-section.chance

@@ -1,0 +1,261 @@
+-
+    var tariffTitleMain = [
+        '',
+        'Базовая  проверка',
+        'Расширенная  проверка',
+        'Полная  проверка',
+        'Выборочная  проверка',
+        'Проверка  нерезидента'
+    ];
+
+    var objTariffTable = {
+        0: [
+            'Базовые возможности',
+            '',
+            '',
+            '',
+            '',
+            ''
+        ],
+        1: [
+            'Бухгалтерская (финансовая) отчетность',
+            '<i class="img-choose"></i>',
+            '<i class="img-choose"></i>',
+            '<i class="img-choose"></i>',
+            '<input type="checkbox", name="choose-doc", class="choose-doc" checked>',
+            '<i class="img-choose"></i>'
+        ],
+        2: [
+            'Поиск взаимосвязей между лицами',
+            '<i class="img-choose"></i>',
+            '<i class="img-choose"></i>',
+            '<i class="img-choose"></i>',
+            '<input type="checkbox", name="choose-doc", class="choose-doc">',
+            ''
+        ],
+        3: [
+            'Экспресс-отчет по контрагентам',
+            '<i class="img-choose"></i>',
+            '<i class="img-choose"></i>',
+            '<i class="img-choose"></i>',
+            '<input type="checkbox", name="choose-doc", class="choose-doc">',
+            '<i class="img-choose"></i>'
+        ],
+        4: [
+            'Финансовый анализ',
+            '<i class="img-choose"></i>',
+            '<i class="img-choose"></i>',
+            '<i class="img-choose"></i>',
+            '<input type="checkbox", name="choose-doc", class="choose-doc" checked>',
+            '<i class="img-choose"></i>'
+        ],
+        5: [
+            'Мобильные приложения iOS и Android',
+            '<i class="img-choose"></i>',
+            '<i class="img-choose"></i>',
+            '<i class="img-choose"></i>',
+            '<input type="checkbox", name="choose-doc", class="choose-doc">',
+            ''
+        ]
+    };
+
+    var objTariffTable1 = {
+        0: [
+            'Расширенные источники',
+            '',
+            '',
+            '',
+            '',
+            ''
+        ],
+        1: [
+            'Арбитражные дела',
+            '',
+            '<i class="img-choose"></i>',
+            '<i class="img-choose"></i>',
+            '<input type="checkbox", name="choose-doc", class="choose-doc" checked>',
+            '<i class="img-choose"></i>'
+        ],
+        2: [
+            'Исполнительные производства',
+            '',
+            '<i class="img-choose"></i>',
+            '<i class="img-choose"></i>',
+            '<input type="checkbox", name="choose-doc", class="choose-doc">',
+            '<i class="img-choose"></i>'
+        ],
+        3: [
+            'Государственные контракты',
+            '',
+            '<i class="img-choose"></i>',
+            '<i class="img-choose"></i>',
+            '<input type="checkbox", name="choose-doc", class="choose-doc">',
+            ''
+        ],
+        4: [
+            'Товарные знаки',
+            '',
+            '<i class="img-choose"></i>',
+            '<i class="img-choose"></i>',
+            '<input type="checkbox", name="choose-doc", class="choose-doc" checked>',
+            '<i class="img-choose"></i>'
+        ],
+        5: [
+            'Упоминания в интернете',
+            '',
+            '<i class="img-choose"></i>',
+            '<i class="img-choose"></i>',
+            '<input type="checkbox", name="choose-doc", class="choose-doc">',
+            ''
+        ],
+        6: [
+            'Сообщения эмитентов',
+            '',
+            '<i class="img-choose"></i>',
+            '<i class="img-choose"></i>',
+            '<input type="checkbox", name="choose-doc", class="choose-doc" checked>',
+            '<i class="img-choose"></i>'
+        ],
+        7: [
+            'Сообщения о банкротстве',
+            '',
+            '<i class="img-choose"></i>',
+            '<i class="img-choose"></i>',
+            '<input type="checkbox", name="choose-doc", class="choose-doc">',
+            '<i class="img-choose"></i>'
+        ],
+        8: [
+            'Особые реестры ФНС',
+            '',
+            '<i class="img-choose"></i>',
+            '<i class="img-choose"></i>',
+            '<input type="checkbox", name="choose-doc", class="choose-doc">',
+            ''
+        ],
+        9: [
+            'Реестр Торгово-промышленной палаты',
+            '',
+            '<i class="img-choose"></i>',
+            '<i class="img-choose"></i>',
+            '<input type="checkbox", name="choose-doc", class="choose-doc" checked>',
+            ''
+        ],
+        10: [
+            'Украины',
+            '',
+            '<i class="img-choose"></i>',
+            '<i class="img-choose"></i>',
+            '<input type="checkbox", name="choose-doc", class="choose-doc" checked>',
+            '<i class="img-choose"></i>'
+        ],
+        11: [
+            'Лицензии',
+            '',
+            '<i class="img-choose"></i>',
+            '<i class="img-choose"></i>',
+            '<input type="checkbox", name="choose-doc", class="choose-doc" checked>',
+            '<i class="img-choose"></i>'
+        ]
+    };
+
+    var objTariffTable2 = {
+        0: [
+            'Робота со списками организаций',
+            '',
+            '',
+            '',
+            '',
+            ''
+        ],
+        1: [
+            'Формирование собственных списков',
+            '',
+            '',
+            '<i class="img-choose"></i>',
+            '<input type="checkbox", name="choose-doc", class="choose-doc" checked>',
+            '<i class="img-choose"></i>'
+        ],
+        2: [
+            'Анализ взаимосвязей',
+            '',
+            '',
+            '<i class="img-choose"></i>',
+            '<input type="checkbox", name="choose-doc", class="choose-doc" checked>',
+            ''
+        ],
+        3: [
+            'Наблюдение за организациями в год **',
+            '',
+            '',
+            '<i class="img-choose"></i>',
+            '<input type="checkbox", name="choose-doc", class="choose-doc" checked>',
+            '<i class="img-choose"></i>'
+        ],
+        4: [
+            'Обмен списками',
+            '',
+            '',
+            '<i class="img-choose"></i>',
+            '<input type="checkbox", name="choose-doc", class="choose-doc">',
+            ''
+        ]
+    };
+
+    var objTariffTable3 = {
+        0: [
+            'Страна контрагента',
+            'Украина',
+            'Украина',
+            'Украина',
+            'Украина',
+            '<select name="country"><option value="Киев">Киев</option><option value="Николаев">Николаев</option><option value="Одесса">Одесса</option><option value="Чернигов">Чернигов</option><option value="Днепропетровск">Днепропетровск</option></select>'
+        ]
+    };
+
+    var objTariffTable4 = {
+        0: [
+            '',
+            '<span>1300</span> грн.',
+            '<span>22000</span> грн.',
+            '<span>57500</span> грн.',
+            '<span>54000</span> грн.',
+            '<span>85000</span> грн.'
+        ]
+    };
+
+    var objTariffTable5 = {
+        0: [
+            '',
+            '<a href="#", class="btn-order-tariff">Заказать</a>',
+            '<a href="#", class="btn-order-tariff">Заказать</a>',
+            '<a href="#", class="btn-order-tariff">Заказать</a>',
+            '<a href="#", class="btn-order-tariff">Заказать</a>',
+            '<a href="#", class="btn-order-tariff">Заказать</a>'
+        ]
+    };
+
+
+mixin objTable(obj)
+    each index, val in obj
+        tr
+            - for(var i = 0; i < obj[val].length; i++)
+                td!= obj[val][i]
+
+
+section#tariff.tariff
+    .tariff-container
+        h2 Тарифы
+
+        .tariff-row
+            table
+                thead
+                    tr
+                        - for(var i = 0; i < tariffTitleMain.length; i++)
+                            th!= tariffTitleMain[i]
+                tbody
+                    +objTable(objTariffTable)
+                    +objTable(objTariffTable1)
+                    +objTable(objTariffTable2)
+                    +objTable(objTariffTable3)
+                    +objTable(objTariffTable4)
+                    +objTable(objTariffTable5)
