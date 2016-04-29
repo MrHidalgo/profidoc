@@ -133,16 +133,13 @@ $( function () {
 /*
 *   SLIDER
 */
-$('section').each( function () {
-    var $this = this,
-        carousel = $($this).find('owl-carousel');
-
-    console.log(carousel);
+$( function () {
+    var carousel = $('.owl-carouse');
 
     if(carousel.length > 0){
         carousel.owlCarousel(
             {
-                loop:true,
+                //loop:true,
                 margin:10,
                 // nav:true,
                 responsiveClass:true,

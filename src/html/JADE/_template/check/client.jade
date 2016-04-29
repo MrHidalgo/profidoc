@@ -14,7 +14,37 @@ section#client.client
     .client-container
         h2= exampleTitle
 
-        //.owl-carousel.owl-theme
-        //    - for(var i = 0; i < 5; i++)
-        //        .internal-block
-        //            img(src= exampleImage[i])
+        .owl-carousel.owl-theme
+            - for(var i = 0; i < 5; i++)
+                .internal-block
+                    img(src= exampleImage[i])
+
+
+script(type='text/javascript').
+    $(document).ready( function() {
+        var carousel = $('.owl-carousel');
+
+        if (carousel.length > 0) {
+            carousel.owlCarousel(
+                    {
+                        loop: true,
+                        margin: 10,
+                        //nav:true,
+                        responsiveClass: true,
+                        responsive: {
+                            0: {
+                                items: 2
+                            },
+                            768: {
+                                items: 3
+                            },
+                            1000: {
+                                items: 5
+                            }
+                        }
+                    }
+            );
+        }
+    });
+
+

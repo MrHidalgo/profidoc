@@ -13,6 +13,7 @@ $width-all        : return-value(dimension, all);
 $color-white      : return-value(color, white);
 $color-lightBlack : return-value(color, lightBlack);
 $color-navBlue    : return-value(color, navBlue);
+$color-scopeBorder: return-value(color, scopeBorder);
 
 
 ///
@@ -24,11 +25,18 @@ section.client{
 
   .client-container{
     @include mixinMaxWidthPosition(10.7, 50, 15, 25);
-    @include mixinBorder(bottom, 1px, $color-navBlue);
+    @include mixinBorder(bottom, 1px, $color-scopeBorder);
 
 
-    .owl-carousel1{
-      padding: render-pixel(50) 0 render-pixel(25);
+    .owl-carousel{
+      //padding: render-pixel(50) 0 render-pixel(25);
+
+      .internal-block{
+        img{
+          margin: 0 auto;
+          width: initial;
+        }
+      }
     }// /-owl-carousel
 
 

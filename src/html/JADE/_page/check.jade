@@ -19,7 +19,6 @@ include ../_mixin/mixin
     ];
 
     var scriptName = [
-        '../script/jquery.min.js',
         '../script/owl.carousel.min.js',
         '../script/script.min.js'
     ];
@@ -32,6 +31,7 @@ doctype html
 html
     head
         +htmlTemplateHEAD('', arrFontName, arrStyleName, false)
+        script(src='../script/jquery.min.js')
 
     body
 
