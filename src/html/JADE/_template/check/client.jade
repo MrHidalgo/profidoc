@@ -6,6 +6,10 @@
         '../image/check-client-1.png',
         '../image/check-client-2.png',
         '../image/check-client-3.png',
+        '../image/check-client-4.png',
+        '../image/check-client-1.png',
+        '../image/check-client-2.png',
+        '../image/check-client-3.png',
         '../image/check-client-4.png'
     ];
 
@@ -15,7 +19,7 @@ section#client.client
         h2= exampleTitle
 
         .owl-carousel.owl-theme
-            - for(var i = 0; i < 5; i++)
+            - for(var i = 0; i < exampleImage.length; i++)
                 .internal-block
                     img(src= exampleImage[i])
 
@@ -28,8 +32,8 @@ script(type='text/javascript').
             carousel.owlCarousel(
                     {
                         loop: true,
+                        //nav: true,
                         margin: 10,
-                        //nav:true,
                         responsiveClass: true,
                         responsive: {
                             0: {

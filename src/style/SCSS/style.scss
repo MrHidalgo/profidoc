@@ -78,6 +78,16 @@ a{
   }
 }
 
+section{
+  .owl-carousel {
+    .owl-dots {
+      margin-top: render-pixel(20) !important;
+      display: block !important;
+    }
+  }
+}
+
+
 
 #content{
   @include mixinMaxWidthPosition(10.7, 30, 0);

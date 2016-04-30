@@ -1,0 +1,135 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all              : return-value(dimension, all);
+
+$color-white            : return-value(color, white);
+$color-black            : return-value(color, black);
+$color-scopeBorder      : return-value(color, scopeBorder);
+$color-navBlue          : return-value(color, navBlue);
+
+$imageReview            : '../../image/check-reviews.png';
+
+
+///
+/// REVIEW SECTION
+///
+section.review {
+  .review-container{
+    @include mixinMaxWidthPosition(10.7, 30, 0);
+
+
+    h2{
+      text-transform: uppercase;
+      text-align: center;
+      font: {
+        size: render-pixel(25);
+        weight: 400;
+      }
+      padding-top: render-pixel(30);
+      padding-bottom: render-pixel(15);
+      @include mixinBorder(bottom, 1px, $color-scopeBorder);
+    }// /-h2
+
+
+    >.review-row {
+      padding-top: render-pixel(40);
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-flow: row wrap;
+      align-content: center;
+
+      [class^='block-']{
+        width: $width-all/2;
+        padding: render-pixel(7.5);
+        @include mixinCenteredBLockFlex(row, flex-start, center);
+
+        .left-photo{
+          width: render-pixel(150);
+          margin-right: render-pixel(7.5);
+
+
+          i{
+            display: block;
+            @include mixinDimensions('', render-pixel(150));
+            border-radius: $width-all;
+            border: 2px solid $color-navBlue;
+            overflow: hidden;
+
+            &:before{
+              content: '';
+              display: inline-block;
+              @include mixinDimensions('', render-pixel(148), render-pixel(198));
+              background: url($imageReview) no-repeat top;
+              background-size: cover;
+            }
+          }
+        }
+
+
+        .right-text{
+          margin-left: render-pixel(7.5);
+
+          p{
+            &.name{
+              font: {
+                size: render-pixel(15);
+                weight: 600;
+              }
+              margin-bottom: render-pixel(10);
+            }
+
+            &.from{
+              font: {
+                size: render-pixel(14);
+              }
+              color: $color-navBlue;
+              text-transform: uppercase;
+              margin-bottom: render-pixel(10);
+            }
+
+            &.text{
+              position: relative;
+              font: {
+                size: render-pixel(14);
+              }
+              background-color: $color-scopeBorder;
+              padding: render-pixel(15);
+              border-radius: .5em;
+              border: 1px solid darken($color-scopeBorder, 10%);
+
+              &:after{
+                content: "";
+                position: absolute;
+                top: $width-all - 93;
+                right: $width-all;
+                border-width: render-pixel(12);
+                border-style: solid;
+                border-color: transparent darken($color-scopeBorder, 10%) transparent transparent;
+              }
+            }
+          }
+        }
+      }
+
+
+      .btn-review-more{
+        color: $color-navBlue;
+        font: {
+          size: render-pixel(15);
+          weight: 500;
+        }
+        text-transform: uppercase;
+        border-bottom: 2px solid $color-navBlue;
+      }// /-btn-review-more
+    }// /-.review-row
+  }// /-.review-container
+}// /-section.review

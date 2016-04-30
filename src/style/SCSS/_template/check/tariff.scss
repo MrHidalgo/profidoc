@@ -16,6 +16,9 @@ $color-scopeBorder      : return-value(color, scopeBorder);
 $color-yellow           : return-value(color, yellow);
 
 $image-choose0          : '../../image/check-tarif-0.png';
+$image-checked          : '../../image/check-tarif-1.png';
+$image-nchecked         : '../../image/check-tarif-2.png';
+$image-select-arrow     : '../../image/check-tarif-3.png';
 
 
 ///
@@ -157,6 +160,63 @@ section.tariff{
               vertical-align: baseline;
             }// /-border container
           }
+        }
+
+
+        .select-custom {
+          position: relative;
+          @include mixinDimensions('', render-pixel(135), render-pixel(19));
+          border: 1px solid lightgray;
+          margin: 0 auto;
+
+          .select-value{
+            height: $width-all;
+
+            span{
+              position: absolute;
+              top: 0;  left: render-pixel(5);
+              @include mixinDimensions('', $width-all);
+              font-size: render-pixel(13);
+              line-height: 1.35;
+              text-align: left;
+            }
+
+            i{
+              position: absolute;
+              top: 8px;  right: 3px;
+              @include mixinDimensions('', render-pixel(9), render-pixel(5));
+              background: url($image-select-arrow) no-repeat right;
+              background-size: contain;
+            }
+          }
+
+          select {
+            position: absolute;
+            width: $width-all;
+            top: 0;
+            left: 0;
+            opacity: 0;
+          }
+        }// /-.select-custom
+
+
+        .checkbox-custom{
+          position: relative;
+          @include mixinDimensions('', render-pixel(12));
+          background: url($image-nchecked) no-repeat center;
+          background-size: contain;
+          margin: 0 auto;
+
+          input[type='checkbox'] {
+            @include mixinDimensions('', $width-all);
+            @include mixinCenteredBLockAbsolute(0,0,0,0);
+            opacity: 0;
+            cursor: pointer;
+          }
+        }// /-.checkbox-custom
+
+        .checkbox-custom.check{
+          background: url($image-checked) no-repeat center;
         }
       }// /-table
     }// /-.tariff-row

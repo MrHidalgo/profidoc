@@ -20,16 +20,23 @@ $color-scopeBorder: return-value(color, scopeBorder);
 /// EXAMPLE SECTION
 ///
 section.client{
-  @include mixinDimensions('min', $width-all, render-pixel(518));
-
-
   .client-container{
     @include mixinMaxWidthPosition(10.7, 50, 15, 25);
     @include mixinBorder(bottom, 1px, $color-scopeBorder);
 
 
+    h2{
+      text-transform: uppercase;
+      text-align: center;
+      font: {
+        size: render-pixel(25);
+        weight: 400;
+      }
+      padding-bottom: render-pixel(15);
+    }
+
+
     .owl-carousel{
-      //padding: render-pixel(50) 0 render-pixel(25);
 
       .internal-block{
         img{
@@ -42,6 +49,9 @@ section.client{
 
     .internal-block{
       text-align: center;
+      height: render-pixel(150);
+      @include mixinCenteredBLockFlex(column, center, center);
+
 
       img{
         cursor: pointer;
@@ -52,6 +62,7 @@ section.client{
           transition: all .5s ease-in-out;
         }
       }// /-img
+
 
       p{
         font-size: render-pixel(14);
