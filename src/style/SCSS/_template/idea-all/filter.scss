@@ -1,0 +1,65 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all              : return-value(dimension, all);
+
+$color-white            : return-value(color, white);
+$color-black            : return-value(color, black);
+$color-scopeBorder      : return-value(color, scopeBorder);
+
+
+///
+/// FILTER SECTION
+///
+section.filter {
+  .filter-container{
+    @include mixinMaxWidthPosition(10.7, 20, 0);
+
+
+    .filter-row{
+      @include mixinCenteredBLockFlex(row, flex-start, flex-start);
+
+
+      .select-custom {
+        margin: 0 render-pixel(15);
+        position: relative;
+        background-color: $color-scopeBorder;
+        text-align: center;
+        line-height: 2.3;
+
+
+        &:first-child{
+          @include mixinDimensions('', render-pixel(211), render-pixel(39));
+        }
+
+        &:nth-child(2){}
+        &:last-child{}
+
+
+
+        span{
+          font: {
+            size: render-pixel(16.5);
+            weight: 600;
+          }
+          color: lighten($color-black, 35%);
+        }
+
+        select{
+          position: absolute;
+          top: 0;
+          left: 0;
+          @include mixinDimensions('', $width-all);
+          opacity: 0;
+        }
+      }// -.select-custom
+    }// /- filter-row
+  }// /-.filter-container
+}// /-section.filter

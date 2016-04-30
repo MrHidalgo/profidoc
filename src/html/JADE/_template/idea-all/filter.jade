@@ -1,0 +1,63 @@
+-
+    var ideaAllSelect0 = [
+        'Любая отрасль',
+        'Отрасль 0',
+        'Отрасль 1',
+        'Отрасль 2',
+        'Отрасль 3',
+        'Отрасль 4',
+        'Отрасль 5',
+        'Отрасль 6',
+        'Отрасль 7',
+        'Отрасль 8',
+        'Отрасль 9'
+    ];
+
+    var ideaAllSelect1 = [
+        '10 000',
+        '20 000',
+        '30 000',
+        '40 000',
+        '50 000',
+        '60 000',
+        '70 000',
+        '80 000',
+        '90 000',
+        '100 000'
+    ];
+
+    var ideaAllSelect2 = [
+        '10 000',
+        '20 000',
+        '30 000',
+        '40 000',
+        '50 000',
+        '60 000',
+        '70 000',
+        '80 000',
+        '90 000',
+        '100 000'
+    ];
+
+mixin selectTemplate(arrValue)
+    div.select-custom
+        div.select-value
+            i.before
+            span
+            i.after
+
+        select
+            - for(var i = 0; i < arrValue.length; i++)
+                if i == 0
+                    option(value=arrValue[i], style='display: none;')!= arrValue[i]
+                else
+                    option(value=arrValue[i])!= arrValue[i]
+
+
+section#filter.filter
+    .filter-container
+        .filter-row
+            +selectTemplate(ideaAllSelect0)
+            +selectTemplate(ideaAllSelect1)
+            +selectTemplate(ideaAllSelect2)
+

@@ -66,28 +66,28 @@ app.use('/',	        express.static('./dist/',
 //         'index' : 'check.html'
 //     }
 // ));
-//
-// // IDEA FOR BUSINESS
-// app.use('/idea',	express.static('./dist/page/',
-//     {
-//         'index' : 'idea.html'
-//     }
-// ));
-//
-// // IDEA FOR BUSINESS ALL
-// app.use('/idea/all',	express.static('./dist/page/',
-//     {
-//         'index' : 'idea-all.html'
-//     }
-// ));
-//
-// // IDEA FOR BUSINESS DETAILS
-// app.use('/idea/details',	express.static('./dist/page/',
-//     {
-//         'index' : 'idea-details.html'
-//     }
-// ));
-//
+
+ // IDEA FOR BUSINESS
+ app.use('/idea',	express.static('./dist/page/',
+     {
+         'index' : 'idea.html'
+     }
+ ));
+
+ // IDEA FOR BUSINESS ALL
+ app.use('/idea/all',	express.static('./dist/page/',
+     {
+         'index' : 'idea-all.html'
+     }
+ ));
+
+ // IDEA FOR BUSINESS DETAILS
+ app.use('/idea/details',	express.static('./dist/page/',
+     {
+         'index' : 'idea-details.html'
+     }
+ ));
+
 // // REVIEWS
 // app.use('/reviews',	express.static('./dist/page/',
 //     {
