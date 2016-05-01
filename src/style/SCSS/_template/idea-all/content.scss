@@ -1,0 +1,107 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all              : return-value(dimension, all);
+
+$color-white            : return-value(color, white);
+$color-black            : return-value(color, black);
+$color-scopeBorder      : return-value(color, scopeBorder);
+$color-navBlue          : return-value(color, navBlue);
+
+$image-play-btn         : '../image/idea-all-play.png';
+
+
+///
+/// CONTENT SECTION
+///
+section.content {
+  .content-container {
+    .content-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-flow: row wrap;
+      align-content: center;
+
+
+      [class^='block-'] {
+        width: render-pixel(334);
+        margin-right: render-pixel(22);
+        margin-bottom: render-pixel(22);
+        border: 1px solid $color-scopeBorder;
+
+
+        div{
+          &.info-block,
+          &.dop-block{
+            padding: render-pixel(7.5) render-pixel(15);
+          }
+
+
+          &.video-block{
+            position: relative;
+
+            img.img-responsive{
+              max-width: $width-all;
+              height: auto;
+              display: block;
+            }
+
+            a.btn-play{
+              @include mixinCenteredBLockAbsolute(0,0,0,0);
+              background: url($image-play-btn) no-repeat center;
+            }
+          }
+
+          &.info-block{
+            h2{
+              font: {
+                size: render-pixel(16);
+                weight: 600;
+              }
+              min-height: render-pixel(60);
+            }
+
+            p{
+              margin-bottom: render-pixel(10);
+              color: darken($color-scopeBorder, 45%);
+            }
+
+            p.price{
+              padding-bottom: render-pixel(20);
+              border-bottom: 1px solid $color-scopeBorder;
+            }
+          }
+
+          &.dop-block{
+            padding: 0 render-pixel(15) render-pixel(20);
+
+            a{
+              font-size: render-pixel(15.5);
+              color: $color-navBlue;
+            }
+          }
+        }
+      }// /-[class^='block-']
+
+
+      .btn-load-more {
+        padding: render-pixel(30);
+        font: {
+          size: render-pixel(22.5);
+          weight: 400;
+        }
+        text-decoration: underline;
+        text-transform: uppercase;
+        color: $color-navBlue;
+      }// /-btn-load-more
+    }// /-.content-row
+  }// /-.content-container
+}// /-section.content
