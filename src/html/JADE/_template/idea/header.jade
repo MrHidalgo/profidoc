@@ -1,0 +1,39 @@
+-
+    var headerLeftMenu = [
+        'ЗДОРОВЬЕ И ОТДЫХ',
+        'ИНТЕРНЕТ-МАГАЗИНЫ',
+        'ИНФОРМАЦИОННЫЕ ТЕХНОЛОГИИ',
+        'ОБРАЗОВАНИЕ',
+        'ОБЩЕПИТ',
+        'ПРОИЗВОДСТВО'
+    ];
+
+    var headerRightMenu = [
+        'СМИ И ВИДЕОПРОДАКШН',
+        'СОЦИАЛЬНЫЙ БИЗНЕС',
+        'СТРОИТЕЛЬСТВО',
+        'УСЛУГИ',
+        'ФЕРМЕРСКОЕ ХОЗЯЙСТВО'
+    ];
+
+
+section#header.header
+    .header-container
+        .header-row
+            .internal-container-block
+                .left-block
+                    ul.list
+                        - for(var i = 0; i < headerLeftMenu.length; i++)
+                            li
+                                a(href='javascript: void(0);', class='btn-#{i}')!= headerLeftMenu[i]
+
+
+                .right-block
+                    ul.list
+                        - for(var i = 0; i < headerRightMenu.length; i++)
+                            li
+                                a(href='javascript: void(0);', class='btn-#{i}')!= headerRightMenu[i]
+
+
+            .internal-container-btn
+                a(href='idea-all.html', class='btn-more-idea')!= 'Показать идеи'

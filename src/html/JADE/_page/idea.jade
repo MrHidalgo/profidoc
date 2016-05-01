@@ -8,7 +8,10 @@ include ../_mixin/mixin
     var arrStyleName = [
         '../style/style.min.css',
         '../style/_dop/breadcrumbs.min.css',
-        '../style/idea/idea.min.css'
+        '../style/idea/idea.min.css',
+        '../style/idea/header.min.css',
+        '../style/idea/idea-content.min.css',
+        '../style/idea/footer.min.css'
     ]
 
     var scriptName = [
@@ -33,6 +36,17 @@ html
         // BREADCRUMBS BLOCK
         block breadcrumbs
             include ../_template/idea/breadcrumbs
+
+
+        block header
+            include ../_template/idea/header
+
+        block idea-content
+            include ../_template/idea/idea-content
+
+        block footer
+            include ../_template/idea/footer
+
 
 
         // FOOTER MENU

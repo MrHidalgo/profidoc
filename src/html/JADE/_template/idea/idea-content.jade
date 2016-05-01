@@ -1,0 +1,151 @@
+-
+    var ideaTitle = [
+        'Бизнес в интернете',
+        'Бизнес в мегаполисе',
+        'Свое дело в маленьком городе',
+        'Старт до 30 000 грн.',
+        'Бизнес с нуля'
+    ];
+
+    var ideaMain = [
+        'Как создавать полезные программы для жителей большого города',
+        'Как открыть рекламное агенство  в Днепропетровске',
+        'Как открыть рекламное агенство  в Днепропетровске',
+        'Как открыть рекламное агенство  в Днепропетровске'
+    ];
+
+    var ideaMainDop = [
+        'Информационные технологии',
+        'Днепропетровск',
+        'Днепропетровск',
+        'Днепропетровск'
+    ];
+
+
+    var ideaContentNotBg0 = [
+        'Стартап и минимум затрат: как открыть творческую мастерскую',
+        'Как за 100 гривен создать переводчик текстов?',
+        'Как уборку превратить в технологичный бизнес'
+    ];
+    var ideaContentNotBg00 = [
+        'Стартовый капитал - 45 000 грн.',
+        'Стартовый капитал - 100 грн.',
+        'Стартовый капитал - 100 000 грн.'
+    ];
+
+    var ideaContentNotBg1 = [
+        'Стартап – это попытка изменить свою жизнь копия',
+        'Как простой бизнес решает сложные  проблемы',
+        'Как запатентовать и монетизировать  изобретение'
+    ];
+    var ideaContentNotBg11 = [
+        'Киев',
+        'Киев',
+        'Киев'
+    ];
+
+    var ideaBtn0 = 'Посмотреть 9 идей';
+    var ideaBtn1 = 'Посмотреть 15 идей';
+    var ideaBtn2 = '75 идей из 12 городов';
+    var ideaBtn3 = 'Посмотреть 23 идей';
+    var ideaBtn4 = '20 идей из 9 городов';
+
+    var contentImage = [
+        '../../image/idea-all-0.png',
+        '../../image/idea-all-1.png',
+        '../../image/idea-all-2.png',
+        '../../image/idea-all-0.png',
+        '../../image/idea-all-1.png',
+        '../../image/idea-all-2.png'
+    ];
+
+    var contentTitle = [
+        'Как зарабатывать на доработке и модернизации автомобилей?',
+        'Бизнес с нуля: как открыть творческую мастерскую',
+        'Как преуспеть на конкурентном рынке интернет-медицины',
+        'Как зарабатывать на доработке и модернизации автомобилей?',
+        'Бизнес с нуля: как открыть творческую мастерскую',
+        'Как преуспеть на конкурентном рынке интернет-медицины'
+    ];
+
+    var contentCity = [
+        'Львов',
+        'Одесса',
+        'Днепропетровск',
+        'Львов',
+        'Одесса',
+        'Днепропетровск',
+    ];
+
+    var contentPrice = [
+        'Стартовый капитал - 90 000 грн.',
+        'Стартовый капитал - 60 000 грн.',
+        'Стартовый капитал - 75 000 грн.',
+        'Стартовый капитал - 80 000 грн.',
+        'Стартовый капитал - 50 000 грн.',
+        'Стартовый капитал - 55 000 грн.',
+    ];
+
+    var contentTag = [
+        'Социальный  бизнес',
+        'Социальный  бизнес',
+        'Социальный  бизнес',
+        'Социальный  бизнес',
+        'Социальный  бизнес',
+        'Социальный  бизнес',
+    ];
+
+
+mixin contentInternal(title, main, slogan, btn, arrMain, arrDop)
+    .internal-container
+        .left
+            p.main!= main
+            p.slogan!= slogan
+            a(href='javascript: void(0);', class='btn-see')!= btn
+
+        .right
+            ul.list
+                - for(var i = 0; i < arrMain.length; i++)
+                    li
+                        p.main!= arrMain[i]
+                        p.slogan!= arrDop[i]
+
+
+mixin contentNotBg(opt, count, title, main, slogan, btn, arrMain, arrDop)
+    if(opt == 'bg')
+        div(class='idea-content-row-bg-#{count}')
+            h2!= title
+            +contentInternal(title, main, slogan, btn, arrMain, arrDop)
+    else
+        h2!= title
+        .idea-content-row
+            +contentInternal(title, main, slogan, btn, arrMain, arrDop)
+
+
+
+section#idea-content.idea-content
+    .idea-content-container
+        +contentNotBg(false, false, ideaTitle[0], ideaMain[0], ideaMainDop[0], ideaBtn0, ideaContentNotBg0, ideaContentNotBg00)
+        +contentNotBg('bg', 0, ideaTitle[1], ideaMain[1], ideaMainDop[1], ideaBtn2, ideaContentNotBg1, ideaContentNotBg11)
+        +contentNotBg('bg', 1, ideaTitle[2], ideaMain[3], ideaMainDop[2], ideaBtn2, ideaContentNotBg1, ideaContentNotBg11)
+        +contentNotBg(false, false, ideaTitle[3], ideaMain[0], ideaMainDop[0], ideaBtn1, ideaContentNotBg0, ideaContentNotBg00)
+        +contentNotBg('bg', 2, ideaTitle[4], ideaMain[3], ideaMainDop[3], ideaBtn2, ideaContentNotBg1, ideaContentNotBg11)
+
+    .idea-content-container-more
+        h2!= 'Свежие идеи'
+        .idea-content-row
+            - for(var i = 0; i < contentImage.length; i++)
+                div(class='block-#{i}')
+                    div.video-block
+                        img(src= contentImage[i], class='img-responsive')
+                        a(href='#', class='btn-play')
+
+                    div.info-block
+                        h2!= contentTitle[i]
+                        p.city!= contentCity[i]
+                        p.price!= contentPrice[i]
+
+                    div.dop-block
+                        a(href='#', class='btn-tags')!= contentTag[i]
+
+            a(href='#', class='btn-load-more')!= 'Загрузить ещё'

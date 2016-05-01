@@ -1,0 +1,93 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all        : return-value(dimension, all);
+
+$color-white            : return-value(color, white);
+$color-black            : return-value(color, black);
+$color-gradientYellow3  : return-value(color, gradientYellow3);
+
+
+$image-header-bg  : '../../image/idea-header-bg.png';
+
+///
+/// HEADER SECTION
+///
+section.header{
+  .header-container{
+    background: url($image-header-bg) no-repeat center;
+    @include mixinDimensions('', $width-all, render-pixel(457));
+
+
+    .header-row{
+      @include mixinMaxWidthPosition(10.7, 0, 0);
+
+
+      .internal-container{
+
+        &-block{
+          height: render-pixel(357);
+          @include mixinCenteredBLockFlex(row, center, center);
+
+
+          .left-block,
+          .right-block{
+            width: $width-all/2;
+
+            ul{
+              li{
+                a{
+                  font: {
+                    size: render-pixel(16);
+                    weight: 600;
+                  }
+                  color: $color-black;
+                  line-height: 2;
+                  @include mixinTextShadow(1px, 1px, 1px, rgba($color-black, .3));
+                }
+              }
+            }
+          }
+
+
+          .left-block{
+            text-align: left;
+          }
+
+
+          .right-block{
+            text-align: right;
+          }
+        }
+
+
+        &-btn{
+          height: render-pixel(90);
+
+
+          .btn-more-idea{
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            color: $color-black;
+            background-color: $color-gradientYellow3;
+            line-height: 2.7;
+            @include mixinBoxShadow(none, 1px, 1px, 1px, rgba($color-black, .5));
+            @include mixinDimensions('', 232px, 56px);
+            font: {
+              size: render-pixel(19.5);
+              weight: 600;
+            }
+          }// /-btn-more-idea
+        }// /-btn
+      }// /-.internal-container
+    }// /-.header-row
+  }// /-.header-container
+}// /-section.header
