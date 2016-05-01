@@ -1,0 +1,36 @@
+-
+    var socList = [
+        '../../image/content-page-0.png',
+        '../../image/content-page-1.png',
+        '../../image/content-page-2.png',
+        '../../image/content-page-3.png',
+        '../../image/content-page-4.png'
+    ];
+
+
+section#footer.footer
+    .footer-container
+        .footer-row
+            p Поделиться
+
+            ul.soc-list
+                - for(var i = 0; i < socList.length; i++)
+                    li: a(href='javascript: void(0);', class='btn-soc-#{i}'): img(src= socList[i], class='img-responsive')
+
+        .footer-row
+            header
+                p!= 'Не пропустите новые публикации'
+
+            section
+                p!= 'Подписывайтесь, и мы будем один раз в неделю присылать полезные бизнес-советы, аналитические статьи, истории успеха и провала, интервью, а также мнения экспертов на острые темы.'
+
+                form(name='subscribe', action='')
+                    div.field-name
+                        input(type='text', class='name-input', id='name', placeholder='Имя', required)
+                        p(class='help-block help-block-error') error
+
+                    div.field-email
+                        input(type='email', class='email-input', id='email', placeholder='E-mail', required)
+                        p(class='help-block help-block-error') warning
+
+                    button(type='submit', class='btn-subscribe') подписаться

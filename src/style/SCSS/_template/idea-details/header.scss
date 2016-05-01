@@ -50,11 +50,13 @@ section.header {
           .right {
           }
 
+
           .left{
             @include mixinDimensions('', render-pixel(40));
             text-align: center;
             margin-right: render-pixel(15);
           }
+
 
           .right{
             width: calc(100% - 50px);
@@ -81,7 +83,8 @@ section.header {
         }// /-block-
       }
     }
-  }// /-.hedaer-container
+  }// /-.header-container
+
 
   >p{
     @include mixinMaxWidthPosition(10.7, 0, 0, 20, 0);

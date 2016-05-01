@@ -1,0 +1,151 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all              : return-value(dimension, all);
+
+$color-white            : return-value(color, white);
+$color-black            : return-value(color, black);
+$color-scopeBorder      : return-value(color, scopeBorder);
+$color-darkenBlueText   : return-value(color, darkenBlueText);
+$color-subscribeHeadGS  : return-value(color, subscribeHeadGS);
+$color-subscribeHeadGE  : return-value(color, subscribeHeadGE);
+$color-gradientYellow3  : return-value(color, gradientYellow3);
+
+
+///
+/// FOOTER SECTION
+///
+section.footer {
+  .footer-container{
+    @include mixinMaxWidthPosition(10.7, 0, 0);
+
+
+    .footer-row{
+
+
+      &:first-child{
+        margin-bottom: render-pixel(20);
+
+        p{
+          font-size: render-pixel(16.5);
+          color: lighten($color-black, 35%);
+        }
+
+        ul.soc-list{
+          padding: render-pixel(20) 0;
+          @include mixinCenteredBLockFlex(row, center, flex-start);
+
+          li{
+            a{
+              padding-right: render-pixel(10);
+            }
+          }
+        }// /-ul.soc-list
+      }
+
+
+      &:last-child{
+        margin: 0 0 render-pixel(50);
+        @include mixinBorder('all', 1px, $color-scopeBorder);
+        @include mixinDimensions('', render-pixel(610), auto);
+
+
+        header{
+          height: render-pixel(50);
+          padding: 0 render-pixel(20);
+          @include mixinLinerGradient($color-subscribeHeadGS, $color-subscribeHeadGE);
+
+
+          p{
+            font: {
+              size: render-pixel(20);
+              weight: 600;
+            }
+            color: $color-darkenBlueText;
+            line-height: 2.4;
+
+
+            span{
+              color: darken($color-darkenBlueText, 15%);
+            }
+          }
+        }
+
+        section{
+          background-color: rgba($color-scopeBorder, .65);
+
+
+          p{
+            font-size: render-pixel(13);
+            padding: render-pixel(10) render-pixel(20);
+          }
+
+
+          form{
+            padding: render-pixel(10) render-pixel(20);
+            @include mixinCenteredBLockFlex(row, center, space-between);
+
+
+            p.help-block.help-block-error{
+              display: none;
+            }
+
+
+            div{
+              padding: render-pixel(5) 0;
+
+              input{
+                display: block;
+                font-style: italic;
+                padding: 0 render-pixel(10);
+                @include mixinDimensions('normal', render-pixel(200), render-pixel(27));
+                @include mixinBorder('all', 1px, $color-scopeBorder);
+                @include mixinBoxShadow('none', 0, 0, 1px, $color-scopeBorder);
+
+                &::-webkit-input-placeholder {
+                  color: darken($color-scopeBorder, 30%);
+                }
+                &:-moz-placeholder { /* Firefox 18- */
+                  color: darken($color-scopeBorder, 30%);
+                }
+                &::-moz-placeholder {  /* Firefox 19+ */
+                  color: darken($color-scopeBorder, 30%);
+                }
+                &:-ms-input-placeholder {
+                  color: darken($color-scopeBorder, 30%);
+                }
+
+                &:focus,
+                &:active{
+                  outline: none;
+                  @include mixinBoxShadow('none', 0, 0, 2px, $color-scopeBorder);
+                }
+              }
+            }
+
+
+            button.btn-subscribe{
+              display: block;
+              border: none;
+              outline: none;
+              background: $color-gradientYellow3;
+              //margin: render-pixel(15) auto;
+              color: $color-white;
+              text-transform: uppercase;
+              font-weight: 600;
+              border-radius: .2em;
+              @include mixinDimensions('normal', render-pixel(200), render-pixel(35));
+            }// /-btn-subscribe
+          }// /- form
+        }
+      }
+    }// /-.footer-row
+  }// /-.footer-container
+}// /-section.footer

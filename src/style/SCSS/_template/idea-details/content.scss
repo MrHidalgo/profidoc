@@ -1,0 +1,71 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all              : return-value(dimension, all);
+
+$color-white            : return-value(color, white);
+$color-black            : return-value(color, black);
+$color-scopeBorder      : return-value(color, scopeBorder);
+
+
+///
+/// CONTENT SECTION
+///
+section.content{
+  .content-container{
+    .content-row{
+
+
+      p{
+        margin-bottom: render-pixel(30);
+        font: {
+          size: render-pixel(14);
+        }
+        line-height: 1.9;
+      }
+
+
+      p.title{
+        font: {
+          size: render-pixel(16);
+          weight: 600;
+        }
+      }
+
+
+      &:first-child{
+        margin-bottom: render-pixel(20);
+        @include mixinCenteredBLockFlex(row, flex-start, flex-start);
+
+        >div{
+
+          &:first-child{
+            width: $width-all - 55;
+          }
+
+          &:last-child{
+            width: $width-all - 45;
+          }
+        }
+      }
+
+
+      &:last-child{
+        border-bottom: 1px solid $color-scopeBorder;
+
+
+        img{
+          text-align: center;
+          margin: 0 0 render-pixel(20);
+        }
+      }
+    }// /-.content-row
+  }// /-.content-container
+}// /-section#content.content
