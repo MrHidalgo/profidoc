@@ -1,0 +1,37 @@
+-
+    var headerIcon = [
+        '../../image/idea-details-icon-0.png',
+        '../../image/idea-details-icon-1.png',
+        '../../image/idea-details-icon-2.png',
+        '../../image/idea-details-icon-3.png'
+    ];
+
+    var headerText = [
+        'Днепропетровск, 2014',
+        'Интернет-магазин',
+        'Без стартового капитала',
+        'Месяц'
+    ];
+
+    var headerInfo = [
+        'Город и год запуска',
+        'Отрасль',
+        'Стартовый капитал',
+        'Окупаемость'
+    ];
+
+
+
+section#header.header
+    .header-container
+        .header-row
+            .info-block
+                - for(var i = 0; i < headerIcon.length; i++)
+                    div(class='block-#{i}')
+                        span.left
+                            img(src= headerIcon[i], class='img-responsive')
+                        span.right
+                            p.text!= headerText[i]
+                            p.info!= headerInfo[i]
+
+    p!= 'Дарья Мартыщук &nbsp;&nbsp; <span class="header-data">10 февраля</span>'

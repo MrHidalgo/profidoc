@@ -1,0 +1,94 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all              : return-value(dimension, all);
+
+$color-white            : return-value(color, white);
+$color-black            : return-value(color, black);
+$color-scopeBorder      : return-value(color, scopeBorder);
+$color-navBlue          : return-value(color, navBlue);
+
+
+$image-header-bg        : '../../image/idea-details-bg.png';
+
+
+///
+/// HEADER SECTION
+///
+section.header {
+  .header-container {
+    @include mixinDimensions('', $width-all, render-pixel(401));
+    background: url($image-header-bg) no-repeat center;
+    background-size: cover;
+
+
+    .header-row {
+      padding: 0;
+      position: relative;
+      @include mixinMaxWidthPosition(10.7, 10, 0);
+
+
+      .info-block{
+        position: absolute;
+        right: 0;  top: 0;
+        padding-top: $width-all - 95;
+        @include mixinDimensions('', $width-all - 70, render-pixel(401));
+
+        [class^='block-'] {
+          margin-bottom: render-pixel(15);
+          display: flex;
+
+
+          .left,
+          .right {
+          }
+
+          .left{
+            @include mixinDimensions('', render-pixel(40));
+            text-align: center;
+            margin-right: render-pixel(15);
+          }
+
+          .right{
+            width: calc(100% - 50px);
+            line-height: 1;
+
+            p{
+              margin-bottom: render-pixel(10);
+            }
+
+            p.text{
+              font: {
+                size: render-pixel(16.5);
+              }
+              color: $color-white;
+            }
+
+            p.info{
+              font: {
+                size: render-pixel(12.5);
+              }
+              color: darken($color-white, 35%);
+            }
+          }
+        }// /-block-
+      }
+    }
+  }// /-.hedaer-container
+
+  >p{
+    @include mixinMaxWidthPosition(10.7, 0, 0, 20, 0);
+    color: $color-navBlue;
+
+    span{
+      color: darken($color-white, 35%);
+    }
+  }
+}// /-section.header
