@@ -1,0 +1,263 @@
+//
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all              : return-value(dimension, all);
+
+$color-white            : return-value(color, white);
+$color-black            : return-value(color, black);
+$color-scopeBorder      : return-value(color, scopeBorder);
+$color-navBlue          : return-value(color, navBlue);
+$color-gradientYellow3  : return-value(color, gradientYellow3);
+$color-signFacebook     : return-value(color, signFacebook);
+$color-signTwitter      : return-value(color, signTwitter);
+
+
+$image-arrow-select     : '../../image/idea-all-filter-arrow.png';
+$image-nchecked         : '../../image/check-tarif-2.png';
+$image-checked          : '../../image/check-tarif-1.png';
+$image-form-user        : '../../image/about-form-1.png';
+$image-form-pass        : '../../image/about-form-0.png';
+$image-form-face        : '../../image/about-form-2.png';
+$image-form-twit        : '../../image/about-form-3.png';
+$image-form-line        : '../../image/about-form-4.png';
+
+
+///
+/// FORM SECTION
+///
+section.form{
+  margin: 0 auto;
+  @include mixinDimensions('', render-pixel(255), render-pixel(331));
+  @include mixinBorder('all', 1px, darken($color-scopeBorder, 15%));
+
+
+
+
+  header.form-header{
+    text-align: center;
+    height: render-pixel(54);
+    background-color: $color-navBlue;
+
+
+    p{
+      color: $color-white;
+      line-height: 3;
+
+
+      &.title{
+        font: {
+          size: render-pixel(16.5);
+          weight: 400;
+        }
+        text-transform: uppercase;
+      }
+    }
+  }// /-header.header
+
+
+  form{
+    margin: render-pixel(15) 0 render-pixel(10);
+    padding: 0 render-pixel(15);
+
+
+    .internal-block{
+      position: relative;
+      margin: render-pixel(10) 0;
+
+      .remember-text{
+        position: absolute;
+        top: -1px;
+        left: render-pixel(30);
+        color: darken($color-scopeBorder, 45%);
+        font: {
+          size: render-pixel(10);
+        }
+      }
+    }
+
+
+    .checkbox-custom{
+      position: relative;
+      @include mixinDimensions('', render-pixel(12));
+      background: url($image-nchecked) no-repeat center;
+      background-size: contain;
+      //margin: 0 auto;
+
+
+      input[type='checkbox'] {
+        @include mixinDimensions('', $width-all);
+        @include mixinCenteredBLockAbsolute(0,0,0,0);
+        opacity: 0;
+        cursor: pointer;
+      }
+
+
+      label{
+        font: {
+          size: render-pixel(11);
+        }
+        color: darken($color-scopeBorder, 35%);
+      }
+    }// /-.checkbox-custom
+
+
+    .checkbox-custom.check{
+      background: url($image-checked) no-repeat center;
+    }
+
+
+    [class^='field-'] {
+      height: render-pixel(43);
+
+
+      input{
+        @include mixinDimensions('', $width-all, 31px);
+        @include mixinBorder('all', 1px, $color-navBlue);
+
+
+        &.name-input,
+        &.password-input{
+          padding-left: render-pixel(40);
+        }
+      }
+
+
+      label.name-label,
+      label.password-label{
+        position: relative;
+
+        &:before{
+          content: '';
+          padding-right: render-pixel(25);
+          @include mixinCenteredBLockAbsolute(0,0,0,0);
+          @include mixinBorder(right, 1px, darken($color-scopeBorder, 15%));
+          @include mixinDimensions('', 9px, 15px);
+        }
+      }
+
+
+      label.name-label{
+        &:before{
+          background: url($image-form-user) no-repeat center;
+        }
+      }
+
+      label.password-label{
+        &:before{
+          background: url($image-form-pass) no-repeat center;
+        }
+      }
+
+
+      input{
+        outline: none;
+        padding: 0 render-pixel(5);
+
+
+        &:focus,
+        &:active{
+          outline: none;
+        }
+      }
+
+
+      .help-block.help-block-error{
+        display: none;
+        font-size: render-pixel(12);
+        color: red;
+      }
+    }// /-[class^='field-']
+
+
+    .btn-registration{
+      font: {
+        size: render-pixel(13.5);
+        weight: 600;
+      }
+      display: block;
+      background-color: $color-gradientYellow3;
+      text-transform: uppercase;
+      color: $color-white;
+      outline: none;
+      border: none;
+      @include mixinDimensions('', $width-all, 33px);
+    }// /-btn-registration
+  }// /-form
+
+
+  div.line{
+    position: relative;
+    height: render-pixel(4);
+    margin: 0 render-pixel(10);
+
+
+    &:before{
+      content: '';
+      position: absolute;
+      left: 0; top: 0;
+      @include mixinDimensions('', $width-all, render-pixel(4));
+      background: url($image-form-line) no-repeat center;
+      background-size: cover;
+    }
+  }// /-div.line
+
+
+  div.social{
+    margin: render-pixel(10) render-pixel(15);
+
+
+    button {
+      @include mixinDimensions('', $width-all, render-pixel(40));
+      border: none;
+      outline: none;
+      border-radius: .2em;
+      color: $color-white;
+      text-align: left;
+
+
+
+      &:first-of-type{
+        margin-bottom: render-pixel(10);
+      }
+
+
+      &.sign-f{
+        padding-left: render-pixel(15);
+        background-color: $color-signFacebook;
+
+        &:before{
+          content: '';
+          display: inline-block;
+          background: url($image-form-face) no-repeat center;
+          background-size: contain;
+          @include mixinDimensions('', 6px, 13px);
+          margin-right: render-pixel(10);
+          vertical-align: middle;
+        }
+      }
+
+
+      &.sign-t{
+        background-color: $color-signTwitter;
+        padding-left: render-pixel(10);
+
+        &:before{
+          content: '';
+          display: inline-block;
+          background: url($image-form-twit) no-repeat center;
+          background-size: contain;
+          @include mixinDimensions('', 15px, 13px);
+          margin-right: render-pixel(10);
+          vertical-align: middle;
+        }
+      }
+    }
+  }// /-div.social
+}// /-section.form

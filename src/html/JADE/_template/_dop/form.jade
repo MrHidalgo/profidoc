@@ -1,4 +1,71 @@
+-
+    var formSelectType = [
+        'ООО',
+        'ФОП',
+        'СПД',
+        'под ключ'
+    ];
+
+    var formSelectCity = [
+        'Киев',
+        'Харьков',
+        'Одесса',
+        'Днепропетровск',
+        'Запорожье',
+        'Львов',
+        'Кривой Рог',
+        'Николаев',
+        'Мариуполь',
+        'Винница',
+        'Херсон'
+    ];
+
 
 section#form.form
-    .form-container
-        h2 form
+    header#form-header.form-header
+        p.title!= 'Заявка'
+        p.slogan!= 'на регистрацию бизнеса под ключ'
+
+    form(name='registration', action='')
+        .field-name
+            label(for='name')!= '<span>*</span>ФИО:'
+            input(type='text', class='name-input', id='name', required)
+            p(class='help-block help-block-error') error
+
+        .field-name
+            span!= '<span>*</span>Тип:'
+            .select-custom
+                .select-value
+                    span
+                    i
+                select(name='type', class='type')
+                    - for(var i = 0; i < formSelectType.length; i++)
+                        option(value= formSelectType[i])!= formSelectType[i]
+
+            p(class='help-block help-block-error') error
+
+        .field-name
+            span!= '<span>*</span>Город:'
+            .select-custom
+                .select-value
+                    span
+                    i
+                select(name='type', class='type')
+                    - for(var i = 0; i < formSelectCity.length; i++)
+                        option(value= formSelectCity[i])!= formSelectCity[i]
+
+            p(class='help-block help-block-error') error
+
+        .field-name
+            label(for='email')!= '<span>*</span>E-mail:'
+            input(type='text', class='email-input', id='email', required)
+            p(class='help-block help-block-error') error
+
+        .field-name
+            label(for='phone')!= '<span>*</span>Телефон:'
+            input(type='text', class='phone-input', id='phone', required)
+            p(class='help-block help-block-error') error
+
+        button(type='submit', class='btn-registration') отправить
+
+

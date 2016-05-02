@@ -329,3 +329,163 @@ section.some{
     }// /- .some-row
   }// /-.some-container
 }// /-section.some
+
+
+
+///
+/// MEDIA QUERIES
+///
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  section#info.info{
+    .info-container{
+      .info-row{
+        display: block;
+
+
+        &:first-of-type{
+          margin: .9375em;
+
+
+          .info-row-top{
+            &-left,
+            &-right {
+              width: $width-all;
+              padding: render-pixel(15) 0;
+            }
+
+
+            &-left{
+              text-align: center;
+            }
+
+
+            &-right{
+              p{
+                font: {
+                  size: render-pixel(17.5);
+                }
+              }
+            }
+          }
+        }
+
+
+        &:last-of-type{
+          .info-row-bottom{
+            &-left,
+            &-right {
+              width: $width-all;
+            }
+
+
+            &-left{
+              margin: render-pixel(15) 0;
+            }
+
+
+            &-right{
+              padding: render-pixel(15);
+
+
+              .info-bottom-list{
+                padding-left: render-pixel(20);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  section#why.why{
+    .why-container{
+      padding: render-pixel(20) render-pixel(15);
+
+
+      .why-row{
+        flex-direction: column;
+
+
+        [class^='why-block-'] {
+          width: $width-all;
+        }
+      }
+    }
+  }
+
+
+  section#get.get {
+    .get-container{
+      .get-row{
+        &:first-of-type{
+          ul.get-list{
+            width: $width-all;
+          }
+        }
+
+
+        &:last-of-type{
+          padding: 0;
+        }
+      }
+    }
+  }
+
+
+  section#some.some{
+    .some-container{
+      padding-left: render-pixel(15);
+      padding-right: render-pixel(15);
+
+
+      a{
+        width: $width-all;
+        text-align: center;
+      }
+
+
+      .some-row{
+        flex-direction: column;
+
+
+        .some-row{
+          &-left{
+            padding: render-pixel(15) 0;
+
+
+            img{
+              padding-bottom: render-pixel(15);
+            }
+          }
+
+
+          &-right{}
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 1023px) {
+  section#get.get{
+    .get-container{
+      padding: render-pixel(20) render-pixel(15);
+
+
+      .get-row{
+        &:last-of-type{
+          display: block;
+          text-align: center;
+
+
+          >img{
+            margin: 0;
+            padding-bottom: render-pixel(30);
+          }
+        }
+      }
+    }
+  }
+}

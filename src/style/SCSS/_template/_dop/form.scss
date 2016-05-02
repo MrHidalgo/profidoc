@@ -1,0 +1,172 @@
+//
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all              : return-value(dimension, all);
+
+$color-white            : return-value(color, white);
+$color-black            : return-value(color, black);
+$color-scopeBorder      : return-value(color, scopeBorder);
+$color-navBlue          : return-value(color, navBlue);
+$color-gradientYellow3  : return-value(color, gradientYellow3);
+
+$image-arrow-select     : '../../image/idea-all-filter-arrow.png';
+
+
+///
+/// FORM SECTION
+///
+section.form{
+  margin: 0 auto;
+  padding: render-pixel(5);
+  @include mixinDimensions('', render-pixel(255), render-pixel(331));
+  @include mixinBorder('all', 1px, darken($color-scopeBorder, 15%));
+
+
+
+
+  header.form-header{
+    text-align: center;
+    height: render-pixel(54);
+    background-color: $color-navBlue;
+
+
+    p{
+      color: $color-white;
+      line-height: 1.2;
+
+
+      &.title{
+        font: {
+          size: render-pixel(28);
+          weight: 400;
+        }
+        text-transform: uppercase;
+      }
+
+
+      &.slogan{
+        font: {
+          size: render-pixel(11.5);
+        }
+      }
+    }
+  }// /-header.header
+
+
+  form{
+    margin: render-pixel(10) 0;
+    text-align: center;
+
+
+    [class^='field-'] {
+      height: render-pixel(43);
+
+
+      >label,
+      >span{
+        font: {
+          size: render-pixel(12.5);
+          weight: 600;
+        }
+        text-align: left;
+        display: inline-block;
+        width: render-pixel(80);
+      }
+
+
+      label>span,
+      span>span{
+        color:red;
+        font-size: render-pixel(12);
+        vertical-align: text-top;
+      }
+
+
+      .select-custom{
+        position: relative;
+        display: inline-block;
+        padding: 0 render-pixel(5);
+
+
+        .select-value{
+          text-align: left;
+
+
+          span{
+            font: {
+              size: render-pixel(12.5);
+            }
+          }
+
+
+          i{
+            float: right;
+            margin-top: render-pixel(10);
+            right: render-pixel(5);
+            @include mixinDimensions('', render-pixel(11), render-pixel(6));
+            background: url($image-arrow-select) no-repeat center;
+            background-size: contain;
+          }
+        }
+
+
+        select{
+          position: absolute;
+          top: 0; left: 0;
+          width: $width-all;
+          height: $width-all;
+          opacity: 0;
+        }
+      }
+
+
+      .select-custom,
+      input{
+        @include mixinDimensions('', 154px, 25px);
+        @include mixinBorder('all', 1px, darken($color-scopeBorder, 10%));
+      }
+
+
+      input{
+        outline: none;
+        padding: 0 render-pixel(5);
+
+
+        &:focus,
+        &:active{
+          outline: none;
+        }
+      }
+
+
+      .help-block.help-block-error{
+        display: none;
+        font-size: render-pixel(12);
+        color: red;
+      }
+    }// /-[class^='field-']
+
+
+    .btn-registration{
+      display: block;
+      margin: 0 auto;
+      background-color: $color-gradientYellow3;
+      font: {
+        size: render-pixel(13.5);
+        weight: 600;
+      }
+      text-transform: uppercase;
+      color: $color-white;
+      outline: none;
+      border: none;
+      @include mixinDimensions('', 130px, 33px);
+    }// /-btn-registration
+  }// /-form
+}// /-section.form

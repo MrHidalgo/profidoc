@@ -24,6 +24,7 @@
     <!-- LINK CSS-->
     <link rel="stylesheet" href="../style/style.min.css"/>
     <link rel="stylesheet" href="../style/_dop/breadcrumbs.min.css"/>
+    <link rel="stylesheet" href="../style/_dop/form1.min.css"/>
     <link rel="stylesheet" href="../style/about/titleSlogan.min.css"/>
     <link rel="stylesheet" href="../style/about/way.min.css"/>
     <link rel="stylesheet" href="../style/about/work.min.css"/>
@@ -146,7 +147,36 @@
     <!-- SECURITY BLOCK-->
     <section id="security" class="security">
       <div class="security-container">
-        <div class="security-row-left"><img src="../image/scope-6.png" class="img-responsive"></div>
+        <div class="security-row-left">
+          <section id="form" class="form">
+            <header id="form-header" class="form-header">
+              <p class="title">Начало работы</p>
+            </header>
+            <form name="registration" action="">
+              <div class="field-name">
+                <label for="name" class="name-label"></label>
+                <input type="text" id="name" placeholder="Username" required class="name-input">
+                <p class="help-block help-block-error">error</p>
+              </div>
+              <div class="field-name">
+                <label for="password" class="password-label"></label>
+                <input type="password" id="password" placeholder="Password" required class="password-input">
+                <p class="help-block help-block-error">error</p>
+              </div>
+              <div class="internal-block">
+                <div class="checkbox-custom">
+                  <input type="checkbox" name="checkbox" id="remember" class="remember">
+                </div><span class="remember-text">Запомнить меня</span>
+              </div>
+              <button type="submit" class="btn-registration">вход</button>
+            </form>
+            <div class="line"></div>
+            <div class="social">
+              <button type="button" class="sign-f">Facebook login</button><br>
+              <button type="button" class="sign-t">Twitter login</button>
+            </div>
+          </section>
+        </div>
         <div class="security-row-right">
           <p>Политика конфиденциальности при подготовке документов в сервисе «ProfiDoc»</p>
           <p>Наша компания с уважением и со всей серьёзностью подходит к защите личных и корпоративных данных пользователей сервиса. Для каждого клиента создаётся личный кабинет, доступ к которому имеет только он. Все данные хранятся на защищённых серверах в дата-центрах. <a href="#">Подробнее</a></p>

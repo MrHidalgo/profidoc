@@ -111,3 +111,43 @@ section.filter {
     }// /- filter-row
   }// /-.filter-container
 }// /-section.filter
+
+
+
+///
+/// MEDIA QUERIES
+///
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  section#filter.filter{
+    .filter-container{
+      padding-bottom: 0;
+
+
+      .filter-row{
+        flex-direction: column;
+        align-items: center;
+        padding: 0 render-pixel(15);
+
+
+        div.select-custom{
+          width: $width-all;
+          margin: render-pixel(15) 0;
+        }
+      }
+    }
+  }
+
+
+  section#content.content{
+    .content-container{
+      .content-row{
+        padding: 0 render-pixel(15);
+
+
+        [class^='block-'] {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

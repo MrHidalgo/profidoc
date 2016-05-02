@@ -31,3 +31,58 @@ section.content{
   padding: render-pixel(50) 0;
   @include mixinCenteredBLockFlex(row, flex-start, center);
 }// /-section.content
+
+
+///
+/// MEDIA QUERIES
+///
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  section#content.content {
+    flex-direction: column;
+
+
+    section#left-panel.left-panel,
+    section#right-panel.right-panel{
+      width: $width-all;
+    }
+
+
+    section#left-panel.left-panel{
+      margin-right: 0 !important;
+
+
+      .left-panel-container{
+        .left-panel-row-more{
+          ul.more-list{
+            flex-direction: column;
+
+            li{
+              width: $width-all;
+            }
+          }
+        }
+      }
+    }
+
+
+    section#right-panel.right-panel{
+      margin-left: 0 !important;
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 991px) {
+  section#content.content {
+    padding-left: render-pixel(15);
+    padding-right: render-pixel(15);
+
+    section#right-panel.right-panel {
+      margin-left: render-pixel(5);
+    }
+
+    section#left-panel.left-panel {
+      margin-right: render-pixel(5);
+
+    }
+  }
+}

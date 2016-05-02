@@ -91,3 +91,16 @@ section.header{
     }// /-.header-row
   }// /-.header-container
 }// /-section.header
+
+
+
+///
+/// MEDIA QUERIES
+///
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  section#header.header{
+    .header-container{
+      padding: 0 render-pixel(15);
+    }
+  }
+}
