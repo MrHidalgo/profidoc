@@ -18,14 +18,14 @@ section#content.content
     .content-container
         .content-row
             div.img-block
-                img(src='../image/idea-details-small.png', class='img-responsive')
+                img(src='../../image/idea-details-small.png', class='img-responsive')
             div.text-block
                 p!= contentSmallText
 
         .content-row
             - for(var i = 0; i < contentMainText.length; i++)
                 if(i == 5)
-                    img(src='../image/idea-details-big.png', class='img-responsive')
+                    img(src='../../image/idea-details-big.png', class='img-responsive')
                     p!= contentMainText[i]
                 else if (i == 6)
                     p.title!= contentMainText[i]

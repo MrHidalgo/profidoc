@@ -57,7 +57,7 @@ section.navigation{
       >i.img-nav{
         cursor: pointer;
         @include mixinDimensions('normal', 323px, 42px);
-        background: url("../../image/header-logotype.png") no-repeat center;
+        background: url("../image/header-logotype.png") no-repeat center;
         background-size: contain;
       }
 

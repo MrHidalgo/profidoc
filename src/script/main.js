@@ -20,13 +20,6 @@ function close_accordion_section() {
 */
 function ajaxReplaceContent(hashValue) {
 
-    var objTitle = {
-        'about-program' : 'О программе',
-        'buy-bonus'     : 'Копить бонусные гравны',
-        'spend-bonus'   : 'Тратить бонусные гривны',
-        'rules'         : 'Правила участия'
-    };
-
     $.ajax(
         {
             url : hashValue + '.html',
@@ -41,6 +34,14 @@ function ajaxReplaceContent(hashValue) {
         }
     );
 }
+/* click item menu */
+
+$('.menu-list li a').click( function (e) {
+    e.preventDefault();
+    var hashVal = $(this).attr('href').substr(1);
+
+    ajaxReplaceContent(hashVal);
+});
 
 
 /*
@@ -113,27 +114,6 @@ $(document).ready(
                 }
             );
         }
-        /* reload page */
-        {
-            var winHash     = window.location.hash.substr(1),
-                valueActive = $('.menu-list li a'),
-                arr         = [];
-
-            for(var i = 0; i < valueActive.length; i++){
-                arr.push($(valueActive[i]).attr('href').substr(1));
-            }
-
-            if(winHash === 'about-program' || winHash === 'buy-bonus' || winHash === 'spend-bonus' || winHash === 'rules') {
-                ajaxReplaceContent(winHash);
-
-                for(var j = 0; j < arr.length; j++) {
-                    if(winHash === arr[j]) {
-                        $(valueActive).filter('[href="/' + winHash + '"]').addClass('active');
-                    }
-                }
-            };
-
-        }
         /* lang btn */
         {
             $('.header-lang a').click( function(e) {
@@ -174,15 +154,6 @@ $(document).ready(
             $('.img-nav').on('click', function (e) {
                 window.location = '/';
                 e.preventDefault();
-            });
-        }
-        /* click item menu */
-        {
-            $('.menu-list li a').click( function (e) {
-                e.preventDefault();
-                var hashVal = $(this).attr('href').substr(1);
-
-                ajaxReplaceContent(hashVal);
             });
         }
         /* accordion */
