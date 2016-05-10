@@ -5,9 +5,9 @@ app.set('port',	(process.env.PORT	||	4000));
 
 
 // MAIN PAGE
-app.use('/',	        express.static('./dist/page/',
+app.use('/',	        express.static('./dist/',
     {
-        'index' : 'scope.html'
+        'index' : 'index.html'
     }
 ));
 

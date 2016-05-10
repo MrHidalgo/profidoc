@@ -96,6 +96,7 @@ section.steps{
           @include sprite($sprite-steps-arrow);
         }
 
+
         .steps-time{
           position: absolute;
           right: render-pixel(-45);
@@ -109,6 +110,7 @@ section.steps{
             font-weight: 600;
           }// /-steps-number
         }// /-steps-time
+
 
         @each $className, $image in
                         (0, $sprite-steps-register),

@@ -15,6 +15,7 @@ $color-white        : return-value(color, white);
 $color-black        : return-value(color, black);
 
 
+
 /// [navigation, footer]
 body{
   @extend %internalPage;

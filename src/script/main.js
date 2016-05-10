@@ -18,34 +18,23 @@ function close_accordion_section() {
 /*
 *   Ajax menu 
 */
-function ajaxReplaceContent(hashValue) {
-
-    $.ajax(
-        {
-            url : hashValue + '.html',
-            cache : false,
-            success : function(html) {
-                if(hashValue in objTitle){
-                    document.title = objTitle[hashValue];
-                }
-                window.location.hash = hashValue;
-                $('#content').html(html);
-            }
-        }
-    );
-}
-/* click item menu */
-
 $('.menu-list li a').click( function (e) {
     e.preventDefault();
     var hashVal = $(this).attr('href').substr(1);
 
-    ajaxReplaceContent(hashVal);
+    $.ajax(
+        {
+            url: hashVal + '.html',
+            success: function(data) {
+                $('#content').html(data);
+            }
+        }
+    );
 });
 
 
 /*
-*   CUSTOM SELECT 
+*   CUSTOM SELECT
 */
 function selectedElementValue(opt, element) {
     if(opt === true) {

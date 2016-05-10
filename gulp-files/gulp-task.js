@@ -87,7 +87,7 @@ function htmlMainTaskPage(opt, taskName, pathName) {
             .pipe(_if(ifJade, template.jadeOptions()))
             .pipe(template.reloadTemplate())
             .pipe(
-                gulp.dest('./dist/page/')
+                gulp.dest('./dist/')
             )
             .on(commands.error, reportError)
     });

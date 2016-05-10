@@ -6,9 +6,7 @@
 - var phoneNumber   = '0 (800) 000-00-00';
 
 section#navigation.navigation
-    // TOP SECTION
     .navigation-container
-        // lang
         .header-lang
             - for(var val = 0; val < 2; val++)
                 if (val == 0)
@@ -16,9 +14,8 @@ section#navigation.navigation
                 else
                     a(href= langHash[val])= langName[val]
 
-        // logo, sign in, registration, slogan, phone
         .header-row
-            i.img-nav
+            img(src='./image/header-logotype.png', class='img-nav')
 
             .header-row-phone
                 p= phoneText
@@ -28,7 +25,6 @@ section#navigation.navigation
                 a(href='#signin', class='active') Войти
                 a(href='#registration') Регистрация
 
-    // NAV
     nav#nav.nav
         .nav-container
             ul.nav-list
