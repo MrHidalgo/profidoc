@@ -12,6 +12,7 @@
 $width-all        : return-value(dimension, all);
 
 $color-white      : return-value(color, white);
+$color-black      : return-value(color, black);
 $color-navBlue    : return-value(color, navBlue);
 $color-yellow     : return-value(color, yellow);
 
@@ -105,6 +106,7 @@ section.navigation{
 
 
   nav.nav{
+    position: relative;
     background-color: $color-navBlue;
     @include mixinDimensions('min', $width-all, render-pixel(51));
     @include mixinBorder(bottom, 2px, $color-white);
@@ -117,6 +119,8 @@ section.navigation{
       .nav-list{
         text-align: center;
         line-height: 3;
+        position: relative;
+        z-index: 100;
 
         >li{
           display: inline-block;
@@ -138,8 +142,155 @@ section.navigation{
             }
           }
         }
+
+        li.active{
+          >a{
+            color: $color-yellow;
+          }
+        }
       }
     }// /-.nav-container
+
+
+    .hide-nav-container{
+      display: none;
+      position: absolute;
+      left: 0;  top: 0;
+      background-color: $color-navBlue;
+      padding-top: render-pixel(48);
+      @include mixinDimensions('min', $width-all, auto);
+
+
+      .hide-row {
+        @include mixinMaxWidthPosition(10.7, 10, 10);
+
+        >div.container{
+          display: none;
+          @include mixinCenteredBLockFlex(row, flex-start, flex-start);
+          align-items: stretch;
+
+
+          .block-0,
+          .block-1,
+          .block-2{
+            width: $width-all - 77;
+          }
+          .block-3{
+            width: $width-all - 69;
+          }
+          [class^='block-'] {
+            position: relative;
+            padding: render-pixel(15);
+
+
+            &:after{
+              content: '';
+              position: absolute;
+              width: 1px;
+              height: $width-all;
+              right: 0;  top: 0;
+              background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+              background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
+              background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
+              filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=0 );
+            }
+
+
+            ul.list{
+              >li.title{
+                margin-bottom: render-pixel(15);
+
+                >a{
+                  display: initial;
+                  font: {
+                    size: render-pixel(15);
+                    weight: 600;
+                  }
+                  color: $color-white;
+                  @include mixinBorder(bottom, 1px, $color-white);
+
+                  &:hover{
+                    color: $color-yellow;
+                    text-decoration: none;
+                    @include mixinBorder(bottom, 1px, $color-yellow);
+                  }
+                }
+              }
+
+
+              >li{
+                margin-bottom: render-pixel(10);
+
+                >a{
+                  display: block;
+                  font: {
+                    size: render-pixel(13.5);
+                    weight: 400;
+                  }
+                  color: $color-black;
+
+                  &:hover{
+                    text-decoration: underline;
+                  }
+                }
+              }
+            }// /-ul.list
+
+
+            ul.list+ul.list{
+              margin-top: render-pixel(30);
+            }
+
+
+            ul.list+ul.list+ul.list{
+              margin-top: render-pixel(30);
+            }
+
+
+            &:last-child{
+              @include mixinCenteredBLockFlex(column, center, center);
+
+
+              &:after{
+                display: none;
+              }
+
+
+              img.img-responsive {
+                display: block;
+                height: auto;
+                max-width: 100%;
+                margin-bottom: render-pixel(15);
+              }
+
+
+              a.btn-menu {
+                display: block;
+                font: {
+                  size: render-pixel(13.5);
+                  weight: 600;
+                }
+                text-transform: uppercase;
+                color: $color-black;
+                line-height: 3.4;
+                text-align: center;
+                @include mixinDimensions('', 279px, 45px);
+                @include mixinBorder('all', 1px, lighten(gray, 30%));
+                background: rgb(255,255,255);
+                background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%);
+                background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
+                background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 );
+              }
+            }
+          }// /-[class^='block-']
+        }// /-div.container
+      }// /-.hide-row
+    }// /-.hide-nav-container
+
+    .hide-nav-container.open{
+      display: block;
+    }
   }// /-nav.nav
 }// /-nav#nav.nav
 

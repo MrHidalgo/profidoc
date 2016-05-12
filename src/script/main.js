@@ -88,6 +88,27 @@ $(document).ready(
         searchAllCheckbox();
 
 
+        /* hover main menu */
+        $('.nav-list li a').off('mouseenter').on('mouseenter',
+            function() {
+                var linkAttr = $(this).attr('data-block');
+
+                $('.nav-list li').removeClass('active');
+                $(this).closest('li').addClass('active');
+                $('.hide-nav-container').fadeIn('');
+                $('.hide-row > div').hide();
+                $('.hide-row > #'+ linkAttr + '').show();
+
+            }
+        );
+        $('.navigation-container, section.document, .header-container').off('mouseenter').on('mouseenter',
+            function() {
+                $('.hide-nav-container').fadeOut('');
+                $('.nav-list li').removeClass('active');
+            }
+        );
+
+
         /* onchange select value */
         {
             $('select').on('change', function() {

@@ -1,9 +1,145 @@
-- var menuItem      = ['Регистрация ООО/СПД', 'Изменение в ООО', 'Конструктор договоров', 'Конструктор документов', 'Проверка контрагента', 'О ресурсе'];
-- var menuHash      = ['#', '#', '#', '#', '#', '#'];
-- var langName      = ['рус', 'укр'];
-- var langHash      = ['#rus', '#ukr'];
-- var phoneText     = 'Всеукраинский сервис подготовки документов';
-- var phoneNumber   = '0 (800) 000-00-00';
+-
+    var menuItem    = [
+        'Регистрация ООО/СПД',
+        'Изменение в ООО',
+        'Конструктор договоров',
+        'Конструктор документов',
+        'Проверка контрагента',
+        'О ресурсе'
+    ];
+
+    var menuHash    = [
+        '#', '#', '#', '#', '#', '#'
+    ];
+
+    var menuAttr    = [
+        'register',
+        'change',
+        'pact',
+        'doc',
+        'test',
+        'about'
+    ];
+
+    var langName    = [
+        'рус', 'укр'
+    ];
+
+    var langHash    = [
+        '#rus', '#ukr'
+    ];
+
+    var phoneText   = 'Всеукраинский сервис подготовки документов';
+
+    var phoneNumber = '0 (800) 000-00-00';
+
+    var menuRegisterCol1 = [
+        'Регистрация ООО/СПД',
+        'Регистрация ООО в 2016 году',
+        'Полная инструкция по регистрации ООО',
+        'Форма Р11001: правила и  примеры заполнения',
+        'Образцы документов для  регистрации ООО',
+        'Примеры заполнения документов',
+        'Деятельность ФОП – ответы на  ваши вопросы'
+    ];
+    var menuRegisterCol11 = [
+        'Изменение в ООО',
+        'Регистрация ООО в 2016 году',
+        'Полная инструкция по регистрации ООО',
+        'Форма Р11001: правила и  примеры заполнения',
+        'Образцы документов для  регистрации ООО',
+        'Примеры заполнения документов',
+        'Деятельность ФОП – ответы на  ваши вопросы'
+    ];
+    var menuRegisterCol12 = [
+        'Конструктор договоров',
+        'Регистрация ООО в 2016 году',
+        'Полная инструкция по регистрации ООО',
+        'Форма Р11001: правила и  примеры заполнения',
+        'Образцы документов для  регистрации ООО',
+        'Примеры заполнения документов',
+        'Деятельность ФОП – ответы на  ваши вопросы'
+    ];
+    var menuRegisterCol13 = [
+        'Конструктор документов',
+        'Регистрация ООО в 2016 году',
+        'Полная инструкция по регистрации ООО',
+        'Форма Р11001: правила и  примеры заполнения',
+        'Образцы документов для  регистрации ООО',
+        'Примеры заполнения документов',
+        'Деятельность ФОП – ответы на  ваши вопросы'
+    ];
+    var menuRegisterCol14 = [
+        'Проверка контрагента',
+        'Регистрация ООО в 2016 году',
+        'Полная инструкция по регистрации ООО',
+        'Форма Р11001: правила и  примеры заполнения',
+        'Образцы документов для  регистрации ООО',
+        'Примеры заполнения документов',
+        'Деятельность ФОП – ответы на  ваши вопросы'
+    ];
+    var menuRegisterCol15 = [
+        'О ресурсе',
+        'Регистрация ООО в 2016 году',
+        'Полная инструкция по регистрации ООО',
+        'Форма Р11001: правила и  примеры заполнения',
+        'Образцы документов для  регистрации ООО',
+        'Примеры заполнения документов',
+        'Деятельность ФОП – ответы на  ваши вопросы'
+    ];
+    var menuRegisterCol2 = [
+        'Виды деятельности',
+        'Регистрация ООО в 2016 году',
+        'Полная инструкция по регистрации ООО'
+    ];
+    var menuRegisterCol21 = [
+        'Платная регистрация',
+        'Регистрация ООО в 2016 году',
+        'Полная инструкция по регистрации ООО'
+    ];
+    var menuRegisterCol3 = [
+        'Бесплатная консультация',
+        'Регистрация ООО в 2016 году',
+        'Полная инструкция по регистрации ООО',
+        'Форма Р11001: правила и  примеры заполнения',
+        'Образцы документов для  регистрации ООО',
+        'Примеры заполнения документов',
+        'Деятельность ФОП – ответы на  ваши вопросы'
+    ];
+
+
+mixin menuContent(val, arr)
+    div(class='block-#{val}')
+        ul.list
+            - for(var j = 0; j < arr.length; j++)
+                if (j == 0)
+                    li.title: a(href='#')!= arr[j]
+                else
+                    li: a(href='#')!= arr[j]
+
+
+mixin menuContent1(val, arr, arr1)
+    div(class='block-#{val}')
+        ul.list
+            - for(var j = 0; j < arr.length; j++)
+                if (j == 0)
+                    li.title: a(href='#')!= arr[j]
+                else
+                    li: a(href='#')!= arr[j]
+        ul.list
+            - for(var j = 0; j < arr1.length; j++)
+                if (j == 0)
+                    li.title: a(href='#')!= arr1[j]
+                else
+                    li: a(href='#')!= arr1[j]
+
+
+mixin menuContentImage(val, img, btn)
+    div(class='block-#{val}')
+        img(src= img, class='img-responsive')
+        a(href='#', class='btn-menu')!= btn
+
+
 
 section#navigation.navigation
     .navigation-container
@@ -29,5 +165,87 @@ section#navigation.navigation
         .nav-container
             ul.nav-list
                 - for(var i = 0; i < 6; i++)
-                    li: a(href= menuHash[i])= menuItem[i]
+                    li: a(href= menuHash[i], data-block= menuAttr[i])= menuItem[i]
+
+        .hide-nav-container
+            .hide-row
+                div(id='register', class='container')
+                    - for(var i = 0; i < 4; i++)
+                        case i
+                            when 0
+                                +menuContent(i, menuRegisterCol1)
+                            when 1
+                                +menuContent1(i, menuRegisterCol2, menuRegisterCol21)
+                            when 2
+                                +menuContent(i, menuRegisterCol3)
+                            when 3
+                                +menuContentImage(i, './image/hide-menu-img0.png', 'регистрация ооо/флп "под ключ"')
+                            default
+                                p!= 'Error'
+
+                div(id='change', class='container')
+                    - for(var i = 0; i < 4; i++)
+                        case i
+                            when 0
+                                +menuContent(i, menuRegisterCol11)
+                            when 1
+                                +menuContent1(i, menuRegisterCol2, menuRegisterCol21)
+                            when 2
+                                +menuContent(i, menuRegisterCol3)
+                            when 3
+                                +menuContentImage(i, './image/hide-menu-img0.png', 'регистрация ооо/флп "под ключ"')
+                            default
+                                p!= 'Error'
+                div(id='pact', class='container')
+                    - for(var i = 0; i < 4; i++)
+                        case i
+                            when 0
+                                +menuContent(i, menuRegisterCol12)
+                            when 1
+                                +menuContent1(i, menuRegisterCol2, menuRegisterCol21)
+                            when 2
+                                +menuContent(i, menuRegisterCol3)
+                            when 3
+                                +menuContentImage(i, './image/hide-menu-img0.png', 'регистрация ооо/флп "под ключ"')
+                            default
+                                p!= 'Error'
+                div(id='doc', class='container')
+                    - for(var i = 0; i < 4; i++)
+                        case i
+                            when 0
+                                +menuContent(i, menuRegisterCol13)
+                            when 1
+                                +menuContent1(i, menuRegisterCol2, menuRegisterCol21)
+                            when 2
+                                +menuContent(i, menuRegisterCol3)
+                            when 3
+                                +menuContentImage(i, './image/hide-menu-img0.png', 'регистрация ооо/флп "под ключ"')
+                            default
+                                p!= 'Error'
+                div(id='test', class='container')
+                    - for(var i = 0; i < 4; i++)
+                        case i
+                            when 0
+                                +menuContent(i, menuRegisterCol14)
+                            when 1
+                                +menuContent1(i, menuRegisterCol2, menuRegisterCol21)
+                            when 2
+                                +menuContent(i, menuRegisterCol3)
+                            when 3
+                                +menuContentImage(i, './image/hide-menu-img0.png', 'регистрация ооо/флп "под ключ"')
+                            default
+                                p!= 'Error'
+                div(id='about', class='container')
+                    - for(var i = 0; i < 4; i++)
+                        case i
+                            when 0
+                                +menuContent(i, menuRegisterCol15)
+                            when 1
+                                +menuContent1(i, menuRegisterCol2, menuRegisterCol21)
+                            when 2
+                                +menuContent(i, menuRegisterCol3)
+                            when 3
+                                +menuContentImage(i, './image/hide-menu-img0.png', 'регистрация ооо/флп "под ключ"')
+                            default
+                                p!= 'Error'
 
