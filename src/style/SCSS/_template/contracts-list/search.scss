@@ -1,0 +1,98 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all              : return-value(dimension, all);
+
+$color-white            : return-value(color, white);
+$color-black            : return-value(color, black);
+$color-navBlue          : return-value(color, navBlue);
+$color-yellow           : return-value(color, yellow);
+$color-scopeBorder      : return-value(color, scopeBorder);
+
+$image-search           : '../../image/icon-btn-search.png';
+
+
+
+section.search {
+
+  .search-container {
+    @include mixinMaxWidthPosition(10.7, 30, 0);
+
+
+    .help-block.help-block-error {
+      display: none;
+      font-size: render-pixel(12);
+      color: red;
+    }
+
+
+    p.example {
+      font-size: render-pixel(14.5);
+      font-style: italic;
+      color: $color-navBlue;
+      margin: render-pixel(5) 0;
+    }
+  }// /-.search-container
+}// /-section#search.search
+
+
+.search-row {
+  position: relative;
+  @include mixinDimensions('', render-pixel(580), render-pixel(38));
+
+
+  >input {
+    position: absolute;
+    left: 0;
+    padding: 0 render-pixel(15);
+    font-style: italic;
+    font-size: render-pixel(15);
+    outline: none;
+    @include mixinBorder(all, 1px, darken($color-scopeBorder, 10%));
+    border-right: none;
+    @include mixinDimensions('', 454px, $width-all);
+
+
+    &:focus,
+    &:active {
+      box-shadow: 0 0 5px 1px rgba($color-black, 0.2);
+    }
+  }
+
+
+  button {
+    position: absolute;
+    right: 0;
+    width: calc(100% - 454px);
+    height: $width-all;
+    font-size: render-pixel(16.5);
+    font-weight: 600;
+    color: $color-white;
+    background-color: $color-navBlue;
+    transition: all .3s linear;
+    cursor: pointer;
+
+
+    &:hover {
+      background-color: $color-yellow;
+    }
+
+
+    &:before{
+      content: '';
+      display: inline-block;
+      @include mixinDimensions('', 21px);
+      background: url($image-search) no-repeat center;
+      background-size: contain;
+      vertical-align: middle;
+      margin-right: render-pixel(5);
+    }
+  }
+}// /-.search-row

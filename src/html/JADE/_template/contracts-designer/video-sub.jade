@@ -1,0 +1,42 @@
+-
+    var subscribeSelect = [
+        'Подписка (Месяцев 1)',
+        'Подписка (Месяцев 2)',
+        'Подписка (Месяцев 3)',
+        'Подписка (Месяцев 4)',
+        'Подписка (Месяцев 5)',
+        'Подписка (Месяцев 6)',
+        'Подписка (Месяцев 7)',
+        'Подписка (Месяцев 8)',
+        'Подписка (Месяцев 9)',
+        'Подписка (Месяцев 10)',
+        'Подписка (Месяцев 11)',
+        'Подписка (Месяцев 12)'
+    ];
+
+
+section#video-sub.video-sub
+    .video-sub-container
+        .video-sub-row
+            video#video.video
+
+        .video-sub-row
+            p!= 'Оформить подписку на договора'
+
+            .select-custom
+                .select-value
+                    span
+                    i
+                select(name='subscribe', class='subscribe')
+                    - for(var i = 0; i < subscribeSelect.length; i++)
+                        option(value= subscribeSelect[i])!= subscribeSelect[i]
+
+            span.count!= 'Количество договоров не ограничено'
+
+            .wrap
+                .left
+                    p.price!= '<span>148.00</span> <span>грн.<span>'
+                    p.econom!= 'экономия <span class="num">5%</span>'
+
+                .right
+                    a(href='#', class='btn-subscribe-contracts')!= 'ОФОРМИТЬ'

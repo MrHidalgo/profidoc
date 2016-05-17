@@ -1,0 +1,47 @@
+include ../_mixin/mixin
+
+-
+    var arrFontName = [
+        'https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800'
+    ];
+
+    var arrStyleName = [
+        './style/style.min.css',
+        './style/_dop/breadcrumbs.min.css',
+        './style/contacts/contacts.min.css',
+        './style/contacts/left-panel.min.css',
+        './style/contacts/right-panel.min.css'
+    ]
+
+    var scriptName = [
+        './script/jquery.min.js',
+        './script/script.min.js'
+    ];
+
+
+
+
+
+doctype html
+html
+    head
+        +htmlTemplateHEAD('Контакты', arrFontName, arrStyleName, false)
+
+    body
+
+        // NAVIGATION MENU
+        include ../_template/_dop/nav
+
+        // BREADCRUMBS BLOCK
+        block breadcrumbs
+            include ../_template/contacts/breadcrumbs
+
+
+        block content
+            include ../_template/contacts/content
+
+
+        // FOOTER MENU
+        include ../_template/_dop/footer
+
+        +htmlTemplateFOOT(scriptName)

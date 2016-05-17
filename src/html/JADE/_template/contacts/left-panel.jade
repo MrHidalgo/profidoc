@@ -1,0 +1,115 @@
+-
+    var contactsRowTitle = [
+        'АДРЕС:',
+        'ТЕЛЕФОН:',
+        'E-MAIL:'
+    ];
+
+    var contactsRowAddress = [
+        'ул. Кудрявская, 37',
+        'г. Киев, Украина, 04053'
+    ];
+
+    var contactsRowPhone = [
+        '+38 044 221 50 82',
+        '+38 044 221 50 82'
+    ];
+
+    var contactsRowEmail = [
+        'office@pravoplus.com.ua',
+        ''
+    ];
+
+    var clientRowTitle = [
+        'ТЕЛЕФОН:',
+        'E-MAIL:'
+    ];
+
+    var clientRowPhone = [
+        '+38 044 221 50 85',
+        '+38 044 221 50 85'
+    ];
+
+    var clientRowEmail = [
+        'c.clients@pravoplus.com.ua',
+        ''
+    ];
+
+
+
+
+mixin blockLoop(arr)
+    - for(var j = 0; j < arr.length; j++)
+        p.info!= arr[j]
+
+mixin contactsWrapInfo(i, arrTitle, arrAddress, arrPhone, arrEmail)
+    div(class='wrap-#{i}')
+        p.title!= arrTitle[i]
+        if (i == 0)
+            +blockLoop(arrAddress)
+        else if (i == 1)
+            +blockLoop(arrPhone)
+        else
+            +blockLoop(arrEmail)
+
+
+section#left-panel.left-panel
+    .left-panel-container
+        .left-panel-row-contact
+            - for(var i = 0; i < contactsRowTitle.length; i++)
+                +contactsWrapInfo(i, contactsRowTitle, contactsRowAddress, contactsRowPhone, contactsRowEmail)
+
+
+
+        .left-panel-row-hours
+            .wrap
+                p.title!= 'Время работы службы поддержки'
+                p.info!= '<span class="date">Пн - Пт: </span> с 10:00 - 18:00'
+
+            .wrap
+                p.title!= 'Время работы сервиса'
+                p.info!= '24/7'
+
+
+
+
+        .left-panel-row-client
+            p.main!= 'Отдел по работе с корпоративными клиентами: '
+            .internal-wrap
+                - for(var i = 0; i < clientRowTitle.length; i++)
+                    +contactsWrapInfo(i, clientRowTitle, clientRowPhone, clientRowEmail, 0)
+
+
+
+        .left-panel-row-feedback
+            h1!= 'ОБРАТНАЯ СВЯЗЬ'
+
+            form(name='contacts', action='')
+                section
+                    div.field-name
+                        label(for='name') Ваше имя *
+                        br
+                        br
+                        input(type='text', class='name-input', id='name', required)
+                        p(class='help-block help-block-error') error
+
+                    div.field-email
+                        label(for='email') Email *
+                        br
+                        br
+                        input(type='email', class='email-input', id='email', required)
+                        p(class='help-block help-block-error') warning
+
+                div.field-message
+                    label(for='message') Сообщение *
+                    br
+                    br
+                    textarea(class='message-input', id='message', required)
+                    p(class='help-block help-block-error') warning
+
+                button(type='submit', class='btn-subscribe') ОТПРАВИТЬ
+
+
+        .left-panel-row-info
+            p.title!= 'Важная информация:'
+            p.info!= 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'

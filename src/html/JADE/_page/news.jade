@@ -8,7 +8,9 @@ include ../_mixin/mixin
     var arrStyleName = [
         './style/style.min.css',
         './style/_dop/breadcrumbs.min.css',
-        './style/news/news.min.css'
+        './style/news/news.min.css',
+        './style/news/right-panel.min.css',
+        './style/news/left-panel.min.css'
     ]
 
     var scriptName = [
@@ -23,7 +25,7 @@ include ../_mixin/mixin
 doctype html
 html
     head
-        +htmlTemplateHEAD('', arrFontName, arrStyleName, false)
+        +htmlTemplateHEAD('Новости', arrFontName, arrStyleName, false)
 
     body
 
@@ -33,6 +35,10 @@ html
         // BREADCRUMBS BLOCK
         block breadcrumbs
             include ../_template/news/breadcrumbs
+
+
+        block content
+            include ../_template/news/content
 
 
         // FOOTER MENU

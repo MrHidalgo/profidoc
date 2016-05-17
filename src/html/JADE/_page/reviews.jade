@@ -8,7 +8,8 @@ include ../_mixin/mixin
     var arrStyleName = [
         './style/style.min.css',
         './style/_dop/breadcrumbs.min.css',
-        './style/reviews/reviews.min.css'
+        './style/reviews/reviews.min.css',
+        './style/reviews/content.min.css'
     ]
 
     var scriptName = [
@@ -18,12 +19,10 @@ include ../_mixin/mixin
 
 
 
-
-
 doctype html
 html
     head
-        +htmlTemplateHEAD('', arrFontName, arrStyleName, false)
+        +htmlTemplateHEAD('Отзывы', arrFontName, arrStyleName, false)
 
     body
 
@@ -33,6 +32,10 @@ html
         // BREADCRUMBS BLOCK
         block breadcrumbs
             include ../_template/reviews/breadcrumbs
+
+
+        block content
+            include ../_template/reviews/content
 
 
         // FOOTER MENU

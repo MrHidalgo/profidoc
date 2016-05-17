@@ -1,0 +1,150 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all            : return-value(dimension, all);
+
+$color-white          : return-value(color, white);
+$color-navBlue        : return-value(color, navBlue);
+$color-grayDarken     : return-value(color, grayDarken);
+$color-wayGrayCircle       : return-value(color, wayGrayCircle);
+
+$image-icon-benefits-0s  : '../../image/icon-benefits-0s.png';
+$image-icon-benefits-0h  : '../../image/icon-benefits-0h.png';
+$image-icon-benefits-1s  : '../../image/icon-benefits-1s.png';
+$image-icon-benefits-1h  : '../../image/icon-benefits-1h.png';
+$image-icon-benefits-2s  : '../../image/icon-benefits-2s.png';
+$image-icon-benefits-2h  : '../../image/icon-benefits-2h.png';
+$image-icon-benefits-3s  : '../../image/icon-benefits-3s.png';
+$image-icon-benefits-3h  : '../../image/icon-benefits-3h.png';
+$image-icon-benefits-4s  : '../../image/icon-benefits-4s.png';
+$image-icon-benefits-4h  : '../../image/icon-benefits-4h.png';
+$image-icon-benefits-5s  : '../../image/icon-benefits-5s.png';
+$image-icon-benefits-5h  : '../../image/icon-benefits-5h.png';
+$image-icon-benefits-6s  : '../../image/icon-benefits-6s.png';
+$image-icon-benefits-6h  : '../../image/icon-benefits-6h.png';
+
+
+section.benefits {
+  .benefits-container {
+    text-align: center;
+    @include mixinMaxWidthPosition(10.7, 30, 0, 50);
+
+
+    h2 {
+      font: {
+        size: render-pixel(19.5);
+        weight: normal;
+      }
+      color: $color-navBlue;
+      text-transform: uppercase;
+    }// /-h2
+
+
+    .benefits-row {
+
+      &:first-of-type {
+        padding: render-pixel(20) 0;
+        @include mixinCenteredBLockFlex(row, center, center);
+
+
+        .btn-benefits.active {
+          @include mixinBorder(bottom, 2px, $color-navBlue);
+
+          @each $className, $imageH in
+                          (0, $image-icon-benefits-0h),
+                          (1, $image-icon-benefits-1h),
+                          (2, $image-icon-benefits-2h),
+                          (3, $image-icon-benefits-3h),
+                          (4, $image-icon-benefits-4h),
+                          (5, $image-icon-benefits-5h),
+                          (6, $image-icon-benefits-6h)
+          {
+            >i.img-icon-#{$className} {
+              background: url($imageH) no-repeat center;
+              background-size: contain;
+            }// /-i.img-icon
+          }// /-each
+
+          p {
+            color: $color-navBlue;
+          }
+        }
+
+
+        [class^='btn-'] {
+          width: $width-all/7;
+          @include mixinBorder(bottom, 2px, transparent);
+
+          @each $className, $imageS in
+                          (0, $image-icon-benefits-0s),
+                          (1, $image-icon-benefits-1s),
+                          (2, $image-icon-benefits-2s),
+                          (3, $image-icon-benefits-3s),
+                          (4, $image-icon-benefits-4s),
+                          (5, $image-icon-benefits-5s),
+                          (6, $image-icon-benefits-6s)
+          {
+            >i.img-icon-#{$className} {
+              display: block;
+              margin: render-pixel(15) auto;
+              @include mixinDimensions('', render-pixel(68), render-pixel(78));
+              background: url($imageS) no-repeat center;
+              background-size: contain;
+              transition: all .5s ease;
+            }// /-i.img-icon
+          }// /-each
+
+
+
+          p {
+            font: {
+              size: render-pixel(13.5);
+              weight: 400;
+            }
+            color: $color-grayDarken;
+            margin-bottom: render-pixel(20);
+          }
+        }// /-[class^='btn-']
+      }// /-&:first-child
+
+
+      &:last-of-type {
+
+        .active{
+          display: flex !important;
+        }
+
+
+        [class*='block-'] {
+          background-color: lighten($color-wayGrayCircle, 15%);
+          @include mixinBorder('all', 1px, $color-navBlue);
+          @include mixinCenteredBLockFlex(row, center, center);
+          display: none;
+
+
+          .left,
+          .right {
+            width: $width-all/2;
+            padding: render-pixel(15) render-pixel(15) render-pixel(5) render-pixel(15);
+            text-align: left;
+
+
+            > p {
+              font: {
+                size: render-pixel(15.5);
+              }
+              margin-bottom: render-pixel(10);
+            }
+          }
+        }// /-block-
+      }// /-&:last-of-type
+    }// /-.benefits-row
+  }// /-.benefits-container
+}// /-section.benefits

@@ -1,0 +1,58 @@
+include ../_mixin/mixin
+
+-
+    var arrFontName = [
+        'https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800'
+    ];
+
+    var arrStyleName = [
+        './style/style.min.css',
+        './style/_dop/breadcrumbs.min.css',
+        './style/contracts-list/contracts-list.min.css',
+        './style/contracts-list/search.min.css',
+        './style/contracts-list/text.min.css',
+        './style/contracts-list/list.min.css',
+        './style/contracts-list/found.min.css'
+    ]
+
+    var scriptName = [
+        './script/jquery.min.js',
+        './script/script.min.js'
+    ];
+
+
+
+
+
+doctype html
+html
+    head
+        +htmlTemplateHEAD('Перечень договоров', arrFontName, arrStyleName, false)
+
+    body
+
+        // NAVIGATION MENU
+        include ../_template/_dop/nav
+
+        // BREADCRUMBS BLOCK
+        block breadcrumbs
+            include ../_template/contracts-list/breadcrumbs
+
+
+        block search
+            include ../_template/contracts-list/search
+
+        block text
+            include ../_template/contracts-list/text
+
+        block list
+            include ../_template/contracts-list/list
+
+        block found
+            include ../_template/contracts-list/found
+
+
+        // FOOTER MENU
+        include ../_template/_dop/footer
+
+        +htmlTemplateFOOT(scriptName)

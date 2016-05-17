@@ -1,0 +1,59 @@
+-
+    var socialBtnClass = [
+        'fb',
+        'tw',
+        'g',
+        'vk',
+        'od'
+    ];
+
+    var socialBtnName = [
+            'Facebook',
+            'Twitter',
+            'Google',
+            'Vkontakte',
+            'Odnoklassniki'
+        ];
+
+
+section#form.form
+    .header
+        p!= 'Вход в Ваш кабинет'
+        i
+
+    .section
+        .left
+            form(name='', action='')
+                .field-name
+                    input(type='text', class='name-input', id='login', required)
+                    p(class='help-block help-block-error') error
+
+                .field-pass
+                    input(type='pass', class='pass-input', id='pass', required)
+                    p(class='help-block help-block-error') error
+
+                p!= 'Забыли пароль? Нажмите <a href="#" class="btn-forget">здесь,</a> чтобы восстановить'
+
+                .block
+                    .left
+                        button(type='button', class='btn-sign-in') Вход
+
+                    .right
+                        .checkbox-custom
+                            label(for='see-pass') Показать пароль
+                            input(type='checkbox', name='see-pass', id='see-pass')
+                        .checkbox-custom
+                            label(for='remember') Запомнить меня
+                            input(type='checkbox', name='remember', id='remember')
+
+        .right
+            p.main!= 'Вы также можете войти через социальные сети'
+
+            .wrap
+                - for(var i = 0; i < socialBtnClass.length; i++)
+                    button(type='button', class='btn-#{socialBtnClass[i]}')!= socialBtnName[i]
+
+            p!= 'Работая в системе ProfiDoc Вы соглашаетесь со всеми условиями и правилами нашей зоны.'
+
+    .footer
+        p!= 'Не зарегистрированы <a href="#" class="btn-register-now">Зарегистрируйтесь сейчас!</a>'

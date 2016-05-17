@@ -1,0 +1,71 @@
+-
+    var newsImage = [
+        'image/news-img.png',
+        'image/news-img.png',
+        'image/news-img.png'
+    ];
+
+    var newsDate = [
+        '16',
+        '10',
+        '01'
+    ];
+    var newsDate1 = [
+        'Feb',
+        'Dec',
+        'Jun'
+    ];
+
+    var newsComments = [
+        '50',
+        '150',
+        '1254'
+    ];
+    var newsComments1 = 'Com';
+
+    var newsTitle = [
+        'News WordPress Theme',
+        'News WordPress Theme',
+        'News WordPress Theme'
+    ];
+
+    var newsText = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.';
+
+
+
+section#left-panel.left-panel
+    .left-panel-container
+        .left-panel-row
+            - for(var i = 0; i < newsImage.length; i++)
+                .wrap
+                    .block-img
+                        img(src= newsImage[i], class='img-responsive')
+
+                        .wrap-date
+                            p.date!= newsDate[i]
+                            span.date!= newsDate1[i]
+
+                        .wrap-comments
+                            p.comments!= newsComments[i]
+                            span.comments!= newsComments1
+
+                    p.title!= newsTitle[i]
+                    p.text!= newsText
+
+                    a(href='#', class='btn-news-details')!= 'Подробнее'
+
+
+        .left-panel-row
+            .wrap
+                a(href='#', class='btn-news-first')!= 'Первая'
+
+                ul.list-pagination
+                    - for(var i = 1; i < 4; i++)
+                        if (i == 2)
+                            li.active
+                                a(href='#', class='btn-news-#{i}')!= i
+                        else
+                            li
+                                a(href='#', class='btn-news-#{i}')!= i
+
+                a(href='#', class='btn-news-last')!= 'Последняя'

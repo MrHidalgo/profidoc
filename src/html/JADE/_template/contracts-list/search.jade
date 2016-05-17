@@ -1,0 +1,9 @@
+
+section#search.search
+    .search-container
+        .search-row
+            input(type='text', name='search', placeholder='Укажите название договора')
+            button(type='button', class='btn-search-contract')!= 'Поиск'
+            p(class='help-block help-block-error') warning
+
+        p.example!= 'Например: Довогор о сотрудничестве (партнёрстве)'

@@ -1,0 +1,57 @@
+include ../_mixin/mixin
+
+-
+    var arrFontName = [
+        'https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800'
+    ];
+
+    var arrStyleName = [
+        './style/style.min.css',
+        './style/_dop/breadcrumbs.min.css',
+        './style/documents-designer/documents-designer.min.css',
+        './style/documents-designer/video-sub.min.css',
+        './style/documents-designer/create.min.css',
+        './style/documents-designer/choose.min.css',
+        './style/documents-designer/benefits.min.css'
+    ]
+
+    var scriptName = [
+        './script/jquery.min.js',
+        './script/script.min.js'
+    ];
+
+
+
+
+doctype html
+html
+    head
+        +htmlTemplateHEAD('Конструктор документов', arrFontName, arrStyleName, false)
+
+    body
+
+        // NAVIGATION MENU
+        include ../_template/_dop/nav
+
+        // BREADCRUMBS BLOCK
+        block breadcrumbs
+            include ../_template/documents-designer/breadcrumbs
+
+
+        // VIDEO SUBSCRIBE
+        include ../_template/documents-designer/video-sub
+
+        // CREATE CONTRACTS
+        include ../_template/documents-designer/create
+
+        // CHOOSE CONTRACTS
+        include ../_template/documents-designer/choose
+
+        // BENEFITS CONTRACTS
+        include ../_template/documents-designer/benefits
+
+
+        // FOOTER MENU
+        include ../_template/_dop/footer
+
+        +htmlTemplateFOOT(scriptName)

@@ -1,0 +1,76 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+@import "../../_extend/extend";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all            : return-value(dimension, all);
+
+$color-white          : return-value(color, white);
+$color-black          : return-value(color, black);
+$color-wayGrayCircle  : return-value(color, wayGrayCircle);
+
+
+$image-info-doc       : '../../image/icon-benefits-2h.png';
+
+
+
+/// [navigation, footer]
+body{
+  @extend %internalPage;
+}
+
+hr {
+  margin: render-pixel(30) 0;
+  box-shadow: 0px 1px 3.5px 0px rgba(0,0,0,.2);
+}
+
+section.info {
+
+  .info-container {
+    @include mixinMaxWidthPosition(10.7, 30, 0, 0);
+
+
+    h1 {
+      font: {
+        size: render-pixel(35);
+        weight: 300;
+      }
+      margin-bottom: render-pixel(15);
+    }// /-h1
+
+
+    .info-row {
+      width: $width-all;
+      padding: render-pixel(15);
+      background-color: lighten($color-wayGrayCircle, 10%);
+
+
+      > p{
+        font-size: render-pixel(15);
+        line-height: 2;
+      }
+
+
+      p.title {
+        font-weight: 600;
+        
+        
+        &:before {
+          content: '';
+          display: inline-block;
+          @include mixinDimensions('', render-pixel(25));
+          vertical-align: middle;
+          margin-right: render-pixel(15);
+          background: url($image-info-doc) no-repeat center;
+          background-size: contain;
+        }
+      }
+    }// /-.info-row
+  }// /-.info-container
+}// /-section.info

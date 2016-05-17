@@ -1,0 +1,44 @@
+-
+    var chooseTxt1All = 'Популярные договора';
+
+    var chooseTxt1Free = 'Бесплатные договора';
+
+    var chooseTxt2All = 'Все договора';
+
+    var chooseTxt2Free = 'Все бесплатные договора';
+
+    var chooseArrAll = [
+        'Договор купли-продажи автомобиля (транспортного средства)',
+        'Договор ссуды нежилого помещения',
+        'Трудовой договор между юридическим лицом и работником',
+        'Договор о совместной деятельности'
+    ];
+
+    var chooseArrFree = [
+        'Расписка',
+        'Договор о сотрудничестве (партнёрстве)',
+        'Трудовой договор физического лица с работником',
+        'Договор о совместной деятельности'
+    ];
+
+
+mixin chooseRow(opt, txt1, txt2, arr)
+    p.title!= txt1
+
+    .wrap
+        - for(var i = 0; i < arr.length; i++)
+            a(href='#', class='btn-choose-contracts')!= arr[i]
+
+    if (opt == 0)
+        a(href='#', class='btn-choose-all')!= txt2
+    else if (opt == 1)
+        a(href='#', class='btn-choose-free')!= txt2
+
+
+section#choose.choose
+    .choose-container
+        .choose-row
+            +chooseRow(0, chooseTxt1All, chooseTxt2All, chooseArrAll)
+
+        .choose-row
+            +chooseRow(1, chooseTxt1Free, chooseTxt2Free, chooseArrFree)

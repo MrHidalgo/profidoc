@@ -1,0 +1,48 @@
+include ../_mixin/mixin
+
+-
+    var arrFontName = [
+        'https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800'
+    ];
+
+    var arrStyleName = [
+        './style/style.min.css',
+        './style/_dop/breadcrumbs.min.css',
+        './style/check-in/check-in.min.css',
+        './style/check-in/choose.min.css'
+    ]
+
+    var scriptName = [
+        './script/jquery.min.js',
+        './script/script.min.js'
+    ];
+
+
+
+
+doctype html
+html
+    head
+        +htmlTemplateHEAD('Реєстрація ТОВ', arrFontName, arrStyleName, false)
+
+    body
+
+        // NAVIGATION MENU
+        include ../_template/_dop/nav
+
+        // BREADCRUMBS BLOCK
+        block breadcrumbs
+            include ../_template/check-in/breadcrumbs
+
+
+        block info
+            include ../_template/check-in/info
+
+        block choose
+            include ../_template/check-in/choose
+
+
+        // FOOTER MENU
+        include ../_template/_dop/footer
+
+        +htmlTemplateFOOT(scriptName)

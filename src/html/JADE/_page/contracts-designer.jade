@@ -1,0 +1,57 @@
+include ../_mixin/mixin
+
+-
+    var arrFontName = [
+        'https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800'
+    ];
+
+    var arrStyleName = [
+        './style/style.min.css',
+        './style/_dop/breadcrumbs.min.css',
+        './style/contracts-designer/contracts-designer.min.css',
+        './style/contracts-designer/video-sub.min.css',
+        './style/contracts-designer/create.min.css',
+        './style/contracts-designer/choose.min.css',
+        './style/contracts-designer/benefits.min.css'
+    ]
+
+    var scriptName = [
+        './script/jquery.min.js',
+        './script/script.min.js'
+    ];
+
+
+
+
+doctype html
+html
+    head
+        +htmlTemplateHEAD('Конструктор договоров', arrFontName, arrStyleName, false)
+
+    body
+
+        // NAVIGATION MENU
+        include ../_template/_dop/nav
+
+        // BREADCRUMBS BLOCK
+        block breadcrumbs
+            include ../_template/contracts-designer/breadcrumbs
+
+
+        // VIDEO SUBSCRIBE
+        include ../_template/contracts-designer/video-sub
+
+        // CREATE CONTRACTS
+        include ../_template/contracts-designer/create
+
+        // CHOOSE CONTRACTS
+        include ../_template/contracts-designer/choose
+
+        // BENEFITS CONTRACTS
+        include ../_template/contracts-designer/benefits
+
+
+        // FOOTER MENU
+        include ../_template/_dop/footer
+
+        +htmlTemplateFOOT(scriptName)

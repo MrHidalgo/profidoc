@@ -1,0 +1,11 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+
+
+section.text {
+  .text-container {
+    @include mixinMaxWidthPosition(10.7, 0, 0, 30);
+  }// /-.text-container
+}// /-section.text

@@ -1,0 +1,79 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all            : return-value(dimension, all);
+
+$color-newsText       : return-value(color, newsText);
+$color-yellow         : return-value(color, yellow);
+$color-white          : return-value(color, white);
+$color-navBlue        : return-value(color, navBlue);
+$color-scopeBorder    : return-value(color, scopeBorder);
+
+
+
+section.create {
+
+  .create-container {
+    text-align: center;
+    @include mixinBorder(bottom, 1px, $color-scopeBorder);
+    @include mixinMaxWidthPosition(10.7, 30, 0);
+
+
+    >* {
+      margin-bottom: render-pixel(15);
+    }
+
+
+    p {
+
+      &.title {
+        font: {
+          size: render-pixel(19.5);
+        }
+        color: $color-navBlue;
+        text-transform: uppercase;
+      }// /-&.title
+
+
+      &.slogan {
+        font: {
+          size: render-pixel(13.8);
+        }
+        color: darken($color-newsText, 20%);
+        margin-bottom: render-pixel(25);
+
+
+        >span {
+          text-decoration: underline;
+        }
+      }// /-&.title
+    }// /-p
+
+
+    a.btn-create-contracts {
+      font: {
+        size: render-pixel(16.5);
+        weight: 600;
+      }
+      color: $color-white;
+      line-height: 2.2;
+      display: block;
+      margin: 0 auto;
+      background-color: $color-navBlue;
+      transition: all .3s ease-in-out;
+      @include mixinDimensions('', 218px, 38px);
+
+
+      &:hover {
+        background-color: $color-yellow;
+      }
+    }// /-a.btn-create-contracts
+  }// /-.create-container
+}// /-section.create

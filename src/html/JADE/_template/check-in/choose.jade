@@ -1,0 +1,67 @@
+-
+    var chooseTitle1 = 'Розширена реєстрація ТОВ';
+    var chooseTitle2 = 'Спрощена реєстрація ТОВ </br> <span>(тільки для громадян України)<span>';
+
+    var chooseList1 = [
+        'Кілька замовників',
+        'Керівник на ваш вибір',
+        'Різні системи опадаткування'
+    ];
+
+    var chooseList2 = [
+        'Кілька замовників',
+        'Керівник на ваш вибір',
+        'Різні системи опадаткування'
+    ];
+
+    var chooseList2 = [
+        'Один замовників',
+        'Засновник є керівником',
+        'Спрощенна системи опадаткування <span>(єдинний податок)</span>'
+    ];
+
+    var chooseSelectLang = [
+        'Украинский',
+        'Украинский - Английский'
+    ];
+
+    var radioAttr1 = 'radio-extend';
+    var radioAttr2 = 'radio-simple';
+
+mixin blockChoose(radioAttr, title, arrInfo, arrLang)
+    .choose-row
+        .left
+            .radio-custom
+                input(type='radio', name= radioAttr, class= radioAttr, id= radioAttr)
+                label(for= radioAttr)!= title
+
+            ul.list
+                -for(var i = 0; i < arrInfo.length; i++)
+                    li!= arrInfo[i]
+        .center
+            p!= 'Мова статуту <span>*</span>'
+
+            .select-custom
+                .select-value
+                    span
+                    i
+                select(name='lang')
+                    - for(var i = 0; i < arrLang.length; i++)
+                        option(value= arrLang[i])!= arrLang[i]
+
+
+        .right
+            p!= 'Вартість'
+            p.price!= '1205 грн'
+
+
+
+section#choose.choose
+    .choose-container
+        +blockChoose(radioAttr1, chooseTitle1, chooseList1, chooseSelectLang)
+        +blockChoose(radioAttr2, chooseTitle2, chooseList2, chooseSelectLang)
+
+        hr
+
+        button(type='button', class='btn-check-in')!= 'Приступить к созданию'
+

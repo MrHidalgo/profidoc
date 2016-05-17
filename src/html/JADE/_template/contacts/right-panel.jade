@@ -1,0 +1,25 @@
+-
+    var freeList = [
+        'Подготовка документов',
+        'Подбор кодов ОКВЭД',
+        'Открытие расчетного счета',
+        'Консультация по регистрации бизнеса ',
+        'Консультация по налогообложению',
+        'Месяц бухгалтерского обслуживания ',
+        'Проверка документов',
+        'Подготовка документов',
+        'Подбор кодов ОКВЭД'
+    ];
+
+
+section#right-panel.right-panel
+    .right-panel-container
+        hr
+
+        .right-panel-row-free
+            p.title Бесплатно
+
+            ul.free-list
+                - for(var i = 0; i < freeList.length; i++)
+                    li: a(href='javascript: void(0);', class='list-item')= freeList[i]
+

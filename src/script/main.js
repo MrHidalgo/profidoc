@@ -54,8 +54,6 @@ function searchAllSelectStart() {
     );
 }
 
-
-
 /*
 *   CUSTOM CHECKBOX
 */
@@ -74,6 +72,26 @@ function searchAllCheckbox() {
     );
 }
 
+/*
+ *   CUSTOM RADIO
+ */
+function customRadio(elem) {
+    $('input[type="radio"]').closest('.radio-custom').removeClass('check');
+
+    if ($(elem).is(':checked')) {
+        $(elem).closest('.radio-custom').addClass('check');
+    } else {
+        $(elem).closest('.radio-custom').removeClass('check');
+    }
+}
+function searchAllRadio() {
+    $('input[type="radio"]').each(
+        function () {
+            customRadio(this);
+        }
+    );
+}
+
 
 
 
@@ -86,27 +104,89 @@ $(document).ready(
         searchAllSelectStart();
         /* custom checkbox */
         searchAllCheckbox();
+        /* custom radio */
+        searchAllRadio();
 
 
-        /* hover main menu */
-        $('.nav-list li a').off('mouseenter').on('mouseenter',
-            function() {
-                var linkAttr = $(this).attr('data-block');
+        /* ... */
+        $('.btn-choose-contract').on('click', function(e) {
+            e.preventDefault();
 
-                $('.nav-list li').removeClass('active');
-                $(this).closest('li').addClass('active');
-                $('.hide-nav-container').fadeIn('');
-                $('.hide-row > div').hide();
-                $('.hide-row > #'+ linkAttr + '').show();
+            var linkAttr = $(this).attr('href');
 
-            }
-        );
-        $('.navigation-container, section.document, .header-container').off('mouseenter').on('mouseenter',
-            function() {
-                $('.hide-nav-container').fadeOut('');
-                $('.nav-list li').removeClass('active');
-            }
-        );
+            $('ul').hide();
+
+            $('ul').filter(linkAttr).slideToggle();
+        });
+
+        $('.btn-list-change').on('click', function(e) {
+            e.preventDefault();
+
+            $('.list-item').hide();
+
+            $('.list-row-content-block').removeClass('list-row-content-block').addClass('list-row-content');
+        });
+
+        $('.btn-block-change').on('click', function(e) {
+            e.preventDefault();
+
+            $('.list-item').hide();
+
+            $('.list-row-content').removeClass('list-row-content').addClass('list-row-content-block');
+        });
+
+
+        /* pagination */
+        {
+            $('.list-pagination li a, .btn-news-first, .btn-news-last').on('click', function(e) {
+                e.preventDefault();
+
+                $('.list-pagination li').removeClass('active');
+
+                if ($(this).attr('class') === 'btn-news-first') {
+                    $('.list-pagination li:first-child').addClass('active');
+                } else if ($(this).attr('class') === 'btn-news-last'){
+                    $('.list-pagination li:last-child').addClass('active');
+                } else {
+                    $(this).closest('li').addClass('active');
+                }
+            });
+        }
+
+        /* designer doc/contr - benefits */
+        {
+            $('.benefits-row a').on('click', function(e) {
+                e.preventDefault();
+                var linkAttr = $(this).attr('data-benefits');
+
+                $('.benefits-row a').removeClass('active');
+                $(this).addClass('active');
+
+                $('.benefits-row>div').removeClass('active');
+                $('.benefits-row>div').filter('.' + linkAttr + '').addClass('active');
+            });
+        }
+
+
+        // /* hover main menu */
+        // $('.nav-list li a').off('mouseenter').on('mouseenter',
+        //     function() {
+        //         var linkAttr = $(this).attr('data-block');
+        //
+        //         $('.nav-list li').removeClass('active');
+        //         $(this).closest('li').addClass('active');
+        //         $('.hide-nav-container').fadeIn('');
+        //         $('.hide-row > div').hide();
+        //         $('.hide-row > #'+ linkAttr + '').show();
+        //
+        //     }
+        // );
+        // $('.navigation-container, section.document, .header-container').off('mouseenter').on('mouseenter',
+        //     function() {
+        //         $('.hide-nav-container').fadeOut('');
+        //         $('.nav-list li').removeClass('active');
+        //     }
+        // );
 
 
         /* onchange select value */
@@ -116,6 +196,7 @@ $(document).ready(
             });
 
         }
+
         /* click checkbox */
         {
             $('input[type="checkbox"]').on('click',
@@ -124,6 +205,18 @@ $(document).ready(
                 }
             );
         }
+
+        /* click radio */
+        {
+            $('input[type="radio"]').on('click',
+                function () {
+                    customRadio(this);
+                    $('.choose-row').removeClass('active');
+                    $(this).closest('.choose-row').addClass('active');
+                }
+            );
+        }
+
         /* lang btn */
         {
             $('.header-lang a').click( function(e) {
@@ -133,6 +226,7 @@ $(document).ready(
                 $(this).addClass('active');
             });
         }
+
         /* owl carousel */
         {
             var carousel = $('.owl-carousel');
@@ -159,6 +253,7 @@ $(document).ready(
                 );
             }
         }
+
         /* go to home page logotype */
         {
             $('.img-nav').on('click', function (e) {
@@ -166,6 +261,7 @@ $(document).ready(
                 e.preventDefault();
             });
         }
+
         /* accordion */
         {
             $('.accordion-section-title').click(function(e) {
@@ -183,6 +279,7 @@ $(document).ready(
                 e.preventDefault();
             });
         }
+
         /* active menu content page */
         {
             $('.menu-list li a').click( function (e) {
@@ -192,6 +289,7 @@ $(document).ready(
                 $(this).addClass('active');
             });
         }
+
         /* split text & add ... */
         {
             $('p.description').html(less(65));

@@ -15,6 +15,7 @@ var gulp            =   require('gulp'),
     rename          =   require('gulp-rename'),         // RENAME OUT.. FILES
     notify          =   require("gulp-notify"),         // NOTIFY
     spritesmith     =   require('gulp.spritesmith'),    // SPRITE
+    changed         =   require('gulp-changed'),
     util            =   require('gulp-util');
 
 
@@ -59,6 +60,7 @@ function htmlMainTask(opt, taskName, pathName) {
         gulp.src(
             pathName
             )
+            .pipe(changed(path.dist.html))
             .pipe(plumber(
                 configuration.mainConfig.errorPlumber
             ))
@@ -80,6 +82,7 @@ function htmlMainTaskPage(opt, taskName, pathName) {
         gulp.src(
             pathName
             )
+            .pipe(changed('./dist/'))
             .pipe(plumber(
                 configuration.mainConfig.errorPlumber
             ))
@@ -106,6 +109,7 @@ function styleMainTask(opt, taskName, pathName) {
         gulp.src(
             pathName
             )
+            .pipe(changed(path.dist.style))
             .pipe(plumber(
                 configuration.mainConfig.errorPlumber
             ))
@@ -149,6 +153,7 @@ function mainScriptTask(taskName, pathName) {
         gulp.src(
             pathName
             )
+            .pipe(changed(path.dist.script))
             .pipe(jshint())
             .pipe(plumber(
                 configuration.mainConfig.errorPlumber

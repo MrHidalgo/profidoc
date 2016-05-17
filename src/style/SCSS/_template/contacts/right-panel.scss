@@ -1,0 +1,95 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all               : return-value(dimension, all);
+
+$color-white             : return-value(color, white);
+$color-black             : return-value(color, black);
+$color-navBlue           : return-value(color, navBlue);
+$color-borderGray        : return-value(color, borderGray);
+$color-newsBgRightPanel  : return-value(color, newsBgRightPanel);
+$color-darkenBlueText    : return-value(color, darkenBlueText);
+$color-subscribeHeadGS   : return-value(color, subscribeHeadGS);
+$color-subscribeHeadGE   : return-value(color, subscribeHeadGE);
+$color-gradientYellow3   : return-value(color, gradientYellow3);
+
+
+///
+/// RIGHT PANEL MAIN
+///
+section.right-panel{
+  .help-block.help-block-error{
+    display: none;
+    font: {
+      size: render-pixel(13.5);
+    }
+  }
+
+  .help-block.help-block-error{
+    color: red;
+  }
+}
+
+
+
+///
+/// RIGHT PANEL SECTION
+///
+section.right-panel{
+  width: render-pixel(270);
+  margin-left: render-pixel(20);
+
+
+  .right-panel-container{
+
+    hr{
+      height: render-pixel(4px);
+      margin: 0;
+      border: none;
+      background-color: $color-navBlue;
+    }
+
+
+    .right-panel-row{
+
+      &-free{
+        background: $color-newsBgRightPanel;
+      }
+
+      &-free{
+        p{
+          padding: render-pixel(10) 0 render-pixel(10);
+          margin: 0 render-pixel(5) render-pixel(10);
+          text-align: center;
+          font-size: render-pixel(25);
+          @include mixinBorder(bottom, 1px, $color-borderGray);
+        }
+
+        ul.free-list{
+          padding: 0 render-pixel(10);
+
+          li{
+            line-height: 1.8;
+
+            a{
+              font-size: render-pixel(13.5);
+              color: lighten($color-black, 30%);
+
+
+              &:hover{
+                color: lighten($color-darkenBlueText, 15%);
+              }
+            }
+          }
+        }
+      }// /-&-free
+    }// /-.right-panel-row
+  }// /-.right-panel-container
+}// /-section.left-panel

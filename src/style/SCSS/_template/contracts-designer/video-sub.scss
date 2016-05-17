@@ -1,0 +1,183 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all            : return-value(dimension, all);
+
+$color-newsText       : return-value(color, newsText);
+$color-yellow         : return-value(color, yellow);
+$color-white          : return-value(color, white);
+$color-navBlue        : return-value(color, navBlue);
+$color-gradientOrange4: return-value(color, gradientOrange4);
+$color-gradientGray1  : return-value(color, gradientGray1);
+$color-gradientGray2  : return-value(color, gradientGray2);
+
+$image-select-arr     : '../../image/check-tarif-3.png';
+
+
+section.video-sub {
+
+  .video-sub-container {
+    @include mixinMaxWidthPosition(10.7, 30, 0);
+    @include mixinCenteredBLockFlex(row, flex-start, center);
+
+
+    .video-sub{
+
+      &-row{
+        width: $width-all/2;
+      }
+    }// /-.video-sub-row
+  }// /-.video-sub-container
+}// /-section.video-sub
+
+
+
+.video-sub-row {
+
+  video.video {
+    background-color: $color-newsText;
+    @include mixinDimensions('', render-pixel(504), render-pixel(283));
+  }// /-video.video
+}// /-.video-sub-row
+
+
+
+.video-sub-row {
+
+  >p {
+    font: {
+      size: render-pixel(19.5);
+    }
+    color: lighten($color-newsText, 15%);
+    padding-bottom: render-pixel(15);
+  }
+
+
+  >.select-custom {
+    position: relative;
+    margin-bottom: render-pixel(15);
+    @include mixinBorder('all', 1px, $color-gradientGray2);
+    @include mixinDimensions('', $width-all, render-pixel(38));
+
+
+    .select-value {
+      height: $width-all;
+      padding: 0 render-pixel(15);
+
+
+      span {
+        font: {
+          size: render-pixel(15.5);
+          weight: 300;
+        }
+        line-height: 2.5;
+      }
+
+
+      i{
+        position: absolute;
+        right: 0;
+        @include mixinBorder(left, 1px, $color-gradientGray2);
+        @include mixinLinerGradient($color-gradientGray1, $color-gradientGray2);
+        @include mixinDimensions('', render-pixel(42), $width-all);
+
+
+        &:before {
+          content: '';
+          display: block;
+          margin: render-pixel(16) auto;
+          @include mixinDimensions('', render-pixel(9), render-pixel(5));
+          background: url($image-select-arr) no-repeat center;
+        }
+      }
+    }// /-.select-value
+
+
+    select {
+      position: absolute;
+      top: 0;  left: 0;
+      opacity: 0;
+      cursor: pointer;
+      @include mixinDimensions('', $width-all);
+    }// /-select
+  }// /-.select-custom
+
+
+  >span.count {
+    font: {
+      size: render-pixel(12.5);
+      weight: 300;
+    }
+    margin-bottom: render-pixel(15);
+    display: block;
+    width: $width-all - 35;
+    cursor: pointer;
+    padding: render-pixel(5) render-pixel(20);
+    border-radius: .3em;
+    @include mixinBorder('all', 1px, $color-gradientGray2);
+  }// /-span.count
+
+
+  .wrap {
+    @include mixinCenteredBLockFlex(row, center, space-between);
+
+
+    .left {
+
+      p{
+        &.price {
+          font: {
+            size: render-pixel(50);
+            weight: 400;
+          }
+
+
+          >span {
+            &:last-child {
+              font: {
+                size: render-pixel(10);
+              }
+            }
+          }
+        }// /-&.price
+
+
+        &.econom {
+          color: darken($color-newsText, 20%);
+
+
+          >span {
+            color: $color-gradientOrange4;
+          }// /-span
+        }// /-econom
+      }
+    }// /-.left
+
+
+    .right {
+
+      .btn-subscribe-contracts {
+        display: block;
+        color: $color-white;
+        background-color: $color-yellow;
+        text-align: center;
+        line-height: 3;
+        font-weight: 600;
+        transition: all .3s ease-in-out;
+        @include mixinDimensions('', 181px, 47px);
+
+
+        &:hover{
+          background-color: $color-navBlue;
+        }
+      }// /-btn-subscribe-contracts
+    }// /-.right
+  }// /-.wrap
+}// /-.video-sub-row

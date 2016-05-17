@@ -1,0 +1,206 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all            : return-value(dimension, all);
+
+$color-white          : return-value(color, white);
+$color-black          : return-value(color, black);
+$color-wayGrayCircle  : return-value(color, wayGrayCircle);
+$color-navBlue        : return-value(color, navBlue);
+$color-yellow         : return-value(color, yellow);
+
+$image-select-arr     : '../../image/check-tarif-3.png';
+
+
+section.choose {
+
+  .choose-container {
+    @include mixinMaxWidthPosition(10.7, 30, 0, 100);
+
+
+
+    .choose-row.active {
+      background-color: lighten($color-navBlue, 40%);
+    }
+
+
+    .choose-row {
+      @include mixinCenteredBLockFlex(row, initial, center);
+      align-content: stretch;
+      padding: render-pixel(30) render-pixel(10);
+
+
+      .left,
+      .center,
+      .right {
+        width: $width-all/3;
+      }
+
+      .center,
+      .right {
+        text-align: center;
+
+        > p {
+          font: {
+            size: render-pixel(19.5);
+            weight: 400;
+          }
+          color: darken($color-navBlue, 35%);
+          margin-bottom: render-pixel(20);
+
+
+          >span {
+            color: red;
+          }
+        }
+      }
+
+
+      .left {
+
+        .list {
+          padding: render-pixel(20) 0 render-pixel(20) render-pixel(70);
+
+
+          >li {
+            font: {
+              size: render-pixel(15);
+              weight: 600;
+            }
+            list-style: disc;
+            line-height: 1.5;
+
+
+            >span{
+              font-size: render-pixel(14);
+            }
+          }
+        }// /-list
+
+
+        .radio-custom {
+          position: relative;
+          display: inline-block;
+          border-radius: $width-all;
+          @include mixinDimensions('', render-pixel(20));
+          @include mixinBorder('all', 2px, $color-wayGrayCircle);
+
+
+          > input {
+            position: absolute;
+            left: 0;  top: 0;
+            margin: 0;
+            cursor: pointer;
+            @include mixinDimensions('', $width-all);
+            opacity: 0;
+          }
+
+
+          > label {
+            white-space: nowrap;
+            padding-left: render-pixel(30);
+            display: block;
+            margin-top: render-pixel(-5);
+            font: {
+              size: render-pixel(19.5);
+              weight: 400;
+            }
+            color: darken($color-navBlue, 35%);
+
+
+            >span {
+              font: {
+                size: render-pixel(12);
+                weight: 600;
+              }
+            }
+          }
+        }// /-.radio-custom
+
+
+        .radio-custom.check {
+
+          &:before {
+            content: '';
+            background-color: $color-navBlue;
+            border-radius: $width-all;
+            @include mixinDimensions('', render-pixel(10));
+            @include mixinCenteredBLockAbsolute(0,0,0,0);
+          }
+        }// /-radio-custom check
+      }// /-.left
+
+
+      .center {
+
+        .select-custom {
+          position: relative;
+          display: inline-block;
+          line-height: 1.6;
+          font: {
+            size: render-pixel(15);
+            weight: 400;
+          }
+          @include mixinDimensions('', render-pixel(250), 30px);
+          @include mixinBorder('all', 2px, $color-navBlue);
+
+
+          .select-value {
+
+            > i {
+              position: absolute;
+              top: render-pixel(11);
+              right: render-pixel(5);
+              background: url($image-select-arr) no-repeat center;
+              @include mixinDimensions('', render-pixel(9), render-pixel(5));
+            }
+          }
+
+
+          select {
+            position: absolute;
+            top: 0; left: 0;
+            @include mixinDimensions('', $width-all);
+            opacity: 0;
+          }// /-select
+        }// /-.select-custom
+      }// /-.center
+
+
+      .right {
+
+        p.price {
+          display: inline-block;
+          color: $color-navBlue;
+          font-weight: 600;
+          width: 250px;
+          padding: render-pixel(2) render-pixel(10);
+          background-color: $color-yellow;
+        }
+      }// /-.right
+    }// /-.choose-row
+
+
+    .btn-check-in {
+      height: 38px;
+      padding: 0 render-pixel(20);
+      background-color: $color-navBlue;
+      transition: all .3s linear;
+      color: $color-white;
+      text-transform: uppercase;
+      cursor: pointer;
+
+
+      &:hover {
+        background-color: $color-yellow;
+      }
+    }// /-btn-check-in
+  }// /-.choose-container
+}// /-section#choose.choose

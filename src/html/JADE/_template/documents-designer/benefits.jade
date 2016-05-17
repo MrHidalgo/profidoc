@@ -1,0 +1,48 @@
+-
+    var benefitsImgTxt = [
+        'Индивидуальность',
+        'Оперативность',
+        'Актуальность',
+        'Возврат денег',
+        'Качество',
+        'Уникальность',
+        'Доступность'
+    ];
+
+
+section#benefits.benefits
+    .benefits-container
+        h2!= 'ПРЕИМУЩЕСТВА И ГАРАНТИИ'
+
+        .benefits-row
+            - for(var i = 0; i < benefitsImgTxt.length; i++)
+                if (i == 0)
+                    a(href='#', class='btn-benefits active', data-benefits='block-#{i}')
+                        i(class='img-icon-#{i}')
+                        p!= benefitsImgTxt[i]
+                else
+                    a(href='#', class='btn-benefits', data-benefits='block-#{i}')
+                        i(class='img-icon-#{i}')
+                        p!= benefitsImgTxt[i]
+
+
+        .benefits-row
+            - for(var i = 0; i < benefitsImgTxt.length; i++)
+                if (i == 0)
+                    div(class='active block-#{i}')
+                        .left
+                            p!= '<b>' + benefitsImgTxt[i] + '</b> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s'
+                            p!= 'It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s'
+
+                        .right
+                            p!= 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s'
+                            p!= 'I has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s'
+                else
+                    div(class='block-#{i}')
+                        .left
+                            p!= '<b>' + benefitsImgTxt[i] + '</b> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s'
+                            p!= 'It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s'
+
+                        .right
+                            p!= 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s'
+                            p!= 'I has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s'

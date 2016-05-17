@@ -1,0 +1,28 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all        : return-value(dimension, all);
+
+$color-white      : return-value(color, white);
+
+$image-form-bg    : '../../image/form-bg.png';
+
+
+section.form {
+  position: fixed;
+  top: 0; bottom: 0; left: 0; right: 0;
+  margin: auto;
+  @include mixinDimensions('', render-pixel(722), render-pixel(353));
+  background-color: gray;
+  z-index: 1000;
+  padding: render-pixel(15);
+  box-shadow: 0 0 10px 1px rgba(0,0,0,0.3);
+  background: url($image-form-bg) no-repeat center;
+}// /-section#form.form
