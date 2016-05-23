@@ -25,6 +25,10 @@
     <link rel="stylesheet" href="./style/style.min.css"/>
     <link rel="stylesheet" href="./style/_dop/breadcrumbs.min.css"/>
     <link rel="stylesheet" href="./style/personal-area/personal-area.min.css"/>
+    <link rel="stylesheet" href="./style/personal-area/header.min.css"/>
+    <link rel="stylesheet" href="./style/personal-area/content.min.css"/>
+    <link rel="stylesheet" href="./style/personal-area/left-nav.min.css"/>
+    <link rel="stylesheet" href="./style/personal-area/main.min.css"/>
     <!-- DOP FILES-->
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries-->
     <!-- WARNING: Respond.js doesn't work if you view the page via file://--><!--[if lt IE 9]>
@@ -42,7 +46,7 @@
             <p>Всеукраинский сервис подготовки документов</p>
             <p>0 (800) 000-00-00</p>
           </div>
-          <div class="header-row-btn"><a href="#signin" class="active">Войти</a><a href="#registration">Регистрация</a></div>
+          <div class="header-row-btn"><a href="#signin" class="sign-in active">Войти</a><a href="#registration" class="registration">Регистрация</a></div>
         </div>
       </div>
       <nav id="nav" class="nav">
@@ -308,6 +312,145 @@
             </div>
           </div>
         </section>
+    <section id="personal-header" class="personal-header">
+      <div class="personal-header-container">
+        <ul class="list-header-info">
+          <li class="li-user"><i class="icon"></i><span class="user">Иванов Иван Иванович</span></li>
+          <li class="li-bonus"><i class="icon"></i><span class="bonus"><span>500</span> бонусных грн.</span></li>
+          <li class="li-wallet"><i class="icon"></i><span class="wallet"><span>300</span> грн.</span></li>
+          <li class="li-discount">
+            <p>Скидка <span class="num">3</span><span>%</span></p><a href="#" class="btn-discount-inc">УВЕЛИЧИТЬ СКИДКУ</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section id="personal-content" class="personal-content">
+      <div class="personal-content-container">
+        <div class="personal-content-left">
+          <div id="form-print" class="form-print">
+            <header>
+              <h1>ЗАКАЗАТЬ ПЕЧАТЬ</h1><i class="form-close"></i>
+            </header>
+            <section>
+              <form action="" method="">
+                <div class="field-name">
+                  <label for="name">Имя <span>*</span></label>
+                  <input type="text" id="name" required class="name-input">
+                  <p class="help-block help-block-error">error</p>
+                </div>
+                <div class="field-surname">
+                  <label for="surname">Фамилия <span>*</span></label>
+                  <input type="text" id="surname" required class="surname-input">
+                  <p class="help-block help-block-error">error</p>
+                </div>
+                <div class="field-phone">
+                  <label for="phone">Телефон</label>
+                  <input type="tel" id="phone" required class="phone-input">
+                  <p class="help-block help-block-error">error</p>
+                </div>
+                <div class="field-mail">
+                  <label for="mail">E-mail <span>*</span></label>
+                  <input type="email" id="mail" required class="mail-input">
+                  <p class="help-block help-block-error">error</p>
+                </div>
+                <div class="field-text">
+                  <label for="text">Текст сообщения <span>*</span></label>
+                  <textarea id="text" class="text"></textarea>
+                  <p class="info">* - поле обязательное для заполнения</p>
+                  <p class="help-block help-block-error">error</p>
+                </div>
+                <button type="submit" class="btn-print">ОТПРАВИТЬ</button>
+              </form>
+            </section>
+          </div>
+          <section id="nav" class="nav">
+            <div class="nav-row">
+              <p class="title">ЛИЧНЫЙ КАБИНЕТ</p>
+                        <ul class="list-link">
+                          <li><a href="#" data-link="main" class="btn-personal-menu">Главная</a></li>
+                          <li><a href="#" data-link="document" class="btn-personal-menu">Мои документы</a></li>
+                          <li><a href="#" data-link="payment" class="btn-personal-menu">Оплата документов</a></li>
+                          <li><a href="#" data-link="bonus" class="btn-personal-menu">Мои бонусы</a></li>
+                          <li><a href="#" data-link="check" class="btn-personal-menu">Проверенные контрагенты</a></li>
+                          <li><a href="#" data-link="order" class="btn-personal-menu">Мои заказы</a></li>
+                          <li><a href="#" data-link="profile" class="btn-personal-menu">Мой профиль</a></li>
+                          <li><a href="#" data-link="message" class="btn-personal-menu">Уведомления от PROFIdoc</a></li>
+                        </ul>
+            </div>
+            <div class="nav-row">
+              <p class="title">ДОПОЛНИТЕЛЬНЫЕ ВОЗМОЖНОСТИ</p>
+                        <ul class="list-link">
+                          <li><a href="#" data-link="print" class="btn-personal-menu">Заказать печать</a></li>
+                          <li><a href="#" data-link="number" class="btn-personal-menu">Получить налоговый номер</a></li>
+                          <li><a href="#" data-link="rent" class="btn-personal-menu">Арендовать юридический адрес</a></li>
+                          <li><a href="#" data-link="choose" class="btn-personal-menu">Выбрать доверенного регистратора</a></li>
+                          <li><a href="#" data-link="registerO" class="btn-personal-menu">Регистрация ООО "под ключ"</a></li>
+                          <li><a href="#" data-link="registerF" class="btn-personal-menu">Регистрация ФОП "под ключ"</a></li>
+                          <li><a href="#" data-link="lawyer" class="btn-personal-menu">Консультация юриста</a></li>
+                        </ul>
+            </div>
+          </section>
+        </div>
+        <div id="personal-content-right" class="personal-content-right">
+          <!--include ../../_page/personal-area-main-->
+          <!--include ../../_page/personal-area-document-->
+          <!--include ../../_page/personal-area-order-->
+          <section id="main" class="main">
+            <div class="main-row-my1">
+              <p class="title">Проверенные контрагенты</p><br>
+              <table cellspacing="0" id="check" class="check">
+                <thead>
+                  <tr>
+                    <td>Название контрагента</td>
+                    <td>Код ЕГРПОУ</td>
+                    <td>Статус проверки</td>
+                    <td>Дата завершения </br> проверки</td>
+                    <td>Скачать отчет</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                              <td>Название 1</td>
+                              <td>345079</td>
+                              <td><span class="status">Не оплаченно</span></td>
+                              <td>10.15.2016</td>
+                              <td><a href="#" class="btn-table-download"></td>
+                  </tr>
+                  <tr>
+                              <td>Название 2</td>
+                              <td>345079</td>
+                              <td><span class="status done">Проверка готова</span></td>
+                              <td>10.15.2016</td>
+                              <td><a href="#" class="btn-table-download"></td>
+                  </tr>
+                  <tr>
+                              <td>Название 3</td>
+                              <td>345079</td>
+                              <td><span class="status in-work">Проверяется</span></td>
+                              <td>10.15.2016</td>
+                              <td><a href="#" class="btn-table-download"></td>
+                  </tr>
+                  <tr>
+                              <td>Название 4</td>
+                              <td>345079</td>
+                              <td><span class="status">Не оплаченно</span></td>
+                              <td>10.15.2016</td>
+                              <td><a href="#" class="btn-table-download"></td>
+                  </tr>
+                  <tr>
+                              <td>Название 5</td>
+                              <td>345079</td>
+                              <td><span class="status">Не оплаченно</span></td>
+                              <td>10.15.2016</td>
+                              <td><a href="#" class="btn-table-download"></td>
+                  </tr>
+                </tbody>
+              </table><a href="#" class="btn-all-check">Все проверки</a><a href="#" class="btn-new-check">Проверить нового контрагента</a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
     <!-- FOOTER MENU-->
     <footer id="footer" class="footer">
       <div class="footer-header">

@@ -1,0 +1,64 @@
+-
+    var tableName = [
+        'ООО "Flart"',
+        'ООО "ArtNow"',
+        'ООО "Sunrise"',
+        'ООО "ArtNow"',
+        'ООО "Flart"'
+    ];
+
+    var tableDate = [
+        '12.05.2015',
+        '12.05.2016',
+        '12.05.2014',
+        '12.05.2016',
+        '12.05.2016'
+    ];
+
+    var tableReady = [
+        '100 грн. Бонусные',
+        '250 грн.',
+        '300 грн.',
+        '100грн.',
+        '500 грн.'
+    ];
+
+    var tableStatus = [
+        '<span class="status">Выполнен</span>',
+        '<span class="status in-work">В работе</span>',
+        '<span class="status">Выполнен</span>',
+        '<span class="status">Выполнен</span>',
+        '<span class="status">В работе</span>'
+    ];
+
+    var tableTitle = [
+        'Название услуги / документа ',
+        'Дата заказа',
+        'Стоимость',
+        'Статус заказа'
+    ];
+
+
+
+mixin tableRowinfo (arr)
+    td!= arr[i]
+
+
+section#main.main
+    .main-row-my1
+        p.title!= 'Документы для создания бизнеса'
+
+        br
+
+        table(cellspacing='0', class='order', id='order')
+            thead
+                tr
+                    - for(var i = 0; i < tableTitle.length; i++)
+                        td!= tableTitle[i]
+            tbody
+                - for(var i = 0; i < tableTitle.length; i++)
+                    tr
+                        +tableRowinfo(tableName)
+                        +tableRowinfo(tableDate)
+                        +tableRowinfo(tableReady)
+                        +tableRowinfo(tableStatus)

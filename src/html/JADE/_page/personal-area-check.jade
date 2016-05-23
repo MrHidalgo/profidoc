@@ -1,0 +1,78 @@
+-
+    var tableTitle = [
+        'Название контрагента',
+        'Код ЕГРПОУ',
+        'Статус проверки',
+        'Дата завершения </br> проверки',
+        'Скачать отчет'
+    ];
+
+    var tableName = [
+        'Название 1',
+        'Название 2',
+        'Название 3',
+        'Название 4',
+        'Название 5'
+    ];
+
+    var tableCode = [
+        '345079',
+        '345079',
+        '345079',
+        '345079',
+        '345079'
+    ];
+
+    var tableStatus = [
+        '<span class="status">Не оплаченно</span>',
+        '<span class="status done">Проверка готова</span>',
+        '<span class="status in-work">Проверяется</span>',
+        '<span class="status">Не оплаченно</span>',
+        '<span class="status">Не оплаченно</span>'
+    ];
+
+    var tableDate = [
+        '10.15.2016',
+        '10.15.2016',
+        '10.15.2016',
+        '10.15.2016',
+        '10.15.2016'
+    ];
+
+    var tableDownload = [
+        '<a href="#" class="btn-table-download">',
+        '<a href="#" class="btn-table-download">',
+        '<a href="#" class="btn-table-download">',
+        '<a href="#" class="btn-table-download">',
+        '<a href="#" class="btn-table-download">'
+    ];
+
+
+
+mixin tableRowinfo (arr)
+    td!= arr[i]
+
+
+
+section#main.main
+    .main-row-my1
+        p.title!= 'Проверенные контрагенты'
+
+        br
+
+        table(cellspacing='0', class='check', id='check')
+            thead
+                tr
+                    - for(var i = 0; i < tableTitle.length; i++)
+                        td!= tableTitle[i]
+            tbody
+                - for(var i = 0; i < tableTitle.length; i++)
+                    tr
+                        +tableRowinfo(tableName)
+                        +tableRowinfo(tableCode)
+                        +tableRowinfo(tableStatus)
+                        +tableRowinfo(tableDate)
+                        +tableRowinfo(tableDownload)
+
+        a(href='#', class='btn-all-check')!= 'Все проверки'
+        a(href='#', class='btn-new-check')!= 'Проверить нового контрагента'

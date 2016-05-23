@@ -107,6 +107,43 @@ $(document).ready(
         /* custom radio */
         searchAllRadio();
 
+        /*...*/
+        {
+            $('.list-link li a').click(function (e) {
+                e.preventDefault();
+                var linkAttr = $(this).attr('data-link');
+
+                console.log(linkAttr);
+                
+                if (linkAttr === 'print') {
+                    $('body').scrollTop(0);
+                    $('#form-print').slideToggle();
+                    $('body').toggleClass('form-open');
+                } else {
+                    $.ajax(
+                        {
+                            url: 'personal-area-' + linkAttr + '.html',
+                            success: function(data) {
+                                $('#personal-content-right').html(data);
+                            }
+                        }
+                    );   
+                }
+            });
+
+            $('.form-close').click(function () {
+                $('#form-print').slideToggle();
+            });
+        }
+
+        /* form sign in main */
+        {
+            $('.sign-in, .form-close').on('click', function() {
+                $('section#form').slideToggle();
+                $('body').toggleClass('form-open');
+            });
+        }
+
 
         /* ... */
         $('.btn-choose-contract').on('click', function(e) {

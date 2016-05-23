@@ -1,0 +1,160 @@
+-
+    var tableName = [
+        'ООО "Flart"',
+        'ООО "ArtNow"',
+        'ООО "Sunrise"',
+        'ООО "ArtNow"',
+        'ООО "Flart"'
+    ];
+
+    var tableDate = [
+        '12.05.2015',
+    '12.05.2016',
+    '12.05.2014',
+    '12.05.2016',
+    '12.05.2016'
+    ];
+
+    var tableReady = [
+        '100%',
+        '100%',
+        '100%',
+        '100%',
+        '100%'
+    ];
+
+    var tableRole = [
+        '<a href="#", class="btn-"></a><a href="#", class="btn-"></a><a href="#", class="btn-"></a>',
+        '<a href="#", class="btn-"></a><a href="#", class="btn-"></a><a href="#", class="btn-"></a>',
+        '<a href="#", class="btn-"></a><a href="#", class="btn-"></a><a href="#", class="btn-"></a>',
+        '<a href="#", class="btn-"></a><a href="#", class="btn-"></a><a href="#", class="btn-"></a>',
+        '<a href="#", class="btn-"></a><a href="#", class="btn-"></a><a href="#", class="btn-"></a>'
+    ];
+
+    var tablePayment = [
+        '<span class="yes">Оплачено</span>',
+        '<span class="no">Не оплачено</span> </br> <a href="#", class="btn-">Оплатить</a>',
+        '<span class="no">Не оплачено</span> </br> <a href="#", class="btn-">Оплатить</a>',
+        '<span class="yes">Оплачено</span>',
+        '<span class="yes">Оплачено</span>'
+    ];
+
+    var tableBonus = [
+        'начислено + 100 грн',
+        '',
+        '',
+        'начислено + 100 грн',
+        'начислено + 100 грн'
+    ];
+
+    var tableTitle = [
+        'Название',
+        'Дата',
+        'Готовность',
+        'Действие',
+        'Оплата',
+        'Ваш бонус'
+    ];
+
+mixin tableRowinfo (arr)
+    td!= arr[i]
+
+
+
+section#main.main
+    .main-row-my1
+        p.title!= 'Документы для создания бизнеса'
+
+        br
+
+        table(cellspacing='0')
+            thead
+                tr
+                    - for(var i = 0; i < tableTitle.length; i++)
+                        td!= tableTitle[i]
+            tbody
+                - for(var i = 0; i < 3; i++)
+                    tr
+                        +tableRowinfo(tableName)
+                        +tableRowinfo(tableDate)
+                        +tableRowinfo(tableReady)
+                        +tableRowinfo(tableRole)
+                        +tableRowinfo(tablePayment)
+                        +tableRowinfo(tableBonus)
+
+        br
+
+        a(href='#', class='btn-all-doc')!= 'Архив Документов для создания бизнеса'
+
+    .main-row-my1
+        p.title!= 'Документы для изменений в бизнеса'
+
+        br
+
+        table(cellspacing='0')
+            thead
+                tr
+                    - for(var i = 0; i < tableTitle.length; i++)
+                        td!= tableTitle[i]
+            tbody
+                - for(var i = 0; i < 2; i++)
+                    tr
+                        +tableRowinfo(tableName)
+                        +tableRowinfo(tableDate)
+                        +tableRowinfo(tableReady)
+                        +tableRowinfo(tableRole)
+                        +tableRowinfo(tablePayment)
+                        +tableRowinfo(tableBonus)
+
+        br
+
+        a(href='#', class='btn-all-doc')!= 'Архив Документов для изменений бизнеса'
+    .main-row-my1
+        p.title!= 'Мои договора'
+
+        br
+
+        table(cellspacing='0')
+            thead
+                tr
+                    - for(var i = 0; i < tableTitle.length; i++)
+                        td!= tableTitle[i]
+            tbody
+                - for(var i = 0; i < 5; i++)
+                    tr
+                        +tableRowinfo(tableName)
+                        +tableRowinfo(tableDate)
+                        +tableRowinfo(tableReady)
+                        +tableRowinfo(tableRole)
+                        +tableRowinfo(tablePayment)
+                        +tableRowinfo(tableBonus)
+
+        br
+
+        a(href='#', class='btn-all-doc')!= 'Архив Документов для создания бизнеса'
+
+    .main-row-my1
+        p.title!= 'Мои документы'
+
+        br
+
+        table(cellspacing='0')
+            thead
+                tr
+                    - for(var i = 0; i < tableTitle.length; i++)
+                        td!= tableTitle[i]
+            tbody
+                - for(var i = 0; i < 4; i++)
+                    tr
+                        +tableRowinfo(tableName)
+                        +tableRowinfo(tableDate)
+                        +tableRowinfo(tableReady)
+                        +tableRowinfo(tableRole)
+                        +tableRowinfo(tablePayment)
+                        +tableRowinfo(tableBonus)
+
+        br
+
+        a(href='#', class='btn-all-doc')!= 'Архив Документов'
+
+

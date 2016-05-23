@@ -1,0 +1,139 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all          : return-value(dimension, all);
+
+$color-white        : return-value(color, white);
+$color-navBlue      : return-value(color, navBlue);
+$color-scopeBorder  : return-value(color, scopeBorder);
+
+$image-user         : '../../image/icon-personal-user.png';
+$image-bonus        : '../../image/icon-personal-bonus.png';
+$image-wallet       : '../../image/icon-personal-wallet.png';
+
+
+
+section.personal-header {
+  padding-bottom: render-pixel(15);
+
+
+  .personal-header-container {
+    @include mixinMaxWidthPosition(10.7, 0, 0, 15);
+    @include mixinBorder(bottom, 1px, $color-scopeBorder);
+  }
+}// /-section.personal-header
+
+
+ul.list-header-info {
+  @include mixinCenteredBLockFlex(row, center, space-between);
+
+
+  @each $className, $widthBlock in
+          (user, 263px),
+          (bonus, 258px),
+          (wallet, 187px),
+          (discount, 320px)
+  {
+    > li.li-#{$className} {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: render-pixel(10);
+      text-align: center;
+      @include mixinDimensions('', render-pixel($widthBlock), render-pixel(66));
+      @include mixinBorder('all', 1px, $color-navBlue);
+
+
+      > i.icon {
+        vertical-align: middle;
+        margin-right: render-pixel(10);
+        @include mixinDimensions('', render-pixel(31), $width-all);
+      }
+    }
+
+
+    @if ($className == 'user') {
+      > li.li-#{$className} {
+
+        i.icon {
+          background: url($image-user) no-repeat center;
+          background-size: contain;
+        }
+
+
+        > span {
+          font-size: render-pixel(15);
+          color: $color-navBlue;
+        }
+      }
+    }
+
+    @if ($className == 'bonus') {
+      > li.li-#{$className} {
+        @include mixinBorder('all', 1px, red);
+
+
+        > i.icon {
+          background: url($image-bonus) no-repeat center;
+          background-size: contain;
+        }
+
+
+        >span.bonus {
+          color: lighten(black, 30%);
+          font-size: render-pixel(13.5);
+        }
+      }
+    }
+
+    @if ($className == 'wallet') {
+      > li.li-#{$className} {
+        >i.icon {
+          background: url($image-wallet) no-repeat center;
+          background-size: contain;
+        }
+
+
+        >span.wallet {
+          color: $color-navBlue;
+          font-size: render-pixel(13.5);
+        }
+      }
+    }
+
+    @if ($className == 'discount') {
+      > li.li-#{$className} {
+        > p {
+          font-size: render-pixel(13);
+          color: $color-navBlue;
+          margin-right: render-pixel(15);
+          vertical-align: middle;
+
+
+          > span {
+            font-size: render-pixel(30);
+            vertical-align: sub;
+          }
+        }
+
+
+        a.btn-discount-inc{
+          padding: render-pixel(7.5) render-pixel(20);
+          background-color: $color-navBlue;
+          color: $color-white;
+          font: {
+            size: render-pixel(12.5);
+            weight: 600;
+          }
+        }
+      }
+    }
+  }
+}// /-ul.list-header-info

@@ -1,0 +1,24 @@
+
+section#personal-header.personal-header
+    .personal-header-container
+        ul.list-header-info
+            - for(var i = 0; i < 4; i++)
+                case i
+                    when 0
+                        li.li-user
+                            i.icon
+                            span.user!= 'Иванов Иван Иванович'
+                    when 1
+                        li.li-bonus
+                            i.icon
+                            span.bonus!= '<span>500</span> бонусных грн.'
+                    when 2
+                        li.li-wallet
+                            i.icon
+                            span.wallet!= '<span>300</span> грн.'
+                    when 3
+                        li.li-discount
+                            p!= 'Скидка <span class="num">3</span><span>%</span>'
+                            a(href='#', class='btn-discount-inc')!= 'УВЕЛИЧИТЬ СКИДКУ'
+                    default
+                        p!= 'Error JADE preprocessors'

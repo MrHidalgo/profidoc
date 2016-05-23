@@ -41,6 +41,7 @@ section.navigation{
         display: block;
         margin: 0 render-pixel(5);
         padding: 0 render-pixel(10) render-pixel(4);
+        @include mixinBorder('all', 1px, transparent);
       }
 
       >a.active{

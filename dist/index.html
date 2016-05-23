@@ -43,53 +43,49 @@
   </head>
   <body>
     <section id="form" class="form">
-      <div class="header">
-        <p>Вход в Ваш кабинет</p><i></i>
-      </div>
-      <div class="section">
+      <header>
+        <p>Вход в Ваш кабинет</p><i class="form-close"></i>
+      </header>
+      <section>
         <div class="left">
           <form name="" action="">
             <div class="field-name">
-              <input type="text" id="login" required class="name-input">
+              <input type="text" id="login" placeholder="Логин" required class="name-input">
               <p class="help-block help-block-error">error</p>
             </div>
             <div class="field-pass">
-              <input type="pass" id="pass" required class="pass-input">
+              <input type="password" id="pass" placeholder="Пароль" required class="pass-input">
               <p class="help-block help-block-error">error</p>
             </div>
-            <p>Забыли пароль? Нажмите <a href="#" class="btn-forget">здесь,</a> чтобы восстановить</p>
+            <p class="forget">Забыли пароль? Нажмите <a href="#" class="btn-forget">здесь,</a> чтобы восстановить</p>
             <div class="block">
               <div class="left">
                 <button type="button" class="btn-sign-in">Вход</button>
               </div>
               <div class="right">
-                <div class="checkbox-custom">
-                  <label for="see-pass">Показать пароль</label>
-                  <input type="checkbox" name="see-pass" id="see-pass">
-                </div>
-                <div class="checkbox-custom">
-                  <label for="remember">Запомнить меня</label>
-                  <input type="checkbox" name="remember" id="remember">
-                </div>
+                <label for="see-pass">Показать пароль</label><span class="checkbox-custom">
+                  <input type="checkbox" name="see-pass" id="see-pass"></span>
+                <label for="remember">Запомнить меня</label><span class="checkbox-custom">
+                  <input type="checkbox" name="remember" id="remember"></span>
               </div>
             </div>
           </form>
         </div>
         <div class="right">
           <p class="main">Вы также можете войти через социальные сети</p>
-          <div class="wrap">
+          <div class="list-soc">
             <button type="button" class="btn-fb">Facebook</button>
             <button type="button" class="btn-tw">Twitter</button>
             <button type="button" class="btn-g">Google</button>
             <button type="button" class="btn-vk">Vkontakte</button>
             <button type="button" class="btn-od">Odnoklassniki</button>
           </div>
-          <p>Работая в системе ProfiDoc Вы соглашаетесь со всеми условиями и правилами нашей зоны.</p>
+          <p class="info">Работая в системе ProfiDoc Вы соглашаетесь со всеми условиями и правилами нашей зоны.</p>
         </div>
-      </div>
-      <div class="footer">
+      </section>
+      <footer>
         <p>Не зарегистрированы <a href="#" class="btn-register-now">Зарегистрируйтесь сейчас!</a></p>
-      </div>
+      </footer>
     </section>
     <!-- HEADER SECTION-->
     <header id="header" class="header">
@@ -103,7 +99,7 @@
               <p>Всеукраинский сервис подготовки документов</p>
               <p>0 (800) 000-00-00</p>
             </div>
-            <div class="header-row-btn"><a href="#signin" class="active">Войти</a><a href="#registration">Регистрация</a></div>
+            <div class="header-row-btn"><a href="#signin" class="sign-in active">Войти</a><a href="#registration" class="registration">Регистрация</a></div>
           </div>
         </div>
         <nav id="nav" class="nav">

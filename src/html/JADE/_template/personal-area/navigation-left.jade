@@ -1,0 +1,61 @@
+-
+    var navRow1 = [
+        'Главная',
+        'Мои документы',
+        'Оплата документов',
+        'Мои бонусы',
+        'Проверенные контрагенты',
+        'Мои заказы',
+        'Мой профиль',
+        'Уведомления от PROFIdoc'
+    ];
+
+    var navRow2 = [
+        'Заказать печать',
+        'Получить налоговый номер',
+        'Арендовать юридический адрес',
+        'Выбрать доверенного регистратора',
+        'Регистрация ООО "под ключ"',
+        'Регистрация ФОП "под ключ"',
+        'Консультация юриста'
+    ];
+
+    var navRow1Attr = [
+        'main',
+        'document',
+        'payment',
+        'bonus',
+        'check',
+        'order',
+        'profile',
+        'message'
+    ];
+
+    var navRow2Attr = [
+        'print',
+        'number',
+        'rent',
+        'choose',
+        'registerO',
+        'registerF',
+        'lawyer'
+    ];
+
+
+
+mixin rowContent(arrName, arrAttr)
+    ul.list-link
+        - for(var i = 0; i < arrName.length; i++)
+            li: a(href='#', data-link= arrAttr[i], class='btn-personal-menu')!= arrName[i]
+
+
+
+section#nav.nav
+    .nav-row
+        p.title!= 'ЛИЧНЫЙ КАБИНЕТ'
+
+        +rowContent(navRow1, navRow1Attr)
+    .nav-row
+        p.title!= 'ДОПОЛНИТЕЛЬНЫЕ ВОЗМОЖНОСТИ'
+
+        +rowContent(navRow2, navRow2Attr)

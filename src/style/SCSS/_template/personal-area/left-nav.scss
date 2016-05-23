@@ -1,0 +1,62 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all          : return-value(dimension, all);
+
+$color-white        : return-value(color, white);
+$color-navBlue      : return-value(color, navBlue);
+$color-scopeBorder  : return-value(color, scopeBorder);
+
+
+section.nav {
+
+  .nav-row {
+    padding: render-pixel(15);
+    margin-bottom: render-pixel(15);
+    background-color: lighten($color-scopeBorder, 6%);
+    @include mixinBorder('all', 1px, $color-navBlue);
+
+
+    p.title {
+      font: {
+        size: render-pixel(14);
+        weight: 600;
+      }
+      color: $color-navBlue;
+      margin-bottom: render-pixel(10);
+    }
+
+    ul{
+      > li {
+        a{
+          font: {
+            size: render-pixel(14);
+            weight: 600;
+          }
+          display: block;
+          color: #222;
+          width: $width-all;
+          padding: render-pixel(5) 0;
+          transition: all .3s ease-in-out;
+
+
+          &:hover {
+            color: lighten(#222, 12%);
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    &:first-child{}
+
+    &:last-child{}
+  }
+}// /-section.nav

@@ -8,7 +8,11 @@ include ../_mixin/mixin
     var arrStyleName = [
         './style/style.min.css',
         './style/_dop/breadcrumbs.min.css',
-        './style/personal-area/personal-area.min.css'
+        './style/personal-area/personal-area.min.css',
+        './style/personal-area/header.min.css',
+        './style/personal-area/content.min.css',
+        './style/personal-area/left-nav.min.css',
+        './style/personal-area/main.min.css'
     ]
 
     var scriptName = [
@@ -33,6 +37,13 @@ html
         // BREADCRUMBS BLOCK
         block breadcrumbs
             include ../_template/personal-area/breadcrumbs
+
+
+        block personal-header
+            include ../_template/personal-area/header
+
+        block personal-content
+            include ../_template/personal-area/personal-content
 
 
         // FOOTER MENU

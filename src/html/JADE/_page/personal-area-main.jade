@@ -1,0 +1,137 @@
+-
+    var freeDoc = [
+        'Договор аренды недвижимости <i>FREE</i>',
+        'договор поручения <i>FREE</i>',
+        'договор дарения <i>FREE</i>',
+        'договор купли-продажи <i>FREE</i>'
+    ];
+
+    var myDocTitle = [
+        'OOO',
+        'ФЛП',
+        'ТД',
+        '+ Создать договор'
+    ];
+
+    var myDocText = [
+        '<strong>Общество с ограниченной ответственностью</strong> – созданное одним или несколькими лицами хозяйственное общество, уставный капитал которого разделен на доли; участники общества не отвечают по его обязательствам и несут риск убытков, связанных с деятельностью общества в пределах стоимости принадлежащих им долей в уставном капитале общества.',
+        '<strong>Физическое лицо предприниматель</strong> – самая простая организационно-правовая форма субъекта хозяйственной деятельности, для которой не предусмотрено учредительных документов и стартового капитала.',
+        '<strong>Трудовой договор с руководителем</strong> – это самый первый документ, который необходимо подготовить и подписать учредителям общества сразу после регистрации ООО (в некоторых случая и после регистрации ФЛП). Вместе с трудовым договором сервис готовит приказ №1 о вступлении руководителя в должность.',
+        'Дополнительно вы можете подготовить более 1000 полезных документов (от заявления до договора), которые могут понадобиться вам в вашей предпринимательской деятельности. Стоимость документа 200 грн. или подписка на месяц 500 грн.'
+    ];
+
+    var tableName = [
+        'ООО "Flart"',
+        'ООО "ArtNow"',
+        'ООО "Sunrise"',
+        'ООО "ArtNow"',
+        'ООО "Flart"'
+    ];
+
+    var tableDate = [
+        '12.05.2015',
+        '12.05.2016',
+        '12.05.2014',
+        '12.05.2016',
+        '12.05.2016'
+    ];
+
+    var tableReady = [
+        '100%',
+        '100%',
+        '100%',
+        '100%',
+        '100%'
+    ];
+
+    var tableRole = [
+        '<a href="#", class="btn-"></a><a href="#", class="btn-"></a><a href="#", class="btn-"></a>',
+        '<a href="#", class="btn-"></a><a href="#", class="btn-"></a><a href="#", class="btn-"></a>',
+        '<a href="#", class="btn-"></a><a href="#", class="btn-"></a><a href="#", class="btn-"></a>',
+        '<a href="#", class="btn-"></a><a href="#", class="btn-"></a><a href="#", class="btn-"></a>',
+        '<a href="#", class="btn-"></a><a href="#", class="btn-"></a><a href="#", class="btn-"></a>'
+    ];
+
+    var tablePayment = [
+        '<span class="yes">Оплачено</span>',
+        '<span class="no">Не оплачено</span> </br> <a href="#", class="btn-">Оплатить</a>',
+        '<span class="no">Не оплачено</span> </br> <a href="#", class="btn-">Оплатить</a>',
+        '<span class="yes">Оплачено</span>',
+        '<span class="yes">Оплачено</span>'
+    ];
+
+    var tableBonus = [
+        'начислено + 100 грн',
+        '',
+        '',
+        'начислено + 100 грн',
+        'начислено + 100 грн'
+    ];
+
+    var tableTitle = [
+        'Название',
+        'Дата',
+        'Готовность',
+        'Действие',
+        'Оплата',
+        'Ваш бонус'
+    ];
+
+mixin tableRowinfo (arr)
+        td!= arr[i]
+
+
+
+section#main.main
+    .main-row-free
+        p.title!= 'Бесплатные документы'
+        p.text!= 'Вы можете скачать бесплатные документы. В каждом из разделов сервиса PROFIdoc они обозначены - "FREE"'
+
+        ul.list-free
+            - for(var i = 0; i < freeDoc.length; i++)
+                li: a(href='#', class='btn-free-doc')!= freeDoc[i]
+
+    .main-row-my
+        p.title!= 'Мои документы'
+        p.text!= 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+
+        ul.list-my
+            - for(var i = 0; i < myDocTitle.length; i++)
+                li
+                    .left
+                        a(href='#', class='btn-choose-doc')!= myDocTitle[i]
+                    .right
+                        p.text!= myDocText[i]
+
+        a(href='#', class='btn-all-doc')!= 'ВСЕ МОИ ДОКУМЕНТЫ'
+
+    .main-row-my1
+        p.title!= 'Мои документы'
+
+        br
+
+        table(cellspacing='0')
+            thead
+                tr
+                    - for(var i = 0; i < tableTitle.length; i++)
+                        td!= tableTitle[i]
+            tbody
+                - for(var i = 0; i < tableTitle.length - 1; i++)
+                    tr
+                        +tableRowinfo(tableName)
+                        +tableRowinfo(tableDate)
+                        +tableRowinfo(tableReady)
+                        +tableRowinfo(tableRole)
+                        +tableRowinfo(tablePayment)
+                        +tableRowinfo(tableBonus)
+
+        br
+
+        a(href='#', class='btn-all-doc')!= 'ВСЕ МОИ ДОКУМЕНТЫ'
+
+    .main-row-message
+        p.title!= 'Уведовления от PROFIdoc'
+        p.date!= '22.03.2016'
+        p.name!= 'Вам начислены новые бонусы гривны'
+        p.text!= 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.'
+        a(href='#', class='btn-all-archives')!= 'АРХИВ УВЕДОМЛЕНИЙ'

@@ -1,0 +1,172 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all          : return-value(dimension, all);
+
+$color-white        : return-value(color, white);
+$color-navBlue      : return-value(color, navBlue);
+$color-scopeBorder  : return-value(color, scopeBorder);
+$color-documentLgray   : return-value(color, documentLgray);
+
+$image-bg-print     : '../../image/form-bg.png';
+$image-icon-print   : '../../image/icon-print.png';
+$image-icon-close   : '../../image/icon-close-btn-form.png';
+
+
+
+section.personal-content {
+
+  .personal-content-container {
+    @include mixinMaxWidthPosition(10.7, 0, 0, 15);
+    @include mixinCenteredBLockFlex(row, flex-start, center);
+
+
+    .personal-content{
+
+      &-left{
+        margin-right: render-pixel(15);
+        @include mixinDimensions('', render-pixel(305), auto);
+
+
+        .form-print {
+          display: none;
+          position: fixed;
+          top: 0;  bottom: 0;  left: 0;  right: 0;
+          margin: auto;
+          @include mixinDimensions('', render-pixel(542), render-pixel(488));
+          padding: render-pixel(20) render-pixel(50);
+          z-index: 1000;
+          box-shadow: 0 0 10px 1px rgba(0,0,0,0.3);
+          background: url($image-bg-print) no-repeat center;
+          background-size: cover;
+
+
+          header {
+            position: relative;
+            margin-bottom: render-pixel(15);
+
+            text-align: center;
+
+            h1 {
+              font: {
+                size: render-pixel(20);
+                weight: 600;
+              }
+              color: $color-navBlue;
+
+              &:before {
+                content: '';
+                display: inline-block;
+                @include mixinDimensions('', render-pixel(23), render-pixel(27));
+                background: url($image-icon-print) no-repeat center;
+                background-size: contain;
+                vertical-align: middle;
+                margin-right: render-pixel(10);
+              }
+            }
+
+
+            >i {
+              cursor: pointer;
+
+
+              &:before {
+                content: '';
+                position: absolute;
+                top: render-pixel(-10);
+                right: render-pixel(-40);
+                background: url($image-icon-close) no-repeat center;
+                background-size: contain;
+                @include mixinDimensions('', render-pixel(17));
+              }
+            }
+          }
+
+
+          p.info,
+          p.help-block.help-block-error{
+            font: {
+              size: render-pixel(12);
+              weight: 600;
+            }
+            color: red;
+          }
+
+
+          p.help-block.help-block-error {
+            display: none;
+          }
+
+
+          [class^='field-'] {
+            margin-bottom: render-pixel(20);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+
+
+            label {
+              display: inline-block;
+              width: render-pixel(170);
+              font: {
+                size: render-pixel(15);
+                weight: 600;
+              }
+
+              span {
+                color: red;
+              }
+            }
+
+
+            input,
+            textarea{
+              display: inline-block;
+              padding: render-pixel(5) render-pixel(15);
+              color: darken($color-documentLgray, 15%);
+              @include mixinBorder('all', 1px, lighten($color-documentLgray, 15%));
+              @include mixinDimensions('', 270px, 30px);
+
+
+              &:focus {
+                box-shadow: 0 0 5px 1px rgba($color-navBlue, 0.2);
+              }
+            }
+
+
+            textarea {
+              resize: initial;
+              height: render-pixel(100);
+              margin-bottom: render-pixel(10);
+            }
+          }// /-.field-
+
+
+          button {
+            font: {
+              size: render-pixel(15);
+            }
+            display: block;
+            margin: 0 auto;
+            color: $color-white;
+            text-transform: uppercase;
+            @include mixinDimensions('', 160px, 40px);
+            background-color: $color-navBlue;
+          }
+        }// /-.form-print
+      }// /-.personal-content-left
+
+
+      &-right{
+        width: calc(100% - 306px);
+      }// /-.personal-content-right
+    }// /-.personal-content
+  } // /-.personal-content-container
+}// /-section.personal-content
