@@ -1,2 +1,118 @@
+-
+    var socList = [
+        './image/content-page-0.png',
+        './image/content-page-1.png',
+        './image/content-page-2.png',
+        './image/content-page-3.png',
+        './image/content-page-4.png'
+    ];
 
-p!= 'Profile'
+
+    var profilePosition = [
+        'учредитель',
+        'директор',
+        'бухгалтер',
+        'юрист',
+        'менеджер по работе с клиентами',
+        'менеджер по персоналу',
+        'помощник руководителя'
+    ];
+
+
+section#main.main
+    .main-row-my1
+        p.title!= 'Персональные данные'
+
+        .field-name
+            label(for='profile-surname')!= 'ФИО <span>*</span>'
+            input(type='text', name='surname', class='surname', id='profile-surname')
+            p(class='help-block help-block-error') error
+
+        .field-mail
+            label(for='profile-mail')!= 'E-mail <span>*</span>'
+            input(type='mail', name='mail', class='mail', id='profile-mail')
+            p(class='help-block help-block-error') error
+
+        .field-phone
+            label(for='profile-phone')!= 'Телефон <span>*</span>'
+            input(type='phone', name='phone', class='phone', id='profile-phone')
+            p(class='help-block help-block-error') error
+
+
+    .main-row-my1
+        p.title!= 'Смена пароля'
+
+        .field-old-pass
+            label(for='profile-old-pass')!= 'Стрый пароль <span>*</span>'
+            input(type='password', name='old-pass', class='old-pass', id='profile-old-pass')
+            p(class='help-block help-block-error') error
+
+        .field-new-pass
+            label(for='profile-new-pass')!= 'Новый пароль <span>*</span>'
+            input(type='password', name='new-pass', class='new-pass', id='profile-new-pass')
+            p(class='help-block help-block-error') error
+
+        .field-repeat-new-pass
+            label(for='profile-repeat-new-pass')!= 'Повторить новый пароль <span>*</span>'
+            input(type='password', name='repeat-new-pass', class='repeat-new-pass', id='profile-repeat-new-pass')
+            p(class='help-block help-block-error') error
+
+
+
+    .main-row-my1
+        p.title!= 'Загрузить фото / логотип'
+
+        .container-load
+            .container-image
+                img(src='', class='img-responsive')
+            .container-btn
+                button(type='button', class='btn-load-img')!= 'ЗАГРУЗИТЬ ФОТО'
+                button(type='button', class='btn-remove-img')!= 'УДАЛИТЬ'
+
+
+    .main-row-my1
+        p.title!= 'Привязаться к социальным сетям'
+
+        ul.soc-list
+            - for(var i = 0; i < socList.length; i++)
+                li: a(href='javascript: void(0);', class='btn-soc-#{i}'): img(src= socList[i], class='img-responsive')
+
+
+
+    .main-row-my1
+        p.title!= 'Отрасль бизнеса <span>*</span>'
+
+        label(for='profile-select', class='profile-label-select')!= 'Выбрать: '
+        .select-custom
+            .select-value
+                span
+                i
+            select(class='profile-select', name='profile-select', id='profile-select')
+                - for(var i = 0; i < 10; i++)
+                    option(value='Test-#{i}')!= 'Test-' + i
+
+
+    .main-row-my1
+        p.title!= 'Название компании <span>*</span>'
+
+        input(type='text', name='company-name', class='company-name', id='company-name', placeholder='"Товариство з обмеженою відповідальністю"')
+
+    .main-row-my1
+        p.title!= 'Должность <span>*</span>'
+
+        - for(var i = 0; i < profilePosition.length; i++)
+            .container-position
+                input(type='radio', name='position', id='position-#{i}')
+                label(for='position-#{i}')!= profilePosition[i]
+
+        br
+        br
+        label(for='position-your-var', class='your-var')!= 'Ваш вариант: '
+        br
+        input(type='text', class='position-your-var', id='position-your-var')
+
+        p.profile-info!= '* - поле обязательное для заполнения'
+
+        button(type='button', class='btn-profile-save')!= 'СОХРАНИТЬ'
+
+

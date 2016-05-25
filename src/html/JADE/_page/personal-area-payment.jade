@@ -1,2 +1,186 @@
+-
+    var tableName = [
+        'ООО "Flart"',
+        'ООО "ArtNow"',
+        'ООО "Sunrise"',
+        'ООО "ArtNow"',
+        'ООО "Flart"'
+    ];
 
-p!= 'Payment'
+    var tableDate = [
+        '12.05.2015',
+        '12.05.2016',
+        '12.05.2014',
+        '12.05.2016',
+        '12.05.2016'
+    ];
+
+    var tableReady = [
+        '100%',
+        '100%',
+        '100%',
+        '100%',
+        '100%'
+    ];
+
+    var tablePayment = [
+        '<span class="no">Не оплачено</span> </br> <a href="#", class="btn-payment">Оплатить</a>',
+        '<span class="no">Не оплачено</span> </br> <a href="#", class="btn-payment">Оплатить</a>',
+        '<span class="no">Не оплачено</span> </br> <a href="#", class="btn-payment">Оплатить</a>',
+        '<span class="yes">Оплачено</span>',
+        '<span class="yes">Оплачено</span>'
+    ];
+
+    var tableBonus = [
+        '100 бонусных грн',
+        '100 бонусных грн',
+        '100 бонусных грн',
+        '',
+        ''
+    ];
+
+    var tableTitle = [
+        'Название',
+        'Дата',
+        'Готовность',
+        'Оплата',
+        'Стоимость в бонусах'
+    ];
+
+    var subscribeTitle = 'Подписка';
+
+    var subscribePeriod = [
+        '1 месяц',
+        '2 месяца',
+        '3 месяца'
+    ];
+
+    var subscribePrice = [
+        '154 грн.',
+        '324 грн.',
+        '475 грн.'
+    ];
+
+    var subscribeSale = [
+        '5%',
+        '10%',
+        '15%'
+    ];
+
+    var subscribeImage = [
+        './image/icon-payment-00.png',
+        './image/icon-payment-11.png',
+        './image/icon-payment-22.png'
+    ];
+
+    var subscribeTitleBottom = [
+        'Экономия средств',
+        'Экономия времени',
+        'Возврат денег'
+    ];
+
+    var subscribeTextBottom = [
+        'Купите пакет и экономьте до 50% на составлении документов.',
+        'Больше не придется оплачивать каждый документ отдельно и ждать поступления денег.',
+        'Гарантируем 100% возврат денег - без сложных процедур.'
+    ];
+
+    var choosePayment = [
+        './image/icon-payment-0.png',
+        './image/icon-payment-1.png',
+        './image/icon-payment-2.png',
+        './image/icon-payment-3.png',
+        'Банковский перевод',
+        'Оплата через СМС',
+        'Безналичный платёж </br> (для предприятий)'
+    ];
+
+
+
+mixin tableRowinfo (arr)
+    td!= arr[i]
+
+
+section#main.main
+    .main-row-my1
+        p.title!= 'Пополнить счет'
+
+        label(for='input-sum')!= 'Введите сумму: '
+        input(type='text', id='input-sum', class='input-sum', name='input-sum')
+        span!= 'грн.'
+
+        p.choose-payment!= 'Выберите вариант оплаты: '
+
+        .choose-payment
+            - for(var i = 0; i < 7; i++)
+                label(for='choose-#{i}')
+                    input(type='radio', name='choose-payment', id='choose-#{i}')
+                    br
+                    if(i == 0) || (i == 1) || (i == 2) || (i == 3)
+                        img(src= choosePayment[i], class='img-responsive')
+                    else if (i == 5)
+                        p.choose-text!= choosePayment[i]
+                        input(type='text', class='in-sms')
+                    else
+                        p.choose-text!= choosePayment[i]
+
+        a(href='', class='btn-choose-payment')!= 'Оплатить'
+
+
+    .main-row-my1
+        p.title!= 'Неоплаченные документы'
+
+        table(cellspacing='0', class='payment', id='payment')
+            thead
+                tr
+                    - for(var i = 0; i < tableTitle.length; i++)
+                        td!= tableTitle[i]
+            tbody
+                - for(var i = 0; i < 3; i++)
+                    tr
+                        +tableRowinfo(tableName)
+                        +tableRowinfo(tableDate)
+                        +tableRowinfo(tableReady)
+                        +tableRowinfo(tablePayment)
+                        +tableRowinfo(tableBonus)
+
+        br
+
+
+
+    .main-row-my1
+        p.title!= 'Тарифные пакеты. <span class="slogan">Выбери свою скидку!</span>'
+
+        p.text!= 'Все пакеты обеспечивают полный спектр услуг по составлению документов и включают в себя индивидуальные документы. Подписываясь, вы получаете выбранную Вами скидку, при этом сумму подписки можно тратить на свое усмотрение. Скидка действует на протяжении подписки на все покупки в сервисе. '
+
+        br
+        .wrap-subscribe
+            - for(var i = 0; i < subscribePeriod.length; i++)
+                div(class='subscribe-#{i}')
+                    header
+                        p.title!= 'Подписка'
+                        p.month!= subscribePeriod[i]
+
+                    section.radio-block
+                        -for(var j = 0; j < subscribeSale.length; j++)
+                            label(for='sale-#{i}-#{j}')
+                                .left
+                                    .radio-custom
+                                        i
+                                        input(type='radio', name='subscribe-#{i}', class='sale', id='sale-#{i}-#{j}')
+                                .right
+                                    p.text!= 'Скидка <span>' + subscribeSale[j] + '</span>'
+
+                    footer
+                        p.price!= 'Цена: <span>' + subscribePrice[i] + '</span>'
+                        a(href='', class='btn-buy')!= 'КУПИТЬ'
+
+        br
+        p.subtitle!= 'С нашими пакетами Вы получаете:'
+
+        .wrap-pack
+            -for(var i = 0; i < subscribeImage.length; i++)
+                .container-sub
+                    img(src= subscribeImage[i], class='img-responsive')
+                    p.title!= subscribeTitleBottom[i]
+                    p.text!= subscribeTextBottom[i]

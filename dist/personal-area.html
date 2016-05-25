@@ -395,57 +395,123 @@
           <!--include ../../_page/personal-area-main-->
           <!--include ../../_page/personal-area-document-->
           <!--include ../../_page/personal-area-order-->
+          <!--include ../../_page/personal-area-check-->
+          <!--include ../../_page/personal-area-bonus-->
+          <!--include ../../_page/personal-area-payment-->
           <section id="main" class="main">
             <div class="main-row-my1">
-              <p class="title">Проверенные контрагенты</p><br>
-              <table cellspacing="0" id="check" class="check">
-                <thead>
-                  <tr>
-                    <td>Название контрагента</td>
-                    <td>Код ЕГРПОУ</td>
-                    <td>Статус проверки</td>
-                    <td>Дата завершения </br> проверки</td>
-                    <td>Скачать отчет</td>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                              <td>Название 1</td>
-                              <td>345079</td>
-                              <td><span class="status">Не оплаченно</span></td>
-                              <td>10.15.2016</td>
-                              <td><a href="#" class="btn-table-download"></td>
-                  </tr>
-                  <tr>
-                              <td>Название 2</td>
-                              <td>345079</td>
-                              <td><span class="status done">Проверка готова</span></td>
-                              <td>10.15.2016</td>
-                              <td><a href="#" class="btn-table-download"></td>
-                  </tr>
-                  <tr>
-                              <td>Название 3</td>
-                              <td>345079</td>
-                              <td><span class="status in-work">Проверяется</span></td>
-                              <td>10.15.2016</td>
-                              <td><a href="#" class="btn-table-download"></td>
-                  </tr>
-                  <tr>
-                              <td>Название 4</td>
-                              <td>345079</td>
-                              <td><span class="status">Не оплаченно</span></td>
-                              <td>10.15.2016</td>
-                              <td><a href="#" class="btn-table-download"></td>
-                  </tr>
-                  <tr>
-                              <td>Название 5</td>
-                              <td>345079</td>
-                              <td><span class="status">Не оплаченно</span></td>
-                              <td>10.15.2016</td>
-                              <td><a href="#" class="btn-table-download"></td>
-                  </tr>
-                </tbody>
-              </table><a href="#" class="btn-all-check">Все проверки</a><a href="#" class="btn-new-check">Проверить нового контрагента</a>
+              <p class="title">Персональные данные</p>
+              <div class="field-name">
+                <label for="profile-surname">ФИО <span>*</span></label>
+                <input type="text" name="surname" id="profile-surname" class="surname">
+                <p class="help-block help-block-error">error</p>
+              </div>
+              <div class="field-mail">
+                <label for="profile-mail">E-mail <span>*</span></label>
+                <input type="mail" name="mail" id="profile-mail" class="mail">
+                <p class="help-block help-block-error">error</p>
+              </div>
+              <div class="field-phone">
+                <label for="profile-phone">Телефон <span>*</span></label>
+                <input type="phone" name="phone" id="profile-phone" class="phone">
+                <p class="help-block help-block-error">error</p>
+              </div>
+            </div>
+            <div class="main-row-my1">
+              <p class="title">Смена пароля</p>
+              <div class="field-old-pass">
+                <label for="profile-old-pass">Стрый пароль <span>*</span></label>
+                <input type="password" name="old-pass" id="profile-old-pass" class="old-pass">
+                <p class="help-block help-block-error">error</p>
+              </div>
+              <div class="field-new-pass">
+                <label for="profile-new-pass">Новый пароль <span>*</span></label>
+                <input type="password" name="new-pass" id="profile-new-pass" class="new-pass">
+                <p class="help-block help-block-error">error</p>
+              </div>
+              <div class="field-repeat-new-pass">
+                <label for="profile-repeat-new-pass">Повторить новый пароль <span>*</span></label>
+                <input type="password" name="repeat-new-pass" id="profile-repeat-new-pass" class="repeat-new-pass">
+                <p class="help-block help-block-error">error</p>
+              </div>
+            </div>
+            <div class="main-row-my1">
+              <p class="title">Загрузить фото / логотип</p>
+              <div class="container-load">
+                <div class="container-image"><img src="" class="img-responsive"></div>
+                <div class="container-btn">
+                  <button type="button" class="btn-load-img">ЗАГРУЗИТЬ ФОТО</button>
+                  <button type="button" class="btn-remove-img">УДАЛИТЬ</button>
+                </div>
+              </div>
+            </div>
+            <div class="main-row-my1">
+              <p class="title">Привязаться к социальным сетям</p>
+              <ul class="soc-list">
+                <li><a href="javascript: void(0);" class="btn-soc-0"><img src="./image/content-page-0.png" class="img-responsive"></a></li>
+                <li><a href="javascript: void(0);" class="btn-soc-1"><img src="./image/content-page-1.png" class="img-responsive"></a></li>
+                <li><a href="javascript: void(0);" class="btn-soc-2"><img src="./image/content-page-2.png" class="img-responsive"></a></li>
+                <li><a href="javascript: void(0);" class="btn-soc-3"><img src="./image/content-page-3.png" class="img-responsive"></a></li>
+                <li><a href="javascript: void(0);" class="btn-soc-4"><img src="./image/content-page-4.png" class="img-responsive"></a></li>
+              </ul>
+            </div>
+            <div class="main-row-my1">
+              <p class="title">Отрасль бизнеса <span>*</span></p>
+              <label for="profile-select" class="profile-label-select">Выбрать: </label>
+              <div class="select-custom">
+                <div class="select-value"><span></span><i></i></div>
+                <select name="profile-select" id="profile-select" class="profile-select">
+                  <option value="Test-0">Test-0</option>
+                  <option value="Test-1">Test-1</option>
+                  <option value="Test-2">Test-2</option>
+                  <option value="Test-3">Test-3</option>
+                  <option value="Test-4">Test-4</option>
+                  <option value="Test-5">Test-5</option>
+                  <option value="Test-6">Test-6</option>
+                  <option value="Test-7">Test-7</option>
+                  <option value="Test-8">Test-8</option>
+                  <option value="Test-9">Test-9</option>
+                </select>
+              </div>
+            </div>
+            <div class="main-row-my1">
+              <p class="title">Название компании <span>*</span></p>
+              <input type="text" name="company-name" id="company-name" placeholder="&quot;Товариство з обмеженою відповідальністю&quot;" class="company-name">
+            </div>
+            <div class="main-row-my1">
+              <p class="title">Должность <span>*</span></p>
+              <div class="container-position">
+                <input type="radio" name="position" id="position-0">
+                <label for="position-0">учредитель</label>
+              </div>
+              <div class="container-position">
+                <input type="radio" name="position" id="position-1">
+                <label for="position-1">директор</label>
+              </div>
+              <div class="container-position">
+                <input type="radio" name="position" id="position-2">
+                <label for="position-2">бухгалтер</label>
+              </div>
+              <div class="container-position">
+                <input type="radio" name="position" id="position-3">
+                <label for="position-3">юрист</label>
+              </div>
+              <div class="container-position">
+                <input type="radio" name="position" id="position-4">
+                <label for="position-4">менеджер по работе с клиентами</label>
+              </div>
+              <div class="container-position">
+                <input type="radio" name="position" id="position-5">
+                <label for="position-5">менеджер по персоналу</label>
+              </div>
+              <div class="container-position">
+                <input type="radio" name="position" id="position-6">
+                <label for="position-6">помощник руководителя</label>
+              </div><br><br>
+              <label for="position-your-var" class="your-var">Ваш вариант: </label><br>
+              <input type="text" id="position-your-var" class="position-your-var">
+              <p class="profile-info">* - поле обязательное для заполнения</p>
+              <button type="button" class="btn-profile-save">СОХРАНИТЬ</button>
             </div>
           </section>
         </div>

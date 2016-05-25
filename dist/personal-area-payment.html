@@ -1,2 +1,217 @@
 
-<p>Payment</p>
+<section id="main" class="main">
+  <div class="main-row-my1">
+    <p class="title">Пополнить счет</p>
+    <label for="input-sum">Введите сумму: </label>
+    <input type="text" id="input-sum" name="input-sum" class="input-sum"/><span>грн.</span>
+    <p class="choose-payment">Выберите вариант оплаты: </p>
+    <div class="choose-payment">
+      <label for="choose-0">
+        <input type="radio" name="choose-payment" id="choose-0"/><br/><img src="./image/icon-payment-0.png" class="img-responsive"/>
+      </label>
+      <label for="choose-1">
+        <input type="radio" name="choose-payment" id="choose-1"/><br/><img src="./image/icon-payment-1.png" class="img-responsive"/>
+      </label>
+      <label for="choose-2">
+        <input type="radio" name="choose-payment" id="choose-2"/><br/><img src="./image/icon-payment-2.png" class="img-responsive"/>
+      </label>
+      <label for="choose-3">
+        <input type="radio" name="choose-payment" id="choose-3"/><br/><img src="./image/icon-payment-3.png" class="img-responsive"/>
+      </label>
+      <label for="choose-4">
+        <input type="radio" name="choose-payment" id="choose-4"/><br/>
+        <p class="choose-text">Банковский перевод</p>
+      </label>
+      <label for="choose-5">
+        <input type="radio" name="choose-payment" id="choose-5"/><br/>
+        <p class="choose-text">Оплата через СМС</p>
+        <input type="text" class="in-sms"/>
+      </label>
+      <label for="choose-6">
+        <input type="radio" name="choose-payment" id="choose-6"/><br/>
+        <p class="choose-text">Безналичный платёж </br> (для предприятий)</p>
+      </label>
+    </div><a href="" class="btn-choose-payment">Оплатить</a>
+  </div>
+  <div class="main-row-my1">
+    <p class="title">Неоплаченные документы</p>
+    <table cellspacing="0" id="payment" class="payment">
+      <thead>
+        <tr>
+          <td>Название</td>
+          <td>Дата</td>
+          <td>Готовность</td>
+          <td>Оплата</td>
+          <td>Стоимость в бонусах</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ООО "Flart"</td>
+          <td>12.05.2015</td>
+          <td>100%</td>
+          <td><span class="no">Не оплачено</span> </br> <a href="#", class="btn-payment">Оплатить</a></td>
+          <td>100 бонусных грн</td>
+        </tr>
+        <tr>
+          <td>ООО "ArtNow"</td>
+          <td>12.05.2016</td>
+          <td>100%</td>
+          <td><span class="no">Не оплачено</span> </br> <a href="#", class="btn-payment">Оплатить</a></td>
+          <td>100 бонусных грн</td>
+        </tr>
+        <tr>
+          <td>ООО "Sunrise"</td>
+          <td>12.05.2014</td>
+          <td>100%</td>
+          <td><span class="no">Не оплачено</span> </br> <a href="#", class="btn-payment">Оплатить</a></td>
+          <td>100 бонусных грн</td>
+        </tr>
+      </tbody>
+    </table><br/>
+  </div>
+  <div class="main-row-my1">
+    <p class="title">Тарифные пакеты. <span class="slogan">Выбери свою скидку!</span></p>
+    <p class="text">Все пакеты обеспечивают полный спектр услуг по составлению документов и включают в себя индивидуальные документы. Подписываясь, вы получаете выбранную Вами скидку, при этом сумму подписки можно тратить на свое усмотрение. Скидка действует на протяжении подписки на все покупки в сервисе. </p><br/>
+    <div class="wrap-subscribe">
+      <div class="subscribe-0">
+        <header>
+          <p class="title">Подписка</p>
+          <p class="month">1 месяц</p>
+        </header>
+        <section class="radio-block">
+          <label for="sale-0-0">
+            <div class="left">
+              <div class="radio-custom"><i></i>
+                <input type="radio" name="subscribe-0" id="sale-0-0" class="sale"/>
+              </div>
+            </div>
+            <div class="right">
+              <p class="text">Скидка <span>5%</span></p>
+            </div>
+          </label>
+          <label for="sale-0-1">
+            <div class="left">
+              <div class="radio-custom"><i></i>
+                <input type="radio" name="subscribe-0" id="sale-0-1" class="sale"/>
+              </div>
+            </div>
+            <div class="right">
+              <p class="text">Скидка <span>10%</span></p>
+            </div>
+          </label>
+          <label for="sale-0-2">
+            <div class="left">
+              <div class="radio-custom"><i></i>
+                <input type="radio" name="subscribe-0" id="sale-0-2" class="sale"/>
+              </div>
+            </div>
+            <div class="right">
+              <p class="text">Скидка <span>15%</span></p>
+            </div>
+          </label>
+        </section>
+        <footer>
+          <p class="price">Цена: <span>154 грн.</span></p><a href="" class="btn-buy">КУПИТЬ</a>
+        </footer>
+      </div>
+      <div class="subscribe-1">
+        <header>
+          <p class="title">Подписка</p>
+          <p class="month">2 месяца</p>
+        </header>
+        <section class="radio-block">
+          <label for="sale-1-0">
+            <div class="left">
+              <div class="radio-custom"><i></i>
+                <input type="radio" name="subscribe-1" id="sale-1-0" class="sale"/>
+              </div>
+            </div>
+            <div class="right">
+              <p class="text">Скидка <span>5%</span></p>
+            </div>
+          </label>
+          <label for="sale-1-1">
+            <div class="left">
+              <div class="radio-custom"><i></i>
+                <input type="radio" name="subscribe-1" id="sale-1-1" class="sale"/>
+              </div>
+            </div>
+            <div class="right">
+              <p class="text">Скидка <span>10%</span></p>
+            </div>
+          </label>
+          <label for="sale-1-2">
+            <div class="left">
+              <div class="radio-custom"><i></i>
+                <input type="radio" name="subscribe-1" id="sale-1-2" class="sale"/>
+              </div>
+            </div>
+            <div class="right">
+              <p class="text">Скидка <span>15%</span></p>
+            </div>
+          </label>
+        </section>
+        <footer>
+          <p class="price">Цена: <span>324 грн.</span></p><a href="" class="btn-buy">КУПИТЬ</a>
+        </footer>
+      </div>
+      <div class="subscribe-2">
+        <header>
+          <p class="title">Подписка</p>
+          <p class="month">3 месяца</p>
+        </header>
+        <section class="radio-block">
+          <label for="sale-2-0">
+            <div class="left">
+              <div class="radio-custom"><i></i>
+                <input type="radio" name="subscribe-2" id="sale-2-0" class="sale"/>
+              </div>
+            </div>
+            <div class="right">
+              <p class="text">Скидка <span>5%</span></p>
+            </div>
+          </label>
+          <label for="sale-2-1">
+            <div class="left">
+              <div class="radio-custom"><i></i>
+                <input type="radio" name="subscribe-2" id="sale-2-1" class="sale"/>
+              </div>
+            </div>
+            <div class="right">
+              <p class="text">Скидка <span>10%</span></p>
+            </div>
+          </label>
+          <label for="sale-2-2">
+            <div class="left">
+              <div class="radio-custom"><i></i>
+                <input type="radio" name="subscribe-2" id="sale-2-2" class="sale"/>
+              </div>
+            </div>
+            <div class="right">
+              <p class="text">Скидка <span>15%</span></p>
+            </div>
+          </label>
+        </section>
+        <footer>
+          <p class="price">Цена: <span>475 грн.</span></p><a href="" class="btn-buy">КУПИТЬ</a>
+        </footer>
+      </div>
+    </div><br/>
+    <p class="subtitle">С нашими пакетами Вы получаете:</p>
+    <div class="wrap-pack">
+      <div class="container-sub"><img src="./image/icon-payment-00.png" class="img-responsive"/>
+        <p class="title">Экономия средств</p>
+        <p class="text">Купите пакет и экономьте до 50% на составлении документов.</p>
+      </div>
+      <div class="container-sub"><img src="./image/icon-payment-11.png" class="img-responsive"/>
+        <p class="title">Экономия времени</p>
+        <p class="text">Больше не придется оплачивать каждый документ отдельно и ждать поступления денег.</p>
+      </div>
+      <div class="container-sub"><img src="./image/icon-payment-22.png" class="img-responsive"/>
+        <p class="title">Возврат денег</p>
+        <p class="text">Гарантируем 100% возврат денег - без сложных процедур.</p>
+      </div>
+    </div>
+  </div>
+</section>

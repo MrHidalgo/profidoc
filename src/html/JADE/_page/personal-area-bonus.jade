@@ -1,2 +1,96 @@
+-
+    var tableTitle = [
+        'Название услуги / документа',
+        'Колчество бонусов',
+        'Дата операции'
+    ];
 
-p!= 'Bonus'
+    var tableCountBonus = [
+        'Название действия',
+        'Название действия',
+        'Название действия',
+        'Название действия',
+        'Название действия',
+        'Название действия'
+    ];
+
+    var tableSum = [
+        '<span class="minus">-100</span>',
+        '<span class="minus">+250</span>',
+        '<span class="plus">-10</span>',
+        '<span class="plus">+1500</span>',
+        '<span class="plus">-0.99</span>',
+        '<span class="minus">+1111.99</span>'
+    ];
+
+    var tableDate = [
+        '10.15.2016',
+        '10.15.2016',
+        '10.15.2016',
+        '10.15.2016',
+        '10.15.2016',
+        '10.15.2016'
+    ];
+
+    var bonusReplaceTitle = [
+        'Оплатить документы в системе',
+        'Обменять на подарочные карты',
+        'Получить электронные издания'
+    ];
+
+    var bonusReplaceImg = [
+        './image/icon-replace-0.png',
+        './image/icon-replace-1.png',
+        './image/icon-replace-2.png'
+    ];
+
+    var bonusYetReplace = [
+        './image/content-ex2.png',
+        './image/content-ex1.png',
+        './image/content-ex0.png',
+        './image/content-get0.png',
+        './image/content-get0.png'
+    ];
+
+
+
+mixin tableRowinfo (arr)
+    td!= arr[i]
+
+
+
+section#main.main
+    .main-row-my1
+        p.title!= 'Баланс бонусов'
+
+        table(cellspacing='0', class='bonus', id='bonus')
+            thead
+                tr
+                    - for(var i = 0; i < tableTitle.length; i++)
+                        td!= tableTitle[i]
+            tbody
+                - for(var i = 0; i < tableCountBonus.length; i++)
+                     tr
+                        +tableRowinfo(tableCountBonus)
+                        +tableRowinfo(tableSum)
+                        +tableRowinfo(tableDate)
+
+        a(href='#', class='btn-all-operation')!= 'Все операции'
+
+    .main-row-my1
+        p.title!= 'Обмен бонусов'
+
+        .container
+            - for(var i = 0; i < bonusReplaceTitle.length; i++)
+                a(href='#', class='btn-replace-bonus-#{i}')
+                    img(src = bonusReplaceImg[i], class='img-responsive')
+                    p.desc!= bonusReplaceTitle[i]
+
+    .main-row-my1
+        p.title!= 'Вы уже обменяли'
+
+        .container-img
+            - for (var i = 0; i < bonusYetReplace.length; i++)
+                div(class='block-cart-#{i}')
+                    img(src= bonusYetReplace[i], class='img-responsive')
+                    p.name!= 'Name'

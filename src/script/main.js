@@ -76,7 +76,7 @@ function searchAllCheckbox() {
  *   CUSTOM RADIO
  */
 function customRadio(elem) {
-    $('input[type="radio"]').closest('.radio-custom').removeClass('check');
+    $(elem).closest('.radio-block').find('.radio-custom').removeClass('check');
 
     if ($(elem).is(':checked')) {
         $(elem).closest('.radio-custom').addClass('check');
