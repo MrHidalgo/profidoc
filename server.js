@@ -7,7 +7,7 @@ app.set('port',	(process.env.PORT	||	4000));
 // MAIN PAGE
 app.use('/',	        express.static('./dist/',
     {
-        'index' : 'personal-area.html'
+        'index' : 'contracts-creating.html'
     }
 ));
 

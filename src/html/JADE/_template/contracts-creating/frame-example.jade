@@ -1,0 +1,197 @@
+-
+    var documentMenu = [
+        'Опросный лист',
+        'Документ',
+        'Приложение',
+        'Обсуждение',
+        'Мои вложения'
+    ];
+
+    var documentMenuArr = [
+        '#radio-content',
+        '#document-content',
+        '#application-content',
+        '#reviews-content',
+        '#attach-content'
+    ];
+
+    var radioPrincipal = [
+        'Юридическое лицо',
+        'Индивидуальный предприниматель',
+        'Физическое лицо'
+    ];
+
+    var radioContracts = [
+        'Приобритение товаров для Принципала',
+        'Продажу товаров Принципала',
+        'Приобритение услуг для Принципала',
+        'Приобритение недвижимости для Принципала',
+        'Продажу недвижимости Принципала',
+        'Поиск клиента для Принципала'
+    ];
+
+    var radioAction = [
+        'От своего имени, но за счет Принципала',
+        'От имени Принципала и за счет Принципала'
+    ];
+
+    var radioTerritory =[
+        'Да',
+        'Нет'
+    ];
+
+    var radioSubBlock = [
+        'Стоимость товаров облагается НДС',
+        'Стоимость товаров не облагается НДС (сделки между физическими лицами НДС не облагаются)'
+    ];
+
+    var radioRights = [
+        'Да, с указанием в договоре конкретных условий субагентского договора',
+        'Да, без указания в договоре конкретных условий субагентского договора',
+        'Только по предварительному согласию с Принципалом, с указанием в договоре конкретных условий субагентского договора',
+        'Только по предварительному согласию с Принципалом , без указания в договоре конкретных условий субагентского договора',
+        'Нет'
+    ];
+
+    var listDoc = [
+        'Агентский договор',
+        'Отчет агента',
+        'Ассортимент товаров',
+        'Протокол разногласий',
+        'Агентский договор',
+        'Отчет агента',
+        'Ассортимент товаров',
+        'Протокол разногласий'
+    ];
+
+
+
+mixin radioBlock(arrRadio, nameSpace)
+    .radio-block
+        -for(var i = 0; i < arrRadio.length; i++)
+            .field
+                span.radio-custom
+                    if (i == 0)
+                        input(type='radio', name= nameSpace, id= nameSpace + '-#{i}', checked='checked')
+                    else
+                        input(type='radio', name= nameSpace, id= nameSpace + '-#{i}')
+                label(for= nameSpace + '-#{i}')!= arrRadio[i]
+
+
+mixin radioBlockSub(arrRadio1, arrRadio2, nameSpace)
+    -for(var i = 0; i < arrRadio1.length; i++)
+        if (i == 0)
+            .radio-block.sub-yes
+                .field
+                    span.radio-custom.main
+                        input(type='radio', name= nameSpace, id= nameSpace + '-#{i}', checked='checked')
+                    label(for= nameSpace + '-#{i}')!= arrRadio1[i]
+
+                    .main-field
+                        -for(var j = 0; j < arrRadio2.length; j++)
+                            .radio-block
+                                .field
+                                    span.radio-custom
+                                        input(type='radio', name= nameSpace, id= nameSpace + '-sub-#{j}')
+                                    label(for= nameSpace + '-sub-#{j}')!= arrRadio2[j]
+        else
+            .radio-block.sub-no
+                .field
+                    span.radio-custom
+                        input(type='radio', name= nameSpace, id= nameSpace + '-#{i}')
+                    label(for= nameSpace + '-#{i}')!= arrRadio1[i]
+
+
+
+
+section#frame-example.frame-example
+    .frame-example-container
+        header
+            a(href='#', class='btn-icon-back')
+            p.title!= 'Шаблон. Агентский договор'
+            a(href='#', class='btn-help')!= 'Помощь'
+
+        .sub-header
+            a(href='#', class='btn-doc-list')
+            a(href='#', class='btn-doc-block')
+            a(href='#', class='btn-doc-price')!= '500'
+            a(href='#', class='btn-doc-download')!= 'Скачать'
+            a(href='#', class='btn-doc-save')
+            a(href='#', class='btn-doc-print')
+            a(href='#', class='btn-doc-attach')
+
+
+        .frame-example-row
+            .left-panel
+                ul.list-menu
+                    - for(var i = 0; i < documentMenu.length; i++)
+                        if (i == 0)
+                            li.active: a(href='#', class='btn-menu-#{i}')!= documentMenu[i]
+                        else
+                            li: a(href='#', class='btn-menu-#{i}')!= documentMenu[i]
+
+
+            .right-panel
+                .right-panel-row
+                    #radio-content
+                        p.title!= 'Правовый статус сторон :'
+                        p.sub-title!= 'Принципал :'
+                            +radioBlock(radioPrincipal, 'principal')
+                        p.sub-title!= 'Агент :'
+                            +radioBlock(radioPrincipal, 'agent')
+
+                        p.title!= 'Договор направлен на :'
+                            +radioBlock(radioContracts, 'contracts')
+
+                        p.title!= 'Агент действует :'
+                            +radioBlock(radioAction, 'action')
+
+                        p.title!= 'Территория исполнения указана в договоре :'
+                            +radioBlock(radioTerritory, 'territory')
+
+                        p.title!= 'Договор содержит условия относительно ассортимента товаров и услуг, являющихся предметом агентирования: '
+                            +radioBlockSub(radioTerritory, radioSubBlock, 'sub-content')
+
+                        p.title!= 'Страхование имущества, являющегося предметом договора, за счет :'
+                            +radioBlock(radioTerritory, 'insurance')
+
+                        p.title!= 'Договор заключается на определенный срок :'
+                            +radioBlock(radioTerritory, 'time')
+
+                        p.title!= 'Принципал обязуется не заключать аналогичных агентских договоров с другими агентами, действующими на определенной договором территории :'
+                            +radioBlock(radioTerritory, 'one')
+
+                        p.title!= 'Принципал обязуется воздерживаться от осуществления на определенной договором территории самостоятельной деятельности, аналогичной деятельности, составляющей предмет договора :'
+                            +radioBlock(radioTerritory, 'two')
+
+                        p.title!= 'Агент обязуется не заключать с другими принципалами аналогичных агентских договоров, которые должны исполняться на территории, полностью или частично совпадающей с территорией договора :'
+                            +radioBlock(radioTerritory, 'three')
+
+                        p.title!= 'Агент вправе заключать субагентские договоры :'
+                            +radioBlock(radioRights, 'four')
+
+                        p.title!= 'К отчету Агента должны быть приложены необходимые доказательства расходов, произведенных Агентом за счет Принципала :'
+                            +radioBlock(radioTerritory, 'five')
+
+
+
+                    #document-content
+                        p!= '<strong>DOCUMENT-CONTENT</strong>'
+                    #application-content
+                        p!= '<strong>APPLICATION-CONTENT</strong>'
+                    #reviews-content
+                        p!= '<strong>REVIEWS-CONTENT</strong>'
+                    #attach-content
+                        p!= '<strong>ATTACH-CONTENT</strong>'
+
+    .frame-example-container
+        footer
+            p.title!= 'Все докуемнти пакета "Агентский договор"'
+
+        section
+            ul.list-more-doc
+                - for(var i = 0; i < listDoc.length; i++)
+                    li: a(href='#', class='btn-document')!= '<i></i> <p>' + listDoc[i] + '</p>'
+
+    .frame-example-container
+        p.title!= 'ПОЛЕЗНАЯ ИНФОРМАЦИЯ'

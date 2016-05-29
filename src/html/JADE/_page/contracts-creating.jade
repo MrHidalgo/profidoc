@@ -8,7 +8,9 @@ include ../_mixin/mixin
     var arrStyleName = [
         './style/style.min.css',
         './style/_dop/breadcrumbs.min.css',
-        './style/contracts-creating/contracts-creating.min.css'
+        './style/contracts-creating/contracts-creating.min.css',
+        './style/contracts-creating/frame-example.min.css',
+        './style/contracts-list/search.min.css'
     ]
 
     var scriptName = [
@@ -33,6 +35,13 @@ html
         // BREADCRUMBS BLOCK
         block breadcrumbs
             include ../_template/contracts-creating/breadcrumbs
+
+
+        block search
+            include ../_template/contracts-list/search
+
+        block frame-example
+            include ../_template/contracts-creating/frame-example
 
 
         // FOOTER MENU

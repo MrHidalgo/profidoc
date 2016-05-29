@@ -76,7 +76,7 @@ function searchAllCheckbox() {
  *   CUSTOM RADIO
  */
 function customRadio(elem) {
-    $(elem).closest('.radio-block').find('.radio-custom').removeClass('check');
+    // $(elem).closest('.radio-block').find('.radio-custom').removeClass('check');
 
     if ($(elem).is(':checked')) {
         $(elem).closest('.radio-custom').addClass('check');
@@ -106,6 +106,13 @@ $(document).ready(
         searchAllCheckbox();
         /* custom radio */
         searchAllRadio();
+
+
+        /*...*/
+        $('ul.list-menu li a').click( function(e) {
+            $('ul.list-menu li').removeClass('active');
+            $(this).closest('li').addClass('active');
+        });
 
         /*...*/
         {
@@ -247,7 +254,13 @@ $(document).ready(
         {
             $('input[type="radio"]').on('click',
                 function () {
+                    $(this).closest('.radio-block').find('.radio-custom').removeClass('check');
+                    $(this).closest('.sub-yes').find('.main-field .radio-custom').removeClass('check');
+                    $(this).closest('.sub-yes').find('.radio-custom.main').addClass('check');
+                    $(this).closest('.sub-yes').siblings('.sub-no').find('.radio-custom').removeClass('check');
+                    $(this).closest('.sub-no').siblings('.sub-yes ').find('.radio-custom').removeClass('check');
                     customRadio(this);
+
                     $('.choose-row').removeClass('active');
                     $(this).closest('.choose-row').addClass('active');
                 }
