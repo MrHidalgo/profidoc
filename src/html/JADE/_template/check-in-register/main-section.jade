@@ -1,0 +1,214 @@
+-
+    var block10 = [
+        'Сокращенное название',
+        'Полное название'
+    ];
+
+    var block11Text = 'По адресу общества будет осуществляться взаимодействие с государственными органами: налоговой инспекцией, ФСС, ПФР и т. д., поэтому рекомендуем иметь доступ к почтовой корреспонденции по указанному адресу. Лучше всего, когда фактический и юридический адреса организации совпадают.';
+
+    var block110 = ['Городской номер телефона'];
+    var block111 = ['Факс'];
+    var block112 = ['Мобильный номер телефона'];
+    var block113 = ['Веб-сайт'];
+    var block114 = ['Электронный адрес'];
+
+    var modal1 = ['Введите адрес'];
+
+    var modalSelectTitle1 = ['Выберите область'];
+    var modalSelectTitle2 = ['Выберите район области'];
+    var modalSelectTitle3 = ['Выберите тип населенного пункта'];
+    var modalSelectTitle4 = ['Выберите город'];
+    var modalSelectTitle5 = ['Выберите район города'];
+    var modalSelectTitle6 = ['Тип улицы'];
+    var modalSelectTitle7 = ['Адрес'];
+    var modalSelectTitle8 = ['Номер дома'];
+    var modalSelectTitle9 = ['Номер корпуса'];
+    var modalSelectTitle10 = ['Тип помещения'];
+    var modalSelectTitle11 = ['№'];
+
+
+    var modalSelectOption1 = ['Выберите область'];
+    var modalSelectOption2 = ['Выберите район области'];
+    var modalSelectOption3 = [
+        'Выберите тип',
+        'Місто',
+        'Селище міського типу',
+        'Селище',
+        'Село'
+    ];
+    var modalSelectOption4 = ['Выберите населенный пункт'];
+    var modalSelectOption5 = ['Выберите район города'];
+    var modalSelectOption6 = [
+        'Улица',
+        'Проспект',
+        'Переулок'
+    ];
+    var modalSelectOption7 = [
+        'Квартира',
+        'Офис',
+        'Комната',
+        'Кабинет'
+    ];
+
+    var modal21 = ['Имя'];
+    var modal22 = ['Фамилия'];
+    var modal23 = ['Телефон'];
+    var modal24 = ['Комментарий'];
+
+    var tableTitle = [
+        '',
+        'Населенный пункт',
+        'Населенный пункт',
+        'Адрес',
+        'Стоимость'
+    ];
+
+    var tableTitle1 = [
+        'Учредитель',
+        'Размер доли в %',
+        'Номинальная часть доли',
+        'Номинальная часть доли прописью',
+        'Способ формирования',
+        ''
+    ];
+
+
+mixin inputSection(title, subTitle, arrLength, inputType)
+    .field
+        p.title!= title
+        - for(var i = 0; i < arrLength; i++)
+            p.sub-title!= subTitle[i]
+            input(type= inputType, name='text', class='text')
+            p.help-block.help-block-error
+
+
+mixin inputSelect(subTitle, selectArr)
+    .field
+        -for(var i = 0; i < subTitle.length; i++)
+            p.sub-title!= subTitle[i]
+            .select-custom
+                .select-value
+                    span
+                    i
+                select
+                    -for(var j = 0; j < selectArr.length; j++)
+                        option(value= selectArr[j])!= selectArr[j]
+            p.help-block.help-block-error
+
+
+
+section#create-document.create-document
+    .create-document-container
+        #admin-panel
+            h4!= '<span class="current-steps">1</span> Наименование компании'
+            section
+                +inputSection('Наименование предприятия на украинском языке', block10, 2, 'text')
+                +inputSection('Наименование предприятия на русском языке', block10, 2, 'text')
+                +inputSection('Наименование предприятия на английском языке', block10, 2, 'text')
+
+
+
+            h4!= '<span class="current-steps">2</span> Адрес предприятия'
+            section
+                p.title!= 'Адрес предприятия'
+                p.text!= block11Text
+                p.sub-title!= 'Выберите адрес'
+                a(href='#', class='btn-address', data-modal='address')!= 'Выбрать адрес'
+
+                p.sub-title!= 'Юридический адрес отсутствует, хочу арендовать.'
+                a(href='#', class='btn-address', data-modal='address1')!= 'Выбрать адрес и заказать'
+
+                +inputSection('', block110, 1, 'text')
+                +inputSection('', block111, 1, 'text')
+                +inputSection('', block112, 1, 'tel')
+                +inputSection('', block113, 1, 'text')
+                +inputSection('', block114, 1, 'email')
+
+
+
+            h4!= '<span class="current-steps">3</span> Основатели предприятия'
+            section
+                table(cellspacing='0', class='', id='')
+                    thead
+                        tr
+                            - for(var i = 0; i < tableTitle1.length; i++)
+                                td!= tableTitle1[i]
+
+                    tbody
+                        tr
+            h4!= '<span class="current-steps">4</span> Руководитель'
+            section
+            h4!= '<span class="current-steps">5</span> Виды деятельности'
+            section
+            h4!= '<span class="current-steps">6</span> Система налогообложения'
+            section
+            h4!= '<span class="current-steps">7</span> Способ подачи документов'
+            section
+            h4!= '<span class="current-steps">8</span> Контактная информация'
+            section
+
+        .modal-row-address
+            #address
+                .modal
+                    .header
+                        p.title!='Выбор адреса предприятия'
+
+                    .section
+                        h5!= 'Поиск'
+                        section
+                            +inputSection('', modal1, 1, 'text')
+                            a(href='#', class='btn-search one')!= 'Поиск'
+                            a(href='#', class='btn-reset two')!= 'Сброс'
+
+                        h5!= 'Выбор адреса'
+                        section
+                            +inputSelect(modalSelectTitle1, modalSelectOption1)
+                            +inputSelect(modalSelectTitle2, modalSelectOption2)
+                            +inputSelect(modalSelectTitle3, modalSelectOption3)
+                            +inputSelect(modalSelectTitle4, modalSelectOption4)
+                            +inputSelect(modalSelectTitle5, modalSelectOption5)
+                            .two-row
+                                .left
+                                    +inputSelect(modalSelectTitle6, modalSelectOption6)
+                                .right
+                                    +inputSection('', modalSelectTitle7, 1, 'text')
+                            .four-row
+                                .one
+                                    +inputSection('', modalSelectTitle8, 1, 'text')
+                                .two
+                                    +inputSection('', modalSelectTitle9, 1, 'text')
+                                .three
+                                    +inputSelect(modalSelectTitle10, modalSelectOption7)
+                                .four
+                                    +inputSection('', modalSelectTitle11, 1, 'text')
+
+                    .footer
+                        a(href='#', class='btn-enter one')!= 'Готово'
+                        a(href='#', class='btn-esc two')!= 'Отмена'
+
+        .modal-row-address1
+            #address1
+                .modal
+                    .header
+                        p.title!= 'Заказать юридический адрес'
+
+                    .section
+                        table(cellspacing='0', class='', id='')
+                            thead
+                                tr
+                                    - for(var i = 0; i < tableTitle.length; i++)
+                                        td!= tableTitle[i]
+
+                            tbody
+                                tr
+
+                        +inputSection('', modal21, 1, 'text')
+                        +inputSection('', modal22, 1, 'text')
+                        +inputSection('', modal23, 1, 'tel')
+
+                        p.sub-title!= modal24
+                        textarea
+
+                    .footer
+                        a(href='#', class='btn-enter one')!= 'Готово'
+                        a(href='#', class='btn-esc two')!= 'Отмена'

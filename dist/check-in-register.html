@@ -18,13 +18,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <!-- TITLE-->
-    <title></title>
+    <title>Реєстрація ТОВ</title>
     <!-- FONTS-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800"/>
     <!-- LINK CSS-->
     <link rel="stylesheet" href="./style/style.min.css"/>
     <link rel="stylesheet" href="./style/_dop/breadcrumbs.min.css"/>
-    <link rel="stylesheet" href="./style/privacy/privacy.min.css"/>
+    <link rel="stylesheet" href="./style/check-in-register/check-in-register.min.css"/>
     <!-- DOP FILES-->
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries-->
     <!-- WARNING: Respond.js doesn't work if you view the page via file://--><!--[if lt IE 9]>
@@ -300,14 +300,304 @@
         <section id="breadcrumbs" class="breadcrumbs">
           <div class="breadcrumbs-container">
             <div class="breadcrumbs-header">
-              <h2>Политика конфиденциальности</h2>
+              <h2>Реєстрація ТОВ</h2>
                   <ul class="bread-list">
                     <li><a href="/">Главная&nbsp;/</a></li>
-                    <li><a href="#">Политика конфиденциальности&nbsp;</a></li>
+                    <li><a href="#">Реєстрація ТОВ&nbsp;</a></li>
                   </ul>
             </div>
           </div>
         </section>
+    <section id="create-document" class="create-document">
+      <div class="create-document-container">
+        <div id="admin-panel">
+          <h4><span class="current-steps">1</span> Наименование компании</h4>
+          <section>
+                <div class="field">
+                  <p class="title">Наименование предприятия на украинском языке</p>
+                  <p class="sub-title">Сокращенное название</p>
+                  <input type="text" name="text" class="text">
+                  <p class="help-block help-block-error"></p>
+                  <p class="sub-title">Полное название</p>
+                  <input type="text" name="text" class="text">
+                  <p class="help-block help-block-error"></p>
+                </div>
+                <div class="field">
+                  <p class="title">Наименование предприятия на русском языке</p>
+                  <p class="sub-title">Сокращенное название</p>
+                  <input type="text" name="text" class="text">
+                  <p class="help-block help-block-error"></p>
+                  <p class="sub-title">Полное название</p>
+                  <input type="text" name="text" class="text">
+                  <p class="help-block help-block-error"></p>
+                </div>
+                <div class="field">
+                  <p class="title">Наименование предприятия на английском языке</p>
+                  <p class="sub-title">Сокращенное название</p>
+                  <input type="text" name="text" class="text">
+                  <p class="help-block help-block-error"></p>
+                  <p class="sub-title">Полное название</p>
+                  <input type="text" name="text" class="text">
+                  <p class="help-block help-block-error"></p>
+                </div>
+          </section>
+          <h4><span class="current-steps">2</span> Адрес предприятия</h4>
+          <section>
+            <p class="title">Адрес предприятия</p>
+            <p class="text">По адресу общества будет осуществляться взаимодействие с государственными органами: налоговой инспекцией, ФСС, ПФР и т. д., поэтому рекомендуем иметь доступ к почтовой корреспонденции по указанному адресу. Лучше всего, когда фактический и юридический адреса организации совпадают.</p>
+            <p class="sub-title">Выберите адрес</p><a href="#" data-modal="address" class="btn-address">Выбрать адрес</a>
+            <p class="sub-title">Юридический адрес отсутствует, хочу арендовать.</p><a href="#" data-modal="address1" class="btn-address">Выбрать адрес и заказать</a>
+                <div class="field">
+                  <p class="title"></p>
+                  <p class="sub-title">Городской номер телефона</p>
+                  <input type="text" name="text" class="text">
+                  <p class="help-block help-block-error"></p>
+                </div>
+                <div class="field">
+                  <p class="title"></p>
+                  <p class="sub-title">Факс</p>
+                  <input type="text" name="text" class="text">
+                  <p class="help-block help-block-error"></p>
+                </div>
+                <div class="field">
+                  <p class="title"></p>
+                  <p class="sub-title">Мобильный номер телефона</p>
+                  <input type="tel" name="text" class="text">
+                  <p class="help-block help-block-error"></p>
+                </div>
+                <div class="field">
+                  <p class="title"></p>
+                  <p class="sub-title">Веб-сайт</p>
+                  <input type="text" name="text" class="text">
+                  <p class="help-block help-block-error"></p>
+                </div>
+                <div class="field">
+                  <p class="title"></p>
+                  <p class="sub-title">Электронный адрес</p>
+                  <input type="email" name="text" class="text">
+                  <p class="help-block help-block-error"></p>
+                </div>
+          </section>
+          <h4><span class="current-steps">3</span> Основатели предприятия</h4>
+          <section>
+            <table cellspacing="0" id="">
+              <thead>
+                <tr>
+                  <td>Учредитель</td>
+                  <td>Размер доли в %</td>
+                  <td>Номинальная часть доли</td>
+                  <td>Номинальная часть доли прописью</td>
+                  <td>Способ формирования</td>
+                  <td></td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr></tr>
+              </tbody>
+            </table>
+          </section>
+          <h4><span class="current-steps">4</span> Руководитель</h4>
+          <section></section>
+          <h4><span class="current-steps">5</span> Виды деятельности</h4>
+          <section></section>
+          <h4><span class="current-steps">6</span> Система налогообложения</h4>
+          <section></section>
+          <h4><span class="current-steps">7</span> Способ подачи документов</h4>
+          <section></section>
+          <h4><span class="current-steps">8</span> Контактная информация</h4>
+          <section></section>
+        </div>
+        <div class="modal-row-address">
+          <div id="address">
+            <div class="modal">
+              <div class="header">
+                <p class="title">Выбор адреса предприятия</p>
+              </div>
+              <div class="section">
+                <h5>Поиск</h5>
+                <section>
+                      <div class="field">
+                        <p class="title"></p>
+                        <p class="sub-title">Введите адрес</p>
+                        <input type="text" name="text" class="text">
+                        <p class="help-block help-block-error"></p>
+                      </div><a href="#" class="btn-search one">Поиск</a><a href="#" class="btn-reset two">Сброс</a>
+                </section>
+                <h5>Выбор адреса</h5>
+                <section>
+                      <div class="field">
+                        <p class="sub-title">Выберите область</p>
+                        <div class="select-custom">
+                          <div class="select-value"><span></span><i></i></div>
+                          <select>
+                            <option value="Выберите область">Выберите область</option>
+                          </select>
+                        </div>
+                        <p class="help-block help-block-error"></p>
+                      </div>
+                      <div class="field">
+                        <p class="sub-title">Выберите район области</p>
+                        <div class="select-custom">
+                          <div class="select-value"><span></span><i></i></div>
+                          <select>
+                            <option value="Выберите район области">Выберите район области</option>
+                          </select>
+                        </div>
+                        <p class="help-block help-block-error"></p>
+                      </div>
+                      <div class="field">
+                        <p class="sub-title">Выберите тип населенного пункта</p>
+                        <div class="select-custom">
+                          <div class="select-value"><span></span><i></i></div>
+                          <select>
+                            <option value="Выберите тип">Выберите тип</option>
+                            <option value="Місто">Місто</option>
+                            <option value="Селище міського типу">Селище міського типу</option>
+                            <option value="Селище">Селище</option>
+                            <option value="Село">Село</option>
+                          </select>
+                        </div>
+                        <p class="help-block help-block-error"></p>
+                      </div>
+                      <div class="field">
+                        <p class="sub-title">Выберите город</p>
+                        <div class="select-custom">
+                          <div class="select-value"><span></span><i></i></div>
+                          <select>
+                            <option value="Выберите населенный пункт">Выберите населенный пункт</option>
+                          </select>
+                        </div>
+                        <p class="help-block help-block-error"></p>
+                      </div>
+                      <div class="field">
+                        <p class="sub-title">Выберите район города</p>
+                        <div class="select-custom">
+                          <div class="select-value"><span></span><i></i></div>
+                          <select>
+                            <option value="Выберите район города">Выберите район города</option>
+                          </select>
+                        </div>
+                        <p class="help-block help-block-error"></p>
+                      </div>
+                  <div class="two-row">
+                    <div class="left">
+                          <div class="field">
+                            <p class="sub-title">Тип улицы</p>
+                            <div class="select-custom">
+                              <div class="select-value"><span></span><i></i></div>
+                              <select>
+                                <option value="Улица">Улица</option>
+                                <option value="Проспект">Проспект</option>
+                                <option value="Переулок">Переулок</option>
+                              </select>
+                            </div>
+                            <p class="help-block help-block-error"></p>
+                          </div>
+                    </div>
+                    <div class="right">
+                          <div class="field">
+                            <p class="title"></p>
+                            <p class="sub-title">Адрес</p>
+                            <input type="text" name="text" class="text">
+                            <p class="help-block help-block-error"></p>
+                          </div>
+                    </div>
+                  </div>
+                  <div class="four-row">
+                    <div class="one">
+                          <div class="field">
+                            <p class="title"></p>
+                            <p class="sub-title">Номер дома</p>
+                            <input type="text" name="text" class="text">
+                            <p class="help-block help-block-error"></p>
+                          </div>
+                    </div>
+                    <div class="two">
+                          <div class="field">
+                            <p class="title"></p>
+                            <p class="sub-title">Номер корпуса</p>
+                            <input type="text" name="text" class="text">
+                            <p class="help-block help-block-error"></p>
+                          </div>
+                    </div>
+                    <div class="three">
+                          <div class="field">
+                            <p class="sub-title">Тип помещения</p>
+                            <div class="select-custom">
+                              <div class="select-value"><span></span><i></i></div>
+                              <select>
+                                <option value="Квартира">Квартира</option>
+                                <option value="Офис">Офис</option>
+                                <option value="Комната">Комната</option>
+                                <option value="Кабинет">Кабинет</option>
+                              </select>
+                            </div>
+                            <p class="help-block help-block-error"></p>
+                          </div>
+                    </div>
+                    <div class="four">
+                          <div class="field">
+                            <p class="title"></p>
+                            <p class="sub-title">№</p>
+                            <input type="text" name="text" class="text">
+                            <p class="help-block help-block-error"></p>
+                          </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="footer"><a href="#" class="btn-enter one">Готово</a><a href="#" class="btn-esc two">Отмена</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-row-address1">
+          <div id="address1">
+            <div class="modal">
+              <div class="header">
+                <p class="title">Заказать юридический адрес</p>
+              </div>
+              <div class="section">
+                <table cellspacing="0" id="">
+                  <thead>
+                    <tr>
+                      <td></td>
+                      <td>Населенный пункт</td>
+                      <td>Населенный пункт</td>
+                      <td>Адрес</td>
+                      <td>Стоимость</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr></tr>
+                  </tbody>
+                </table>
+                    <div class="field">
+                      <p class="title"></p>
+                      <p class="sub-title">Имя</p>
+                      <input type="text" name="text" class="text">
+                      <p class="help-block help-block-error"></p>
+                    </div>
+                    <div class="field">
+                      <p class="title"></p>
+                      <p class="sub-title">Фамилия</p>
+                      <input type="text" name="text" class="text">
+                      <p class="help-block help-block-error"></p>
+                    </div>
+                    <div class="field">
+                      <p class="title"></p>
+                      <p class="sub-title">Телефон</p>
+                      <input type="tel" name="text" class="text">
+                      <p class="help-block help-block-error"></p>
+                    </div>
+                <p class="sub-title">Комментарий</p>
+                <textarea></textarea>
+              </div>
+              <div class="footer"><a href="#" class="btn-enter one">Готово</a><a href="#" class="btn-esc two">Отмена</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- FOOTER MENU-->
     <footer id="footer" class="footer">
       <div class="footer-header">
@@ -364,6 +654,7 @@
       </div>
     </footer>
         <script src="./script/jquery.min.js"></script>
+        <script src="./script/jquery.steps.min.js"></script>
         <script src="./script/script.min.js"></script>
   </body>
 </html>

@@ -25,15 +25,16 @@
         'Украинский - Английский'
     ];
 
-    var radioAttr1 = 'radio-extend';
-    var radioAttr2 = 'radio-simple';
+    var radioAttr1 = 'radioAttr1';
+    var radioAttr2 = 'radioAttr2';
 
 mixin blockChoose(radioAttr, title, arrInfo, arrLang)
     .choose-row
         .left
-            .radio-custom
-                input(type='radio', name= radioAttr, class= radioAttr, id= radioAttr)
-                label(for= radioAttr)!= title
+            .radio-block
+                .radio-custom
+                    input(type='radio', name='radioAttr', class= radioAttr, id= radioAttr)
+                    label(for= radioAttr)!= title
 
             ul.list
                 -for(var i = 0; i < arrInfo.length; i++)

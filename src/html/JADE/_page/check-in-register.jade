@@ -8,22 +8,21 @@ include ../_mixin/mixin
     var arrStyleName = [
         './style/style.min.css',
         './style/_dop/breadcrumbs.min.css',
-        './style/terms/terms.min.css'
+        './style/check-in-register/check-in-register.min.css'
     ]
 
     var scriptName = [
         './script/jquery.min.js',
+        './script/jquery.steps.min.js',
         './script/script.min.js'
     ];
-
-
 
 
 
 doctype html
 html
     head
-        +htmlTemplateHEAD('', arrFontName, arrStyleName, false)
+        +htmlTemplateHEAD('Реєстрація ТОВ', arrFontName, arrStyleName, false)
 
     body
 
@@ -32,7 +31,11 @@ html
 
         // BREADCRUMBS BLOCK
         block breadcrumbs
-            include ../_template/terms/breadcrumbs
+            include ../_template/check-in/breadcrumbs
+
+
+        block main-section
+            include ../_template/check-in-register/main-section
 
 
         // FOOTER MENU

@@ -114,6 +114,8 @@ section.navigation{
 
 
     .nav-container{
+      position: relative;
+      z-index: 1001;
       @include mixinMaxWidthPosition(10.7, 0, 15, 0, 15);
 
 
@@ -160,6 +162,7 @@ section.navigation{
       background-color: $color-navBlue;
       padding-top: render-pixel(48);
       @include mixinDimensions('min', $width-all, auto);
+      z-index: 1000;
 
 
       .hide-row {

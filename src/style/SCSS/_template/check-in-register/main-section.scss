@@ -1,0 +1,436 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_mixin/mixin";
+@import "../../_function/function";
+
+
+///
+/// VARIABLE BLOCK
+///
+$width-all            : return-value(dimension, all);
+
+$color-white          : return-value(color, white);
+$color-black          : return-value(color, black);
+$color-scopeBorder    : return-value(color, scopeBorder);
+$color-navBlue        : return-value(color, navBlue);
+$color-yellow         : return-value(color, yellow);
+$color-gradientGray1    : return-value(color, gradientGray1);
+$color-gradientGray2    : return-value(color, gradientGray2);
+
+$image-form-bg        : '../../image/form-bg.png';
+$image-select-arrow   : '../../image/check-tarif-3.png';
+
+
+
+///
+/// MAIN SECTION
+///
+
+section.create-document {
+  .create-document-container {
+    @include mixinMaxWidthPosition(10.7, 30, 0);
+
+    p.title {
+      font-size: render-pixel(18);
+      color: darken($color-navBlue, 40%);
+      margin: render-pixel(10) 0;
+    }
+
+    p.sub-title {
+      font: {
+        size: render-pixel(15);
+        weight: 600;
+      }
+      margin: render-pixel(20) 0 render-pixel(10);
+    }
+
+    p.help-block.help-block-error {
+      display: none;
+      color: red;
+      font-size: render-pixel(12);
+    }
+
+    input[type='text'],
+    input[type='email'],
+    input[type='tel'] {
+      padding: 0 .9375em;
+      font-style: italic;
+      font-size: .9375em;
+      outline: 0;
+      border: 1px solid #cecece;
+      @include mixinDimensions('', $width-all, 38px);
+      border-radius: .2em;
+
+
+      &:focus {
+        border-radius: 0;
+        box-shadow: 0 0 5px 1px rgba(0,0,0,.2);
+      }
+    }
+
+    textarea {
+      @include mixinDimensions('', $width-all, 50px);
+      border-radius: .2em;
+      padding: 0 .9375em;
+      font-size: .9375em;
+      outline: 0;
+      border: 1px solid #cecece;
+    }
+
+    table {
+      margin-top: render-pixel(20);
+      width: $width-all;
+      font-size: render-pixel(14);
+      @include mixinBorder('all', 1px, lighten($color-gradientGray2, 3%));
+
+      thead,
+      tbody {
+
+        tr{
+
+          td {
+            text-align: center;
+            vertical-align: middle;
+            padding: render-pixel(10);
+            @include mixinBorder(right, 1px, lighten($color-gradientGray2, 3%));
+
+
+            &:last-child {
+              border: none;
+            }
+          }
+        }
+      }
+
+      thead {
+        @include mixinLinerGradient($color-gradientGray1, $color-gradientGray2);
+      }
+
+      tbody {
+        border-collapse: separate;
+        tr{
+          min-height: render-pixel(50);
+        }
+      }
+    }
+
+    .field {
+      margin-bottom: render-pixel(10);
+    }
+
+    .select-custom {
+      cursor: pointer;
+      position: relative;
+      @include mixinDimensions('', $width-all, 38px);
+      padding: 0 .9375em;
+      outline: 0;
+      border: 1px solid #cecece;
+      border-radius: .2em;
+      line-height: 36px;
+
+      .select-value {
+        span {
+          display: inline-block;
+          font-size: render-pixel(14);
+          @include mixinDimensions('', $width-all);
+        }
+
+        i {
+          position: absolute;
+          right: 10px;  top: 17px;
+          @include mixinDimensions('', 9px, 5px);
+          background: url($image-select-arrow) no-repeat center;
+          background-size: contain;
+        }
+      }
+
+
+      select {
+        opacity: 0;
+        @include mixinCenteredBLockAbsolute(0,0,0,0);
+        @include mixinDimensions('', $width-all);
+      }
+    }
+
+    .two-row {
+      overflow: hidden;
+
+      .left,
+      .right {
+        float: left;
+        padding: render-pixel(5);
+      }
+
+      .left {
+        width: $width-all - 75;
+      }
+
+      .right {
+        width: $width-all - 25;
+      }
+    }
+
+    .four-row {
+      overflow: hidden;
+
+      .one,
+      .two,
+      .three,
+      .four {
+        float: left;
+        width: $width-all/4;
+        padding: render-pixel(5);
+      }
+    }
+
+    .steps {
+      ul {
+        li {
+          a {
+            span.current-info.audible {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    .content {
+      > h4,
+      > h5 {
+        display: none;
+      }
+    }
+
+    #admin-panel {
+      overflow: auto;
+
+
+      .steps {
+        float: right;
+        width: render-pixel(350);
+        padding-bottom: render-pixel(30);
+
+
+        ul {
+
+          li {
+            padding: render-pixel(10) 0 render-pixel(10) render-pixel(15);
+            @include mixinBorder(left, 1px, $color-scopeBorder);
+            @include mixinBorder(top, 1px, transparent);
+            @include mixinBorder(bottom, 1px, transparent);
+
+
+            a{
+              font: {
+                size: render-pixel(14);
+                weight: 600;
+              }
+
+              span.current-steps {
+                padding: 1.5px 7px;
+                border-radius: $width-all;
+                color: $color-navBlue;
+                @include mixinBorder('all', 1px, $color-navBlue);
+              }
+            }
+
+
+            &.current {
+              @include mixinBorder(left, 1px, transparent);
+              @include mixinBorder(top, 1px, $color-scopeBorder);
+              @include mixinBorder(bottom, 1px, $color-scopeBorder);
+
+
+              a {
+
+                span.current-steps {
+                  color: $color-white;
+                  background-color: $color-navBlue;
+                }
+              }
+            }
+          }
+        }
+      }// /-.steps
+
+
+      .content {
+        float: left;
+        width: render-pixel(720);
+        padding: 0 render-pixel(20) render-pixel(30) 0;
+
+        > section {
+
+          p.text {
+            font: {
+              size: render-pixel(14);
+            }
+            padding: render-pixel(15);
+            @include mixinBorder('all', 1px, $color-scopeBorder);
+          }
+
+          a[class^='btn-'] {
+            padding: render-pixel(10) render-pixel(15);
+            text-align: center;
+            line-height: 2.5;
+            @include mixinDimensions('all', 120px, 38px);
+            color: $color-white;
+            font-size: render-pixel(14);
+            background-color: $color-navBlue;
+            transition: all .3s linear;
+
+            &:hover {
+              background-color: $color-yellow;
+            }
+          }
+        }
+      }// /-.content
+
+
+      .actions {
+        clear: both;
+        width: 100%;
+        padding: render-pixel(30) 0;
+        @include mixinBorder(top, 1px, $color-scopeBorder);
+
+
+        ul {
+          overflow: auto;
+
+
+          li {
+            display: inline-block;
+            margin-right: render-pixel(20);
+
+
+            a {
+              display: block;
+              font-size: render-pixel(14);
+              padding: render-pixel(10) render-pixel(30);
+              @include mixinDimensions('', $width-all);
+            }
+
+
+            &:first-child {
+              a {
+                @include mixinBorder('all', 1px, $color-scopeBorder);
+              }
+            }
+
+
+            &:nth-child(2) {
+              a {
+                color: $color-white;
+                background-color: $color-navBlue;
+                @include mixinBorder('all', 1px, $color-navBlue);
+              }
+            }
+
+            &:last-child {
+              float: right;
+              margin-right: 0;
+
+
+              a {
+                color: $color-white;
+                background-color: $color-yellow;
+                @include mixinBorder('all', 1px, $color-yellow);
+              }
+            }
+          }
+        }
+      }// /-.actions
+    }
+  }
+}// /-section.create-document
+
+
+.modal-row-address,
+.modal-row-address1 {
+  display: none;
+  position: fixed;
+  top: 0;  bottom: 0;  right: 0;  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  z-index: 1000;
+  overflow: auto;
+  @include mixinDimensions('', $width-all);
+
+
+  >div#address,
+  >div#address1 {
+    margin: 10% auto;
+    @include mixinDimensions('min', render-pixel(600), auto);
+    padding: render-pixel(15);
+    box-shadow: 0 0 10px 1px rgba(0,0,0,0.3);
+    background-color: $color-white;
+  }
+
+
+  ul[role='tablist'] {
+    margin: render-pixel(10);
+    @include mixinBorder(bottom, 1px, $color-navBlue);
+
+
+    li {
+      display: inline-block;
+      text-align: center;
+      margin-bottom: -1px;
+
+      a {
+        border-radius: .3em .3em 0 0;
+      }
+
+      &.current {
+        a{
+          @include mixinBorder(top, 1px, $color-navBlue);
+          @include mixinBorder(left, 1px, $color-navBlue);
+          @include mixinBorder(right, 1px, $color-navBlue);
+          @include mixinBorder(bottom, 1px, $color-white);
+        }
+      }
+    }
+  }
+
+  a {
+    display: inline-block;
+    font-size: render-pixel(14);
+    padding: render-pixel(10) render-pixel(15);
+    margin-right: render-pixel(10);
+    min-width: render-pixel(75);
+
+    &.one {
+      background-color: $color-navBlue;
+      color: $color-white;
+      @include mixinBorder('all', 1px, $color-navBlue);
+    }
+
+    &.two {
+      @include mixinBorder('all', 1px, $color-scopeBorder);
+    }
+  }
+
+
+  .header {
+    padding: render-pixel(2.5) 0;
+    @include mixinBorder(bottom, 1px, $color-scopeBorder);
+
+    p.title {
+      margin-top: 0 !important;
+    }
+  }
+
+  .section {
+    padding-bottom: render-pixel(20);
+  }
+
+  .footer {
+    width: calc(100% - 30px);
+    text-align: center;
+    bottom: 0;
+    padding: render-pixel(10) 0;
+    @include mixinBorder(top, 1px, $color-scopeBorder);
+  }
+}

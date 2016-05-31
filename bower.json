@@ -19,5 +19,8 @@
   "dependencies": {
     "OwlCarousel2": "https://github.com/OwlCarousel2/OwlCarousel2",
     "owl.carousel": "^2.0.0-beta.3"
+  },
+  "devDependencies": {
+    "jquery.steps": "jquery-steps#^1.1.0"
   }
 }

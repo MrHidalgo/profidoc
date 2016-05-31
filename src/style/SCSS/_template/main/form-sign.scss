@@ -51,7 +51,7 @@ section.form {
       color: $color-navBlue;
       width: $width-all;
       padding-bottom: render-pixel(10);
-      @include mixinBorder(bottom, 1px, lighten($color-documentLgray, 15%));
+      //@include mixinBorder(bottom, 1px, lighten($color-documentLgray, 15%));
     }
 
 
@@ -94,7 +94,7 @@ section.form {
 
 section {
   padding: render-pixel(20) 0;
-  @include mixinBorder(bottom, 1px, lighten($color-documentLgray, 15%));
+  //@include mixinBorder(bottom, 1px, lighten($color-documentLgray, 15%));
 
 
   .left,

@@ -1,0 +1,10 @@
+///
+/// IMPORT BLOCK
+///
+@import "../../_extend/extend";
+
+
+/// [navigation, footer]
+body{
+  @extend %internalPage;
+}
