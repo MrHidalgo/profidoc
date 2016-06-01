@@ -7,15 +7,14 @@ include ../_mixin/mixin
 
     var arrStyleName = [
         './style/style.min.css',
-        './style/_dop/breadcrumbs.min.css',
-        './style/_dop/form1.min.css',
-        './style/about/about.min.css'
+        './style/about.min.css'
     ];
 
     var scriptName = [
         './script/jquery.min.js',
         './script/script.min.js'
     ];
+
 
 
 doctype html
@@ -27,6 +26,9 @@ html
 
         // NAVIGATION MENU
         include ../_template/_dop/nav
+
+        block sign
+            include ../_template/main/form-sign
 
         // CONTENT BLOCK
         block breadcrumbs

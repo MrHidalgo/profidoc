@@ -7,12 +7,7 @@ include ../_mixin/mixin
 
     var arrStyleName = [
         './style/style.min.css',
-        './style/content-info/about-program.min.css',
-        './style/content-info/menu.min.css',
-        './style/content-info/content-footer.min.css',
-        './style/content-info/rules.min.css',
-        './style/content-info/buy-bonus.min.css',
-        './style/content-info/spend-bonus.min.css'
+        './style/content-info.min.css'
     ]
 
     var scriptName = [
@@ -34,6 +29,8 @@ html
         // NAVIGATION MENU
         include ../_template/_dop/nav
 
+        block sign
+            include ../_template/main/form-sign
 
         block navigation
             include ../_template/content-info/navigation

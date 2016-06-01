@@ -97,14 +97,13 @@ section{
 body.form-open {
   overflow: hidden;
 
-
   &:before{
     content: '';
     position: absolute;
     top: 0;  left: 0;
     @include mixinDimensions('', $width-all);
     background-color: rgba(0,0,0,0.4);
-    z-index: 1000;
+    z-index: 10000;
   }
 }
 

@@ -28,13 +28,14 @@ $image-icon-g     : '../../image/icon-form-g.png';
 $image-icon-od    : '../../image/icon-form-od.png';
 
 
-section.form {
+
+section.form-sign {
   display: none;
   position: fixed;
   top: 0; bottom: 0; left: 0; right: 0;
   margin: auto;
   padding: render-pixel(15) render-pixel(20);
-  z-index: 1000;
+  z-index: 10001;
   box-shadow: 0 0 10px 1px rgba(0,0,0,0.3);
   background: gray url($image-form-bg) no-repeat center;
   @include mixinDimensions('', render-pixel(722), render-pixel(353));
@@ -93,7 +94,7 @@ section.form {
 
 
 section {
-  padding: render-pixel(20) 0;
+  //padding: render-pixel(20) 0;
   //@include mixinBorder(bottom, 1px, lighten($color-documentLgray, 15%));
 
 

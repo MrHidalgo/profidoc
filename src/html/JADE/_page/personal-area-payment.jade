@@ -165,9 +165,7 @@ section#main.main
                         -for(var j = 0; j < subscribeSale.length; j++)
                             label(for='sale-#{i}-#{j}')
                                 .left
-                                    .radio-custom
-                                        i
-                                        input(type='radio', name='subscribe-#{i}', class='sale', id='sale-#{i}-#{j}')
+                                    input(type='radio', name='subscribe-#{i}', class='sale', id='sale-#{i}-#{j}')
                                 .right
                                     p.text!= 'Скидка <span>' + subscribeSale[j] + '</span>'
 

@@ -7,20 +7,13 @@ include ../_mixin/mixin
 
     var arrStyleName = [
         './style/style.min.css',
-        './style/_dop/breadcrumbs.min.css',
-        './style/contracts-list/contracts-list.min.css',
-        './style/contracts-list/search.min.css',
-        './style/contracts-list/text.min.css',
-        './style/contracts-list/list.min.css',
-        './style/contracts-list/found.min.css'
+        './style/contracts-list.min.css'
     ]
 
     var scriptName = [
         './script/jquery.min.js',
         './script/script.min.js'
     ];
-
-
 
 
 
@@ -33,6 +26,9 @@ html
 
         // NAVIGATION MENU
         include ../_template/_dop/nav
+
+        block sign
+            include ../_template/main/form-sign
 
         // BREADCRUMBS BLOCK
         block breadcrumbs

@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800"/>
     <!-- LINK CSS-->
     <link rel="stylesheet" href="./style/style.min.css"/>
-    <link rel="stylesheet" href="./style/security/security.min.css"/>
+    <link rel="stylesheet" href="./style/security.min.css"/>
     <!-- DOP FILES-->
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries-->
     <!-- WARNING: Respond.js doesn't work if you view the page via file://--><!--[if lt IE 9]>
@@ -281,6 +281,51 @@
           </div>
         </div>
       </nav>
+    </section>
+    <section id="form-sign" class="form-sign">
+      <header>
+        <p>Вход в Ваш кабинет</p><i class="form-close"></i>
+      </header>
+      <section>
+        <div class="left">
+          <form name="" action="">
+            <div class="field-name">
+              <input type="text" id="login" placeholder="Логин" required class="name-input">
+              <p class="help-block help-block-error">error</p>
+            </div>
+            <div class="field-pass">
+              <input type="password" id="pass" placeholder="Пароль" required class="pass-input">
+              <p class="help-block help-block-error">error</p>
+            </div>
+            <p class="forget">Забыли пароль? Нажмите <a href="#" class="btn-forget">здесь,</a> чтобы восстановить</p>
+            <div class="block">
+              <div class="left">
+                <button type="button" class="btn-sign-in">Вход</button>
+              </div>
+              <div class="right">
+                <label for="see-pass">Показать пароль</label><span class="checkbox-custom">
+                  <input type="checkbox" name="see-pass" id="see-pass"></span>
+                <label for="remember">Запомнить меня</label><span class="checkbox-custom">
+                  <input type="checkbox" name="remember" id="remember"></span>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="right">
+          <p class="main">Вы также можете войти через социальные сети</p>
+          <div class="list-soc">
+            <button type="button" class="btn-fb">Facebook</button>
+            <button type="button" class="btn-tw">Twitter</button>
+            <button type="button" class="btn-g">Google</button>
+            <button type="button" class="btn-vk">Vkontakte</button>
+            <button type="button" class="btn-od">Odnoklassniki</button>
+          </div>
+          <p class="info">Работая в системе ProfiDoc Вы соглашаетесь со всеми условиями и правилами нашей зоны.</p>
+        </div>
+      </section>
+      <footer>
+        <p>Не зарегистрированы <a href="#" class="btn-register-now">Зарегистрируйтесь сейчас!</a></p>
+      </footer>
     </section>
     <!-- CONTENT BLOCK-->
     <!---->

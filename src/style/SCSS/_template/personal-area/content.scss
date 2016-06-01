@@ -42,7 +42,7 @@ section.personal-content {
           margin: auto;
           @include mixinDimensions('', render-pixel(542), render-pixel(488));
           padding: render-pixel(20) render-pixel(50);
-          z-index: 1000;
+          z-index: 10001;
           box-shadow: 0 0 10px 1px rgba(0,0,0,0.3);
           background: url($image-bg-print) no-repeat center;
           background-size: cover;

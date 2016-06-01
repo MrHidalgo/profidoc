@@ -7,18 +7,15 @@ include ../_mixin/mixin
 
     var arrStyleName = [
         './style/style.min.css',
-        './style/_dop/breadcrumbs.min.css',
         './style/_dop/owl.carousel.min.css',
         './style/_dop/owl.theme.default.css',
-        './style/check/check.min.css'
+        './style/check.min.css'
     ];
 
     var scriptName = [
         './script/owl.carousel.min.js',
         './script/script.min.js'
     ];
-
-
 
 
 
@@ -33,10 +30,12 @@ html
         // NAVIGATION MENU
         include ../_template/_dop/nav
 
+        block sign
+            include ../_template/main/form-sign
+
         // BREADCRUMBS BLOCK
         block breadcrumbs
             include ../_template/check/breadcrumbs
-
 
         // BANNER
         include ../_template/check/banner

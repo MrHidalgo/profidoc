@@ -136,11 +136,12 @@ $(document).ready(
             );
         }
 
+
         $('a.btn-address').on('click', function(e) {
             e.preventDefault();
             var linkAttr = $(this).attr('data-modal');
 
-            $('body').toggleClass('form-open');
+            // $('body').toggleClass('form-open');
 
             if(linkAttr === 'address') {
                 $('.modal-row-address').toggle();
@@ -188,15 +189,16 @@ $(document).ready(
                 }
             });
 
-            $('.form-close').click(function () {
+            $('.form-close-print').click(function () {
                 $('#form-print').slideToggle();
+                $('body').toggleClass('form-open');
             });
         }
 
         /* form sign in main */
         {
             $('.sign-in, .form-close').on('click', function() {
-                $('section#form').slideToggle();
+                $('section#form-sign').slideToggle();
                 $('body').toggleClass('form-open');
             });
         }

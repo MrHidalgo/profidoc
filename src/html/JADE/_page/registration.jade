@@ -7,9 +7,7 @@ include ../_mixin/mixin
 
     var arrStyleName = [
         './style/style.min.css',
-        './style/_dop/breadcrumbs.min.css',
-        './style/_dop/form.min.css',
-        './style/registration/registration.min.css'
+        './style/registration.min.css'
     ];
 
     var scriptName = [
@@ -25,6 +23,9 @@ html
     body
 
         include ../_template/_dop/nav
+
+        block sign
+            include ../_template/main/form-sign
 
         // BREADCRUMBS BLOCK
         block breadcrumbs
