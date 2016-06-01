@@ -7,7 +7,7 @@ app.set('port',	(process.env.PORT	||	4000));
 // MAIN PAGE
 app.use('/',	        express.static('./dist/',
     {
-        'index' : 'check-in-register.html'
+        'index' : 'index.html'
     }
 ));
 

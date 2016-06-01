@@ -95,6 +95,7 @@ section{
 
 
 body.form-open {
+  transition: all 1s ease-in-out;
   overflow: hidden;
 
   &:before{

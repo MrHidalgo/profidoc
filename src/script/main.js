@@ -190,7 +190,7 @@ $(document).ready(
             });
 
             $('.form-close-print').click(function () {
-                $('#form-print').slideToggle();
+                $('#form-print').fadeToggle();
                 $('body').toggleClass('form-open');
             });
         }
@@ -198,7 +198,7 @@ $(document).ready(
         /* form sign in main */
         {
             $('.sign-in, .form-close').on('click', function() {
-                $('section#form-sign').slideToggle();
+                $('section#form-sign').fadeToggle();
                 $('body').toggleClass('form-open');
             });
         }
