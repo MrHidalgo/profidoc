@@ -93,9 +93,6 @@ section.footer {
             @include mixinCenteredBLockFlex(row, center, space-between);
 
 
-            p.help-block.help-block-error{
-              display: none;
-            }
 
 
             div{

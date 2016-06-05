@@ -45,11 +45,6 @@ section.create-document {
       margin: render-pixel(20) 0 render-pixel(10);
     }
 
-    p.help-block.help-block-error {
-      display: none;
-      color: red;
-      font-size: render-pixel(12);
-    }
 
     input[type='text'],
     input[type='email'],

@@ -36,12 +36,22 @@ section.breadcrumbs{
           a {
             color: $color-footerBg;
             font-size: render-pixel(16);
+
+
+            &:after {
+              content: '/';
+            }
           }
 
           &:last-of-type {
             a {
               color: lighten($color-footerBg, 15%);
               pointer-events: none;
+
+
+              &:after {
+                display: none;
+              }
             }
           }
         }

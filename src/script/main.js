@@ -6,6 +6,7 @@ function less(nWords){
     return txtNews + '...';
 }
 
+
 /*
  *   ACCORDION
  */
@@ -24,7 +25,7 @@ $('.menu-list li a').click( function (e) {
 
     $.ajax(
         {
-            url: hashVal + '.html',
+            url: /ajax-page/ + hashVal,
             success: function(data) {
                 $('#content').html(data);
             }
@@ -339,7 +340,7 @@ $(document).ready(
                     {
                         loop:true,
                         margin:10,
-                        nav:true,
+                        // nav:true,
                         responsiveClass:true,
                         responsive:{
                             0:{

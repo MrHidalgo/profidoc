@@ -24,16 +24,7 @@ $color-gradientYellow3   : return-value(color, gradientYellow3);
 /// RIGHT PANEL MAIN
 ///
 section.right-panel{
-  .help-block.help-block-error{
-    display: none;
-    font: {
-      size: render-pixel(13.5);
-    }
-  }
 
-  .help-block.help-block-error{
-    color: red;
-  }
 }
 
 ///

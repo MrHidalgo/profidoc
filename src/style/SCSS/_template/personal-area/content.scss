@@ -90,8 +90,7 @@ section.personal-content {
           }
 
 
-          p.info,
-          p.help-block.help-block-error{
+          p.info {
             font: {
               size: render-pixel(12);
               weight: 600;
@@ -99,10 +98,6 @@ section.personal-content {
             color: red;
           }
 
-
-          p.help-block.help-block-error {
-            display: none;
-          }
 
 
           [class^='field-'] {

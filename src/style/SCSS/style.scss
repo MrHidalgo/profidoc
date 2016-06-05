@@ -5,6 +5,7 @@
 @import "_function/function";
 @import "_template/_dop/nav";
 @import "_template/_dop/footer";
+@import "./_template/main/form-sign";
 
 
 ///
@@ -15,8 +16,9 @@ $width-all        : return-value(dimension, all);
 $color-white      : return-value(color, white);
 $color-yellow     : return-value(color, yellow);
 $color-borderGray : return-value(color, borderGray);
+$color-scopeBorder      : return-value(color, scopeBorder);
 
-$font         : 'Open Sans';
+$font             : 'Open Sans';
 
 
 ///
@@ -111,6 +113,37 @@ body.form-open {
 
 #content{
   @include mixinMaxWidthPosition(10.7, 30, 0);
+}
+
+
+
+p.help-block.help-block-error {
+  color: red;
+  font-size: render-pixel(12);
+}
+
+[class^='field-'].has-error {
+  input {
+    border: 1px solid red !important;
+  }
+}
+
+
+input.form-control {
+  display: inline-block;
+  padding: 0 render-pixel(15);
+  font-style: italic;
+  font-size: render-pixel(15);
+  outline: none;
+  @include mixinBorder(all, 1px, darken($color-scopeBorder, 10%));
+  border-right: none;
+  @include mixinDimensions('', 454px, 38px);
+
+
+  &:focus,
+  &:active {
+    box-shadow: 0 0 5px 1px rgba($color-black, 0.2);
+  }
 }
 
 

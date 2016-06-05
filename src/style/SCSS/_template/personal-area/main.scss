@@ -188,13 +188,6 @@ section.main {
         margin-bottom: render-pixel(15);
 
 
-        >p.help-block.help-block-error {
-          display: none;
-          font-size: render-pixel(12);
-          color: red;
-        }
-
-
         > label {
           display: inline-block;
           width: render-pixel(250);
