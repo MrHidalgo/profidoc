@@ -1,44 +1,42 @@
-//
-// HEAD
-//
+
+//- HEAD
 mixin htmlTemplateHEAD(title, arrFont, arrStyle, arrDop)
-    // META TAGS
+    //- META TAGS
     meta(charset= 'utf-8')
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(name="viewport" content="width=device-width, initial-scale=1")
 
-    // TITLE
+    //- TITLE
     title= title
 
-    // FONTS
+    //- FONTS
     each val in arrFont
         if (val.length > 0)
             link(rel='stylesheet', href= val)
 
-    // LINK CSS
+    //- LINK CSS
     if(arrStyle != false)
         each val in arrStyle
             if (val.length > 0)
                 link(rel="stylesheet", href= val)
 
-    // DOP FILES
+    //- DOP FILES
     if(arrDop != false)
         each val in arrDop
             if (val.length > 0)
                 link(rel="stylesheet", href= val)
 
 
-    // HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
-    // WARNING: Respond.js doesn't work if you view the page via file://
+    //- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+    //- WARNING: Respond.js doesn't work if you view the page via file://
     <!--[if lt IE 9]>
     script(src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js")
     script(src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js")
     <![endif]-->
 
 
-//
-// FOOT
-//
+
+//- FOOT
 mixin htmlTemplateFOOT(arrScript)
     if(arrScript != false)
         each val in arrScript
@@ -46,9 +44,7 @@ mixin htmlTemplateFOOT(arrScript)
                 script(src= val)
 
 
-//
-//  BREADCRUMBS MAIN
-//
+//-  BREADCRUMBS MAIN
 mixin breadcrumbsMain(classIdName, title)
     section(id = classIdName, class= classIdName)
         div(class= classIdName + '-container')
@@ -56,9 +52,7 @@ mixin breadcrumbsMain(classIdName, title)
                 h2= title
                 +breadcrumbsPanel(linkName, linkHash, linkLine)
 
-//
-//  BREADCRUMBS LIST
-//
+//-  BREADCRUMBS LIST
 mixin breadcrumbsPanel(arrLink, arrHash, arrLine)
     ul.bread-list
         each val, index in arrLink

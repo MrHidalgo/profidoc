@@ -1,7 +1,7 @@
 doctype html
 html
     head
-        // HEADER SECTION [link, meta.., title & etc]
+        //- HEADER SECTION [link, meta.., title & etc]
         include head
 
     body
@@ -9,30 +9,30 @@ html
         block sign
             include main/form-sign
 
-        // HEADER SECTION
+        //- HEADER SECTION
         block header
             include main/header
 
-        // WHICH DOCUMENT...?
+        //- WHICH DOCUMENT...?
         block document
             include main/document
 
-        // 3 STEPS
+        //- 3 STEPS
         block steps
             include main/steps
 
-        // VIDEO SECTION
+        //- VIDEO SECTION
         section#video.video
             .video-container
                 h2 Видео
                 .video-block
                 h2!= 'уникальность и преимущества <span>profidoc</span>'
 
-        // UNIQUENESS SECTION
+        //- UNIQUENESS SECTION
         block uniqueness
             include main/uniqueness
 
-        // EXAMPLE
+        //- EXAMPLE
         block example
             include main/example
 
@@ -42,5 +42,5 @@ html
         block footer
             include _dop/footer
 
-        // FOOTER SECTION [script..]
+        //- FOOTER SECTION [script..]
         include foot

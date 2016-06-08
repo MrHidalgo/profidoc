@@ -46,7 +46,7 @@
 mixin rowContent(arrName, arrAttr)
     ul.list-link
         - for(var i = 0; i < arrName.length; i++)
-            li: a(href='#', data-link= arrAttr[i], class='btn-personal-menu')!= arrName[i]
+            li: a(href='#', data-link= arrAttr[i], class='btn-personal-menu btn-' + arrAttr[i])!= arrName[i]
 
 
 

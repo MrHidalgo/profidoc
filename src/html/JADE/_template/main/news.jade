@@ -1,20 +1,20 @@
-//
-//  VARIABLE BLOCK
-//
+//-
+//-  VARIABLE BLOCK
+//-
 - var newsTitle         = ['Новости', 'Новость'];
 - var newsDescription   = 'Юлий Цезарь советовал ложиться при первых позывах ко сну и спать до упора – независимо от времени суток. Правда, в итоге он умер от двадцати трех ножевых ран, так что его компетентность в этих вопросах сомнительна. Поэтому советы о том, как гарантированно высыпаться';
 
-//
-// MIXIN BLOCK
-//
+//-
+//- MIXIN BLOCK
+//-
 
-// [title, description]
+//- [title, description]
 mixin sectionText
     .section
         p.title= newsTitle[1]
         p.description= newsDescription
 
-// [data, read, like]
+//- [data, read, like]
 mixin footerInfo
     .footer
         span.data 12.11.2016
@@ -23,9 +23,9 @@ mixin footerInfo
             span.like 24
             span.read 10
 
-//
-// MAIN SECTION
-//
+//-
+//- MAIN SECTION
+//-
 section#news.news
     .news-container
         h2= newsTitle[0]
