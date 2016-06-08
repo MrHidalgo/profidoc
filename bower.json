@@ -17,6 +17,10 @@
     "tests",
     "dist/*.html",
     "dist/image"
+    "*.iml",
+    "*.js",
+    "src",
+    "docs",
   ],
   "dependencies": {
     "OwlCarousel2": "https://github.com/OwlCarousel2/OwlCarousel2",
