@@ -20,7 +20,7 @@
     "*.iml",
     "*.js",
     "src",
-    "docs",
+    "docs"
   ],
   "dependencies": {
     "OwlCarousel2": "https://github.com/OwlCarousel2/OwlCarousel2",
