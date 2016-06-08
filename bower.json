@@ -18,7 +18,8 @@
     "dist/*.html",
     "dist/image",
     "*.iml",
-    "*.js",
+    "server.js",
+    "gulpfile.js",
     "src",
     "docs"
   ],
