@@ -15,6 +15,7 @@
 $width-all        : return-value(dimension, all);
 
 $color-white      : return-value(color, white);
+$color-navBlue    : return-value(color, navBlue);
 $color-yellow     : return-value(color, yellow);
 $color-borderGray : return-value(color, borderGray);
 $color-scopeBorder      : return-value(color, scopeBorder);
@@ -97,6 +98,21 @@ section{
   }
 }
 
+.btn-primary {
+  display: block;
+  font-size: render-pixel(14.5);
+  @include mixinDimensions('', 195px, 40px);
+  background-color: $color-navBlue;
+  transition: all .3s linear;
+  color: $color-white;
+  text-align: center;
+  line-height: 2.6;
+
+
+  &:hover {
+    background-color: $color-yellow;
+  }
+}
 
 body.form-open {
   transition: all 1s ease-in-out;
