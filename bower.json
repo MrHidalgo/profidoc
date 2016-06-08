@@ -16,7 +16,6 @@
     "test",
     "tests",
     "dist/*.html",
-    "dist/image",
     "*.iml",
     "server.js",
     "gulpfile.js",
