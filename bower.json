@@ -1,7 +1,7 @@
 {
   "name": "Template",
   "description": "",
-  "main": "",
+  "main": "dist/",
   "authors": [
     "MrHidalgo <Luckyhidalgo@gmail.com>"
   ],
@@ -14,7 +14,9 @@
     "bower_components",
     "vendor/bower",
     "test",
-    "tests"
+    "tests",
+    "dist/*.html",
+    "dist/image"
   ],
   "dependencies": {
     "OwlCarousel2": "https://github.com/OwlCarousel2/OwlCarousel2",
