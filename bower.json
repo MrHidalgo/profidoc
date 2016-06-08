@@ -21,7 +21,9 @@
     "server.js",
     "gulpfile.js",
     "src",
-    "docs"
+    "docs",
+    "gulp-files",
+    "task.md"
   ],
   "dependencies": {
     "OwlCarousel2": "https://github.com/OwlCarousel2/OwlCarousel2",
