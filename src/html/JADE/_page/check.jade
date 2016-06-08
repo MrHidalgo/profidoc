@@ -25,32 +25,34 @@ html
         +htmlTemplateHEAD('', arrFontName, arrStyleName, false)
         script(src='./script/jquery.min.js')
 
-    body
+    body.internal
 
         // NAVIGATION MENU
         include ../_template/_dop/nav
 
-        block sign
-            include ../_template/main/form-sign
+        .wrap-container
+            block sign
+                include ../_template/main/form-sign
 
-        // BREADCRUMBS BLOCK
-        block breadcrumbs
-            include ../_template/check/breadcrumbs
 
-        // BANNER
-        include ../_template/check/banner
+            // BREADCRUMBS BLOCK
+            block breadcrumbs
+                include ../_template/check/breadcrumbs
 
-        // CHANCE
-        include ../_template/check/chance
+            // BANNER
+            include ../_template/check/banner
 
-        // TARIFF
-        include ../_template/check/tarif
+            // CHANCE
+            include ../_template/check/chance
 
-        // CLIENT
-        include ../_template/check/client
+            // TARIFF
+            include ../_template/check/tarif
 
-        // REVIEWS
-        include ../_template/check/review
+            // CLIENT
+            include ../_template/check/client
+
+            // REVIEWS
+            include ../_template/check/review
 
 
         // FOOTER MENU

@@ -14,9 +14,9 @@ $color-white        : return-value(color, white);
 $color-navBlue      : return-value(color, navBlue);
 $color-scopeBorder  : return-value(color, scopeBorder);
 
-$image-user         : '../../image/icon-personal-user.png';
-$image-bonus        : '../../image/icon-personal-bonus.png';
-$image-wallet       : '../../image/icon-personal-wallet.png';
+$image-user         : '../image/icon-personal-user.png';
+$image-bonus        : '../image/icon-personal-bonus.png';
+$image-wallet       : '../image/icon-personal-wallet.png';
 
 
 

@@ -18,24 +18,24 @@ $color-workBlueText   : return-value(color, workBlueText);
 $color-gradientYellow3: return-value(color, gradientYellow3);
 
 
-$imageMainUser0       : '../../image/content-about-ub-0.png';
-$imageMainUser1       : '../../image/content-about-ub-1.png';
-$imageMainUser2       : '../../image/content-about-ub-2.png';
-$imageMainUser3       : '../../image/content-about-ub-3.png';
-$imageMainUser4       : '../../image/content-about-ub-4.png';
-$imageMainUser5       : '../../image/content-about-ub-5.png';
+$imageMainUser0       : '../image/content-about-ub-0.png';
+$imageMainUser1       : '../image/content-about-ub-1.png';
+$imageMainUser2       : '../image/content-about-ub-2.png';
+$imageMainUser3       : '../image/content-about-ub-3.png';
+$imageMainUser4       : '../image/content-about-ub-4.png';
+$imageMainUser5       : '../image/content-about-ub-5.png';
 
-$imageHoverUser0      : '../../image/content-about-uh-0.png';
-$imageHoverUser1      : '../../image/content-about-uh-1.png';
-$imageHoverUser2      : '../../image/content-about-uh-2.png';
-$imageHoverUser3      : '../../image/content-about-uh-3.png';
-$imageHoverUser4      : '../../image/content-about-uh-4.png';
-$imageHoverUser5      : '../../image/content-about-uh-5.png';
+$imageHoverUser0      : '../image/content-about-uh-0.png';
+$imageHoverUser1      : '../image/content-about-uh-1.png';
+$imageHoverUser2      : '../image/content-about-uh-2.png';
+$imageHoverUser3      : '../image/content-about-uh-3.png';
+$imageHoverUser4      : '../image/content-about-uh-4.png';
+$imageHoverUser5      : '../image/content-about-uh-5.png';
 
-/// [navigation, footer]
-body{
-  @extend %internalPage;
-}
+///// [navigation, footer]
+//body{
+//  @extend %internalPage;
+//}
 
 
 ///

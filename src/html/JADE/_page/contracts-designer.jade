@@ -23,30 +23,31 @@ html
     head
         +htmlTemplateHEAD('Конструктор договоров', arrFontName, arrStyleName, false)
 
-    body
+    body.internal
 
         // NAVIGATION MENU
         include ../_template/_dop/nav
 
-        block sign
-            include ../_template/main/form-sign
+        .wrap-container
+            block sign
+                include ../_template/main/form-sign
 
-        // BREADCRUMBS BLOCK
-        block breadcrumbs
-            include ../_template/contracts-designer/breadcrumbs
+            // BREADCRUMBS BLOCK
+            block breadcrumbs
+                include ../_template/contracts-designer/breadcrumbs
 
 
-        // VIDEO SUBSCRIBE
-        include ../_template/contracts-designer/video-sub
+            // VIDEO SUBSCRIBE
+            include ../_template/contracts-designer/video-sub
 
-        // CREATE CONTRACTS
-        include ../_template/contracts-designer/create
+            // CREATE CONTRACTS
+            include ../_template/contracts-designer/create
 
-        // CHOOSE CONTRACTS
-        include ../_template/contracts-designer/choose
+            // CHOOSE CONTRACTS
+            include ../_template/contracts-designer/choose
 
-        // BENEFITS CONTRACTS
-        include ../_template/contracts-designer/benefits
+            // BENEFITS CONTRACTS
+            include ../_template/contracts-designer/benefits
 
 
         // FOOTER MENU

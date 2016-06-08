@@ -17,16 +17,16 @@ $color-gradientYellow3  : return-value(color, gradientYellow3);
 $color-navBlue          : return-value(color, navBlue);
 $color-scopeBorder      : return-value(color, scopeBorder);
 
-$image-content-0        : '../../image/idea-content-bg-0.png';
-$image-content-1        : '../../image/idea-content-bg-1.png';
-$image-content-2        : '../../image/idea-content-bg-2.png';
-$image-play-btn         : '../../image/idea-all-play.png';
+$image-content-0        : '../image/idea-content-bg-0.png';
+$image-content-1        : '../image/idea-content-bg-1.png';
+$image-content-2        : '../image/idea-content-bg-2.png';
+$image-play-btn         : '../image/idea-all-play.png';
 
 
 /// [navigation, footer]
-body{
-  @extend %internalPage;
-}
+//body{
+//  @extend %internalPage;
+//}
 
 
 section.idea-content {

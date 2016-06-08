@@ -94,6 +94,14 @@ function searchAllRadio() {
 }
 
 
+$(window).on('click', function (e) {
+    if($(e.target).closest('.btn-personal-menu, #form-print, .sign-in, section#form-sign').length)
+        return;
+
+    $('#form-print').hide();
+    $('body').removeClass('form-open');
+    $('section#form-sign').hide();
+});
 
 
 /*
@@ -168,26 +176,34 @@ $(document).ready(
 
         /*...*/
         {
-            $('.list-link li a').click(function (e) {
-                e.preventDefault();
-                var linkAttr = $(this).attr('data-link');
+            // $('.list-link li a').click(function (e) {
+            //     e.preventDefault();
+            //     var linkAttr = $(this).attr('data-link');
+            //
+            //     console.log(linkAttr);
+            //
+            //     if (linkAttr === 'print') {
+            //         $('body').scrollTop(0);
+            //         $('#form-print').slideToggle();
+            //         $('body').toggleClass('form-open');
+            //     } else {
+            //         $.ajax(
+            //             {
+            //                 url: 'personal-area-' + linkAttr + '.html',
+            //                 success: function(data) {
+            //                     $('#personal-content-right').html(data);
+            //                 }
+            //             }
+            //         );
+            //     }
+            // });
 
-                console.log(linkAttr);
-                
-                if (linkAttr === 'print') {
-                    $('body').scrollTop(0);
-                    $('#form-print').slideToggle();
+            $('.btn-personal-menu').click( function (e) {
+                e.preventDefault();
+                if ($(this).attr('data-link') === 'print')
+                    $('body').scrollTop(0);+
+                    $('#form-print').fadeToggle();
                     $('body').toggleClass('form-open');
-                } else {
-                    $.ajax(
-                        {
-                            url: 'personal-area-' + linkAttr + '.html',
-                            success: function(data) {
-                                $('#personal-content-right').html(data);
-                            }
-                        }
-                    );   
-                }
             });
 
             $('.form-close-print').click(function () {

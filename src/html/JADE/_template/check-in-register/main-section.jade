@@ -75,9 +75,9 @@
 
 mixin inputSection(title, subTitle, arrLength, inputType)
     .field
-        p.title!= title
+        p.group-title!= title
         - for(var i = 0; i < arrLength; i++)
-            p.sub-title!= subTitle[i]
+            p.control-label!= subTitle[i]
             input(type= inputType, name='text', class='text')
             p.help-block.help-block-error
 
@@ -85,7 +85,7 @@ mixin inputSection(title, subTitle, arrLength, inputType)
 mixin inputSelect(subTitle, selectArr)
     .field
         -for(var i = 0; i < subTitle.length; i++)
-            p.sub-title!= subTitle[i]
+            p.control-label!= subTitle[i]
             .select-custom
                 .select-value
                     span
@@ -110,12 +110,12 @@ section#create-document.create-document
 
             h4!= '<span class="current-steps">2</span> Адрес предприятия'
             section
-                p.title!= 'Адрес предприятия'
+                p.group-title!= 'Адрес предприятия'
                 p.text!= block11Text
-                p.sub-title!= 'Выберите адрес'
+                p.control-label!= 'Выберите адрес'
                 a(href='#', class='btn-address', data-modal='address')!= 'Выбрать адрес'
 
-                p.sub-title!= 'Юридический адрес отсутствует, хочу арендовать.'
+                p.control-label!= 'Юридический адрес отсутствует, хочу арендовать.'
                 a(href='#', class='btn-address', data-modal='address1')!= 'Выбрать адрес и заказать'
 
                 +inputSection('', block110, 1, 'text')
@@ -151,7 +151,7 @@ section#create-document.create-document
             #address
                 .modal
                     .header
-                        p.title!='Выбор адреса предприятия'
+                        p.group-title!='Выбор адреса предприятия'
 
                     .section
                         h5!= 'Поиск'
@@ -190,7 +190,7 @@ section#create-document.create-document
             #address1
                 .modal
                     .header
-                        p.title!= 'Заказать юридический адрес'
+                        p.group-title!= 'Заказать юридический адрес'
 
                     .section
                         table(cellspacing='0', class='', id='')
@@ -206,7 +206,7 @@ section#create-document.create-document
                         +inputSection('', modal22, 1, 'text')
                         +inputSection('', modal23, 1, 'tel')
 
-                        p.sub-title!= modal24
+                        p.control-label!= modal24
                         textarea
 
                     .footer

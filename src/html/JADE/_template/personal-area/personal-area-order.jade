@@ -40,8 +40,8 @@
 
 
 
-mixin tableRowinfo (arr)
-    td!= arr[i]
+mixin tableRowinfo (arr, arrClass)
+    td(class= arrClass)!= arr[i]
 
 
 section#main.main
@@ -52,11 +52,11 @@ section#main.main
             thead
                 tr
                     - for(var i = 0; i < tableTitle.length; i++)
-                        td!= tableTitle[i]
+                        th!= tableTitle[i]
             tbody
                 - for(var i = 0; i < tableTitle.length; i++)
                     tr
-                        +tableRowinfo(tableName)
-                        +tableRowinfo(tableDate)
-                        +tableRowinfo(tableReady)
-                        +tableRowinfo(tableStatus)
+                        +tableRowinfo(tableName, 'name')
+                        +tableRowinfo(tableDate, 'data-start')
+                        +tableRowinfo(tableReady, 'price')
+                        +tableRowinfo(tableStatus, 'status')

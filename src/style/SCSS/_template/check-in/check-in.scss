@@ -16,14 +16,8 @@ $color-black          : return-value(color, black);
 $color-wayGrayCircle  : return-value(color, wayGrayCircle);
 
 
-$image-info-doc       : '../../image/icon-benefits-2h.png';
+$image-info-doc       : '../image/icon-benefits-2h.png';
 
-
-
-/// [navigation, footer]
-body{
-  @extend %internalPage;
-}
 
 hr {
   margin: render-pixel(30) 0;

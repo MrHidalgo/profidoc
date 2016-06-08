@@ -20,17 +20,18 @@ html
     head
         +htmlTemplateHEAD('Возможности', arrFontName, arrStyleName, false)
 
-    body
+    body.internal
 
         include ../_template/_dop/nav
 
 
-        block sign
-            include ../_template/main/form-sign
+        .wrap-container
+            block sign
+                include ../_template/main/form-sign
 
-        // CONTENT BLOCK
-        block content
-            include ../_template/scope/content
+            // CONTENT BLOCK
+            block content
+                include ../_template/scope/content
 
 
         include ../_template/_dop/footer

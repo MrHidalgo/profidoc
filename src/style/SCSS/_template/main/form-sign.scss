@@ -200,12 +200,13 @@ section {
 
         &-name,
         &-pass {
+          padding-bottom: render-pixel(20);
+
 
           input {
             display: block;
             outline: none;
             border-radius: .5em;
-            margin-bottom: render-pixel(20);
             padding: render-pixel(5) render-pixel(15);
             color: $color-documentLgray;
             @include mixinBorder('all', 1px, lighten($color-documentLgray, 15%));

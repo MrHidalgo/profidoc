@@ -18,10 +18,10 @@ $color-darkenBlueText : return-value(color, darkenBlueText);
 $color-lightenBlueText: return-value(color, lightenBlueText);
 
 
-/// [navigation, footer]
-body{
-  @extend %internalPage;
-}
+///// [navigation, footer]
+//body{
+//  @extend %internalPage;
+//}
 
 
 ///

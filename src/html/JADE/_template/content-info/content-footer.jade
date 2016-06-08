@@ -54,8 +54,9 @@ section#content-footer.content-footer
                     section
                         ul.list-idea
                             - for(var i = 0; i < 3; i++)
-                                li(class='list-idea-#{i}')
-                                    p.list-description= contentFooterRightContent[i]
-                                    span.list-data= contentFooterData[i]
+                                li()
+                                    a(href='#', class='list-idea-#{i}')
+                                        p.list-description= contentFooterRightContent[i]
+                                        span.list-data= contentFooterData[i]
 
                         a(href='/idea/all', class='btn-all-idea') Все идеи

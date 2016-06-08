@@ -3,6 +3,7 @@
 ///
 @import "_mixin/mixin";
 @import "_function/function";
+@import "_extend/extend";
 @import "_template/_dop/nav";
 @import "_template/_dop/footer";
 @import "./_template/main/form-sign";
@@ -17,6 +18,7 @@ $color-white      : return-value(color, white);
 $color-yellow     : return-value(color, yellow);
 $color-borderGray : return-value(color, borderGray);
 $color-scopeBorder      : return-value(color, scopeBorder);
+$color-navBlue      : return-value(color, navBlue);
 
 $font             : 'Open Sans';
 
@@ -111,6 +113,20 @@ body.form-open {
 }
 
 
+/// [navigation, footer]
+body.internal {
+  @extend %internalPage;
+
+  display: flex;
+  flex-direction: column;
+
+
+  .wrap-container {
+    flex: 1;
+  }
+}
+
+
 #content{
   @include mixinMaxWidthPosition(10.7, 30, 0);
 }
@@ -122,8 +138,9 @@ p.help-block.help-block-error {
   font-size: render-pixel(12);
 }
 
-[class^='field-'].has-error {
-  input {
+.has-error {
+  input,
+  textarea{
     border: 1px solid red !important;
   }
 }
@@ -135,6 +152,7 @@ input.form-control {
   font-style: italic;
   font-size: render-pixel(15);
   outline: none;
+  border: 0;
   @include mixinBorder(all, 1px, darken($color-scopeBorder, 10%));
   border-right: none;
   @include mixinDimensions('', 454px, 38px);
@@ -145,6 +163,32 @@ input.form-control {
     box-shadow: 0 0 5px 1px rgba($color-black, 0.2);
   }
 }
+
+
+#document-content {
+  * {
+    font: {
+      size: 14px;
+      family: $font;
+    }
+  }
+}
+
+#protectFromCopy {
+  a.btn.payCopingLink{
+    height: 38px;
+    line-height: 38px;
+    padding: 0 20px;
+    background-color: $color-navBlue;
+    color: $color-white;
+    font: {
+      size: 13px;
+      weight: 600;
+    }
+    text-transform: uppercase;
+  }
+}
+
 
 
 ///
@@ -162,4 +206,11 @@ input.form-control {
 }
 .visiblyAnimated{
   opacity: 1;
+}
+
+
+@media screen and  (max-width: 767px){
+  body.internal {
+    display: block;
+  }
 }

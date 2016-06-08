@@ -62,4 +62,4 @@ mixin breadcrumbsMain(classIdName, title)
 mixin breadcrumbsPanel(arrLink, arrHash, arrLine)
     ul.bread-list
         each val, index in arrLink
-            li: a(href= arrHash[index])!= val + '&nbsp;' +  arrLine[index]
+            li: a(href= arrHash[index])!= val + '' +  arrLine[index]

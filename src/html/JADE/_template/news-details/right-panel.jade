@@ -36,11 +36,11 @@ section#right-panel.right-panel
                 form(name='subscribe', action='')
                     div.field-name
                         input(type='text', class='name-input', id='name', placeholder='Имя', required)
-                        p(class='help-block help-block-error') error
+                        p(class='help-block help-block-error')!= ''
 
                     div.field-email
                         input(type='email', class='email-input', id='email', placeholder='E-mail', required)
-                        p(class='help-block help-block-error') warning
+                        p(class='help-block help-block-error')!= ''
 
                     button(type='submit', class='btn-subscribe') подписаться
         hr

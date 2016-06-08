@@ -15,22 +15,22 @@ $color-scopeBorder  : return-value(color, scopeBorder);
 $color-subscribeHeadGE  : return-value(color, subscribeHeadGE);
 $color-navBlue      : return-value(color, navBlue);
 
-$image-back : '../../image/icon-back.png';
-$image-help : '../../image/icon-help.png';
-$image-list : '../../image/icon-list.png';
-$image-block : '../../image/icon-block.png';
-$image-uan : '../../image/icon-uan.png';
-$image-download : '../../image/icon-download.png';
-$image-save : '../../image/icon-save.png';
-$image-print : '../../image/icon-print.png';
-$image-attach : '../../image/icon-attach.png';
-$image-doc-icon : '../../image/icon-document-internal.png';
+$image-back : '../image/icon-back.png';
+$image-help : '../image/icon-help.png';
+$image-list : '../image/icon-list.png';
+$image-block : '../image/icon-block.png';
+$image-uan : '../image/icon-uan.png';
+$image-download : '../image/icon-download.png';
+$image-save : '../image/icon-save.png';
+$image-print : '../image/icon-print.png';
+$image-attach : '../image/icon-attach.png';
+$image-doc-icon : '../image/icon-document-internal.png';
 
-$icon-left-0 : '../../image/icon-left-0.png';
-$icon-left-1 : '../../image/icon-left-1.png';
-$icon-left-2 : '../../image/icon-left-2.png';
-$icon-left-3 : '../../image/icon-left-3.png';
-$icon-left-4 : '../../image/icon-left-4.png';
+$icon-left-0 : '../image/icon-left-0.png';
+$icon-left-1 : '../image/icon-left-1.png';
+$icon-left-2 : '../image/icon-left-2.png';
+$icon-left-3 : '../image/icon-left-3.png';
+$icon-left-4 : '../image/icon-left-4.png';
 
 
 
@@ -377,46 +377,47 @@ $icon-left-4 : '../../image/icon-left-4.png';
             padding-left: render-pixel(40);
           }
 
+
+          span.radio-custom {
+            position: relative;
+            display: inline-block;
+            border-radius: $width-all;
+            vertical-align: middle;
+            margin-right: render-pixel(5);
+            @include mixinDimensions('', render-pixel(22));
+            @include mixinBorder('all', 2px, $color-scopeBorder);
+
+            > input {
+              opacity: 0;
+              margin: 0;
+              cursor: pointer;
+              @include mixinCenteredBLockAbsolute(0,0,0,0);
+            }
+
+
+            &.check {
+              &:before{
+                content: '';
+                border-radius: $width-all;
+                @include mixinCenteredBLockAbsolute(0,0,0,0);
+                @include mixinDimensions('', render-pixel(10));
+                background-color: $color-navBlue;
+              }
+            }
+          }
+
+
+          label {
+            font-size: render-pixel(14);
+            vertical-align: middle;
+            cursor: pointer;
+          }
+
           .radio-block {
             padding-left: render-pixel(20);
 
             .field {
               margin-bottom: render-pixel(10);
-
-              span.radio-custom {
-                position: relative;
-                display: inline-block;
-                border-radius: $width-all;
-                vertical-align: middle;
-                margin-right: render-pixel(5);
-                @include mixinDimensions('', render-pixel(22));
-                @include mixinBorder('all', 2px, $color-scopeBorder);
-
-                > input {
-                  opacity: 0;
-                  margin: 0;
-                  cursor: pointer;
-                  @include mixinCenteredBLockAbsolute(0,0,0,0);
-                }
-
-
-                &.check {
-                  &:before{
-                    content: '';
-                    border-radius: $width-all;
-                    @include mixinCenteredBLockAbsolute(0,0,0,0);
-                    @include mixinDimensions('', render-pixel(10));
-                    background-color: $color-navBlue;
-                  }
-                }
-              }
-
-
-              label {
-                font-size: render-pixel(14);
-                vertical-align: middle;
-                cursor: pointer;
-              }
 
               &:last-child {
                 margin-bottom: render-pixel(20);

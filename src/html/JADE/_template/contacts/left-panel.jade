@@ -91,21 +91,21 @@ section#left-panel.left-panel
                         br
                         br
                         input(type='text', class='name-input', id='name', required)
-                        p(class='help-block help-block-error') error
+                        p(class='help-block help-block-error')!= ''
 
                     div.field-email
                         label(for='email') Email *
                         br
                         br
                         input(type='email', class='email-input', id='email', required)
-                        p(class='help-block help-block-error') warning
+                        p(class='help-block help-block-error')!= ''
 
                 div.field-message
                     label(for='message') Сообщение *
                     br
                     br
                     textarea(class='message-input', id='message', required)
-                    p(class='help-block help-block-error') warning
+                    p(class='help-block help-block-error')!= ''
 
                 button(type='submit', class='btn-subscribe') ОТПРАВИТЬ
 

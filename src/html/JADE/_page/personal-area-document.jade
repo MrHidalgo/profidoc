@@ -1,0 +1,49 @@
+include ../_mixin/mixin
+
+-
+    var arrFontName = [
+        'https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800'
+    ];
+
+    var arrStyleName = [
+        './style/style.min.css',
+        './style/personal-area.min.css'
+    ]
+
+    var scriptName = [
+        './script/jquery.min.js',
+        './script/script.min.js'
+    ];
+
+
+
+doctype html
+html
+    head
+        +htmlTemplateHEAD('Личный кабинет', arrFontName, arrStyleName, false)
+
+    body.internal
+
+        // NAVIGATION MENU
+        include ../_template/_dop/nav
+
+        .wrap-container
+            block sign
+                include ../_template/main/form-sign
+
+            // BREADCRUMBS BLOCK
+            block breadcrumbs
+                include ../_template/personal-area/breadcrumbs
+
+
+            block personal-header
+                include ../_template/personal-area/header
+
+            block personal-content
+                include ../_template/personal-area/personal-content-document
+
+
+        // FOOTER MENU
+        include ../_template/_dop/footer
+
+        +htmlTemplateFOOT(scriptName)

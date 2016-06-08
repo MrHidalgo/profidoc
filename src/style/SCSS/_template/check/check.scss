@@ -16,9 +16,9 @@ $color-black        : return-value(color, black);
 
 
 /// [navigation, footer]
-body{
-  @extend %internalPage;
-}
+//body{
+//  @extend %internalPage;
+//}
 
 .img-responsive{
   max-width: $width-all;

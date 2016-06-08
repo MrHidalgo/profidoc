@@ -18,8 +18,8 @@ $color-yellow         : return-value(color, yellow);
 $color-gradientGray1    : return-value(color, gradientGray1);
 $color-gradientGray2    : return-value(color, gradientGray2);
 
-$image-form-bg        : '../../image/form-bg.png';
-$image-select-arrow   : '../../image/check-tarif-3.png';
+$image-form-bg        : '../image/form-bg.png';
+$image-select-arrow   : '../image/check-tarif-3.png';
 
 
 
@@ -31,13 +31,13 @@ section.create-document {
   .create-document-container {
     @include mixinMaxWidthPosition(10.7, 30, 0);
 
-    p.title {
+    p.group-title {
       font-size: render-pixel(18);
       color: darken($color-navBlue, 40%);
       margin: render-pixel(10) 0;
     }
 
-    p.sub-title {
+    p.control-label {
       font: {
         size: render-pixel(15);
         weight: 600;
@@ -412,7 +412,7 @@ section.create-document {
     padding: render-pixel(2.5) 0;
     @include mixinBorder(bottom, 1px, $color-scopeBorder);
 
-    p.title {
+    p.-group-title {
       margin-top: 0 !important;
     }
   }

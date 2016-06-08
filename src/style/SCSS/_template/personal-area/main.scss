@@ -19,11 +19,11 @@ $color-gradientGray1    : return-value(color, gradientGray1);
 $color-gradientGray2    : return-value(color, gradientGray2);
 $color-documentDgreen   : return-value(color, documentDgreen);
 
-$image-doc          : '../../image/icon-file.png';
-$image-pen          : '../../image/icon-table-pen.png';
-$image-download     : '../../image/icon-table-download.png';
-$image-del          : '../../image/icon-table-del.png';
-$image-sort         : '../../image/icon-table-sort.png';
+$image-doc          : '../image/icon-file.png';
+$image-pen          : '../image/icon-table-pen.png';
+$image-download     : '../image/icon-table-download.png';
+$image-del          : '../image/icon-table-del.png';
+$image-sort         : '../image/icon-table-sort.png';
 
 
 
@@ -439,7 +439,7 @@ section.main {
       table#payment.payment {
         thead {
           tr {
-            td {
+            th {
 
               &:nth-child(n+2) {
                 text-align: center;
@@ -455,7 +455,7 @@ section.main {
                 text-align: center;
               }
 
-              &:nth-child(4) {
+              &.payment {
                 span {
                   font: {
                     size: render-pixel(13);
@@ -698,7 +698,7 @@ section.main {
 
         thead {
           tr {
-            td {
+            th {
               &:after{
                 display: none;
               }
@@ -713,15 +713,15 @@ section.main {
           tr {
             td {
 
-              &:nth-child(1) {
+              &.name {
                 text-decoration: none;
               }
 
-              &:nth-child(n+2) {
+              &.count {
                 text-align: center;
               }
 
-              &:nth-child(3) {
+              &.date {
                 color: lighten(#222, 5%);
                 font-weight: normal;
               }
@@ -748,7 +748,7 @@ section.main {
       table#check.check {
         thead {
           tr {
-            td {
+            th {
               &:after{
                 display: none;
               }
@@ -800,7 +800,7 @@ section.main {
               }// /-btn-table-download
 
 
-              &:nth-child(4) {
+              &.data-end {
                 font: {
                   size: render-pixel(13);
                   weight: 600;
@@ -816,7 +816,7 @@ section.main {
       table#order.order {
         thead {
           tr {
-            td {
+            th {
               &:after{
                 display: none;
               }
@@ -856,7 +856,7 @@ section.main {
         thead {
           @include mixinLinerGradient($color-gradientGray1, $color-gradientGray2);
           tr {
-            td {
+            th {
               padding: render-pixel(10);
               color: lighten(#222, 3%);
               cursor: pointer;
@@ -893,7 +893,7 @@ section.main {
               vertical-align: middle;
 
 
-              &:first-child {
+              &.name {
                 font: {
                   size: render-pixel(15.5);
                   weight: 600;
@@ -901,18 +901,18 @@ section.main {
                 text-decoration: underline;
               }
 
-              &:nth-child(2) {
+              &.date {
                 font-size: render-pixel(14);
                 color: lighten(#222, 5%);
               }
 
-              &:nth-child(3) {
+              &.readiness {
                 text-align: center;
                 color: $color-navBlue;
                 font-size: render-pixel(15.5);
               }
 
-              &:nth-child(4) {
+              &.act {
                 > a.btn-main {
                   display: inline-block;
                   @include mixinDimensions('', 30px);
@@ -920,9 +920,9 @@ section.main {
                   @include mixinBorder('all', 1px, $color-gradientGray2);
                   margin-right: render-pixel(2.5);
 
-                  &:first-child,
-                  &:nth-child(2),
-                  &:last-child {
+                  &.edit,
+                  &.delete,
+                  &.download {
                     &:before{
                       content: '';
                       display: block;
@@ -932,21 +932,21 @@ section.main {
                   }
 
 
-                  &:first-child{
+                  &.edit{
                     &:before{
                       background: url($image-pen) no-repeat center;
                       background-size: contain;
                     }
                   }
 
-                  &:nth-child(2){
+                  &.delete{
                     &:before{
                       background: url($image-del) no-repeat center;
                       background-size: contain;
                     }
                   }
 
-                  &:last-child{
+                  &.download{
                     &:before{
                       background: url($image-download) no-repeat center;
                       background-size: contain;
@@ -955,7 +955,7 @@ section.main {
                 }
               }
 
-              &:nth-child(5) {
+              &.payment {
                 span {
                   font: {
                     size: render-pixel(13);
@@ -996,7 +996,7 @@ section.main {
                 }
               }
 
-              &:last-child {
+              &.bonus {
                 color: $color-navBlue;
                 font: {
                   size: render-pixel(13);

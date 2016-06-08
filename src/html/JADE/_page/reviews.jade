@@ -22,21 +22,22 @@ html
     head
         +htmlTemplateHEAD('Отзывы', arrFontName, arrStyleName, false)
 
-    body
+    body.internal
 
         // NAVIGATION MENU
         include ../_template/_dop/nav
 
-        block sign
-            include ../_template/main/form-sign
+        .wrap-container
+            block sign
+                include ../_template/main/form-sign
 
-        // BREADCRUMBS BLOCK
-        block breadcrumbs
-            include ../_template/reviews/breadcrumbs
+            // BREADCRUMBS BLOCK
+            block breadcrumbs
+                include ../_template/reviews/breadcrumbs
 
 
-        block content
-            include ../_template/reviews/content
+            block content
+                include ../_template/reviews/content
 
 
         // FOOTER MENU

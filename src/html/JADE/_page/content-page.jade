@@ -20,20 +20,21 @@ html
     head
         +htmlTemplateHEAD('Контентная страница', arrFontName, arrStyleName, false)
 
-    body
+    body.internal
 
         include ../_template/_dop/nav
 
-        block sign
-            include ../_template/main/form-sign
+        .wrap-container
+            block sign
+                include ../_template/main/form-sign
 
-        // BREADCRUMBS BLOCK
-        block breadcrumbs
-            include ../_template/content-page/breadcrumbs
+            // BREADCRUMBS BLOCK
+            block breadcrumbs
+                include ../_template/content-page/breadcrumbs
 
 
-        block content
-            include ../_template/content-page/content
+            block content
+                include ../_template/content-page/content
 
 
         include ../_template/_dop/footer

@@ -20,16 +20,17 @@ html
     head
         +htmlTemplateHEAD('Безопасность', arrFontName, arrStyleName, false)
 
-    body
+    body.internal
 
         include ../_template/_dop/nav
 
-        block sign
-            include ../_template/main/form-sign
+        .wrap-container
+            block sign
+                include ../_template/main/form-sign
 
-        // CONTENT BLOCK
-        block content
-            include ../_template/security/content
+            // CONTENT BLOCK
+            block content
+                include ../_template/security/content
 
         include ../_template/_dop/footer
 

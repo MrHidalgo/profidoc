@@ -24,21 +24,22 @@ html
     head
         +htmlTemplateHEAD('Контакты', arrFontName, arrStyleName, false)
 
-    body
+    body.internal
 
         // NAVIGATION MENU
         include ../_template/_dop/nav
 
-        block sign
-            include ../_template/main/form-sign
+        .wrap-container
+            block sign
+                include ../_template/main/form-sign
 
-        // BREADCRUMBS BLOCK
-        block breadcrumbs
-            include ../_template/contacts/breadcrumbs
+            // BREADCRUMBS BLOCK
+            block breadcrumbs
+                include ../_template/contacts/breadcrumbs
 
 
-        block content
-            include ../_template/contacts/content
+            block content
+                include ../_template/contacts/content
 
 
         // FOOTER MENU

@@ -9,12 +9,12 @@ section#form.form
         .field-name
             label(for='name', class='name-label')
             input(type='text', class='name-input', id='name', placeholder='Username', required)
-            p(class='help-block help-block-error') error
+            p(class='help-block help-block-error')!= ''
 
         .field-name
             label(for='password', class='password-label')
             input(type='password', class='password-input', id='password', placeholder='Password', required)
-            p(class='help-block help-block-error') error
+            p(class='help-block help-block-error')!= ''
 
         div.internal-block
             .checkbox-custom

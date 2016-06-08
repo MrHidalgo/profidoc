@@ -22,49 +22,51 @@ html
     head
         +htmlTemplateHEAD('О проекте', arrFontName, arrStyleName, false)
 
-    body
+    body.internal
 
         // NAVIGATION MENU
         include ../_template/_dop/nav
 
-        block sign
-            include ../_template/main/form-sign
+        .wrap-container
+            block sign
+                include ../_template/main/form-sign
 
-        // CONTENT BLOCK
-        block breadcrumbs
-            include ../_template/about/breadcrumbs
 
-        // ABOUT BLOCK
-        block about
-            include ../_template/about/titleSlogan
+            // CONTENT BLOCK
+            block breadcrumbs
+                include ../_template/about/breadcrumbs
 
-        // WAY BLOCK
-        block way
-            include ../_template/about/way
+            // ABOUT BLOCK
+            block about
+                include ../_template/about/titleSlogan
 
-        // WORK BLOCK
-        block work
-            include ../_template/about/work
+            // WAY BLOCK
+            block way
+                include ../_template/about/way
 
-        // SECURITY BLOCK
-        block security
-            include ../_template/about/security
+            // WORK BLOCK
+            block work
+                include ../_template/about/work
 
-        // CREATE BLOCK
-        block create
-            include ../_template/about/create
+            // SECURITY BLOCK
+            block security
+                include ../_template/about/security
 
-        // MAPS BLOCK
-        block map
-            include ../_template/about/map
+            // CREATE BLOCK
+            block create
+                include ../_template/about/create
 
-        // TRAINING BLOCK
-        block training
-            include ../_template/about/training
+            // MAPS BLOCK
+            block map
+                include ../_template/about/map
 
-        // try BLOCK
-        block try
-            include ../_template/about/try
+            // TRAINING BLOCK
+            block training
+                include ../_template/about/training
+
+            // try BLOCK
+            block try
+                include ../_template/about/try
 
         // FOOTER MENU
         include ../_template/_dop/footer

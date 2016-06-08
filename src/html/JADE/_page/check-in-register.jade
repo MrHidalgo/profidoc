@@ -23,21 +23,22 @@ html
     head
         +htmlTemplateHEAD('Реєстрація ТОВ', arrFontName, arrStyleName, false)
 
-    body
+    body.internal
 
         // NAVIGATION MENU
         include ../_template/_dop/nav
 
-        block sign
-            include ../_template/main/form-sign
+        .wrap-container
+            block sign
+                include ../_template/main/form-sign
 
-        // BREADCRUMBS BLOCK
-        block breadcrumbs
-            include ../_template/check-in/breadcrumbs
+            // BREADCRUMBS BLOCK
+            block breadcrumbs
+                include ../_template/check-in/breadcrumbs
 
 
-        block main-section
-            include ../_template/check-in-register/main-section
+            block main-section
+                include ../_template/check-in-register/main-section
 
 
         // FOOTER MENU

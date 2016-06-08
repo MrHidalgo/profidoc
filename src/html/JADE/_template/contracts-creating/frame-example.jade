@@ -136,9 +136,22 @@ section#frame-example.frame-example
                     #radio-content
                         p.title!= 'Правовый статус сторон :'
                         p.sub-title!= 'Принципал :'
-                            +radioBlock(radioPrincipal, 'principal')
+                        .radio-block
+                            -for(var i = 0; i < radioPrincipal.length; i++)
+                                .field
+                                    span.radio-custom
+                                        if (i == 0)
+                                            input(type='radio', name= 'principal', id= 'principal-#{i}', checked='checked')
+                                        else
+                                            input(type='radio', name= 'principal', id= 'principal-#{i}')
+                                    label(for= 'principal-#{i}')!= radioPrincipal[i]
                         p.sub-title!= 'Агент :'
-                            +radioBlock(radioPrincipal, 'agent')
+                        .radio-block
+                            -for(var i = 0; i < radioPrincipal.length; i++)
+                                .field
+                                    span.radio-custom
+                                        input(type='radio', name= 'principal', id= 'principal1-#{i}')
+                                    label(for= 'principal1-#{i}')!= radioPrincipal[i]
 
                         p.title!= 'Договор направлен на :'
                             +radioBlock(radioContracts, 'contracts')

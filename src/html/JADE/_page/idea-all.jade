@@ -22,24 +22,25 @@ html
     head
         +htmlTemplateHEAD('', arrFontName, arrStyleName, false)
 
-    body
+    body.internal
 
         // NAVIGATION MENU
         include ../_template/_dop/nav
 
-        block sign
-            include ../_template/main/form-sign
+        .wrap-container
+            block sign
+                include ../_template/main/form-sign
 
-        // BREADCRUMBS BLOCK
-        block breadcrumbs
-            include ../_template/idea-all/breadcrumbs
+            // BREADCRUMBS BLOCK
+            block breadcrumbs
+                include ../_template/idea-all/breadcrumbs
 
 
-        block filter
-            include ../_template/idea-all/filter
+            block filter
+                include ../_template/idea-all/filter
 
-        block content
-            include ../_template/idea-all/content
+            block content
+                include ../_template/idea-all/content
 
 
         // FOOTER MENU

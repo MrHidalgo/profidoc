@@ -22,30 +22,31 @@ html
     head
         +htmlTemplateHEAD('Перечень договоров', arrFontName, arrStyleName, false)
 
-    body
+    body.internal
 
         // NAVIGATION MENU
         include ../_template/_dop/nav
 
-        block sign
-            include ../_template/main/form-sign
+        .wrap-container
+            block sign
+                include ../_template/main/form-sign
 
-        // BREADCRUMBS BLOCK
-        block breadcrumbs
-            include ../_template/contracts-list/breadcrumbs
+            // BREADCRUMBS BLOCK
+            block breadcrumbs
+                include ../_template/contracts-list/breadcrumbs
 
 
-        block search
-            include ../_template/contracts-list/search
+            block search
+                include ../_template/contracts-list/search
 
-        block text
-            include ../_template/contracts-list/text
+            block text
+                include ../_template/contracts-list/text
 
-        block list
-            include ../_template/contracts-list/list
+            block list
+                include ../_template/contracts-list/list
 
-        block found
-            include ../_template/contracts-list/found
+            block found
+                include ../_template/contracts-list/found
 
 
         // FOOTER MENU

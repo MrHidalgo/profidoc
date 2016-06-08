@@ -20,8 +20,8 @@ $color-lightBlack       : return-value(color, lightBlack);
 $color-gradientYellow2  : return-value(color, gradientYellow2);
 $color-gradientYellow3  : return-value(color, gradientYellow3);
 
-$image-arrow            : '../../image/contentPage-arrow.png';
-$image-mail             : '../../image/contentPage-mail.png';
+$image-arrow            : '../image/contentPage-arrow.png';
+$image-mail             : '../image/contentPage-mail.png';
 
 
 ///
@@ -234,7 +234,8 @@ section.content-footer{
                   }
 
 
-                  cursor: pointer;
+                  //cursor: pointer;
+                  display: block;
                   min-height: render-pixel(160);
                   padding: render-pixel(20);
                   margin: render-pixel(15) 0;
@@ -256,7 +257,7 @@ section.content-footer{
                   }
                 }// /-list-idea-
 
-                li{
+                a{
                   &:hover{
                     @include mixinBorder('all', 1px, darken($color-bgGray, 5%));
                     transition: .3s;

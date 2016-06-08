@@ -23,24 +23,25 @@ html
     head
         +htmlTemplateHEAD('Создание договора', arrFontName, arrStyleName, false)
 
-    body
+    body.internal
 
         // NAVIGATION MENU
         include ../_template/_dop/nav
 
-        block sign
-            include ../_template/main/form-sign
+        .wrap-container
+            block sign
+                include ../_template/main/form-sign
 
-        // BREADCRUMBS BLOCK
-        block breadcrumbs
-            include ../_template/contracts-creating/breadcrumbs
+            // BREADCRUMBS BLOCK
+            block breadcrumbs
+                include ../_template/contracts-creating/breadcrumbs
 
 
-        block search
-            include ../_template/contracts-list/search
+            block search
+                include ../_template/contracts-list/search
 
-        block frame-example
-            include ../_template/contracts-creating/frame-example
+            block frame-example
+                include ../_template/contracts-creating/frame-example
 
 
         // FOOTER MENU

@@ -20,29 +20,30 @@ html
     head
         +htmlTemplateHEAD('Регистрация ООО и ФОП "под ключ"', arrFontName, arrStyleName, false)
 
-    body
+    body.internal
 
         include ../_template/_dop/nav
 
-        block sign
-            include ../_template/main/form-sign
+        .wrap-container
+            block sign
+                include ../_template/main/form-sign
 
-        // BREADCRUMBS BLOCK
-        block breadcrumbs
-            include ../_template/registration/breadcrumbs
+            // BREADCRUMBS BLOCK
+            block breadcrumbs
+                include ../_template/registration/breadcrumbs
 
 
-        block info
-            include ../_template/registration/info
+            block info
+                include ../_template/registration/info
 
-        block why
-            include ../_template/registration/why
+            block why
+                include ../_template/registration/why
 
-        block get
-            include ../_template/registration/get
+            block get
+                include ../_template/registration/get
 
-        block some
-            include ../_template/registration/some
+            block some
+                include ../_template/registration/some
 
 
         include ../_template/_dop/footer

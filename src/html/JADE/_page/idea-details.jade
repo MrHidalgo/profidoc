@@ -23,26 +23,27 @@ html
     head
         +htmlTemplateHEAD('', arrFontName, arrStyleName, false)
 
-    body
+    body.internal
 
         // NAVIGATION MENU
         include ../_template/_dop/nav
 
-        block sign
-            include ../_template/main/form-sign
+        .wrap-container
+            block sign
+                include ../_template/main/form-sign
 
-        // BREADCRUMBS BLOCK
-        block breadcrumbs
-            include ../_template/idea-details/breadcrumbs
+            // BREADCRUMBS BLOCK
+            block breadcrumbs
+                include ../_template/idea-details/breadcrumbs
 
-        block header
-            include ../_template/idea-details/header
+            block header
+                include ../_template/idea-details/header
 
-        block content
-            include ../_template/idea-details/content
+            block content
+                include ../_template/idea-details/content
 
-        block footer
-            include ../_template/idea-details/footer
+            block footer
+                include ../_template/idea-details/footer
 
 
         // FOOTER MENU

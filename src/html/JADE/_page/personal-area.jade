@@ -22,24 +22,25 @@ html
     head
         +htmlTemplateHEAD('Личный кабинет', arrFontName, arrStyleName, false)
 
-    body
+    body.internal
 
         // NAVIGATION MENU
         include ../_template/_dop/nav
 
-        block sign
-            include ../_template/main/form-sign
+        .wrap-container
+            block sign
+                include ../_template/main/form-sign
 
-        // BREADCRUMBS BLOCK
-        block breadcrumbs
-            include ../_template/personal-area/breadcrumbs
+            // BREADCRUMBS BLOCK
+            block breadcrumbs
+                include ../_template/personal-area/breadcrumbs
 
 
-        block personal-header
-            include ../_template/personal-area/header
+            block personal-header
+                include ../_template/personal-area/header
 
-        block personal-content
-            include ../_template/personal-area/personal-content
+            block personal-content
+                include ../_template/personal-area/personal-content
 
 
         // FOOTER MENU

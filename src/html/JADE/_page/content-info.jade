@@ -24,25 +24,26 @@ html
     head
         +htmlTemplateHEAD('', arrFontName, arrStyleName, false)
 
-    body
+    body.internal
 
         // NAVIGATION MENU
         include ../_template/_dop/nav
 
-        block sign
-            include ../_template/main/form-sign
+        .wrap-container
+            block sign
+                include ../_template/main/form-sign
 
-        block navigation
-            include ../_template/content-info/navigation
-
-
-        block dynamic-content
-            div#content.content
-                include about-program
+            block navigation
+                include ../_template/content-info/navigation
 
 
-        block content-footer
-            include ../_template/content-info/content-footer
+            block dynamic-content
+                div#content.content
+                    include about-program
+
+
+            block content-footer
+                include ../_template/content-info/content-footer
 
 
         // FOOTER MENU

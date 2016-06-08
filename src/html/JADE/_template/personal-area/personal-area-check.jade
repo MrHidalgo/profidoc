@@ -49,8 +49,8 @@
 
 
 
-mixin tableRowinfo (arr)
-    td!= arr[i]
+mixin tableRowinfo (arr, arrClass)
+    td(class= arrClass)!= arr[i]
 
 
 
@@ -62,15 +62,15 @@ section#main.main
             thead
                 tr
                     - for(var i = 0; i < tableTitle.length; i++)
-                        td!= tableTitle[i]
+                        th!= tableTitle[i]
             tbody
                 - for(var i = 0; i < tableTitle.length; i++)
                     tr
-                        +tableRowinfo(tableName)
-                        +tableRowinfo(tableCode)
-                        +tableRowinfo(tableStatus)
-                        +tableRowinfo(tableDate)
-                        +tableRowinfo(tableDownload)
+                        +tableRowinfo(tableName, 'name')
+                        +tableRowinfo(tableCode, 'code')
+                        +tableRowinfo(tableStatus, 'status')
+                        +tableRowinfo(tableDate, 'data-end')
+                        +tableRowinfo(tableDownload, 'download')
 
         a(href='#', class='btn-all-check')!= 'Все проверки'
         a(href='#', class='btn-new-check')!= 'Проверить нового контрагента'

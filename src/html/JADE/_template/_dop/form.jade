@@ -30,7 +30,7 @@ section#form.form
         .field-name
             label(for='name')!= '<span>*</span>ФИО:'
             input(type='text', class='name-input', id='name', required)
-            p(class='help-block help-block-error') error
+            p(class='help-block help-block-error')!= ''
 
         .field-name
             span!= '<span>*</span>Тип:'
@@ -42,7 +42,7 @@ section#form.form
                     - for(var i = 0; i < formSelectType.length; i++)
                         option(value= formSelectType[i])!= formSelectType[i]
 
-            p(class='help-block help-block-error') error
+            p(class='help-block help-block-error')!= ''
 
         .field-name
             span!= '<span>*</span>Город:'
@@ -54,17 +54,17 @@ section#form.form
                     - for(var i = 0; i < formSelectCity.length; i++)
                         option(value= formSelectCity[i])!= formSelectCity[i]
 
-            p(class='help-block help-block-error') error
+            p(class='help-block help-block-error')!= ''
 
         .field-name
             label(for='email')!= '<span>*</span>E-mail:'
             input(type='text', class='email-input', id='email', required)
-            p(class='help-block help-block-error') error
+            p(class='help-block help-block-error')!= ''
 
         .field-name
             label(for='phone')!= '<span>*</span>Телефон:'
             input(type='text', class='phone-input', id='phone', required)
-            p(class='help-block help-block-error') error
+            p(class='help-block help-block-error')!= ''
 
         button(type='submit', class='btn-registration') отправить
 

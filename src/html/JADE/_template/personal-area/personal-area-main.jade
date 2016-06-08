@@ -45,11 +45,11 @@
     ];
 
     var tableRole = [
-        '<a href="#", class="btn-main"></a><a href="#", class="btn-main"></a><a href="#", class="btn-main"></a>',
-        '<a href="#", class="btn-main"></a><a href="#", class="btn-main"></a><a href="#", class="btn-main"></a>',
-        '<a href="#", class="btn-main"></a><a href="#", class="btn-main"></a><a href="#", class="btn-main"></a>',
-        '<a href="#", class="btn-main"></a><a href="#", class="btn-main"></a><a href="#", class="btn-main"></a>',
-        '<a href="#", class="btn-main"></a><a href="#", class="btn-main"></a><a href="#", class="btn-main"></a>'
+        '<a href="#" class="btn-main edit"></a><a href="#" class="btn-main delete"></a><a href="#" class="btn-main download"></a>',
+        '<a href="#" class="btn-main edit"></a><a href="#" class="btn-main delete"></a><a href="#" class="btn-main download"></a>',
+        '<a href="#" class="btn-main edit"></a><a href="#" class="btn-main delete"></a><a href="#" class="btn-main download"></a>',
+        '<a href="#" class="btn-main edit"></a><a href="#" class="btn-main delete"></a><a href="#" class="btn-main download"></a>',
+        '<a href="#" class="btn-main edit"></a><a href="#" class="btn-main delete"></a><a href="#" class="btn-main download"></a>'
     ];
 
     var tablePayment = [
@@ -77,8 +77,9 @@
         'Ваш бонус'
     ];
 
-mixin tableRowinfo (arr)
-        td!= arr[i]
+
+mixin tableRowinfo (arr, arrClass)
+        td(class= arrClass)!= arr[i]
 
 
 
@@ -112,16 +113,16 @@ section#main.main
             thead
                 tr
                     - for(var i = 0; i < tableTitle.length; i++)
-                        td!= tableTitle[i]
+                        th!= tableTitle[i]
             tbody
                 - for(var i = 0; i < tableTitle.length - 1; i++)
                     tr
-                        +tableRowinfo(tableName)
-                        +tableRowinfo(tableDate)
-                        +tableRowinfo(tableReady)
-                        +tableRowinfo(tableRole)
-                        +tableRowinfo(tablePayment)
-                        +tableRowinfo(tableBonus)
+                        +tableRowinfo(tableName, 'name')
+                        +tableRowinfo(tableDate, 'date')
+                        +tableRowinfo(tableReady, 'readiness')
+                        +tableRowinfo(tableRole, 'act')
+                        +tableRowinfo(tablePayment, 'payment')
+                        +tableRowinfo(tableBonus, 'bonus')
 
         br
 

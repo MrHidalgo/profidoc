@@ -26,17 +26,17 @@ section#main.main
         .field-name
             label(for='profile-surname')!= 'ФИО <span>*</span>'
             input(type='text', name='surname', class='surname', id='profile-surname')
-            p(class='help-block help-block-error') error
+            p(class='help-block help-block-error')!= ''
 
         .field-mail
             label(for='profile-mail')!= 'E-mail <span>*</span>'
             input(type='mail', name='mail', class='mail', id='profile-mail')
-            p(class='help-block help-block-error') error
+            p(class='help-block help-block-error')!= ''
 
         .field-phone
             label(for='profile-phone')!= 'Телефон <span>*</span>'
             input(type='phone', name='phone', class='phone', id='profile-phone')
-            p(class='help-block help-block-error') error
+            p(class='help-block help-block-error')!= ''
 
 
     .main-row-my1
@@ -45,17 +45,17 @@ section#main.main
         .field-old-pass
             label(for='profile-old-pass')!= 'Стрый пароль <span>*</span>'
             input(type='password', name='old-pass', class='old-pass', id='profile-old-pass')
-            p(class='help-block help-block-error') error
+            p(class='help-block help-block-error')!= ''
 
         .field-new-pass
             label(for='profile-new-pass')!= 'Новый пароль <span>*</span>'
             input(type='password', name='new-pass', class='new-pass', id='profile-new-pass')
-            p(class='help-block help-block-error') error
+            p(class='help-block help-block-error')!= ''
 
         .field-repeat-new-pass
             label(for='profile-repeat-new-pass')!= 'Повторить новый пароль <span>*</span>'
             input(type='password', name='repeat-new-pass', class='repeat-new-pass', id='profile-repeat-new-pass')
-            p(class='help-block help-block-error') error
+            p(class='help-block help-block-error')!= ''
 
 
 

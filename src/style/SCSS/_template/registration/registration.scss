@@ -19,10 +19,10 @@ $color-workBlueText     : return-value(color, workBlueText);
 $color-newsText         : return-value(color, newsText);
 
 
-/// [navigation, footer]
-body{
-  @extend %internalPage;
-}
+///// [navigation, footer]
+//body{
+//  @extend %internalPage;
+//}
 
 
 ///

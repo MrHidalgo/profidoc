@@ -33,5 +33,6 @@ $color-footerBg   : return-value(color, footerBg);
 %internalPage{
   section#navigation{
     background-color: $color-footerBg;
+    flex: 1 0 auto;
   }// /-section#navigation
 }

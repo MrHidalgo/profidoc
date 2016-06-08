@@ -8,12 +8,12 @@
     ];
 
     var socialBtnName = [
-            'Facebook',
-            'Twitter',
-            'Google',
-            'Vkontakte',
-            'Odnoklassniki'
-        ];
+        'Facebook',
+        'Twitter',
+        'Google',
+        'Vkontakte',
+        'Odnoklassniki'
+    ];
 
 
 section#form-sign.form-sign
@@ -26,11 +26,11 @@ section#form-sign.form-sign
             form(name='', action='')
                 .field-name
                     input(type='text', class='name-input', id='login', placeholder='Логин', required)
-                    p(class='help-block help-block-error') error
+                    p(class='help-block help-block-error')!= ''
 
                 .field-pass
                     input(type='password', class='pass-input', id='pass', placeholder='Пароль', required)
-                    p(class='help-block help-block-error') error
+                    p(class='help-block help-block-error')!= ''
 
                 p.forget!= 'Забыли пароль? Нажмите <a href="#" class="btn-forget">здесь,</a> чтобы восстановить'
 
