@@ -16,7 +16,7 @@
     "test",
     "tests",
     "dist/*.html",
-    "dist/image"
+    "dist/image",
     "*.iml",
     "*.js",
     "src",
