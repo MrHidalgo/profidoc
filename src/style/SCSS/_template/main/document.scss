@@ -14,6 +14,7 @@ $width-all        : return-value(dimension, all);
 
 $color-white          : return-value(color, white);
 $color-navBlue        : return-value(color, navBlue);
+$color-yellow         : return-value(color, yellow);
 $color-lightBlack     : return-value(color, lightBlack);
 $color-borderGray     : return-value(color, borderGray);
 $color-documentBord   : return-value(color, documentBord);
@@ -71,6 +72,27 @@ section.document{
         @include mixinBorder('all', 1px, $color-borderGray);
         margin: render-pixel(10);
         padding: render-pixel(15);
+        transition: all .3s linear;
+
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          @include mixinDimensions('', $width-all);
+          border-bottom: 4px solid transparent;
+          transition: all .3s linear;
+        }
+
+
+        &:hover {
+          &:before {
+            border-bottom: 4px solid $color-navBlue;
+            box-shadow: 0 0 4px .5px rgba(34,159,255,0.3);
+          }
+          border-bottom: 1px solid transparent;
+        }
 
 
         .row-title-block{
@@ -159,6 +181,12 @@ section.document{
             text-transform: uppercase;
             font-size: render-pixel(10);
             line-height: 3.4;
+            transition: all .3s linear;
+
+
+            &:hover {
+              background: $color-yellow;
+            }
           }
         }// /-row-btn-price
       }// /-div[class^='row-block-']

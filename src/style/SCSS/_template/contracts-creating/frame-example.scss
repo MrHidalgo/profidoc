@@ -144,26 +144,19 @@ $icon-left-4 : '../image/icon-left-4.png';
     .sub-header {
       position: relative;
       height: render-pixel(35);
+      padding-left: 154px;
       background-color: $color-scopeBorder;
 
 
       .btn-doc {
-        &-list,
-        &-block,
+
         &-price,
         &-download,
         &-save,
         &-print,
         &-attach {
-          @include mixinCenteredBLockAbsolute(0,0,0,0);
           display: inline-block;
           vertical-align: middle;
-          //margin: render-pixel(5) 0;
-        }
-
-        &-list,
-        &-block {
-          margin: render-pixel(8) 0;
         }
 
         &-price,
@@ -171,21 +164,7 @@ $icon-left-4 : '../image/icon-left-4.png';
         &-save,
         &-print,
         &-attach {
-          left: render-pixel(154);
-        }
-
-
-        &-list {
-          @include mixinDimensions('', render-pixel(76), render-pixel(17));
-          background: url($image-list) no-repeat center;
-          //background-size: contain;
-        }
-
-        &-block {
-          left: render-pixel(76);
-          @include mixinDimensions('', render-pixel(76), render-pixel(18));
-          background: url($image-block) no-repeat center;
-          //background-size: contain;
+          text-align: center;
         }
 
         &-price {
@@ -234,50 +213,62 @@ $icon-left-4 : '../image/icon-left-4.png';
         }
 
         &-save {
-          left: 374px;
           margin: 0;
-          width: 50px;
+          min-width: 50px;
+          font: {
+            size: render-pixel(14);
+          }
+          color: $color-navBlue;
+          padding: 0 10px;
 
           &:before{
             content: '';
-            display: block;
-            @include mixinDimensions('', render-pixel(16));
+            display: inline-block;
+            @include mixinDimensions('', 16px);
             background: url($image-save) no-repeat center;
             background-size: contain;
             vertical-align: middle;
-            margin: 9px auto;
+            margin-right: 10px;
           }
         }
 
         &-print {
-          left: 424px;
           margin: 0;
-          width: 50px;
+          min-width: 50px;
+          font: {
+            size: render-pixel(14);
+          }
+          color: $color-navBlue;
+          padding: 0 10px;
 
           &:before{
             content: '';
-            display: block;
-            @include mixinDimensions('', render-pixel(16));
+            display: inline-block;
+            @include mixinDimensions('', 16px);
             background: url($image-print) no-repeat center;
             background-size: contain;
             vertical-align: middle;
-            margin: 9px auto;
+            margin-right: 10px;
           }
         }
 
         &-attach {
-          left: 474px;
           margin: 0;
-          width: 50px;
+          min-width: 50px;
+          font: {
+            size: render-pixel(14);
+          }
+          color: $color-navBlue;
+          padding: 0 10px;
 
           &:before{
             content: '';
-            display: block;
-            @include mixinDimensions('', render-pixel(16));
+            display: inline-block;
+            @include mixinDimensions('', 16px);
             background: url($image-attach) no-repeat center;
             background-size: contain;
             vertical-align: middle;
-            margin: 9px auto;
+            margin-right: 10px;
           }
         }
       }// /-btn-doc
@@ -359,8 +350,8 @@ $icon-left-4 : '../image/icon-left-4.png';
           padding: render-pixel(20);
 
           > div {
-            min-height: 100vh;
-            margin-bottom: render-pixel(10);
+            min-height: 120vh;
+            margin-bottom: render-pixel(100);
           }
 
           p.title,
@@ -370,7 +361,6 @@ $icon-left-4 : '../image/icon-left-4.png';
 
           p.sub-title {
             font-size: render-pixel(14);
-            padding-left: render-pixel(20);
           }
 
           p.sub-title+.radio-block {
@@ -421,6 +411,13 @@ $icon-left-4 : '../image/icon-left-4.png';
 
               &:last-child {
                 margin-bottom: render-pixel(20);
+              }
+            }
+
+
+            &.principal {
+              .field {
+                padding-left: render-pixel(20);
               }
             }
           }

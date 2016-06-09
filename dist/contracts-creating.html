@@ -336,50 +336,48 @@
           <header><a href="#" class="btn-icon-back"></a>
             <p class="title">Шаблон. Агентский договор</p><a href="#" class="btn-help">Помощь</a>
           </header>
-          <div class="sub-header"><a href="#" class="btn-doc-list"></a><a href="#" class="btn-doc-block"></a><a href="#" class="btn-doc-price">500</a><a href="#" class="btn-doc-download">Скачать</a><a href="#" class="btn-doc-save"></a><a href="#" class="btn-doc-print"></a><a href="#" class="btn-doc-attach"></a></div>
-          <div class="frame-example-row">
+          <div id="sub-header" class="sub-header">
+            <!--a(href='#', class='btn-doc-list')-->
+            <!--a(href='#', class='btn-doc-block')--><a href="#" class="btn-doc-price">500</a><a href="#" class="btn-doc-download">Скачать</a><a href="#" class="btn-doc-save"></a><a href="#" class="btn-doc-print"></a><a href="#" class="btn-doc-attach"></a>
+          </div>
+          <div id="js-scrollspy" class="frame-example-row">
             <div class="left-panel">
-              <ul class="list-menu">
-                <li class="active"><a href="#" class="btn-menu-0">Опросный лист</a></li>
-                <li><a href="#" class="btn-menu-1">Документ</a></li>
-                <li><a href="#" class="btn-menu-2">Приложение</a></li>
-                <li><a href="#" class="btn-menu-3">Обсуждение</a></li>
-                <li><a href="#" class="btn-menu-4">Мои вложения</a></li>
+              <ul id="list-menu" class="list-menu">
+                <li class="active"><a href="#radio-content" class="btn-menu-0 radio-content">Опросный лист</a></li>
+                <li><a href="#document-content" class="btn-menu-1 document-content">Документ</a></li>
               </ul>
             </div>
             <div class="right-panel">
-              <div class="right-panel-row">
+              <div id="right-panel-row" class="right-panel-row">
                 <div id="radio-content">
                   <p class="title">Правовый статус сторон :</p>
-                  <p class="sub-title">Принципал :</p>
-                  <div class="radio-block">
-                    <div class="field"><span class="radio-custom">
-                        <input type="radio" name="principal" id="principal-0" checked="checked"></span>
-                      <label for="principal-0">Юридическое лицо</label>
-                    </div>
-                    <div class="field"><span class="radio-custom">
-                        <input type="radio" name="principal" id="principal-1"></span>
-                      <label for="principal-1">Индивидуальный предприниматель</label>
-                    </div>
-                    <div class="field"><span class="radio-custom">
-                        <input type="radio" name="principal" id="principal-2"></span>
-                      <label for="principal-2">Физическое лицо</label>
-                    </div>
-                  </div>
-                  <p class="sub-title">Агент :</p>
-                  <div class="radio-block">
-                    <div class="field"><span class="radio-custom">
-                        <input type="radio" name="principal" id="principal1-0"></span>
-                      <label for="principal1-0">Юридическое лицо</label>
-                    </div>
-                    <div class="field"><span class="radio-custom">
-                        <input type="radio" name="principal" id="principal1-1"></span>
-                      <label for="principal1-1">Индивидуальный предприниматель</label>
-                    </div>
-                    <div class="field"><span class="radio-custom">
-                        <input type="radio" name="principal" id="principal1-2"></span>
-                      <label for="principal1-2">Физическое лицо</label>
-                    </div>
+                  <div class="radio-block principal">
+                    <p class="sub-title">Принципал :
+                      <div class="field"><span class="radio-custom">
+                          <input type="radio" name="principal" id="principal-0" checked="checked"></span>
+                        <label for="principal-0">Юридическое лицо</label>
+                      </div>
+                      <div class="field"><span class="radio-custom">
+                          <input type="radio" name="principal" id="principal-1"></span>
+                        <label for="principal-1">Индивидуальный предприниматель</label>
+                      </div>
+                      <div class="field"><span class="radio-custom">
+                          <input type="radio" name="principal" id="principal-2"></span>
+                        <label for="principal-2">Физическое лицо</label>
+                      </div></p>
+                    <p class="sub-title">Агент :
+                      <div class="field"><span class="radio-custom">
+                          <input type="radio" name="principal" id="principal1-0"></span>
+                        <label for="principal1-0">Юридическое лицо</label>
+                      </div>
+                      <div class="field"><span class="radio-custom">
+                          <input type="radio" name="principal" id="principal1-1"></span>
+                        <label for="principal1-1">Индивидуальный предприниматель</label>
+                      </div>
+                      <div class="field"><span class="radio-custom">
+                          <input type="radio" name="principal" id="principal1-2"></span>
+                        <label for="principal1-2">Физическое лицо</label>
+                      </div></p>
                   </div>
                   <p class="title">Договор направлен на :
                           <div class="radio-block">
@@ -549,15 +547,6 @@
                 </div>
                 <div id="document-content">
                   <p><strong>DOCUMENT-CONTENT</strong></p>
-                </div>
-                <div id="application-content">
-                  <p><strong>APPLICATION-CONTENT</strong></p>
-                </div>
-                <div id="reviews-content">
-                  <p><strong>REVIEWS-CONTENT</strong></p>
-                </div>
-                <div id="attach-content">
-                  <p><strong>ATTACH-CONTENT</strong></p>
                 </div>
               </div>
             </div>

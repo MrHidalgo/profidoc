@@ -1,18 +1,17 @@
 -
     var documentMenu = [
         'Опросный лист',
-        'Документ',
-        'Приложение',
-        'Обсуждение',
-        'Мои вложения'
+        'Документ'
     ];
 
     var documentMenuArr = [
         '#radio-content',
-        '#document-content',
-        '#application-content',
-        '#reviews-content',
-        '#attach-content'
+        '#document-content'
+    ];
+
+    var documentMenuArrClass = [
+        'radio-content',
+        'document-content'
     ];
 
     var radioPrincipal = [
@@ -111,9 +110,9 @@ section#frame-example.frame-example
             p.title!= 'Шаблон. Агентский договор'
             a(href='#', class='btn-help')!= 'Помощь'
 
-        .sub-header
-            a(href='#', class='btn-doc-list')
-            a(href='#', class='btn-doc-block')
+        #sub-header.sub-header
+            //a(href='#', class='btn-doc-list')
+            //a(href='#', class='btn-doc-block')
             a(href='#', class='btn-doc-price')!= '500'
             a(href='#', class='btn-doc-download')!= 'Скачать'
             a(href='#', class='btn-doc-save')
@@ -121,37 +120,37 @@ section#frame-example.frame-example
             a(href='#', class='btn-doc-attach')
 
 
-        .frame-example-row
+        #js-scrollspy.frame-example-row
             .left-panel
-                ul.list-menu
+                ul#list-menu.list-menu
                     - for(var i = 0; i < documentMenu.length; i++)
                         if (i == 0)
-                            li.active: a(href='#', class='btn-menu-#{i}')!= documentMenu[i]
+                            li.active: a(href='#' + documentMenuArrClass[i], class='btn-menu-#{i} ' + documentMenuArrClass[i])!= documentMenu[i]
                         else
-                            li: a(href='#', class='btn-menu-#{i}')!= documentMenu[i]
+                            li: a(href='#' + documentMenuArrClass[i], class='btn-menu-#{i} ' + documentMenuArrClass[i])!= documentMenu[i]
 
 
             .right-panel
-                .right-panel-row
+                #right-panel-row.right-panel-row
                     #radio-content
                         p.title!= 'Правовый статус сторон :'
-                        p.sub-title!= 'Принципал :'
-                        .radio-block
-                            -for(var i = 0; i < radioPrincipal.length; i++)
-                                .field
-                                    span.radio-custom
-                                        if (i == 0)
-                                            input(type='radio', name= 'principal', id= 'principal-#{i}', checked='checked')
-                                        else
-                                            input(type='radio', name= 'principal', id= 'principal-#{i}')
-                                    label(for= 'principal-#{i}')!= radioPrincipal[i]
-                        p.sub-title!= 'Агент :'
-                        .radio-block
-                            -for(var i = 0; i < radioPrincipal.length; i++)
-                                .field
-                                    span.radio-custom
-                                        input(type='radio', name= 'principal', id= 'principal1-#{i}')
-                                    label(for= 'principal1-#{i}')!= radioPrincipal[i]
+
+                        .radio-block.principal
+                            p.sub-title!= 'Принципал :'
+                                -for(var i = 0; i < radioPrincipal.length; i++)
+                                    .field
+                                        span.radio-custom
+                                            if (i == 0)
+                                                input(type='radio', name= 'principal', id= 'principal-#{i}', checked='checked')
+                                            else
+                                                input(type='radio', name= 'principal', id= 'principal-#{i}')
+                                        label(for= 'principal-#{i}')!= radioPrincipal[i]
+                            p.sub-title!= 'Агент :'
+                                -for(var j = 0; j < radioPrincipal.length; j++)
+                                    .field
+                                        span.radio-custom
+                                            input(type='radio', name= 'principal', id= 'principal1-#{j}')
+                                        label(for= 'principal1-#{j}')!= radioPrincipal[j]
 
                         p.title!= 'Договор направлен на :'
                             +radioBlock(radioContracts, 'contracts')
@@ -190,12 +189,6 @@ section#frame-example.frame-example
 
                     #document-content
                         p!= '<strong>DOCUMENT-CONTENT</strong>'
-                    #application-content
-                        p!= '<strong>APPLICATION-CONTENT</strong>'
-                    #reviews-content
-                        p!= '<strong>REVIEWS-CONTENT</strong>'
-                    #attach-content
-                        p!= '<strong>ATTACH-CONTENT</strong>'
 
     .frame-example-container
         footer

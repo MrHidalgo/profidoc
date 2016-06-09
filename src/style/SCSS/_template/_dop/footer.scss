@@ -22,12 +22,10 @@ $color-navBlue    : return-value(color, navBlue);
 footer.footer{
   position: relative;
   background-color: $color-footerBg;
-  @include mixinDimensions('min', $width-all, render-pixel(450));
+  @include mixinDimensions('min', $width-all, render-pixel(367));
+
 
   .footer-header{
-    //position: absolute;
-    //top: 0;
-    //left: 0;
     background-color: $color-navBlue;
     @include mixinDimensions('min', $width-all, render-pixel(65));
 
