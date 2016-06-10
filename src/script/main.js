@@ -136,17 +136,17 @@ $(document).ready(
 
 
         if($('#admin-panel').length > 0 || $('#address .section').length > 0) {
-            $('#admin-panel').steps(
-                {
-                    headerTag: "h4",
-                    bodyTag: "section",
-                    transitionEffect: "slideLeft",
-                    stepsOrientation: "vertical",
-                    titleTemplate: "#title#",
-                    showFinishButtonAlways: true,
-                    startIndex: 0
-                }
-            );
+            // $('#admin-panel').steps(
+            //     {
+            //         headerTag: "h4",
+            //         bodyTag: "section",
+            //         transitionEffect: "slideLeft",
+            //         stepsOrientation: "vertical",
+            //         titleTemplate: "#title#",
+            //         showFinishButtonAlways: true,
+            //         startIndex: 0
+            //     }
+            // );
 
             $("#address .section").steps(
                 {
