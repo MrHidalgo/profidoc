@@ -1,20 +1,6 @@
 include ../../_mixin/mixin
 
 
--
-    var linkName = [
-        'Главная',
-        'Безопасность'
-    ];
-
-    var linkHash = [
-        '/', '#'
-    ];
-
-    var linkLine = [
-        '/', ''
-    ];
-
 
 -
     var imagePath = [
@@ -60,10 +46,6 @@ include ../../_mixin/mixin
 
 section#content.content
     .content-container
-        .content-header
-            h2 Безопасность
-            +breadcrumbsPanel(linkName, linkHash, linkLine)
-
         .content-section
             - for(var i = 0; i < 5; i++)
                 div(class='block-#{i}')

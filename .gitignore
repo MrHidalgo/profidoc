@@ -4,6 +4,7 @@ vendor/
 .idea/
 config/
 src/image/
+dist/style/_maps/
 
 # FILE
 profidoc.iml

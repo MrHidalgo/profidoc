@@ -15,8 +15,8 @@ $color-black          : return-value(color, black);
 $color-scopeBorder    : return-value(color, scopeBorder);
 $color-navBlue        : return-value(color, navBlue);
 $color-yellow         : return-value(color, yellow);
-$color-gradientGray1    : return-value(color, gradientGray1);
-$color-gradientGray2    : return-value(color, gradientGray2);
+$color-gradientGray1  : return-value(color, gradientGray1);
+$color-gradientGray2  : return-value(color, gradientGray2);
 
 $image-form-bg        : '../image/form-bg.png';
 $image-select-arrow   : '../image/check-tarif-3.png';
@@ -37,12 +37,17 @@ section.create-document {
       margin: render-pixel(10) 0;
     }
 
-    .control-label {
+    p.control-label,
+    label.control-label {
       font: {
         size: render-pixel(15);
         weight: 600;
       }
       margin: render-pixel(20) 0 render-pixel(10);
+    }
+
+    label.control-label {
+      display: inline-block;
     }
 
 

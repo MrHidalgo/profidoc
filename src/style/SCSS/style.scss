@@ -168,10 +168,7 @@ input.form-control {
   font-style: italic;
   font-size: render-pixel(15);
   outline: none;
-  border: 0;
-  @include mixinBorder(all, 1px, darken($color-scopeBorder, 10%));
-  border-right: none;
-  @include mixinDimensions('', 454px, 38px);
+  @include mixinDimensions('', 365px, 38px);
 
 
   &:focus,

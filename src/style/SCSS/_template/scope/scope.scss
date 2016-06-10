@@ -29,7 +29,7 @@ $color-scopeBorder  : return-value(color, scopeBorder);
 ///
 section.content{
   .content-container{
-    @include mixinMaxWidthPosition(10.7, 15, 0);
+    @include mixinMaxWidthPosition(10.7, 0, 0);
 
     .content-header{
       padding-bottom: render-pixel(15);
