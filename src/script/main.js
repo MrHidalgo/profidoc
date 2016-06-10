@@ -136,7 +136,7 @@ $(document).ready(
 
 
         if($('#admin-panel').length > 0 || $('#address .section').length > 0) {
-            /*$('#admin-panel').steps(
+            $('#admin-panel').steps(
                 {
                     headerTag: "h4",
                     bodyTag: "section",
@@ -146,7 +146,7 @@ $(document).ready(
                     showFinishButtonAlways: true,
                     startIndex: 0
                 }
-            );*/
+            );
 
             $("#address .section").steps(
                 {
@@ -189,14 +189,15 @@ $(document).ready(
         /*...*/
         $('ul.list-menu li a').click( function(e) {
             e.preventDefault();
-            // var hrefLink = $(this).attr('href'), subHeader  = $('#sub-header').offset().top;
+            var hrefLink = $(this).attr('href'), subHeader  = $('#sub-header').offset().top;
 
             $('ul.list-menu li').removeClass('active');
             $(this).closest('li').addClass('active');
             //
             // console.log(hrefLink);
-            // console.log(subHeader);
-            // console.log($('#right-panel-row').filter(subHeader));
+            console.log(subHeader);
+            // console.log($('#right-panel-row > div' + hrefLink));
+            $('#document-content').scrollTop(0);
         });
 
         /*...*/

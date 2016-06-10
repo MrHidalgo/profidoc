@@ -173,6 +173,10 @@ section.left-panel{
   &-feedback{
     margin-bottom: render-pixel(100);
 
+    .field-message {
+      padding-bottom: render-pixel(30);
+    }
+
 
     h1 {
       font: {
@@ -208,7 +212,6 @@ section.left-panel{
         resize: none;
         padding: render-pixel(15);
         font-family: $font;
-        margin-bottom: render-pixel(30);
         @include mixinDimensions('', $width-all - 2.5, render-pixel(267));
       }
 
@@ -216,7 +219,7 @@ section.left-panel{
 
       > section {
         margin-bottom: render-pixel(20);
-        @include mixinCenteredBLockFlex(row, center, center);
+        @include mixinCenteredBLockFlex(row, flex-start, center);
 
 
         [class^='field-'] {
