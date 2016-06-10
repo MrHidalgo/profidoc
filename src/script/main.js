@@ -148,19 +148,19 @@ $(document).ready(
             //     }
             // );
 
-            $("#address .section").steps(
-                {
-                    headerTag: "h5",
-                    bodyTag: "section",
-                    transitionEffect: "slideLeft",
-                    enableFinishButton: false,
-                    enablePagination: false,
-                    enableAllSteps: true,
-                    titleTemplate: "#title#",
-                    cssClass: "tabcontrol",
-                    startIndex: 0
-                }
-            );
+            // $("#address .section").steps(
+            //     {
+            //         headerTag: "h5",
+            //         bodyTag: "section",
+            //         transitionEffect: "slideLeft",
+            //         enableFinishButton: false,
+            //         enablePagination: false,
+            //         enableAllSteps: true,
+            //         titleTemplate: "#title#",
+            //         cssClass: "tabcontrol",
+            //         startIndex: 0
+            //     }
+            // );
         }
 
 
@@ -308,9 +308,12 @@ $(document).ready(
 
         /* onchange select value */
         {
-            $('select').on('change', function() {
+            $(document).on('change', 'select', function() {
                 selectedElementValue(false, this);
             });
+            // $('select').on('change', function() {
+            //     selectedElementValue(false, this);
+            // });
 
         }
 
