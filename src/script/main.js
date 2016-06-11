@@ -47,10 +47,11 @@ function selectedElementValue(opt, element) {
     $(element).prev('.select-value').find('span').html($valueOption);
 }
 // in load page find all select and change val in span
-function searchAllSelectStart() {
+function searchAllSelectStart(opt) {
+    opt = (typeof opt === 'undefined') ? true : opt;
     $('select').each(
         function() {
-            selectedElementValue(true, this);
+            selectedElementValue(opt, this);
         }
     );
 }
@@ -135,7 +136,7 @@ $(document).ready(
         searchAllRadio();
 
 
-        if($('#admin-panel').length > 0 || $('#address .section').length > 0) {
+        // if($('#admin-panel').length > 0 || $('#address .section').length > 0) {
             // $('#admin-panel').steps(
             //     {
             //         headerTag: "h4",
@@ -161,7 +162,7 @@ $(document).ready(
             //         startIndex: 0
             //     }
             // );
-        }
+        // }
 
 
         $('a.btn-address').on('click', function(e) {

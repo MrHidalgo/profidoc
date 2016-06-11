@@ -119,6 +119,14 @@ section{
   padding: render-pixel(20) 0 0;
 }
 
+.well {
+  font: {
+    size: render-pixel(14);
+  }
+  padding: render-pixel(15);
+  @include mixinBorder('all', 1px, $color-scopeBorder);
+}
+
 body.form-open {
   transition: all 1s ease-in-out;
   overflow: hidden;
