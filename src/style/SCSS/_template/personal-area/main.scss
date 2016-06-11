@@ -124,6 +124,7 @@ section.main {
           .left{
             position: relative;
             margin-right: render-pixel(10);
+            padding-right: 0;
             @include mixinDimensions('', 220px, 105px);
             @include mixinLinerGradient($color-gradientGray1, $color-gradientGray2);
             @include mixinBorder('all', 1px, $color-gradientGray2);
@@ -164,7 +165,7 @@ section.main {
         transition: all .3s linear;
         color: $color-white;
         text-align: center;
-        line-height: 2.6;
+        line-height: 40px;
 
 
         &:hover {

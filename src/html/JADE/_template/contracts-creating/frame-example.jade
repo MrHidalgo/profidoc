@@ -103,7 +103,7 @@ mixin radioBlockSub(arrRadio1, arrRadio2, nameSpace)
 
 
 
-section#frame-example.frame-example
+section(class='frame-example', id='#frame-example')
     .frame-example-container
         header
             a(href='#', class='btn-icon-back')
@@ -121,8 +121,8 @@ section#frame-example.frame-example
 
 
         #js-scrollspy.frame-example-row
-            .left-panel
-                ul#list-menu.list-menu
+            #myScrollspy.left-panel
+                ul#list-menu.list-menu.nav
                     - for(var i = 0; i < documentMenu.length; i++)
                         if (i == 0)
                             li.active: a(href='#' + documentMenuArrClass[i], class='btn-menu-#{i} ' + documentMenuArrClass[i])!= documentMenu[i]
@@ -130,9 +130,9 @@ section#frame-example.frame-example
                             li: a(href='#' + documentMenuArrClass[i], class='btn-menu-#{i} ' + documentMenuArrClass[i])!= documentMenu[i]
 
 
-            .right-panel
-                #right-panel-row.right-panel-row
-                    #radio-content
+            #right-panel.right-panel
+                div(class='right-panel-row', id='right-panel-row', data-spy="scroll", data-target="#myScrollspy")
+                    .scroll#radio-content
                         p.title!= 'Правовый статус сторон :'
 
                         .radio-block.principal
@@ -187,8 +187,10 @@ section#frame-example.frame-example
 
 
 
-                    #document-content
+                    .scroll#document-content
                         p!= '<strong>DOCUMENT-CONTENT</strong>'
+
+
 
     .frame-example-container
         footer
