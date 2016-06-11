@@ -95,32 +95,24 @@ function searchAllRadio() {
 
 
 $(window).on('click', function (e) {
-    if($(e.target).closest('.btn-print, #form-print, .sign-in, section#form-sign').length)
+    if($(e.target).closest('a.btn-address, .modal-wrap, .btn-print, #form-print, .sign-in, section#form-sign').length)
         return;
 
     $('#form-print').hide();
     $('body').removeClass('form-open');
     $('section#form-sign').hide();
+    $('.modal-window').hide();
 });
 
 
-//
-// $(window).on('load resize scroll' ,function() {
-//     var subHeader  = $('#sub-header').offset().top,
-//         radioContent = $('#radio-content').offset().top,
-//         documentContent = $('#document-content').offset().top;
-//
-//
-//     console.log(subHeader);
-//     // console.log(documentContent);
-//
-//     if (subHeader >= documentContent) {
-//         console.log(radioContent);
-//         console.log(documentContent);
-//         console.log(radioContent >= documentContent);
-//         $('ul#list-menu.list-menu li').addClass('active');
-//     }
-// });
+
+function mark(nav) {
+    $('ul.list-menu li').removeClass('active');
+    $(nav).closest('li').addClass('active');
+}
+
+
+
 
 /*
 * DOCUMENT READY
@@ -135,32 +127,76 @@ $(document).ready(
         searchAllRadio();
 
 
-        if($('#admin-panel').length > 0 || $('#address .section').length > 0) {
-            // $('#admin-panel').steps(
-            //     {
-            //         headerTag: "h4",
-            //         bodyTag: "section",
-            //         transitionEffect: "slideLeft",
-            //         stepsOrientation: "vertical",
-            //         titleTemplate: "#title#",
-            //         showFinishButtonAlways: true,
-            //         startIndex: 0
-            //     }
-            // );
+        /* SCROLLSPY */
+        {
+            var lastID;
+            var elemID;
 
-            // $("#address .section").steps(
-            //     {
-            //         headerTag: "h5",
-            //         bodyTag: "section",
-            //         transitionEffect: "slideLeft",
-            //         enableFinishButton: false,
-            //         enablePagination: false,
-            //         enableAllSteps: true,
-            //         titleTemplate: "#title#",
-            //         cssClass: "tabcontrol",
-            //         startIndex: 0
-            //     }
-            // );
+            $('#list-menu li a').click(function() {
+                var id          = $(this).attr('href'),
+                    blockTop    = $('#right-panel-row').offset().top,
+                    y           = $(id).offset().top - blockTop - 20;
+
+                $('.right-panel').animate(
+                    {
+                        scrollTop : y
+                    },
+                    'slow'
+                );
+                
+                $('ul.list-menu li').removeClass('active');
+                $(this).closest('li').addClass('active');
+                
+                return false;
+            });
+
+            $('#right-panel').scroll(function() {
+                var blockTop    = $('#right-panel-row').offset().top,
+                    yDoc        = $(this).scrollTop() + 50;
+
+                $('.scroll').each(function() {
+                    var yElem = $(this).offset().top - blockTop;
+
+                    if (yDoc >= yElem) {
+                        elemID = $(this).attr('id');
+
+                        if (elemID != lastID) {
+                            lastID = elemID;
+                            
+                            mark($('#list-menu li a[href="#' + elemID + '"]'));
+                        }
+                    }
+                });
+            });
+        }
+
+
+        if($('#admin-panel').length > 0 || $('#address .section').length > 0) {
+            $('#admin-panel').steps(
+                {
+                    headerTag: "h4",
+                    bodyTag: "section",
+                    transitionEffect: "slideLeft",
+                    stepsOrientation: "vertical",
+                    titleTemplate: "#title#",
+                    showFinishButtonAlways: true,
+                    startIndex: 1
+                }
+            );
+
+            $("#address .section").steps(
+                {
+                    headerTag: "h5",
+                    bodyTag: "section",
+                    transitionEffect: "slideLeft",
+                    enableFinishButton: false,
+                    enablePagination: false,
+                    enableAllSteps: true,
+                    titleTemplate: "#title#",
+                    cssClass: "tabcontrol",
+                    startIndex: 0
+                }
+            );
         }
 
 
@@ -168,7 +204,7 @@ $(document).ready(
             e.preventDefault();
             var linkAttr = $(this).attr('data-modal');
 
-            // $('body').toggleClass('form-open');
+            $('body').addClass('form-open');
 
             if(linkAttr === 'address') {
                 $('.modal-row-address').toggle();
@@ -186,19 +222,6 @@ $(document).ready(
 
         });
 
-        /*...*/
-        $('ul.list-menu li a').click( function(e) {
-            e.preventDefault();
-            var hrefLink = $(this).attr('href'), subHeader  = $('#sub-header').offset().top;
-
-            $('ul.list-menu li').removeClass('active');
-            $(this).closest('li').addClass('active');
-            //
-            // console.log(hrefLink);
-            console.log(subHeader);
-            // console.log($('#right-panel-row > div' + hrefLink));
-            $('#document-content').scrollTop(0);
-        });
 
         /*...*/
         {

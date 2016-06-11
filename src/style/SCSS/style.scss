@@ -114,14 +114,11 @@ section{
   }
 }
 
-.ajax-loader {
-  text-align: center;
-  padding: render-pixel(20) 0 0;
-}
-
 body.form-open {
   transition: all 1s ease-in-out;
   overflow: hidden;
+  height: initial;
+
 
   &:before{
     content: '';
@@ -137,6 +134,8 @@ body.form-open {
 /// [navigation, footer]
 body.internal {
   @extend %internalPage;
+
+  position: relative;
 
   display: flex;
   flex-direction: column;

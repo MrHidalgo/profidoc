@@ -18,6 +18,8 @@ $color-yellow         : return-value(color, yellow);
 $color-gradientGray1  : return-value(color, gradientGray1);
 $color-gradientGray2  : return-value(color, gradientGray2);
 
+$font                 : 'Open Sans';
+
 $image-form-bg        : '../image/form-bg.png';
 $image-select-arrow   : '../image/check-tarif-3.png';
 
@@ -37,6 +39,10 @@ section.create-document {
       margin: render-pixel(10) 0;
     }
 
+    label {
+
+    }
+
     p.control-label,
     label.control-label {
       font: {
@@ -46,8 +52,10 @@ section.create-document {
       margin: render-pixel(20) 0 render-pixel(10);
     }
 
-    label.control-label {
+    label {
       display: inline-block;
+      color: darken($color-navBlue, 40%);
+      margin-top: 0 !important;
     }
 
 
@@ -70,12 +78,24 @@ section.create-document {
     }
 
     textarea {
-      @include mixinDimensions('', $width-all, 50px);
+      @include mixinDimensions('', $width-all, 70px);
       border-radius: .2em;
-      padding: 0 .9375em;
-      font-size: .9375em;
-      outline: 0;
+      resize: none;
+      padding: 10px .9375em;
+      outline: none;
+      font: {
+        family: $font;
+        style: italic;
+        size: .9375em;
+      }
       border: 1px solid #cecece;
+
+
+      &:focus,
+      &:active {
+        @include mixinBorder(all, 1px, $color-navBlue);
+        box-shadow: 0 0 5px 1px rgba($color-black, 0.2);
+      }
     }
 
     table {
@@ -352,10 +372,8 @@ section.create-document {
   display: none;
   position: fixed;
   top: 0;  bottom: 0;  right: 0;  left: 0;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
-  z-index: 1000;
   overflow: auto;
+  z-index: 10001;
   @include mixinDimensions('', $width-all);
 
 
@@ -376,14 +394,16 @@ section.create-document {
 
     li {
       display: inline-block;
-      text-align: center;
-      margin-bottom: -1px;
+
 
       a {
         border-radius: .3em .3em 0 0;
       }
 
       &.current {
+        margin-bottom: -1px;
+
+
         a{
           @include mixinBorder(top, 1px, $color-navBlue);
           @include mixinBorder(left, 1px, $color-navBlue);

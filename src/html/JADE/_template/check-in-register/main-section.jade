@@ -147,8 +147,10 @@ section#create-document.create-document
             h4!= '<span class="current-steps">8</span> Контактная информация'
             section
 
-        .modal-row-address
-            #address
+
+
+        .modal-row-address.modal-window
+            #address.modal-wrap
                 .modal
                     .header
                         p.group-title!='Выбор адреса предприятия'
@@ -167,6 +169,7 @@ section#create-document.create-document
                             +inputSelect(modalSelectTitle3, modalSelectOption3)
                             +inputSelect(modalSelectTitle4, modalSelectOption4)
                             +inputSelect(modalSelectTitle5, modalSelectOption5)
+
                             .two-row
                                 .left
                                     +inputSelect(modalSelectTitle6, modalSelectOption6)
@@ -186,8 +189,8 @@ section#create-document.create-document
                         a(href='#', class='btn-enter one')!= 'Готово'
                         a(href='#', class='btn-esc two')!= 'Отмена'
 
-        .modal-row-address1
-            #address1
+        .modal-row-address1.modal-window
+            #address1.modal-wrap
                 .modal
                     .header
                         p.group-title!= 'Заказать юридический адрес'

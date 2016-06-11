@@ -331,7 +331,7 @@
           <p class="example">Например: Довогор о сотрудничестве (партнёрстве)</p>
         </div>
       </section>
-      <section id="frame-example" class="frame-example">
+      <section id="#frame-example" class="frame-example">
         <div class="frame-example-container">
           <header><a href="#" class="btn-icon-back"></a>
             <p class="title">Шаблон. Агентский договор</p><a href="#" class="btn-help">Помощь</a>
@@ -341,15 +341,15 @@
             <!--a(href='#', class='btn-doc-block')--><a href="#" class="btn-doc-price">500</a><a href="#" class="btn-doc-download">Скачать</a><a href="#" class="btn-doc-save"></a><a href="#" class="btn-doc-print"></a><a href="#" class="btn-doc-attach"></a>
           </div>
           <div id="js-scrollspy" class="frame-example-row">
-            <div class="left-panel">
-              <ul id="list-menu" class="list-menu">
+            <div id="myScrollspy" class="left-panel">
+              <ul id="list-menu" class="list-menu nav">
                 <li class="active"><a href="#radio-content" class="btn-menu-0 radio-content">Опросный лист</a></li>
                 <li><a href="#document-content" class="btn-menu-1 document-content">Документ</a></li>
               </ul>
             </div>
-            <div class="right-panel">
-              <div id="right-panel-row" class="right-panel-row">
-                <div id="radio-content">
+            <div id="right-panel" class="right-panel">
+              <div id="right-panel-row" data-spy="scroll" data-target="#myScrollspy" class="right-panel-row">
+                <div id="radio-content" class="scroll">
                   <p class="title">Правовый статус сторон :</p>
                   <div class="radio-block principal">
                     <p class="sub-title">Принципал :
@@ -545,7 +545,7 @@
                             </div>
                           </div></p>
                 </div>
-                <div id="document-content">
+                <div id="document-content" class="scroll">
                   <p><strong>DOCUMENT-CONTENT</strong></p>
                 </div>
               </div>
