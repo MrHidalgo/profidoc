@@ -75,9 +75,10 @@
 
 mixin inputSection(title, subTitle, arrLength, inputType)
     .field
-        p.group-title!= title
+        if (title != '')
+            p.group-title!= title
         - for(var i = 0; i < arrLength; i++)
-            p.control-label!= subTitle[i]
+            label.control-label!= subTitle[i]
             input(type= inputType, name='text', class='text')
             p.help-block.help-block-error
 
@@ -85,7 +86,7 @@ mixin inputSection(title, subTitle, arrLength, inputType)
 mixin inputSelect(subTitle, selectArr)
     .field
         -for(var i = 0; i < subTitle.length; i++)
-            p.control-label!= subTitle[i]
+            label.control-label!= subTitle[i]
             .select-custom
                 .select-value
                     span
@@ -112,11 +113,15 @@ section#create-document.create-document
             section
                 p.group-title!= 'Адрес предприятия'
                 p.text!= block11Text
-                p.control-label!= 'Выберите адрес'
-                a(href='#', class='btn-address', data-modal='address')!= 'Выбрать адрес'
+                label.control-label!= 'Выберите адрес'
+                br
+                a(href='#', class='btn-modal', data-modal='address')!= 'Выбрать адрес'
 
-                p.control-label!= 'Юридический адрес отсутствует, хочу арендовать.'
-                a(href='#', class='btn-address', data-modal='address1')!= 'Выбрать адрес и заказать'
+                br
+
+                label.control-label!= 'Юридический адрес отсутствует, хочу арендовать.'
+                br
+                a(href='#', class='btn-modal', data-modal='address1')!= 'Выбрать адрес и заказать'
 
                 +inputSection('', block110, 1, 'text')
                 +inputSection('', block111, 1, 'text')
@@ -138,6 +143,7 @@ section#create-document.create-document
                         tr
             h4!= '<span class="current-steps">4</span> Руководитель'
             section
+                a(href='#', class='btn-modal', data-modal='modal')!= 'Modal main'
             h4!= '<span class="current-steps">5</span> Виды деятельности'
             section
             h4!= '<span class="current-steps">6</span> Система налогообложения'
@@ -149,7 +155,7 @@ section#create-document.create-document
 
 
 
-        .modal-row-address.modal-window
+        .modal-row-address.modal-window.modal-main
             #address.modal-wrap
                 .modal
                     .header
@@ -187,9 +193,9 @@ section#create-document.create-document
 
                     .footer
                         a(href='#', class='btn btn-enter one')!= 'Готово'
-                        a(href='#', class='btn btn-esc two')!= 'Отмена'
+                        a(href='#', class='btn btn-esc two', data-esc='main')!= 'Отмена'
 
-        .modal-row-address1.modal-window
+        .modal-row-address1.modal-window.modal-main
             #address1.modal-wrap
                 .modal
                     .header
@@ -209,9 +215,36 @@ section#create-document.create-document
                         +inputSection('', modal22, 1, 'text')
                         +inputSection('', modal23, 1, 'tel')
 
-                        p.control-label!= modal24
+                        label.control-label!= modal24
                         textarea
 
                     .footer
                         a(href='#', class='btn btn-enter one')!= 'Готово'
-                        a(href='#', class='btn btn-esc two')!= 'Отмена'
+                        a(href='#', class='btn btn-esc two', data-esc='main')!= 'Отмена'
+
+        .modal-row-modal.modal-window.modal-main
+            #modal.modal-wrap
+                .modal
+                    .header
+                        p.group-title!= 'Main'
+
+                    .section
+                        p!= 'Some text...'
+
+                        a(href='#', class='btn btn-internal-modal', data-modal='modal-internal')!= 'Internal-modal'
+
+                    .footer
+                        a(href='#', class='btn btn-enter one')!= 'Ok'
+                        a(href='#', class='btn btn-esc two', data-esc='main')!= 'Esc'
+
+        .modal-row-modal-internal.modal-window.modal-internal-main
+            #modal-internal.modal-wrap
+                .modal
+                    .header
+                        p.group-title!= 'Internal modal'
+                    .section
+                        p!= 'In process...'
+                    .footer
+                        a(href='#', class='btn btn-internal-enter one')!= 'Ok'
+                        a(href='#', class='btn btn-internal-esc two', data-esc='internal')!= 'Esc'
+

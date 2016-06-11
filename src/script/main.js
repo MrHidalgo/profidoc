@@ -95,7 +95,7 @@ function searchAllRadio() {
 
 
 $(window).on('click', function (e) {
-    if($(e.target).closest('a.btn-address, .modal-wrap, .btn-print, #form-print, .sign-in, section#form-sign').length)
+    if($(e.target).closest('.modal-internal-main, a.btn-address, a.btn-modal, .modal-wrap, .btn-print, #form-print, .sign-in, section#form-sign').length)
         return;
 
     $('#form-print').hide();
@@ -173,54 +173,67 @@ $(document).ready(
 
 
         if($('#admin-panel').length > 0 || $('#address .section').length > 0) {
-            // $('#admin-panel').steps(
-            //     {
-            //         headerTag: "h4",
-            //         bodyTag: "section",
-            //         transitionEffect: "slideLeft",
-            //         stepsOrientation: "vertical",
-            //         titleTemplate: "#title#",
-            //         showFinishButtonAlways: true,
-            //         startIndex: 0
-            //     }
-            // );
-            //
-            // $("#address .section").steps(
-            //     {
-            //         headerTag: "h5",
-            //         bodyTag: "section",
-            //         transitionEffect: "slideLeft",
-            //         enableFinishButton: false,
-            //         enablePagination: false,
-            //         enableAllSteps: true,
-            //         titleTemplate: "#title#",
-            //         cssClass: "tabcontrol",
-            //         startIndex: 0
-            //     }
-            // );
+             $('#admin-panel').steps(
+                 {
+                     headerTag: "h4",
+                     bodyTag: "section",
+                     transitionEffect: "slideLeft",
+                     stepsOrientation: "vertical",
+                     titleTemplate: "#title#",
+                     showFinishButtonAlways: true,
+                     startIndex: 3
+                 }
+             );
+
+             $("#address .section").steps(
+                 {
+                     headerTag: "h5",
+                     bodyTag: "section",
+                     transitionEffect: "slideLeft",
+                     enableFinishButton: false,
+                     enablePagination: false,
+                     enableAllSteps: true,
+                     titleTemplate: "#title#",
+                     cssClass: "tabcontrol",
+                     startIndex: 0
+                 }
+             );
         }
 
 
-        $('a.btn-address').on('click', function(e) {
+        $('a.btn-modal, a.btn-internal-modal').on('click', function(e) {
             e.preventDefault();
             var linkAttr = $(this).attr('data-modal');
 
             $('body').addClass('form-open');
 
             if(linkAttr === 'address') {
-                $('.modal-row-address').toggle();
-            } else {
-                $('.modal-row-address1').toggle();
+                $('.modal-row-address').show();
+            } else if (linkAttr === 'address1'){
+                $('.modal-row-address1').show();
+            } else if (linkAttr === 'modal'){
+                $('.modal-row-modal').show();
+            } else if (linkAttr === 'modal-internal') {
+                $('.modal-row-modal-internal').show();
+                $('body').addClass('internal-modal');
             }
         });
 
-        $('a.btn-esc').on('click', function(e) {
+        $('a.btn-esc, a.btn-internal-esc').on('click', function(e) {
             e.preventDefault();
 
-            $('body').removeClass('form-open');
+            var linkAttr = $(this).attr('data-esc');
 
-            $('[class^="modal-row-"]').hide();
+            console.log(linkAttr);
 
+            if(linkAttr === 'main') {
+                $('body').removeClass('form-open');
+                $('.modal-' + linkAttr).hide();
+            }
+            else if(linkAttr === 'internal') {
+                $('body').removeClass('internal-modal');
+                $('.modal-' + linkAttr + '-main').hide();
+            }
         });
 
 

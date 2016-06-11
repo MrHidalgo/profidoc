@@ -327,28 +327,28 @@
             <section>
                     <div class="field">
                       <p class="group-title">Наименование предприятия на украинском языке</p>
-                      <p class="control-label">Сокращенное название</p>
+                      <label class="control-label">Сокращенное название</label>
                       <input type="text" name="text" class="text">
                       <p class="help-block help-block-error"></p>
-                      <p class="control-label">Полное название</p>
+                      <label class="control-label">Полное название</label>
                       <input type="text" name="text" class="text">
                       <p class="help-block help-block-error"></p>
                     </div>
                     <div class="field">
                       <p class="group-title">Наименование предприятия на русском языке</p>
-                      <p class="control-label">Сокращенное название</p>
+                      <label class="control-label">Сокращенное название</label>
                       <input type="text" name="text" class="text">
                       <p class="help-block help-block-error"></p>
-                      <p class="control-label">Полное название</p>
+                      <label class="control-label">Полное название</label>
                       <input type="text" name="text" class="text">
                       <p class="help-block help-block-error"></p>
                     </div>
                     <div class="field">
                       <p class="group-title">Наименование предприятия на английском языке</p>
-                      <p class="control-label">Сокращенное название</p>
+                      <label class="control-label">Сокращенное название</label>
                       <input type="text" name="text" class="text">
                       <p class="help-block help-block-error"></p>
-                      <p class="control-label">Полное название</p>
+                      <label class="control-label">Полное название</label>
                       <input type="text" name="text" class="text">
                       <p class="help-block help-block-error"></p>
                     </div>
@@ -357,35 +357,30 @@
             <section>
               <p class="group-title">Адрес предприятия</p>
               <p class="text">По адресу общества будет осуществляться взаимодействие с государственными органами: налоговой инспекцией, ФСС, ПФР и т. д., поэтому рекомендуем иметь доступ к почтовой корреспонденции по указанному адресу. Лучше всего, когда фактический и юридический адреса организации совпадают.</p>
-              <p class="control-label">Выберите адрес</p><a href="#" data-modal="address" class="btn-address">Выбрать адрес</a>
-              <p class="control-label">Юридический адрес отсутствует, хочу арендовать.</p><a href="#" data-modal="address1" class="btn-address">Выбрать адрес и заказать</a>
+              <label class="control-label">Выберите адрес</label><br><a href="#" data-modal="address" class="btn-modal">Выбрать адрес</a><br>
+              <label class="control-label">Юридический адрес отсутствует, хочу арендовать.</label><br><a href="#" data-modal="address1" class="btn-modal">Выбрать адрес и заказать</a>
                     <div class="field">
-                      <p class="group-title"></p>
-                      <p class="control-label">Городской номер телефона</p>
+                      <label class="control-label">Городской номер телефона</label>
                       <input type="text" name="text" class="text">
                       <p class="help-block help-block-error"></p>
                     </div>
                     <div class="field">
-                      <p class="group-title"></p>
-                      <p class="control-label">Факс</p>
+                      <label class="control-label">Факс</label>
                       <input type="text" name="text" class="text">
                       <p class="help-block help-block-error"></p>
                     </div>
                     <div class="field">
-                      <p class="group-title"></p>
-                      <p class="control-label">Мобильный номер телефона</p>
+                      <label class="control-label">Мобильный номер телефона</label>
                       <input type="tel" name="text" class="text">
                       <p class="help-block help-block-error"></p>
                     </div>
                     <div class="field">
-                      <p class="group-title"></p>
-                      <p class="control-label">Веб-сайт</p>
+                      <label class="control-label">Веб-сайт</label>
                       <input type="text" name="text" class="text">
                       <p class="help-block help-block-error"></p>
                     </div>
                     <div class="field">
-                      <p class="group-title"></p>
-                      <p class="control-label">Электронный адрес</p>
+                      <label class="control-label">Электронный адрес</label>
                       <input type="email" name="text" class="text">
                       <p class="help-block help-block-error"></p>
                     </div>
@@ -409,7 +404,7 @@
               </table>
             </section>
             <h4><span class="current-steps">4</span> Руководитель</h4>
-            <section></section>
+            <section><a href="#" data-modal="modal" class="btn-modal">Modal main</a></section>
             <h4><span class="current-steps">5</span> Виды деятельности</h4>
             <section></section>
             <h4><span class="current-steps">6</span> Система налогообложения</h4>
@@ -419,7 +414,7 @@
             <h4><span class="current-steps">8</span> Контактная информация</h4>
             <section></section>
           </div>
-          <div class="modal-row-address modal-window">
+          <div class="modal-row-address modal-window modal-main">
             <div id="address" class="modal-wrap">
               <div class="modal">
                 <div class="header">
@@ -429,8 +424,7 @@
                   <h5>Поиск</h5>
                   <section>
                           <div class="field">
-                            <p class="group-title"></p>
-                            <p class="control-label">Введите адрес</p>
+                            <label class="control-label">Введите адрес</label>
                             <input type="text" name="text" class="text">
                             <p class="help-block help-block-error"></p>
                           </div><a href="#" class="btn btn-search one">Поиск</a><a href="#" class="btn btn-reset two">Сброс</a>
@@ -438,7 +432,7 @@
                   <h5>Выбор адреса</h5>
                   <section>
                           <div class="field">
-                            <p class="control-label">Выберите область</p>
+                            <label class="control-label">Выберите область</label>
                             <div class="select-custom">
                               <div class="select-value"><span></span><i></i></div>
                               <select>
@@ -448,7 +442,7 @@
                             <p class="help-block help-block-error"></p>
                           </div>
                           <div class="field">
-                            <p class="control-label">Выберите район области</p>
+                            <label class="control-label">Выберите район области</label>
                             <div class="select-custom">
                               <div class="select-value"><span></span><i></i></div>
                               <select>
@@ -458,7 +452,7 @@
                             <p class="help-block help-block-error"></p>
                           </div>
                           <div class="field">
-                            <p class="control-label">Выберите тип населенного пункта</p>
+                            <label class="control-label">Выберите тип населенного пункта</label>
                             <div class="select-custom">
                               <div class="select-value"><span></span><i></i></div>
                               <select>
@@ -472,7 +466,7 @@
                             <p class="help-block help-block-error"></p>
                           </div>
                           <div class="field">
-                            <p class="control-label">Выберите город</p>
+                            <label class="control-label">Выберите город</label>
                             <div class="select-custom">
                               <div class="select-value"><span></span><i></i></div>
                               <select>
@@ -482,7 +476,7 @@
                             <p class="help-block help-block-error"></p>
                           </div>
                           <div class="field">
-                            <p class="control-label">Выберите район города</p>
+                            <label class="control-label">Выберите район города</label>
                             <div class="select-custom">
                               <div class="select-value"><span></span><i></i></div>
                               <select>
@@ -494,7 +488,7 @@
                     <div class="two-row">
                       <div class="left">
                               <div class="field">
-                                <p class="control-label">Тип улицы</p>
+                                <label class="control-label">Тип улицы</label>
                                 <div class="select-custom">
                                   <div class="select-value"><span></span><i></i></div>
                                   <select>
@@ -508,8 +502,7 @@
                       </div>
                       <div class="right">
                               <div class="field">
-                                <p class="group-title"></p>
-                                <p class="control-label">Адрес</p>
+                                <label class="control-label">Адрес</label>
                                 <input type="text" name="text" class="text">
                                 <p class="help-block help-block-error"></p>
                               </div>
@@ -518,23 +511,21 @@
                     <div class="four-row">
                       <div class="one">
                               <div class="field">
-                                <p class="group-title"></p>
-                                <p class="control-label">Номер дома</p>
+                                <label class="control-label">Номер дома</label>
                                 <input type="text" name="text" class="text">
                                 <p class="help-block help-block-error"></p>
                               </div>
                       </div>
                       <div class="two">
                               <div class="field">
-                                <p class="group-title"></p>
-                                <p class="control-label">Номер корпуса</p>
+                                <label class="control-label">Номер корпуса</label>
                                 <input type="text" name="text" class="text">
                                 <p class="help-block help-block-error"></p>
                               </div>
                       </div>
                       <div class="three">
                               <div class="field">
-                                <p class="control-label">Тип помещения</p>
+                                <label class="control-label">Тип помещения</label>
                                 <div class="select-custom">
                                   <div class="select-value"><span></span><i></i></div>
                                   <select>
@@ -549,8 +540,7 @@
                       </div>
                       <div class="four">
                               <div class="field">
-                                <p class="group-title"></p>
-                                <p class="control-label">№</p>
+                                <label class="control-label">№</label>
                                 <input type="text" name="text" class="text">
                                 <p class="help-block help-block-error"></p>
                               </div>
@@ -558,11 +548,11 @@
                     </div>
                   </section>
                 </div>
-                <div class="footer"><a href="#" class="btn btn-enter one">Готово</a><a href="#" class="btn btn-esc two">Отмена</a></div>
+                <div class="footer"><a href="#" class="btn btn-enter one">Готово</a><a href="#" data-esc="main" class="btn btn-esc two">Отмена</a></div>
               </div>
             </div>
           </div>
-          <div class="modal-row-address1 modal-window">
+          <div class="modal-row-address1 modal-window modal-main">
             <div id="address1" class="modal-wrap">
               <div class="modal">
                 <div class="header">
@@ -584,27 +574,50 @@
                     </tbody>
                   </table>
                         <div class="field">
-                          <p class="group-title"></p>
-                          <p class="control-label">Имя</p>
+                          <label class="control-label">Имя</label>
                           <input type="text" name="text" class="text">
                           <p class="help-block help-block-error"></p>
                         </div>
                         <div class="field">
-                          <p class="group-title"></p>
-                          <p class="control-label">Фамилия</p>
+                          <label class="control-label">Фамилия</label>
                           <input type="text" name="text" class="text">
                           <p class="help-block help-block-error"></p>
                         </div>
                         <div class="field">
-                          <p class="group-title"></p>
-                          <p class="control-label">Телефон</p>
+                          <label class="control-label">Телефон</label>
                           <input type="tel" name="text" class="text">
                           <p class="help-block help-block-error"></p>
                         </div>
-                  <p class="control-label">Комментарий</p>
+                  <label class="control-label">Комментарий</label>
                   <textarea></textarea>
                 </div>
-                <div class="footer"><a href="#" class="btn btn-enter one">Готово</a><a href="#" class="btn btn-esc two">Отмена</a></div>
+                <div class="footer"><a href="#" class="btn btn-enter one">Готово</a><a href="#" data-esc="main" class="btn btn-esc two">Отмена</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-row-modal modal-window modal-main">
+            <div id="modal" class="modal-wrap">
+              <div class="modal">
+                <div class="header">
+                  <p class="group-title">Main</p>
+                </div>
+                <div class="section">
+                  <p>Some text...</p><a href="#" data-modal="modal-internal" class="btn btn-internal-modal">Internal-modal</a>
+                </div>
+                <div class="footer"><a href="#" class="btn btn-enter one">Ok</a><a href="#" data-esc="main" class="btn btn-esc two">Esc</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-row-modal-internal modal-window modal-internal-main">
+            <div id="modal-internal" class="modal-wrap">
+              <div class="modal">
+                <div class="header">
+                  <p class="group-title">Internal modal</p>
+                </div>
+                <div class="section">
+                  <p>In process...</p>
+                </div>
+                <div class="footer"><a href="#" class="btn btn-internal-enter one">Ok</a><a href="#" data-esc="internal" class="btn btn-internal-esc two">Esc</a></div>
               </div>
             </div>
           </div>

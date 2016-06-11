@@ -39,25 +39,15 @@ section.create-document {
       margin: render-pixel(10) 0;
     }
 
-    label {
-
-    }
-
-    p.control-label,
     label.control-label {
       font: {
         size: render-pixel(15);
         weight: 600;
       }
-      margin: render-pixel(20) 0 render-pixel(10);
-    }
-
-    label {
       display: inline-block;
       color: darken($color-navBlue, 40%);
-      margin-top: 0 !important;
+      margin: render-pixel(20) 0 render-pixel(10);
     }
-
 
     input[type='text'],
     input[type='email'],
@@ -373,9 +363,16 @@ section.create-document {
   }
 }// /-section.create-document
 
+.modal-window.modal-internal-main {
+  z-index: 10002;
 
-.modal-row-address,
-.modal-row-address1 {
+  >div.modal-wrap {
+    margin-top: 11%;
+    @include mixinDimensions('min', render-pixel(550), auto);
+  }
+}
+
+.modal-window{
   display: none;
   position: fixed;
   top: 0;  bottom: 0;  right: 0;  left: 0;
@@ -384,8 +381,7 @@ section.create-document {
   @include mixinDimensions('', $width-all);
 
 
-  >div#address,
-  >div#address1 {
+  >div.modal-wrap{
     margin: 10% auto;
     @include mixinDimensions('min', render-pixel(600), auto);
     padding: render-pixel(15);
@@ -434,14 +430,17 @@ section.create-document {
     padding: render-pixel(10) render-pixel(15);
     margin-right: render-pixel(10);
     min-width: render-pixel(75);
+    background-color: $color-navBlue;
+
 
     &.one {
-      background-color: $color-navBlue;
       color: $color-white;
       @include mixinBorder('all', 1px, $color-navBlue);
     }
 
+
     &.two {
+      background-color: transparent;
       @include mixinBorder('all', 1px, $color-scopeBorder);
     }
   }
