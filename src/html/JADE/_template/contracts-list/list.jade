@@ -53,4 +53,5 @@ section#list.list
                     .wrap
                         ul(id='section-#{i}', class='list-item')
                             -for(var j = 0; j < listInternalLink.length; j++)
-                                li: a(href='#', class='btn-internal-contract')!= listInternalLink[j]
+                                li
+                                    a(href='#', class='btn-internal-contract')!= listInternalLink[j]

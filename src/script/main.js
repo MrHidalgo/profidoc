@@ -119,6 +119,7 @@ function mark(nav) {
 */
 $(document).ready(
     function() {
+
         /* custom select*/
         searchAllSelectStart();
         /* custom checkbox */
@@ -172,31 +173,31 @@ $(document).ready(
 
 
         if($('#admin-panel').length > 0 || $('#address .section').length > 0) {
-            $('#admin-panel').steps(
-                {
-                    headerTag: "h4",
-                    bodyTag: "section",
-                    transitionEffect: "slideLeft",
-                    stepsOrientation: "vertical",
-                    titleTemplate: "#title#",
-                    showFinishButtonAlways: true,
-                    startIndex: 1
-                }
-            );
-
-            $("#address .section").steps(
-                {
-                    headerTag: "h5",
-                    bodyTag: "section",
-                    transitionEffect: "slideLeft",
-                    enableFinishButton: false,
-                    enablePagination: false,
-                    enableAllSteps: true,
-                    titleTemplate: "#title#",
-                    cssClass: "tabcontrol",
-                    startIndex: 0
-                }
-            );
+            // $('#admin-panel').steps(
+            //     {
+            //         headerTag: "h4",
+            //         bodyTag: "section",
+            //         transitionEffect: "slideLeft",
+            //         stepsOrientation: "vertical",
+            //         titleTemplate: "#title#",
+            //         showFinishButtonAlways: true,
+            //         startIndex: 0
+            //     }
+            // );
+            //
+            // $("#address .section").steps(
+            //     {
+            //         headerTag: "h5",
+            //         bodyTag: "section",
+            //         transitionEffect: "slideLeft",
+            //         enableFinishButton: false,
+            //         enablePagination: false,
+            //         enableAllSteps: true,
+            //         titleTemplate: "#title#",
+            //         cssClass: "tabcontrol",
+            //         startIndex: 0
+            //     }
+            // );
         }
 
 

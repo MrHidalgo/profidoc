@@ -48,6 +48,7 @@ section.list {
 
         ul.list-item {
           display: none;
+          padding-left: 40px;
         }// /-ul.list-item
       }
     }// /-.list-row
@@ -98,7 +99,6 @@ section.list {
           >a {
             line-height: 3;
             color: lighten($color-black, 25%);
-            padding-left: render-pixel(40);
             @include mixinDimensions('', $width-all, 50px);
 
 
