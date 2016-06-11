@@ -98,8 +98,11 @@ section.create-document {
       }
     }
 
-    table {
+    .address-label {
       margin-top: render-pixel(20);
+    }
+
+    table {
       width: $width-all;
       font-size: render-pixel(14);
       @include mixinBorder('all', 1px, lighten($color-gradientGray2, 3%));
@@ -291,8 +294,7 @@ section.create-document {
             @include mixinBorder('all', 1px, $color-scopeBorder);
           }
 
-          a[class^='btn-'] {
-            padding: render-pixel(10) render-pixel(15);
+          [class^='btn-'] {
             text-align: center;
             line-height: 2.5;
             @include mixinDimensions('all', 120px, 38px);
@@ -300,10 +302,15 @@ section.create-document {
             font-size: render-pixel(14);
             background-color: $color-navBlue;
             transition: all .3s linear;
+            cursor: pointer;
 
             &:hover {
               background-color: $color-yellow;
             }
+          }
+
+          a[class^='btn-'] {
+            padding: render-pixel(10) render-pixel(15);
           }
         }
       }// /-.content

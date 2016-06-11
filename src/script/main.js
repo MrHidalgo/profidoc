@@ -199,7 +199,7 @@ $(document).ready(
             });
         }
 
-        $('a.btn-address').on('click', function(e) {
+        $('.btn-address').on('click', function(e) {
             e.preventDefault();
             var linkAttr = $(this).attr('data-modal');
 
