@@ -23,8 +23,6 @@ $font                 : 'Open Sans';
 $image-form-bg        : '../image/form-bg.png';
 $image-select-arrow   : '../image/check-tarif-3.png';
 
-
-
 ///
 /// MAIN SECTION
 ///
@@ -86,10 +84,6 @@ section.create-document {
         @include mixinBorder(all, 1px, $color-navBlue);
         box-shadow: 0 0 5px 1px rgba($color-black, 0.2);
       }
-    }
-
-    .address-label {
-      margin-top: render-pixel(20);
     }
 
     table {
@@ -465,5 +459,15 @@ section.create-document {
     bottom: 0;
     padding: render-pixel(10) 0;
     @include mixinBorder(top, 1px, $color-scopeBorder);
+  }
+}
+
+
+/////////
+// FIX //
+/////////
+.modal-form {
+  label.control-label {
+    margin: render-pixel(4) 0 render-pixel(10) !important;
   }
 }

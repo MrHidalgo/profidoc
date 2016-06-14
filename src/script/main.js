@@ -95,7 +95,7 @@ function searchAllRadio() {
 
 
 $(window).on('click', function (e) {
-    if($(e.target).closest('.modal-internal-main, a.btn-address, a.btn-modal, .modal-wrap, .btn-print, #form-print, .sign-in, section#form-sign').length)
+    if($(e.target).closest('.modal-internal-main, .btn-address, .btn-modal, .modal-wrap, .btn-print, #form-print, .sign-in, section#form-sign').length)
         return;
 
     $('#form-print').hide();
@@ -201,7 +201,7 @@ $(document).ready(
         }
 
 
-        $('a.btn-modal, a.btn-internal-modal').on('click', function(e) {
+        $('.btn-modal, .btn-internal-modal').on('click', function(e) {
             e.preventDefault();
             var linkAttr = $(this).attr('data-modal');
 
