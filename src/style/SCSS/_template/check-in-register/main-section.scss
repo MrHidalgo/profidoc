@@ -65,6 +65,15 @@ section.create-document {
       }
     }
 
+    input[type='text']:read-only,
+    input[type='email']:read-only,
+    input[type='tel']:read-only {
+      border: none;
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
     textarea {
       @include mixinDimensions('', $width-all, 70px);
       border-radius: .2em;
@@ -158,6 +167,21 @@ section.create-document {
         @include mixinCenteredBLockAbsolute(0,0,0,0);
         @include mixinDimensions('', $width-all);
       }
+    }
+
+    .btn-success,
+    .btn-danger {
+      padding: render-pixel(8);
+      color: $color-white;
+      cursor: pointer;
+    }
+
+    .btn-success {
+      background: green;
+    }
+
+    .btn-danger {
+      background: red;
     }
 
     .two-row {
