@@ -114,6 +114,10 @@ section{
     background-color: $color-yellow;
   }
 }
+button.btn-modal,
+button.btn-primary {
+  margin: render-pixel(8) 0;
+}
 
 .ajax-loader {
   text-align: center;
