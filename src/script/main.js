@@ -124,8 +124,10 @@ $(document).ready(
         // new modal windows
         $(document).on('click', '[data-modal]', function(e) {
             e.preventDefault();
-            var options = {modalClass: "modal-window"};
-            // var options = {fadeDuration: 3000};
+            var options = {
+                modalClass: "modal-window",
+                showClose: false
+            };
             if ($(this).data('submodal')) {
                 options = $.extend({}, options, {closeExisting: false});
             }
