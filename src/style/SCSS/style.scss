@@ -152,6 +152,29 @@ body.form-open {
   }
 }
 
+.blocker {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  z-index: 10000;
+  padding: render-pixel(20);
+  background-color: rgba(0,0,0,0.4);
+  // box-sizing: border-box;
+  // background-color: rgb(0,0,0);
+  // background-color: rgba(0,0,0,0.75);
+  // text-align: center;
+  &:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.05em;
+  }
+  &.behind {
+    background-color: transparent;
+  }
+}
 
 /// [navigation, footer]
 body.internal {
