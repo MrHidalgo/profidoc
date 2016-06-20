@@ -113,6 +113,7 @@ $image-select-arrow   : '../image/check-tarif-3.png';
             text-align: center;
             vertical-align: middle;
             padding: render-pixel(10);
+            font-weight: normal;
             @include mixinBorder(right, 1px, lighten($color-gradientGray2, 3%));
 
 
