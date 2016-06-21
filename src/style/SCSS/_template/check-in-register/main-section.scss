@@ -421,7 +421,6 @@ $image-select-arrow   : '../image/check-tarif-3.png';
     li {
       display: inline-block;
 
-
       a {
         display: inline-block;
         font-size: render-pixel(14);
@@ -433,7 +432,7 @@ $image-select-arrow   : '../image/check-tarif-3.png';
         border-radius: .3em .3em 0 0;
       }
 
-      &.current {
+      &.active {
         //margin-bottom: -1px;
 
 
