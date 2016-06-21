@@ -188,7 +188,7 @@ $(document).ready(
         }
 
 
-        if($('#admin-panel').length > 0 || $('#address .section').length > 0) {
+        // if($('#admin-panel').length > 0 || $('#address .section').length > 0) {
 /*              $('#admin-panel').steps(
                   {
                       headerTag: "h4",
@@ -214,7 +214,7 @@ $(document).ready(
                       startIndex: 0
                   }
               );*/
-        }
+        // }
 
 
         // $('.btn-modal, .btn-internal-modal').on('click', function(e) {

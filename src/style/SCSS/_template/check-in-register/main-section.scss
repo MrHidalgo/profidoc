@@ -207,6 +207,18 @@ $image-select-arrow   : '../image/check-tarif-3.png';
       }
     }
 
+    .three-row {
+      overflow: hidden;
+
+      .one,
+      .two,
+      .three {
+        float: left;
+        width: $width-all/3;
+        padding: render-pixel(5);
+      }
+    }
+
     .four-row {
       overflow: hidden;
 
