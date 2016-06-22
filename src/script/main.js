@@ -131,11 +131,10 @@ $(document).ready(
 
         /* radio */
         $("div.radio-item").click(function() {
-            $(this).parent().find("div.radio-item").removeClass("active");
-            $(this).closest('.radio-container').find("div.radio-item").removeClass("active");
+            var inputAttr = $(this).find('input[type=radio]').attr('name');
+
+            $('input[name="' + inputAttr + '"]').closest('.radio-item').removeClass('active');
             $(this).addClass('active');
-            $(this).parent().find('input:checked').prop('checked', false);
-            $(this).find('input').prop('checked', true);
         });
 
 
@@ -184,31 +183,31 @@ $(document).ready(
 
 
         if($('#admin-panel').length > 0 || $('#address .section').length > 0) {
-              $('#admin-panel').steps(
-                  {
-                      headerTag: "h4",
-                      bodyTag: "section",
-                      transitionEffect: "slideLeft",
-                      stepsOrientation: "vertical",
-                      titleTemplate: "#title#",
-                      showFinishButtonAlways: true,
-                      startIndex: 3
-                  }
-              );
-
-              $("#address .section").steps(
-                  {
-                      headerTag: "h5",
-                      bodyTag: "section",
-                      transitionEffect: "slideLeft",
-                      enableFinishButton: false,
-                      enablePagination: false,
-                      enableAllSteps: true,
-                      titleTemplate: "#title#",
-                      cssClass: "tabcontrol",
-                      startIndex: 0
-                  }
-              );
+              //$('#admin-panel').steps(
+              //    {
+              //        headerTag: "h4",
+              //        bodyTag: "section",
+              //        transitionEffect: "slideLeft",
+              //        stepsOrientation: "vertical",
+              //        titleTemplate: "#title#",
+              //        showFinishButtonAlways: true,
+              //        startIndex: 3
+              //    }
+              //);
+              //
+              //$("#address .section").steps(
+              //    {
+              //        headerTag: "h5",
+              //        bodyTag: "section",
+              //        transitionEffect: "slideLeft",
+              //        enableFinishButton: false,
+              //        enablePagination: false,
+              //        enableAllSteps: true,
+              //        titleTemplate: "#title#",
+              //        cssClass: "tabcontrol",
+              //        startIndex: 0
+              //    }
+              //);
         }
 
         $('.btn-modal').on(

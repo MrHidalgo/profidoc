@@ -26,15 +26,18 @@
     ];
 
     var radioAttr1 = 'register';
+    var radioAttr2 = 'register1';
 
     var radioID1 = 'more';
     var radioID2 = 'some';
+    var radioID3 = 'more1';
+    var radioID4 = 'some1';
 
 
-mixin blockChoose(radioAttr, radioID, title, arrInfo, arrLang)
+mixin blockChoose(radioAttr, radioID, title, arrInfo, arrLang, inputClass)
     .choose-row
         .left
-            .radio-item
+            div(class='radio-item ' + inputClass)
                 input(type='radio', name=radioAttr, id= radioID)
                 label(for= radioID)
                     i.icon.icon-radio
@@ -63,8 +66,8 @@ mixin blockChoose(radioAttr, radioID, title, arrInfo, arrLang)
 
 section#choose.choose
     .choose-container.radio-container
-        +blockChoose(radioAttr1, radioID1, chooseTitle1, chooseList1, chooseSelectLang)
-        +blockChoose(radioAttr1, radioID2, chooseTitle2, chooseList2, chooseSelectLang)
+        +blockChoose(radioAttr1, radioID1, chooseTitle1, chooseList1, chooseSelectLang, 'active')
+        +blockChoose(radioAttr1, radioID2, chooseTitle2, chooseList2, chooseSelectLang, '')
 
         hr
 

@@ -7,5 +7,6 @@ src/image/
 dist/style/_maps/
 
 # FILE
-profidoc.iml
+dist/script/tabs-ignore.js
+*.iml
 ngrok
