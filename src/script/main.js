@@ -129,6 +129,16 @@ $(document).ready(
         searchAllRadio();
 
 
+        /* radio */
+        $("div.radio-item").click(function() {
+            $(this).parent().find("div.radio-item").removeClass("active");
+            $(this).closest('.radio-container').find("div.radio-item").removeClass("active");
+            $(this).addClass('active');
+            $(this).parent().find('input:checked').prop('checked', false);
+            $(this).find('input').prop('checked', true);
+        });
+
+
         /* SCROLLSPY */
         {
             var lastID;
@@ -174,7 +184,7 @@ $(document).ready(
 
 
         if($('#admin-panel').length > 0 || $('#address .section').length > 0) {
-/*              $('#admin-panel').steps(
+              $('#admin-panel').steps(
                   {
                       headerTag: "h4",
                       bodyTag: "section",
@@ -182,7 +192,7 @@ $(document).ready(
                       stepsOrientation: "vertical",
                       titleTemplate: "#title#",
                       showFinishButtonAlways: true,
-                      startIndex: 2
+                      startIndex: 3
                   }
               );
 
@@ -198,44 +208,70 @@ $(document).ready(
                       cssClass: "tabcontrol",
                       startIndex: 0
                   }
-              );*/
+              );
         }
 
+        $('.btn-modal').on(
+            'click',
+            function(e) {
+                e.preventDefault();
 
-        $('.btn-modal, .btn-internal-modal').on('click', function(e) {
-            e.preventDefault();
-            var linkAttr = $(this).attr('data-modal');
-
-            $('body').addClass('form-open');
-
-            if(linkAttr === 'address') {
-                $('.modal-row-address').show();
-            } else if (linkAttr === 'address1'){
-                $('.modal-row-address1').show();
-            } else if (linkAttr === 'modal'){
-                $('.modal-row-modal').show();
-            } else if (linkAttr === 'modal-internal') {
-                $('.modal-row-modal-internal').show();
-                $('body').addClass('internal-modal');
+                var attrLink = $(this).attr('data-modal');
+                if (attrLink == 'modal-open') {
+                    if(!$('body').hasClass('form-open')) {
+                        $('body').addClass('form-open');
+                        $('#modal').show();
+                    } else {
+                        $('body').addClass('internal-modal');
+                        $('#modal1').show();
+                    }
+                }
             }
-        });
+        );
+        $('.btn-esc').on(
+            'click',
+            function(e) {
+                e.preventDefault();
 
-        $('a.btn-esc, a.btn-internal-esc').on('click', function(e) {
-            e.preventDefault();
-
-            var linkAttr = $(this).attr('data-esc');
-
-            console.log(linkAttr);
-
-            if(linkAttr === 'main') {
-                $('body').removeClass('form-open');
-                $('.modal-' + linkAttr).hide();
+                if($('body').hasClass('internal-modal')) {
+                    $('body').removeClass('internal-modal');
+                    $('#modal1').hide();
+                } else {
+                    $('body').removeClass('form-open');
+                    $('#modal').hide();
+                }
             }
-            else if(linkAttr === 'internal') {
-                $('body').removeClass('internal-modal');
-                $('.modal-' + linkAttr + '-main').hide();
-            }
-        });
+        );
+
+        //$('.btn-modal, .btn-internal-modal').on('click', function(e) {
+        //    e.preventDefault();
+        //    var linkAttr = $(this).attr('data-modal');
+        //
+        //    $('body').addClass('form-open');
+        //
+        //    if(linkAttr === 'address') {
+        //        $('.modal-row-address').show();
+        //    } else if (linkAttr === 'address1'){
+        //        $('.modal-row-address1').show();
+        //    }
+        //});
+        //
+        //$('a.btn-esc, a.btn-internal-esc').on('click', function(e) {
+        //    e.preventDefault();
+        //
+        //    var linkAttr = $(this).attr('data-esc');
+        //
+        //    console.log(linkAttr);
+        //
+        //    if(linkAttr === 'main') {
+        //        $('body').removeClass('form-open');
+        //        $('.modal-' + linkAttr).hide();
+        //    }
+        //    else if(linkAttr === 'internal') {
+        //        $('body').removeClass('internal-modal');
+        //        $('.modal-' + linkAttr + '-main').hide();
+        //    }
+        //});
 
 
         /*...*/

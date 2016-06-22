@@ -96,6 +96,11 @@ section.create-document {
     }
 
     table {
+      table-layout: fixed;
+      word-break: break-word;
+      -webkit-hyphens: none;
+      -moz-hyphens: none;
+      hyphens: none;
       width: $width-all;
       font-size: render-pixel(14);
       @include mixinBorder('all', 1px, lighten($color-gradientGray2, 3%));
@@ -122,6 +127,10 @@ section.create-document {
 
       thead {
         @include mixinLinerGradient($color-gradientGray1, $color-gradientGray2);
+
+        th {
+          font-weight: normal;
+        }
       }
 
       tbody {
@@ -382,7 +391,7 @@ section.create-document {
   }
 }// /-section.create-document
 
-.modal-window.modal-internal-main {
+#modal1.modal-window {
   z-index: 10002;
 
   >div.modal-wrap {
@@ -407,6 +416,8 @@ section.create-document {
     box-shadow: 0 0 10px 1px rgba(0,0,0,0.3);
     background-color: $color-white;
   }
+
+  >div.modal-wrap
 
 
   ul[role='tablist'] {

@@ -93,11 +93,13 @@ section.content {
 
 
       .btn-load-more {
-        padding: render-pixel(30);
         font: {
           size: render-pixel(22.5);
           weight: 400;
         }
+        width: $width-all;
+        padding: render-pixel(30);
+        text-align: center;
         text-decoration: underline;
         text-transform: uppercase;
         color: $color-navBlue;

@@ -18,11 +18,13 @@ $color-white      : return-value(color, white);
 $color-navBlue    : return-value(color, navBlue);
 $color-yellow     : return-value(color, yellow);
 $color-borderGray : return-value(color, borderGray);
-$color-scopeBorder      : return-value(color, scopeBorder);
-$color-navBlue      : return-value(color, navBlue);
+$color-scopeBorder: return-value(color, scopeBorder);
+$color-navBlue    : return-value(color, navBlue);
 
 $font             : 'Open Sans';
 
+$i-radio          : '../image/icon-radio.png';
+$i-radio-a        : '../image/icon-radio-active.png';
 
 ///
 /// MAIN BLOCK
@@ -181,8 +183,10 @@ p.help-block.help-block-error {
 }
 
 .has-error {
+
   input,
-  textarea{
+  textarea,
+  .select-custom {
     border: 1px solid red !important;
   }
 }
@@ -226,6 +230,52 @@ input.form-control {
     }
     text-transform: uppercase;
   }
+}
+
+
+.radio-item  {
+  position: relative;
+
+
+  &.active {
+    label {
+
+      > i {
+        background: url($i-radio-a) no-repeat center;
+        background-size: contain;
+      }
+    }
+  }// /-&.active
+
+
+  > input {
+    height: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    position: absolute;
+    width: 0;
+    outline: none;
+  }
+
+
+  >label {
+    cursor: pointer;
+
+
+    > i {
+      display: inline-block;
+      @include mixinDimensions('', 24px);
+      background: url($i-radio) no-repeat center;
+      background-size: contain;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
+    >span {
+      vertical-align: middle;
+    }
+  } // /->label
 }
 
 

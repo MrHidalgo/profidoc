@@ -21,6 +21,23 @@ section#header.header
     .header-container
         .header-row
             .internal-container-block
+                .center-block
+                    h1!= '145'
+                    p!= 'ИДЕЙ НА ОСНОВЕ КОНКУРСА'
+
+                    .wrap-slider
+                        span.circle-0
+                        span.circle-1
+                        span.circle-2
+                        span.circle-3.last!= '$'
+
+                        .row-text
+                            span.txt-0!= '100 тыс'
+                            span.txt-1!= '500 тыс'
+                            span.txt-2!= '1 млн'
+                            span.txt-3!= '10 млн'
+
+
                 .left-block
                     ul.list
                         - for(var i = 0; i < headerLeftMenu.length; i++)

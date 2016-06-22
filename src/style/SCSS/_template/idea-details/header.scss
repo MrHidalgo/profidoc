@@ -23,23 +23,48 @@ $image-header-bg        : '../image/idea-details-bg.png';
 /// HEADER SECTION
 ///
 section.header {
+
   .header-container {
-    @include mixinDimensions('', $width-all, render-pixel(401));
+    @include mixinDimensions('min', $width-all, render-pixel(401));
     background: url($image-header-bg) no-repeat center;
     background-size: cover;
+
 
 
     .header-row {
       padding: 0;
       position: relative;
-      @include mixinMaxWidthPosition(10.7, 10, 0);
+      min-height: render-pixel(401);
+      @include mixinMaxWidthPosition(10.7, 0, 0);
+      @include mixinCenteredBLockFlex(row, center, center);
 
 
-      .info-block{
-        position: absolute;
-        right: 0;  top: 0;
-        padding-top: $width-all - 95;
-        @include mixinDimensions('', $width-all - 70, render-pixel(401));
+      .video-block {
+        position: relative;
+        width: 60%;
+        min-height: render-pixel(401);
+
+
+        video.idea-video {
+          position: absolute;
+          top: 0; left: 0;
+          @include mixinDimensions('', $width-all);
+          background-color: $color-white;
+        }
+      }
+
+
+      .info-block {
+        width: 40%;
+        padding-left: render-pixel(20);
+      }
+
+
+      .info-block {
+        //position: absolute;
+        //right: 0;  top: 0;
+        //padding-top: $width-all - 95;
+        //@include mixinDimensions('', $width-all - 70, render-pixel(401));
 
         [class^='block-'] {
           margin-bottom: render-pixel(15);
@@ -86,9 +111,10 @@ section.header {
   }// /-.header-container
 
 
-  >p{
-    @include mixinMaxWidthPosition(10.7, 0, 0, 20, 0);
+  > p{
+    @include mixinMaxWidthPosition(10.7, 20, 0);
     color: $color-navBlue;
+
 
     span{
       color: darken($color-white, 35%);

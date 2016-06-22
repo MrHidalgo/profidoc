@@ -1,3 +1,43 @@
 @import "../_template/_dop/breadcrumbs";
 @import "../_template/check-in/check-in";
 @import "../_template/check-in/choose";
+
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  section#choose {
+    .choose-container {
+      .choose-row {
+        flex-flow: row wrap;
+
+
+        >div {
+          width:  $width-all/2;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  body.internal {
+    .wrap-container {
+      padding: 0 15px;
+    }
+  }
+
+
+  section#choose {
+    .choose-container {
+      .choose-row {
+        flex-direction: column;
+
+
+        >div {
+          width:  $width-all;
+          margin: 10px 0;
+        }
+      }
+    }
+  }
+}

@@ -2,3 +2,119 @@
 @import "../_template/idea/footer";
 @import "../_template/idea/header";
 @import "../_template/idea/idea-content";
+
+
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  section#header {
+    .header-container {
+      background-size: cover;
+      height: auto;
+
+      .header-row {
+        .internal-container-block {
+          display: block;
+          height: auto;
+
+
+          .center-block,
+          .right-block {
+            margin-bottom: 20px;
+          }
+
+
+          .center-block,
+          .left-block,
+          .right-block {
+            width: $width-all;
+            height: auto;
+            text-align: center;
+          }
+
+
+          .center-block {
+            position: relative;
+            display: block;
+            width: $width-all;
+
+
+            .wrap-slider {
+              margin: 20px auto;
+              width: 320px;
+              max-width: 320px;
+
+
+              .row-text {
+                [class^='txt-'] {
+                  width: (320 / 4) * 1px;
+                }
+              }
+            }
+          }
+
+
+          .left-block {
+            margin-top: 40px;
+          }
+        }
+      }
+    }
+  }
+
+  section#idea-content {
+    font-size: 80%;
+
+
+    .idea-content-container {
+
+      [class^=idea-content-row] {
+        padding-left: 15px;
+        padding-right: 15px;
+
+
+        .internal-container {
+          flex-direction: column;
+
+          > div {
+            width: 100%;
+
+
+            &.left,
+            &.right {
+              padding: 15px 0;
+            }
+          }
+
+
+          [class^=btn-] {
+            width: 289px;
+            line-height: 54px;
+            margin: 0 auto;
+          }
+        }
+      }
+
+      [class^=idea-content-row-bg-] {
+        height: auto;
+        min-height: 27.75em;
+      }
+    }
+  }
+
+
+  section#idea-content {
+    .idea-content-container-more {
+      .idea-content-row {
+        [class^=block-] {
+          width: 230px;
+        }
+
+
+        .btn-load-more {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

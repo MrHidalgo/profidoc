@@ -84,57 +84,6 @@ section.choose {
           }
         }// /-list
 
-
-        .radio-custom {
-          position: relative;
-          display: inline-block;
-          border-radius: $width-all;
-          @include mixinDimensions('', render-pixel(20));
-          @include mixinBorder('all', 2px, $color-wayGrayCircle);
-
-
-          > input {
-            position: absolute;
-            left: 0;  top: 0;
-            margin: 0;
-            cursor: pointer;
-            @include mixinDimensions('', $width-all);
-            opacity: 0;
-          }
-
-
-          > label {
-            white-space: nowrap;
-            padding-left: render-pixel(30);
-            display: block;
-            margin-top: render-pixel(-5);
-            font: {
-              size: render-pixel(19.5);
-              weight: 400;
-            }
-            color: darken($color-navBlue, 35%);
-
-
-            >span {
-              font: {
-                size: render-pixel(12);
-                weight: 600;
-              }
-            }
-          }
-        }// /-.radio-custom
-
-
-        .radio-custom.check {
-
-          &:before {
-            content: '';
-            background-color: $color-navBlue;
-            border-radius: $width-all;
-            @include mixinDimensions('', render-pixel(10));
-            @include mixinCenteredBLockAbsolute(0,0,0,0);
-          }
-        }// /-radio-custom check
       }// /-.left
 
 

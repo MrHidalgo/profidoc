@@ -395,7 +395,6 @@
                     <th>Номинальная часть доли</th>
                     <th>Номинальная часть доли прописью</th>
                     <th>Способ формирования</th>
-                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -404,7 +403,7 @@
               </table>
             </section>
             <h4><span class="current-steps">4</span> Руководитель</h4>
-            <section><a href="#" data-modal="modal" class="btn-modal">Modal main</a></section>
+            <section><a href="#" data-modal="modal-open" class="btn-modal">Modal main</a></section>
             <h4><span class="current-steps">5</span> Виды деятельности</h4>
             <section></section>
             <h4><span class="current-steps">6</span> Система налогообложения</h4>
@@ -595,29 +594,29 @@
               </div>
             </div>
           </div>
-          <div class="modal-row-modal modal-window modal-main">
-            <div id="modal" class="modal-wrap">
+          <div id="modal" class="modal-row-modal modal-window modal-main">
+            <div class="modal-wrap">
               <div class="modal">
                 <div class="header">
                   <p class="group-title">Main</p>
                 </div>
                 <div class="section">
-                  <p>Some text...</p><a href="#" data-modal="modal-internal" class="btn btn-internal-modal">Internal-modal</a>
+                  <p>Some text...</p><a href="#" data-modal="modal-open" class="btn btn-modal">Internal-modal</a>
                 </div>
                 <div class="footer"><a href="#" class="btn btn-enter one">Ok</a><a href="#" data-esc="main" class="btn btn-esc two">Esc</a></div>
               </div>
             </div>
           </div>
-          <div class="modal-row-modal-internal modal-window modal-internal-main">
-            <div id="modal-internal" class="modal-wrap">
+          <div id="modal1" class="modal-row-modal modal-window modal-main">
+            <div class="modal-wrap">
               <div class="modal">
                 <div class="header">
-                  <p class="group-title">Internal modal</p>
+                  <p class="group-title">Main</p>
                 </div>
                 <div class="section">
-                  <p>In process...</p>
+                  <p>Some text...</p>
                 </div>
-                <div class="footer"><a href="#" class="btn btn-internal-enter one">Ok</a><a href="#" data-esc="internal" class="btn btn-internal-esc two">Esc</a></div>
+                <div class="footer"><a href="#" class="btn btn-enter one">Ok</a><a href="#" data-esc="main" class="btn btn-esc two">Esc</a></div>
               </div>
             </div>
           </div>

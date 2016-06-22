@@ -72,13 +72,14 @@ section.right-panel{
         }
 
         input+label{
+
           &:before{
             content: '';
             position: absolute;
             top: render-pixel(31);
             left: render-pixel(12);
             @include mixinDimensions('normal', render-pixel(16));
-            background: url("../../image/content-page-search.png") no-repeat center;
+            background: url("../image/content-page-search.png") no-repeat center;
             background-size: contain;
             vertical-align: middle;
           }

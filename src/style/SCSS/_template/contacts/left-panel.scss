@@ -212,7 +212,7 @@ section.left-panel{
         resize: none;
         padding: render-pixel(15);
         font-family: $font;
-        @include mixinDimensions('', $width-all - 2.5, render-pixel(267));
+        @include mixinDimensions('', $width-all, render-pixel(267));
       }
 
 
@@ -222,6 +222,17 @@ section.left-panel{
         @include mixinCenteredBLockFlex(row, flex-start, center);
 
 
+        .field {
+          &-name {
+            margin-right: 7.5px;
+          }
+
+          &-email {
+            margin-left: 7.5px;
+          }
+        }
+
+
         [class^='field-'] {
           width: $width-all/2;
 
@@ -229,7 +240,7 @@ section.left-panel{
           input {
             padding: 0 render-pixel(15);
             outline: none;
-            @include mixinDimensions('', 365px, 42px);
+            @include mixinDimensions('', $width-all, 42px);
           }
         }// /-[class^='field-']
       }// /-section
@@ -237,7 +248,6 @@ section.left-panel{
 
       .btn-subscribe{
         float: right;
-        margin-right: render-pixel(19);
         @include mixinDimensions('', 125px, 41px);
         background-color: $color-navBlue;
         transition: all .3s linear;

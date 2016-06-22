@@ -45,23 +45,22 @@ section#content.content
         - for(var i = 0; i < reviewTitle.length; i++)
             .content-row
                 if (i % 2 == 0)
-                    .left
-                        p.name!= reviewTitle[i]
-                        p.coorp!= reviewFrom[i]
-                        p.text!= reviewText[i]
+                    .right
+                        p.date!= reviewDate[i]
 
                     .center
                         img(src= reviewImg[i], class='img-responsive')
 
-                    .right
-                        p.date!= reviewDate[i]
+                    .left
+                        p.name!= reviewTitle[i]
+                        p.coorp!= reviewFrom[i]
+                        p.text!= reviewText[i]
                 else
                     .left
                         p.date!= reviewDate[i]
 
                     .center
                         img(src= reviewImg[i], class='img-responsive')
-
                     .right
                         p.name!= reviewTitle[i]
                         p.coorp!= reviewFrom[i]

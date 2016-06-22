@@ -5,3 +5,107 @@
 @import "../_template/check/client";
 @import "../_template/check/review";
 @import "../_template/check/tariff";
+
+
+@media screen and (min-width: 320px) and (max-width: 1069px) {
+  section#tariff {
+    .tariff-container {
+      .tariff-row {
+        overflow-x: auto;
+        padding: 0 15px;
+
+
+        table {
+          width: 1070px;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  section#chance {
+    .chance-container-info {
+      .chance-row {
+        [class^=block-] {
+          width: 180px;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 479px) {
+  section#chance {
+    .chance-container-info {
+      .chance-row {
+        [class^=block-] {
+          width: 290px;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  section#banner {
+    .banner-container {
+      .banner-row {
+        width: auto;
+        max-width: 33.0625em;
+
+
+        .container-text {
+          width: auto;
+          max-width: 33.0625em;
+        }
+
+
+        .container-btn {
+          flex-direction: column;
+
+
+          .btn-order {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+
+
+  section#review {
+    .review-container{
+      >.review-row {
+        [class^=block-] {
+          width: $width-all;
+          flex-direction: column;
+
+
+          .left-photo {
+            margin: 0 auto;
+          }
+
+
+          .right-text {
+            margin: 0;
+
+            p {
+              &.name {
+               text-align: center;
+             }
+              &.text {
+                &:after {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

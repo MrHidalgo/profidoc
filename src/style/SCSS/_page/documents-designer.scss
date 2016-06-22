@@ -4,3 +4,161 @@
 @import "../_template/documents-designer/choose";
 @import "../_template/documents-designer/create";
 @import "../_template/documents-designer/video-sub";
+
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  section#choose {
+    .choose-container {
+      .choose-row {
+        a {
+          font-size: 9px;
+        }
+
+
+        &:last-child {
+          .btn-choose-free {
+            width: 290px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  section#video-sub {
+    .video-sub-container {
+      flex-direction: column;
+
+
+      .video-sub-row {
+        width: $width-all;
+
+
+        &:last-child {
+          padding: 30px 0;
+          text-align: center;
+        }
+
+
+        .wrap {
+          flex-direction: column;
+
+          >div{
+            display: block;
+            width: $width-all;
+
+
+            &.left {
+              margin-bottom: 10px;
+            }
+
+
+            &.right {
+              a {
+                margin: 0 auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  section.choose {
+    .choose-container {
+      flex-direction: column;
+
+
+      .choose-row {
+        width: $width-all;
+      }
+    }
+  }
+
+
+  section#benefits {
+    .benefits-container {
+      padding: 0 15px 30px;
+
+
+      .benefits-row {
+
+        &:first-of-type {
+          flex-flow: row wrap;
+
+
+          a.btn-benefits{
+            width: 145px;
+
+
+            >i {
+              display: none;
+            }
+          }
+        }
+
+        &:last-of-type {
+          [class*=block-] {
+            flex-direction: column;
+
+            >div {
+              width: $width-all;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 1069px) {
+  section#video-sub {
+    padding: 0 15px;
+
+    .video-sub-row{
+      >span.count {
+        width: $width-all;
+      }
+    }
+
+
+    .wrap {
+      .left {
+        p.price {
+          font-size: render-pixel(34);
+        }
+      }
+    }
+  }
+
+  section#choose {
+    .choose-container {
+      .choose-row {
+        a {
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  section#benefits {
+    .benefits-container {
+      .benefits-row {
+        &:first-of-type {
+          [class^=btn-] {
+            p {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

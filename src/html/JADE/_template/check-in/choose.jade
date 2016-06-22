@@ -25,16 +25,20 @@
         'Украинский - Английский'
     ];
 
-    var radioAttr1 = 'radioAttr1';
-    var radioAttr2 = 'radioAttr2';
+    var radioAttr1 = 'register';
 
-mixin blockChoose(radioAttr, title, arrInfo, arrLang)
+    var radioID1 = 'more';
+    var radioID2 = 'some';
+
+
+mixin blockChoose(radioAttr, radioID, title, arrInfo, arrLang)
     .choose-row
         .left
-            .radio-block
-                .radio-custom
-                    input(type='radio', name='radioAttr', class= radioAttr, id= radioAttr)
-                    label(for= radioAttr)!= title
+            .radio-item
+                input(type='radio', name=radioAttr, id= radioID)
+                label(for= radioID)
+                    i.icon.icon-radio
+                    span.text.text-radio!= title
 
             ul.list
                 -for(var i = 0; i < arrInfo.length; i++)
@@ -58,9 +62,9 @@ mixin blockChoose(radioAttr, title, arrInfo, arrLang)
 
 
 section#choose.choose
-    .choose-container
-        +blockChoose(radioAttr1, chooseTitle1, chooseList1, chooseSelectLang)
-        +blockChoose(radioAttr2, chooseTitle2, chooseList2, chooseSelectLang)
+    .choose-container.radio-container
+        +blockChoose(radioAttr1, radioID1, chooseTitle1, chooseList1, chooseSelectLang)
+        +blockChoose(radioAttr1, radioID2, chooseTitle2, chooseList2, chooseSelectLang)
 
         hr
 

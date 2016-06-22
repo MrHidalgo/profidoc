@@ -68,6 +68,12 @@ section.idea-content {
           }
           line-height: 2.7;
           @include mixinDimensions('', 309px, 54px);
+          transition: all .3s linear;
+
+
+          &:hover {
+            background-color: $color-navBlue;
+          }
         }// /-btn-
 
 
@@ -206,7 +212,7 @@ section.idea-content {
     .idea-content-row{
       padding: render-pixel(20) 0;
       display: flex;
-      align-items: flex-start;
+      //align-items: flex-start;
       justify-content: center;
       flex-flow: row wrap;
       align-content: center;

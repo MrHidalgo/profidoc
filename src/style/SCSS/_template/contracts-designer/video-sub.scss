@@ -32,6 +32,11 @@ section.video-sub {
 
       &-row{
         width: $width-all/2;
+
+
+        &:last-child {
+          padding-left: 15px;
+        }
       }
     }// /-.video-sub-row
   }// /-.video-sub-container
@@ -43,7 +48,7 @@ section.video-sub {
 
   video.video {
     background-color: $color-newsText;
-    @include mixinDimensions('', render-pixel(504), render-pixel(283));
+    @include mixinDimensions('', $width-all, render-pixel(283));
   }// /-video.video
 }// /-.video-sub-row
 

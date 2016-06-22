@@ -15,7 +15,55 @@ $color-white        : return-value(color, white);
 $color-black        : return-value(color, black);
 
 
-/// [navigation, footer]
-//body{
-//  @extend %internalPage;
-//}
+@media screen and (min-width: 320px) and (max-width: 1070px) {
+  section{
+    &#content {
+      padding-left: 15px;
+      padding-right: 15px;
+
+
+      .content-container {
+        &:before {
+          display: none;
+        }
+      }
+
+
+      .content-row {
+        > div {
+
+          &.left,
+          &.right {
+            float: none;
+            text-align: center;
+            width: $width-all;
+            max-width: $width-all;
+
+
+            .date {
+              padding-top: 0;
+            }
+
+            .text {
+              &:after {
+                display: none;
+              }
+            }
+          }
+
+
+          &.left {
+            padding-right: 0;
+          }
+
+
+          &.center {
+            position: relative;
+            left: 0;
+            margin: 25px auto;
+          }
+        }
+      }
+    }
+  }
+}
