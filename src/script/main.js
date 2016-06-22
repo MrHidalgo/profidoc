@@ -121,6 +121,19 @@ function mark(nav) {
 $(document).ready(
     function() {
 
+        // new modal windows
+        $(document).on('click', '[data-modal]', function(e) {
+            e.preventDefault();
+            var options = {
+                modalClass: "modal-window",
+                showClose: false
+            };
+            if ($(this).data('submodal')) {
+                options = $.extend({}, options, {closeExisting: false});
+            }
+            $($(this).data('modal')).modal(options);
+        });
+
         /* custom select*/
         searchAllSelectStart();
         /* custom checkbox */
