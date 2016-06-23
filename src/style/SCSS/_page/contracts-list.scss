@@ -4,3 +4,25 @@
 @import "../_template/contracts-list/list";
 @import "../_template/contracts-list/search";
 @import "../_template/contracts-list/text";
+
+
+.list-row-content {
+  margin: 20px;
+
+  .btn-accordion {
+    display: block;
+    width: 100%;
+    background-color: lightseagreen;
+    padding: 10px 0;
+  }
+
+
+  .accordion {
+
+    &-content {
+      display: none;
+      margin-left: 20px;
+    }
+  }
+
+}

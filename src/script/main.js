@@ -491,6 +491,31 @@ $(document).ready(
 
                 e.preventDefault();
             });
+
+
+            $('.btn-accordion').click(function(e) {
+                var currentAttrValue = $(this).attr('href');
+                console.log(currentAttrValue);
+
+                if($(e.target).hasClass('active')) {
+                    console.log($(e.target).hasClass('active'));
+                    console.log('active');
+                    //$('.accordion-list .btn-accordion').removeClass('active');
+                    //$('.accordion-list .accordion-content').slideUp(250).removeClass('open');
+                    //$(this).closest('.accordion-list').siblings('.accordion-list').find('.btn-accordion').removeClass('active');
+                    //$(this).closest('.accordion-list').siblings('.accordion-list').find('.accordion-content').slideUp(250).removeClass('open');
+                }else {
+                    console.log($(e.target).hasClass('active'));
+                    console.log('else');
+                    $(this).closest('.accordion-list').siblings('.accordion-list').find('.btn-accordion').removeClass('active');
+                    $(this).closest('.accordion-list').siblings('.accordion-list').find('.accordion-content').slideUp(250).removeClass('open');
+
+                    $(this).addClass('active');
+                    $(currentAttrValue).slideDown(250).addClass('open');
+                }
+
+                e.preventDefault();
+            });
         }
 
         /* active menu content page */
