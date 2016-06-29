@@ -4,6 +4,8 @@
 @import "../../_mixin/mixin";
 @import "../../_function/function";
 
+@import "../../config/config.test";
+
 
 ///
 /// VARIABLE BLOCK
@@ -15,22 +17,21 @@ $color-scopeBorder  : return-value(color, scopeBorder);
 $color-subscribeHeadGE  : return-value(color, subscribeHeadGE);
 $color-navBlue      : return-value(color, navBlue);
 
-$image-back : '../image/icon-back.png';
-$image-help : '../image/icon-help.png';
-$image-list : '../image/icon-list.png';
-$image-block : '../image/icon-block.png';
-$image-uan : '../image/icon-uan.png';
-$image-download : '../image/icon-download.png';
-$image-save : '../image/icon-save.png';
-$image-print : '../image/icon-print.png';
-$image-attach : '../image/icon-attach.png';
-$image-doc-icon : '../image/icon-document-internal.png';
-
-$icon-left-0 : '../image/icon-left-0.png';
-$icon-left-1 : '../image/icon-left-1.png';
-$icon-left-2 : '../image/icon-left-2.png';
-$icon-left-3 : '../image/icon-left-3.png';
-$icon-left-4 : '../image/icon-left-4.png';
+$image-back     : $config-variable + 'image/icon-back.png';
+$image-help     : $config-variable + 'image/icon-help.png';
+$image-list     : $config-variable + 'image/icon-list.png';
+$image-block    : $config-variable + 'image/icon-block.png';
+$image-uan      : $config-variable + 'image/icon-uan.png';
+$image-download : $config-variable + 'image/icon-download.png';
+$image-save     : $config-variable + 'image/icon-save.png';
+$image-print    : $config-variable + 'image/icon-print.png';
+$image-attach   : $config-variable + 'image/icon-attach.png';
+$image-doc-icon : $config-variable + 'image/icon-document-internal.png';
+$icon-left-0    : $config-variable + 'image/icon-left-0.png';
+$icon-left-1    : $config-variable + 'image/icon-left-1.png';
+$icon-left-2    : $config-variable + 'image/icon-left-2.png';
+$icon-left-3    : $config-variable + 'image/icon-left-3.png';
+$icon-left-4    : $config-variable + 'image/icon-left-4.png';
 
 
 

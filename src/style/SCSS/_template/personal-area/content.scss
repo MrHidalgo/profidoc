@@ -4,6 +4,8 @@
 @import "../../_mixin/mixin";
 @import "../../_function/function";
 
+@import "../../config/config.test";
+
 
 ///
 /// VARIABLE BLOCK
@@ -15,9 +17,9 @@ $color-navBlue      : return-value(color, navBlue);
 $color-scopeBorder  : return-value(color, scopeBorder);
 $color-documentLgray   : return-value(color, documentLgray);
 
-$image-bg-print     : '../image/form-bg.png';
-$image-icon-print   : '../image/icon-print.png';
-$image-icon-close   : '../image/icon-close-btn-form.png';
+$image-bg-print     : $config-variable + 'image/form-bg.png';
+$image-icon-print   : $config-variable + 'image/icon-print.png';
+$image-icon-close   : $config-variable + 'image/icon-close-btn-form.png';
 
 
 

@@ -4,6 +4,7 @@
 @import "../../_mixin/mixin";
 @import "../../_function/function";
 
+@import "../../config/config.test";
 
 ///
 /// VARIABLE BLOCK
@@ -19,11 +20,11 @@ $color-gradientGray1    : return-value(color, gradientGray1);
 $color-gradientGray2    : return-value(color, gradientGray2);
 $color-documentDgreen   : return-value(color, documentDgreen);
 
-$image-doc          : '../image/icon-file.png';
-$image-pen          : '../image/icon-table-pen.png';
-$image-download     : '../image/icon-table-download.png';
-$image-del          : '../image/icon-table-del.png';
-$image-sort         : '../image/icon-table-sort.png';
+$image-doc          : $config-variable + 'image/icon-file.png';
+$image-pen          : $config-variable + 'image/icon-table-pen.png';
+$image-download     : $config-variable + 'image/icon-table-download.png';
+$image-del          : $config-variable + 'image/icon-table-del.png';
+$image-sort         : $config-variable + 'image/icon-table-sort.png';
 
 
 

@@ -4,9 +4,14 @@
 @import "_mixin/mixin";
 @import "_function/function";
 @import "_extend/extend";
-@import "_template/_dop/nav";
-@import "_template/_dop/footer";
 @import "./_template/main/form-sign";
+@import "./_template/_dop/nav";
+@import "./_template/_dop/footer";
+@import "./_template/_dop/breadcrumbs";
+@import "./_template/_dop/form1";
+@import "./_template/_dop/form";
+
+@import "./config/config.test";
 
 
 ///
@@ -23,8 +28,10 @@ $color-navBlue    : return-value(color, navBlue);
 
 $font             : 'Open Sans';
 
-$i-radio          : '../image/icon-radio.png';
-$i-radio-a        : '../image/icon-radio-active.png';
+$i-radio          : $config-variable + 'image/icon-radio.png';
+$i-radio-a        : $config-variable + 'image/icon-radio-active.png';
+$image-checked    : $config-variable + 'image/check-tarif-1.png';
+$image-nchecked   : $config-variable + 'image/check-tarif-2.png';
 
 ///
 /// MAIN BLOCK
@@ -301,6 +308,32 @@ input.form-control {
     }
   } // /->label
 }
+
+///
+/// CHECKBOX
+///
+.checkbox-custom{
+  position: relative;
+  @include mixinDimensions('', render-pixel(24));
+  background: url($image-nchecked) no-repeat center;
+  background-size: contain;
+  margin: 0 auto;
+
+
+  input[type='checkbox'] {
+    @include mixinDimensions('', $width-all);
+    @include mixinCenteredBLockAbsolute(0,0,0,0);
+    opacity: 0;
+    cursor: pointer;
+  }
+}// /-.checkbox-custom
+
+
+.checkbox-custom.check{
+  background: url($image-checked) no-repeat center;
+  background-size: contain;
+}
+
 
 
 

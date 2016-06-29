@@ -5,6 +5,9 @@
 @import "../../_function/function";
 
 
+@import "../../config/config.test";
+
+
 ///
 /// VARIABLE BLOCK
 ///
@@ -16,7 +19,7 @@ $color-scopeBorder      : return-value(color, scopeBorder);
 $color-navBlue          : return-value(color, navBlue);
 
 
-$image-header-bg        : '../image/idea-details-bg.png';
+$image-header-bg        :  $config-variable + 'image/idea-details-bg.png';
 
 
 ///

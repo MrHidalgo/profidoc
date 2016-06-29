@@ -71,7 +71,6 @@
         'Способ формирования'
     ];
 
-
 mixin inputSection(title, subTitle, arrLength, inputType)
     .field
         if (title != '')
@@ -132,7 +131,7 @@ section#create-document.create-document
 
             h4!= '<span class="current-steps">3</span> Основатели предприятия'
             section
-                table(cellspacing='0', class='', id='')
+                table(cellspacing='0', class='')
                     thead
                         tr
                             - for(var i = 0; i < tableTitle1.length; i++)

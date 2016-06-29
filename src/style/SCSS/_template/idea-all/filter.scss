@@ -4,6 +4,8 @@
 @import "../../_mixin/mixin";
 @import "../../_function/function";
 
+@import "../../config/config.test";
+
 
 ///
 /// VARIABLE BLOCK
@@ -14,10 +16,10 @@ $color-white            : return-value(color, white);
 $color-black            : return-value(color, black);
 $color-scopeBorder      : return-value(color, scopeBorder);
 
-$image-filter-arrow     : '../image/idea-all-filter-arrow.png';
-$image-filter-0         : '../image/idea-all-filter-0.png';
-$image-filter-1         : '../image/idea-all-filter-1.png';
-$image-filter-2         : '../image/idea-all-filter-2.png';
+$image-filter-arrow     : $config-variable + 'image/idea-all-filter-arrow.png';
+$image-filter-0         : $config-variable + 'image/idea-all-filter-0.png';
+$image-filter-1         : $config-variable + 'image/idea-all-filter-1.png';
+$image-filter-2         : $config-variable + 'image/idea-all-filter-2.png';
 
 
 ///

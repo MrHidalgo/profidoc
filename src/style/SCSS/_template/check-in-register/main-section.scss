@@ -4,6 +4,8 @@
 @import "../../_mixin/mixin";
 @import "../../_function/function";
 
+@import "../../config/config.test";
+
 
 ///
 /// VARIABLE BLOCK
@@ -20,8 +22,8 @@ $color-gradientGray2  : return-value(color, gradientGray2);
 
 $font                 : 'Open Sans';
 
-$image-form-bg        : '../image/form-bg.png';
-$image-select-arrow   : '../image/check-tarif-3.png';
+$image-form-bg        : $config-variable + 'image/form-bg.png';
+$image-select-arrow   : $config-variable + 'image/check-tarif-3.png';
 
 ///
 /// MAIN SECTION
@@ -98,12 +100,8 @@ $image-select-arrow   : '../image/check-tarif-3.png';
       }
     }
 
+
     table {
-      table-layout: fixed;
-      word-break: break-word;
-      -webkit-hyphens: none;
-      -moz-hyphens: none;
-      hyphens: none;
       width: $width-all;
       font-size: render-pixel(14);
       @include mixinBorder('all', 1px, lighten($color-gradientGray2, 3%));
@@ -142,6 +140,15 @@ $image-select-arrow   : '../image/check-tarif-3.png';
         tr{
           min-height: render-pixel(50);
         }
+      }
+
+
+      &.table-fixed {
+        table-layout: fixed;
+        word-break: break-word;
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        hyphens: none;
       }
     }
 

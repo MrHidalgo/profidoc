@@ -4,6 +4,8 @@
 @import "../../_mixin/mixin";
 @import "../../_function/function";
 
+@import "../../config/config.test";
+
 
 ///
 /// VARIABLE BLOCK
@@ -16,7 +18,7 @@ $color-wayGrayCircle  : return-value(color, wayGrayCircle);
 $color-navBlue        : return-value(color, navBlue);
 $color-yellow         : return-value(color, yellow);
 
-$image-select-arr     : '../image/check-tarif-3.png';
+$image-select-arr     : $config-variable + 'image/check-tarif-3.png';
 
 
 section.choose {

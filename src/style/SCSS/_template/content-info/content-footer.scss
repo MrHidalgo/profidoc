@@ -5,6 +5,8 @@
 @import "../../_function/function";
 @import "../../_extend/extend";
 
+@import "../../config/config.test";
+
 
 ///
 /// VARIABLE BLOCK
@@ -20,8 +22,8 @@ $color-lightBlack       : return-value(color, lightBlack);
 $color-gradientYellow2  : return-value(color, gradientYellow2);
 $color-gradientYellow3  : return-value(color, gradientYellow3);
 
-$image-arrow            : '../image/contentPage-arrow.png';
-$image-mail             : '../image/contentPage-mail.png';
+$image-arrow            : $config-variable + 'image/contentPage-arrow.png';
+$image-mail             : $config-variable + 'image/contentPage-mail.png';
 
 
 ///

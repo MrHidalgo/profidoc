@@ -1,0 +1,103 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+.input-append {
+    position: relative;
+    padding: 0 40px 0 15px;
+    font-style: italic;
+    font-size: .9375em;
+    outline: 0;
+    width: 220px;
+    height: 38px;
+}
+
+.input-append input {
+    padding: 0 .9375em;
+    font-style: italic;
+    font-size: .9375em;
+    outline: 0;
+    border: 1px solid #cecece;
+    border-right: none;
+    width: 100%;
+    height: 38px;
+    border-radius: .2em;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.input-append .add-on{
+    position: absolute;
+    top: 0; right: 0;
+    width: 40px;
+    height: 38px;
+    min-width: 16px;
+    padding: 4px 5px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+    text-align: center;
+    text-shadow: 0 1px 0 #ffffff;
+    background-color: #eeeeee;
+    border: 1px solid #ccc;
+}
+
+.input-append .add-on i {
+    position: absolute;
+    top: 7px;
+    left: 8px;
+    width: 23px;
+    height: 3px;
+    background-color: #229fff;
+}
+
+.input-append .add-on i:nth-child(2) {
+    top: 14px;
+}
+
+.input-append .add-on i:last-child {
+    top: 21px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    font-size: 14px;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    list-style: none;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+}
+
+.datepicker:before {
+    content: '';
+    display: inline-block;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #ccc;
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: -7px;
+    left: 6px;
+}
+

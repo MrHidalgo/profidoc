@@ -4,6 +4,9 @@
 @import "../../_mixin/mixin";
 @import "../../_function/function";
 
+@import "../../config/config.test";
+
+
 
 ///
 /// VARIABLE BLOCK
@@ -15,7 +18,7 @@ $color-black            : return-value(color, black);
 $color-scopeBorder      : return-value(color, scopeBorder);
 $color-navBlue          : return-value(color, navBlue);
 
-$imageReview            : '../image/check-reviews.png';
+$imageReview            : $config-variable + 'image/check-reviews.png';
 
 
 ///

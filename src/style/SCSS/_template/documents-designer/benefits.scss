@@ -4,31 +4,34 @@
 @import "../../_mixin/mixin";
 @import "../../_function/function";
 
+@import "../../config/config.test";
+
+
 
 ///
 /// VARIABLE BLOCK
 ///
-$width-all            : return-value(dimension, all);
+$width-all               : return-value(dimension, all);
 
-$color-white          : return-value(color, white);
-$color-navBlue        : return-value(color, navBlue);
-$color-grayDarken     : return-value(color, grayDarken);
-$color-wayGrayCircle       : return-value(color, wayGrayCircle);
+$color-white             : return-value(color, white);
+$color-navBlue           : return-value(color, navBlue);
+$color-grayDarken        : return-value(color, grayDarken);
+$color-wayGrayCircle     : return-value(color, wayGrayCircle);
 
-$image-icon-benefits-0s  : '../image/icon-benefits-0s.png';
-$image-icon-benefits-0h  : '../image/icon-benefits-0h.png';
-$image-icon-benefits-1s  : '../image/icon-benefits-1s.png';
-$image-icon-benefits-1h  : '../image/icon-benefits-1h.png';
-$image-icon-benefits-2s  : '../image/icon-benefits-2s.png';
-$image-icon-benefits-2h  : '../image/icon-benefits-2h.png';
-$image-icon-benefits-3s  : '../image/icon-benefits-3s.png';
-$image-icon-benefits-3h  : '../image/icon-benefits-3h.png';
-$image-icon-benefits-4s  : '../image/icon-benefits-4s.png';
-$image-icon-benefits-4h  : '../image/icon-benefits-4h.png';
-$image-icon-benefits-5s  : '../image/icon-benefits-5s.png';
-$image-icon-benefits-5h  : '../image/icon-benefits-5h.png';
-$image-icon-benefits-6s  : '../image/icon-benefits-6s.png';
-$image-icon-benefits-6h  : '../image/icon-benefits-6h.png';
+$image-icon-benefits-0s  : $config-variable + 'image/icon-benefits-0s.png';
+$image-icon-benefits-0h  : $config-variable + 'image/icon-benefits-0h.png';
+$image-icon-benefits-1s  : $config-variable + 'image/icon-benefits-1s.png';
+$image-icon-benefits-1h  : $config-variable + 'image/icon-benefits-1h.png';
+$image-icon-benefits-2s  : $config-variable + 'image/icon-benefits-2s.png';
+$image-icon-benefits-2h  : $config-variable + 'image/icon-benefits-2h.png';
+$image-icon-benefits-3s  : $config-variable + 'image/icon-benefits-3s.png';
+$image-icon-benefits-3h  : $config-variable + 'image/icon-benefits-3h.png';
+$image-icon-benefits-4s  : $config-variable + 'image/icon-benefits-4s.png';
+$image-icon-benefits-4h  : $config-variable + 'image/icon-benefits-4h.png';
+$image-icon-benefits-5s  : $config-variable + 'image/icon-benefits-5s.png';
+$image-icon-benefits-5h  : $config-variable + 'image/icon-benefits-5h.png';
+$image-icon-benefits-6s  : $config-variable + 'image/icon-benefits-6s.png';
+$image-icon-benefits-6h  : $config-variable + 'image/icon-benefits-6h.png';
 
 
 section.benefits {

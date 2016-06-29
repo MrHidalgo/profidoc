@@ -4,6 +4,8 @@
 @import "../../_mixin/mixin";
 @import "../../_function/function";
 
+@import "../../config/config.test";
+
 
 ///
 /// VARIABLE BLOCK
@@ -18,8 +20,8 @@ $color-scopeBorder    : return-value(color, scopeBorder);
 $color-gradientGray1  : return-value(color, gradientGray1);
 $color-gradientGray2  : return-value(color, gradientGray2);
 
-$image-contracts-all  : '../image/icon-contracts-all.png';
-$image-contracts-free : '../image/icon-contracts-free.png';
+$image-contracts-all  : $config-variable + 'image/icon-contracts-all.png';
+$image-contracts-free : $config-variable + 'image/icon-contracts-free.png';
 
 
 

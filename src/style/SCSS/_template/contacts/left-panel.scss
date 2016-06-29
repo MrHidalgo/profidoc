@@ -4,6 +4,7 @@
 @import "../../_mixin/mixin";
 @import "../../_function/function";
 
+@import "../../config/config.test";
 
 ///
 /// VARIABLE BLOCK
@@ -20,7 +21,7 @@ $color-yellow           : return-value(color, yellow);
 
 $font         : 'Open Sans';
 
-$image-clock            : '../image/about-clock.png';
+$image-clock            : $config-variable + 'image/about-clock.png';
 
 
 

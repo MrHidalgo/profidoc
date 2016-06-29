@@ -4,11 +4,14 @@
 @import "../../_mixin/mixin";
 @import "../../_function/function";
 
+@import "../../config/config.test";
+
+
 
 ///
 /// VARIABLE BLOCK
 ///
-$width-all        : return-value(dimension, all);
+$width-all              : return-value(dimension, all);
 
 $color-white            : return-value(color, white);
 $color-black            : return-value(color, black);
@@ -16,7 +19,7 @@ $color-navBlue          : return-value(color, navBlue);
 $color-gradientYellow3  : return-value(color, gradientYellow3);
 
 
-$image-header-bg  : '../image/idea-header-bg.png';
+$image-header-bg        : $config-variable + 'image/idea-header-bg.png';
 
 ///
 /// HEADER SECTION

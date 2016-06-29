@@ -5,6 +5,9 @@
 @import "../../_function/function";
 @import "../_dop/nav";
 
+@import "../../config/config.test";
+
+
 
 ///
 /// VARIABLE BLOCK
@@ -17,7 +20,7 @@ $color-navBlue    : return-value(color, navBlue);
 
 $font             : 'Open Sans';
 
-$imageBackground  : '../image/header-bg.png';
+$imageBackground  : $config-variable + 'image/header-bg.png';
 
 
 ///

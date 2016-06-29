@@ -4,6 +4,8 @@
 @import "../../_mixin/mixin";
 @import "../../_function/function";
 
+@import "../../config/config.test";
+
 
 ///
 /// VARIABLE BLOCK
@@ -18,7 +20,7 @@ $color-gradientOrange4: return-value(color, gradientOrange4);
 $color-gradientGray1  : return-value(color, gradientGray1);
 $color-gradientGray2  : return-value(color, gradientGray2);
 
-$image-select-arr     : '../image/check-tarif-3.png';
+$image-select-arr     : $config-variable + '../image/check-tarif-3.png';
 
 
 section.video-sub {

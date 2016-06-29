@@ -4,6 +4,8 @@
 @import "../../_mixin/mixin";
 @import "../../_function/function";
 
+@import "../../config/config.test";
+
 
 ///
 /// VARIABLE BLOCK
@@ -17,7 +19,7 @@ $color-yellow         : return-value(color, yellow);
 $color-wayGrayCircle  : return-value(color, wayGrayCircle);
 $color-navBlue        : return-value(color, navBlue);
 
-$imageBg              : '../image/about-bg.png';
+$imageBg              : $config-variable + 'image/about-bg.png';
 
 
 ///

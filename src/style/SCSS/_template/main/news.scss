@@ -7,6 +7,9 @@
 @import "../../../../../dist/style/_sprite/sprite";
 
 
+@import "../../config/config.test";
+
+
 ///
 /// VARIABLE BLOCK
 ///
@@ -19,10 +22,10 @@ $color-newsText   : return-value(color, newsText);
 
 $font             : 'Open Sans';
 
-$imageNew0        : '../image/news-bg-0.png';
-$imageNew1        : '../image/news-bg-1.png';
-$imageNew2        : '../image/news-bg-2.png';
-$imageNew3        : '../image/news-bg-3.png';
+$imageNew0        : $config-variable + 'image/news-bg-0.png';
+$imageNew1        : $config-variable + 'image/news-bg-1.png';
+$imageNew2        : $config-variable + 'image/news-bg-2.png';
+$imageNew3        : $config-variable + 'image/news-bg-3.png';
 
 
 

@@ -4,6 +4,8 @@
 @import "../../_mixin/mixin";
 @import "../../_function/function";
 
+@import "../../config/config.test";
+
 
 ///
 /// VARIABLE BLOCK
@@ -16,8 +18,8 @@ $color-borderGray     : return-value(color, borderGray);
 $color-navBlue        : return-value(color, navBlue);
 $color-newsText       : return-value(color, newsText);
 
-$image-icon-arr-left  : '../image/icon-news-paginataion-left.png';
-$image-icon-arr-right : '../image/icon-news-paginataion-right.png';
+$image-icon-arr-left  : $config-variable + 'image/icon-news-paginataion-left.png';
+$image-icon-arr-right : $config-variable + 'image/icon-news-paginataion-right.png';
 
 
 ///

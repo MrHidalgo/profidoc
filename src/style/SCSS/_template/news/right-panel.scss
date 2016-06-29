@@ -4,6 +4,9 @@
 @import "../../_mixin/mixin";
 @import "../../_function/function";
 
+@import "../../config/config.test";
+
+
 
 ///
 /// VARIABLE BLOCK
@@ -19,6 +22,7 @@ $color-subscribeHeadGS   : return-value(color, subscribeHeadGS);
 $color-subscribeHeadGE   : return-value(color, subscribeHeadGE);
 $color-gradientYellow3   : return-value(color, gradientYellow3);
 
+$img-search : $config-variable + "image/content-page-search.png";
 
 ///
 /// RIGHT PANEL MAIN
@@ -79,7 +83,7 @@ section.right-panel{
             top: render-pixel(31);
             left: render-pixel(12);
             @include mixinDimensions('normal', render-pixel(16));
-            background: url("../image/content-page-search.png") no-repeat center;
+            background: url($img-search) no-repeat center;
             background-size: contain;
             vertical-align: middle;
           }

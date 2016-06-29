@@ -4,6 +4,9 @@
 @import "../../_mixin/mixin";
 @import "../../_function/function";
 
+@import "../../config/config.test";
+
+
 
 ///
 /// VARIABLE BLOCK
@@ -15,10 +18,9 @@ $color-black            : return-value(color, black);
 $color-scopeBorder      : return-value(color, scopeBorder);
 $color-yellow           : return-value(color, yellow);
 
-$image-choose0          : '../image/check-tarif-0.png';
-$image-checked          : '../image/check-tarif-1.png';
-$image-nchecked         : '../image/check-tarif-2.png';
-$image-select-arrow     : '../image/check-tarif-3.png';
+$image-choose0          : $config-variable + 'image/check-tarif-0.png';
+
+$image-select-arrow     : $config-variable + 'image/check-tarif-3.png';
 
 
 ///
@@ -198,26 +200,6 @@ section.tariff{
             opacity: 0;
           }
         }// /-.select-custom
-
-
-        .checkbox-custom{
-          position: relative;
-          @include mixinDimensions('', render-pixel(12));
-          background: url($image-nchecked) no-repeat center;
-          background-size: contain;
-          margin: 0 auto;
-
-          input[type='checkbox'] {
-            @include mixinDimensions('', $width-all);
-            @include mixinCenteredBLockAbsolute(0,0,0,0);
-            opacity: 0;
-            cursor: pointer;
-          }
-        }// /-.checkbox-custom
-
-        .checkbox-custom.check{
-          background: url($image-checked) no-repeat center;
-        }
       }// /-table
     }// /-.tariff-row
   }// /-.tariff-container

@@ -5,6 +5,8 @@
 @import "../../_function/function";
 @import "../../_extend/extend";
 
+@import "../../config/config.test";
+
 
 ///
 /// VARIABLE BLOCK
@@ -16,7 +18,7 @@ $color-black          : return-value(color, black);
 $color-wayGrayCircle  : return-value(color, wayGrayCircle);
 
 
-$image-info-doc       : '../image/icon-benefits-2h.png';
+$image-info-doc       : $config-variable + 'image/icon-benefits-2h.png';
 
 
 hr {

@@ -4,6 +4,8 @@
 @import "../../_mixin/mixin";
 @import "../../_function/function";
 
+@import "../../config/config.test";
+
 
 ///
 /// VARIABLE BLOCK
@@ -16,7 +18,7 @@ $color-borderGray     : return-value(color, borderGray);
 $color-workBlueText   : return-value(color, workBlueText);
 $color-yellow         : return-value(color, yellow);
 
-$imageClockIcon       : '../image/about-clock.png';
+$imageClockIcon       : $config-variable + 'image/about-clock.png';
 
 
 ///
