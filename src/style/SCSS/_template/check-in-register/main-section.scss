@@ -425,22 +425,16 @@ $image-select-arrow   : $config-variable + 'image/check-tarif-3.png';
 
 .modal-window{
   display: none;
-  position: fixed;
+  position: absolute;
   top: 0;  bottom: 0;  right: 0;  left: 0;
   overflow: auto;
   z-index: 10001;
-  @include mixinDimensions('', $width-all);
-
-
-  >div.modal-wrap{
-    margin: 10% auto;
-    @include mixinDimensions('min', render-pixel(600), auto);
-    padding: render-pixel(15);
-    box-shadow: 0 0 10px 1px rgba(0,0,0,0.3);
-    background-color: $color-white;
-  }
-
-  >div.modal-wrap
+  margin: 10% auto;
+  height: auto;
+  @include mixinDimensions('min', render-pixel(600), auto);
+  padding: render-pixel(15);
+  box-shadow: 0 0 10px 1px rgba(0,0,0,0.3);
+  background-color: $color-white;
 
 
   ul[role='tablist'] {
