@@ -8,6 +8,6 @@ dist/style/_maps/
 
 # FILE
 dist/script/tabs-ignore.js
-src/style/SCSS/config/*
+src/style/SCSS/config/*.scss
 *.iml
 ngrok
