@@ -143,13 +143,13 @@ $(document).ready(
 
 
         /* radio */
-        $("div.radio-item").click(function() {
+        $(document).on('click', 'div.radio-item', function(e) {
+            console.log(e.target);
             var inputAttr = $(this).find('input[type=radio]').attr('name');
 
             $('input[name="' + inputAttr + '"]').closest('.radio-item').removeClass('active');
             $(this).addClass('active');
         });
-
 
         /* SCROLLSPY */
         {
