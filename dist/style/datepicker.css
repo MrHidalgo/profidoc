@@ -63,6 +63,11 @@ body {
     top: 21px;
 }
 
+.datepicker {
+    position: absolute;
+}
+
+
 .dropdown-menu {
     position: absolute;
     top: 100%;
