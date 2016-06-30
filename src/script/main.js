@@ -144,7 +144,6 @@ $(document).ready(
 
         /* radio */
         $(document).on('click', 'div.radio-item', function(e) {
-            console.log(e.target);
             var inputAttr = $(this).find('input[type=radio]').attr('name');
 
             $('input[name="' + inputAttr + '"]').closest('.radio-item').removeClass('active');
