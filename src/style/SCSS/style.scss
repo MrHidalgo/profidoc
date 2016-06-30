@@ -11,7 +11,7 @@
 @import "./_template/_dop/form1";
 @import "./_template/_dop/form";
 
-@import "./config/config.test";
+@import "./config/config.test.scss";
 
 
 ///
@@ -32,6 +32,8 @@ $i-radio          : $config-variable + 'image/icon-radio.png';
 $i-radio-a        : $config-variable + 'image/icon-radio-active.png';
 $image-checked    : $config-variable + 'image/check-tarif-1.png';
 $image-nchecked   : $config-variable + 'image/check-tarif-2.png';
+
+
 
 ///
 /// MAIN BLOCK
@@ -303,8 +305,9 @@ input.form-control {
       vertical-align: middle;
     }
 
-    >span {
+    >span.text.text-radio {
       vertical-align: middle;
+      border: none;  *border: 0;
     }
   } // /->label
 }
