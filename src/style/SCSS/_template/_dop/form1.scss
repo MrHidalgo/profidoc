@@ -4,6 +4,8 @@
 @import "../../_mixin/mixin";
 @import "../../_function/function";
 
+@import "../../config/config.test.scss";
+
 
 ///
 /// VARIABLE BLOCK
@@ -18,15 +20,14 @@ $color-gradientYellow3  : return-value(color, gradientYellow3);
 $color-signFacebook     : return-value(color, signFacebook);
 $color-signTwitter      : return-value(color, signTwitter);
 
-
-$image-arrow-select     : '../image/idea-all-filter-arrow.png';
-$image-nchecked         : '../image/check-tarif-2.png';
-$image-checked          : '../image/check-tarif-1.png';
-$image-form-user        : '../image/about-form-1.png';
-$image-form-pass        : '../image/about-form-0.png';
-$image-form-face        : '../image/about-form-2.png';
-$image-form-twit        : '../image/about-form-3.png';
-$image-form-line        : '../image/about-form-4.png';
+$image-arrow-select     : $config-variable + 'image/idea-all-filter-arrow.png';
+$image-nchecked         : $config-variable + 'image/check-tarif-2.png';
+$image-checked          : $config-variable + 'image/check-tarif-1.png';
+$image-form-user        : $config-variable + 'image/about-form-1.png';
+$image-form-pass        : $config-variable + 'image/about-form-0.png';
+$image-form-face        : $config-variable + 'image/about-form-2.png';
+$image-form-twit        : $config-variable + 'image/about-form-3.png';
+$image-form-line        : $config-variable + 'image/about-form-4.png';
 
 
 ///

@@ -5,6 +5,10 @@
 @import "../../_function/function";
 
 
+@import "../../config/config.test.scss";
+
+
+
 ///
 /// VARIABLE BLOCK
 ///
@@ -17,15 +21,15 @@ $color-documentLgray   : return-value(color, documentLgray);
 $color-gradientGray1   : return-value(color, gradientGray1);
 $color-gradientGray2   : return-value(color, gradientGray2);
 
-$image-form-bg    : '../../image/form-bg.png';
-$image-close-btn  : '../../image/icon-close-btn-form.png';
-$image-checked    : '../../image/check-tarif-1.png';
-$image-checked-a  : '../../image/check-tarif-2.png';
-$image-icon-vk    : '../../image/icon-form-vk.png';
-$image-icon-tw    : '../../image/icon-form-tw.png';
-$image-icon-fb    : '../../image/icon-form-fb.png';
-$image-icon-g     : '../../image/icon-form-g.png';
-$image-icon-od    : '../../image/icon-form-od.png';
+$image-form-bg    : $config-variable + 'image/form-bg.png';
+$image-close-btn  : $config-variable + 'image/icon-close-btn-form.png';
+$image-checked    : $config-variable + 'image/check-tarif-1.png';
+$image-checked-a  : $config-variable + 'image/check-tarif-2.png';
+$image-icon-vk    : $config-variable + 'image/icon-form-vk.png';
+$image-icon-tw    : $config-variable + 'image/icon-form-tw.png';
+$image-icon-fb    : $config-variable + 'image/icon-form-fb.png';
+$image-icon-g     : $config-variable + 'image/icon-form-g.png';
+$image-icon-od    : $config-variable + 'image/icon-form-od.png';
 
 
 

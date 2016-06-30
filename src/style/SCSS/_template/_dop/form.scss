@@ -4,6 +4,8 @@
 @import "../../_mixin/mixin";
 @import "../../_function/function";
 
+@import "../../config/config.test.scss";
+
 
 ///
 /// VARIABLE BLOCK
@@ -16,7 +18,7 @@ $color-scopeBorder      : return-value(color, scopeBorder);
 $color-navBlue          : return-value(color, navBlue);
 $color-gradientYellow3  : return-value(color, gradientYellow3);
 
-$image-arrow-select     : '../image/idea-all-filter-arrow.png';
+$image-arrow-select     : $config-variable + 'image/idea-all-filter-arrow.png';
 
 
 ///
