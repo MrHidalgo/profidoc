@@ -142,6 +142,27 @@ $(document).ready(
         searchAllRadio();
 
 
+      $('a.btn').each(function () {
+        var linkAttr = $(this).attr('data-list');
+
+        if ($('div#' + linkAttr + ' > *').length < 1) {
+          $(this).addClass('disabled');
+        }
+      });
+
+      $('.btn').on('click', function (e) {
+        e.preventDefault();
+
+        if ($(this).hasClass('active')) {
+          $(this).removeClass('active').siblings('div.list-content').find('a.btn').removeClass('active');
+        } else {
+          $(this).siblings('a.btn').next('div.list-content').find('a.btn').removeClass('active');
+          $(this).siblings('a.btn').removeClass('active');
+          $(this).addClass('active');
+        }
+      });
+
+
         /* radio */
         $("div.radio-item").click(function() {
             var inputAttr = $(this).find('input[type=radio]').attr('name');
