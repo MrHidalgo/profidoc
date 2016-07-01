@@ -127,7 +127,20 @@ $image-doc-list-internal: $config-variable + 'image/icon-document-internal.png';
 }
 
 
-.internal-block-desktop-row0,
-.internal-block-desktop-row1 {
-	display: none;
+
+[class^=main-block-] {
+	display: inline-block;
+	background-color: lightgoldenrodyellow;
+
+
+	>.list-content {
+
+		a.btn,
+		a.doc {
+			display: inline-block;
+			width: calc(100% / 4);
+			margin-right: -.32em;
+			height: 150px;
+		}
+	}
 }

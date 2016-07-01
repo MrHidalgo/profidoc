@@ -45,9 +45,10 @@ section#list.list
             a(href='#', class='btn-block-change btn-mode')
                 img(src='./image/icon-block.png', class='img-block')
 
-        //.list-row-content.list-block
-        .list-row-content.list-view
-            a(href='#', class='btn' data-list='title-0')!= '<i class="icon icon-title"></i><span class="text">Договоры доверительного управления управления</span>'
+
+        //.list-row-content.list-view
+        .list-row-content.list-block
+            a(href='#', class='btn' data-list='title-0' data-desktop='0')!= '<i class="icon icon-title"></i><span class="text">Договоры доверительного управления управления</span>'
             .list-content#title-0
                 a(href='#', class='btn' data-list='title-00')!= '<i class="icon icon-title"></i><span class="text">Договоры доверительного управления управления</span>'
                 .list-content#title-00
@@ -72,9 +73,10 @@ section#list.list
                 .list-content#title-02
                 a(href='#', class='btn' data-list='title-03')!= '<i class="icon icon-title"></i><span class="text">Договоры доверительного управления управления</span>'
                 .list-content#title-03
+                .main-block-desktop
                 a(href='#', class='doc')!= '<i class="icon icon-doc"></i><span class="text">Договоры доверительного управления</span>'
                 a(href='#', class='doc')!= '<i class="icon icon-doc"></i><span class="text">Договоры доверительного управления</span>'
-            a(href='#', class='btn' data-list='title-1')!= '<i class="icon icon-title"></i><span class="text">Договоры доверительного управления управления</span>'
+            a(href='#', class='btn' data-list='title-1' data-desktop='0')!= '<i class="icon icon-title"></i><span class="text">Договоры доверительного управления управления</span>'
             .list-content#title-1
                 a(href='#', class='btn' data-list='title-10')!= '<i class="icon icon-title"></i><span class="text">Договоры доверительного управления управления</span>'
                 .list-content#title-10
@@ -91,13 +93,15 @@ section#list.list
                     a(href='#', class='doc')!= '<i class="icon icon-doc"></i><span class="text">Договоры доверительного управления</span>'
                     a(href='#', class='doc')!= '<i class="icon icon-doc"></i><span class="text">Договоры доверительного управления</span>'
                     a(href='#', class='doc')!= '<i class="icon icon-doc"></i><span class="text">Договоры доверительного управления</span>'
-            a(href='#', class='btn' data-list='title-2')!= '<i class="icon icon-title"></i><span class="text">Договоры доверительного управления управления</span>'
+            .main-block-mobile
+            a(href='#', class='btn' data-list='title-2' data-desktop='0')!= '<i class="icon icon-title"></i><span class="text">Договоры доверительного управления управления</span>'
             .list-content#title-2
                 a(href='#', class='doc')!= '<i class="icon icon-doc"></i><span class="text">Договоры доверительного управления</span>'
                 a(href='#', class='doc')!= '<i class="icon icon-doc"></i><span class="text">Договоры доверительного управления</span>'
                 a(href='#', class='doc')!= '<i class="icon icon-doc"></i><span class="text">Договоры доверительного управления</span>'
                 a(href='#', class='doc')!= '<i class="icon icon-doc"></i><span class="text">Договоры доверительного управления</span>'
-            a(href='#', class='btn' data-list='title-3')!= '<i class="icon icon-title"></i><span class="text">Договоры доверительного управления управления</span>'
+            .main-block-tablet
+            a(href='#', class='btn' data-list='title-3' data-desktop='0')!= '<i class="icon icon-title"></i><span class="text">Договоры доверительного управления управления</span>'
             .list-content#title-3
                 a(href='#', class='btn' data-list='title-30')!= '<i class="icon icon-title"></i><span class="text">Договоры доверительного управления управления</span>'
                 .list-content#title-30
@@ -108,7 +112,8 @@ section#list.list
                         a(href='#', class='doc')!= '<i class="icon icon-doc"></i><span class="text">Договоры доверительного управления</span>'
                 a(href='#', class='doc')!= '<i class="icon icon-doc"></i><span class="text">Договоры доверительного управления</span>'
                 a(href='#', class='doc')!= '<i class="icon icon-doc"></i><span class="text">Договоры доверительного управления</span>'
-            a(href='#', class='btn' data-list='title-0')!= '<i class="icon icon-title"></i><span class="text">Договоры доверительного управления управления</span>'
+            .main-block-desktop-0
+            a(href='#', class='btn' data-list='title-4' data-desktop='1')!= '<i class="icon icon-title"></i><span class="text">Договоры доверительного управления управления</span>'
             .list-content#title-4
                 a(href='#', class='btn' data-list='title-40')!= '<i class="icon icon-title"></i><span class="text">Договоры доверительного управления управления</span>'
                 .list-content#title-40
@@ -135,7 +140,7 @@ section#list.list
                 .list-content#title-43
                 a(href='#', class='doc')!= '<i class="icon icon-doc"></i><span class="text">Договоры доверительного управления</span>'
                 a(href='#', class='doc')!= '<i class="icon icon-doc"></i><span class="text">Договоры доверительного управления</span>'
-            a(href='#', class='btn' data-list='title-5')!= '<i class="icon icon-title"></i><span class="text">Договоры доверительного управления управления</span>'
+            a(href='#', class='btn' data-list='title-5' data-desktop='1')!= '<i class="icon icon-title"></i><span class="text">Договоры доверительного управления управления</span>'
             .list-content#title-5
                 a(href='#', class='btn' data-list='title-50')!= '<i class="icon icon-title"></i><span class="text">Договоры доверительного управления управления</span>'
                 .list-content#title-50
@@ -152,13 +157,15 @@ section#list.list
                     a(href='#', class='doc')!= '<i class="icon icon-doc"></i><span class="text">Договоры доверительного управления</span>'
                     a(href='#', class='doc')!= '<i class="icon icon-doc"></i><span class="text">Договоры доверительного управления</span>'
                     a(href='#', class='doc')!= '<i class="icon icon-doc"></i><span class="text">Договоры доверительного управления</span>'
-            a(href='#', class='btn' data-list='title-6')!= '<i class="icon icon-title"></i><span class="text">Договоры доверительного управления управления</span>'
+            .main-block-mobile
+            a(href='#', class='btn' data-list='title-6' data-desktop='1')!= '<i class="icon icon-title"></i><span class="text">Договоры доверительного управления управления</span>'
             .list-content#title-6
                 a(href='#', class='doc')!= '<i class="icon icon-doc"></i><span class="text">Договоры доверительного управления</span>'
                 a(href='#', class='doc')!= '<i class="icon icon-doc"></i><span class="text">Договоры доверительного управления</span>'
                 a(href='#', class='doc')!= '<i class="icon icon-doc"></i><span class="text">Договоры доверительного управления</span>'
                 a(href='#', class='doc')!= '<i class="icon icon-doc"></i><span class="text">Договоры доверительного управления</span>'
-            a(href='#', class='btn' data-list='title-7')!= '<i class="icon icon-title"></i><span class="text">Договоры доверительного управления управления</span>'
+            .main-block-tablet
+            a(href='#', class='btn' data-list='title-7' data-desktop='1')!= '<i class="icon icon-title"></i><span class="text">Договоры доверительного управления управления</span>'
             .list-content#title-7
                 a(href='#', class='btn' data-list='title-70')!= '<i class="icon icon-title"></i><span class="text">Договоры доверительного управления управления</span>'
                 .list-content#title-70
@@ -169,3 +176,4 @@ section#list.list
                         a(href='#', class='doc')!= '<i class="icon icon-doc"></i><span class="text">Договоры доверительного управления</span>'
                 a(href='#', class='doc')!= '<i class="icon icon-doc"></i><span class="text">Договоры доверительного управления</span>'
                 a(href='#', class='doc')!= '<i class="icon icon-doc"></i><span class="text">Договоры доверительного управления</span>'
+            .main-block-desktop-1
