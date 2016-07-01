@@ -5,61 +5,129 @@
 @import "../_template/contracts-list/text";
 
 
-body,
-html {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	height: 100%;
-}
+$image-doc-list         : $config-variable + 'image/Icon-document.png';
+$image-doc-list-internal: $config-variable + 'image/icon-document-internal.png';
 
-* {
-	box-sizing: border-box;
 
-	&:after,
-	&:before {
-		box-sizing: border-box;
+
+.list-view {
+
+	.btn,
+	.doc {
+		display: block;
+		padding: 10px 20px;
+
+
+		>i.icon {
+			float: left;
+			vertical-align: middle;
+			margin-right: 10px;
+		}
+
+
+		>span.text {
+			display: block;
+			padding-left: 40px;
+		}
+	}
+
+
+	.btn {
+		>i.icon {
+			@include mixinDimensions('', 22px, 28px);
+			background: url($image-doc-list) no-repeat center;
+			background-size: contain;
+		}
+	}
+
+
+	.doc {
+		>i.icon {
+			@include mixinDimensions('', 18px, 24px);
+			background: url($image-doc-list-internal) no-repeat center;
+			background-size: contain;
+		}
+	}
+
+
+	.list-content {
+		margin-left: 40px;
 	}
 }
 
 
-.btn {
-	display: block;
-	width: 100%;
-	height: 40px;
-	line-height: 40px;
-	color: black;
-	text-transform: uppercase;
-	text-decoration: none;
-	border: 1px solid gray;
-	padding: 0 20px;
-	background-color: lightgrey;
+.list-block {
+	overflow: hidden;
+
+
+	>a.btn {
+		float: left;
+		position: relative;
+		width: calc(100% / 4);
+		height: 150px;
+		margin: 10px 0;
+	}
+
+
+	a.btn,
+	a.doc {
+		text-align: center;
+
+
+		>i.icon {
+			display: block;
+			margin: 0 auto 10px;
+		}
+	}
 }
 
-a.btn.disabled {
-	pointer-events: none;
+.list-row-content {
+	.btn,
+	.doc {
+
+		>i.icon {
+			background: url($image-doc-list) no-repeat center;
+			background-size: contain;
+		}
+	}
+
+	.btn {
+		>i.icon {
+			@include mixinDimensions('', 22px, 28px);
+			background: url($image-doc-list) no-repeat center;
+			background-size: contain;
+		}
+	}
+
+	.doc {
+		>i.icon {
+			@include mixinDimensions('', 18px, 24px);
+			background: url($image-doc-list-internal) no-repeat center;
+			background-size: contain;
+		}
+	}
+
+	a.btn {
+		&.active{
+			color: $color-navBlue;
+		}
+	}
+
+	a.btn.disabled {
+		pointer-events: none;
+	}
+
+	a.btn + .list-content {
+		display: none;
+	}
+
+	.btn.active + .list-content {
+		display: block;
+	}
 }
 
-.list-content {
-	margin-left: 20px;
-}
 
-.btn + .list-content {
+.internal-block-desktop-row0,
+.internal-block-desktop-row1 {
 	display: none;
-}
-
-.btn.active + .list-content {
-	display: block;
-}
-
-.doc {
-	display: block;
-	width: 100%;
-	height: 40px;
-	line-height: 40px;
-	color: black;
-	font-weight: 700;
-	border: 1px solid gray;
-	padding: 0 20px;
-	background-color: lightcyan;
 }
