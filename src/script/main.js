@@ -156,7 +156,16 @@ $(document).ready(
 			e.preventDefault();
 
 			
-			var linkAttr  = $(this).attr('data-list');
+			var linkAttr  = $(this).attr('data-list'),
+					linkNum   = $(this).attr('data-desktop'),
+					thisBlockLink = $('.main-block-desktop-' + linkNum),
+					selector  = $('[class^="main-block-desktop-"]'),
+					arr = [];
+
+
+			console.log(linkNum);
+			console.log(selector);
+			console.log(arr.push(thisBlockLink.find(selector)));
 
 
 			if ($('.list-row-content ').hasClass('list-view')) {
@@ -171,22 +180,34 @@ $(document).ready(
 
 				console.log(linkAttr);
 
+				$('a.btn').removeClass('active');
+				$(this).addClass('active');
+
 				if ($(window).width() >= 1200) {
 					var linkDesktop = $(this).attr('data-desktop');
 
+					$('.main-block-desktop-' + linkDesktop).css(
+						'display' , 'inline-block'
+					);
 
+					// console.log('linkDesktop: ' + linkDesktop);
+					// console.log($('.main-block-desktop-' + linkDesktop + ' > div').length);
 
-					if ($('.main-block-desktop-' + linkDesktop + ' > div').eq(linkDesktop).length > 0) {
+					if ($('.main-block-desktop-' + linkDesktop + ' > div').length > 0) {
 
-						console.log($('.main-block-desktop-' + linkDesktop + ' > div').filter('#' + linkAttr));
-						console.log($('a.btn[data-list=' + linkAttr + ']'));
+						var appendBlock       = $('.main-block-desktop-' + linkDesktop + ' > div').attr('id'),
+								replacePathBlock  = $('.main-block-desktop-' + linkDesktop + ' > div#' + appendBlock),
+								insertAfterBtn    = $('a.btn[data-list=' + appendBlock + ']');
 
+						// console.log('linkAttr: ' + linkAttr);
+						// console.log('appendBlock: ' + appendBlock);
+						// console.log('replacePathBlock: ', replacePathBlock);
+						// console.log('insertAfterBtn: ', insertAfterBtn);
 
-						$('a.btn[data-list=' + linkAttr + ']').appendTo($('.main-block-desktop-' + linkDesktop + ' > div').filter('#' + linkAttr));
+						insertAfterBtn.after(replacePathBlock);
 					}
 
-
-					$('.main-block-desktop-' + linkDesktop).eq(linkDesktop).append($('div').filter('#' + linkAttr));
+					$('.main-block-desktop-' + linkDesktop).append($('div').filter('#' + linkAttr));
 				}
 			}
 		});
@@ -444,7 +465,7 @@ $(document).ready(
 
 				$('.nav-list li').removeClass('active');
 				$(this).closest('li').addClass('active');
-				$('.hide-nav-container').fadeIn('');
+				$('.hide-nav-container').stop(true, true).fadeIn('');
 				$('.hide-row > div').hide();
 				$('.hide-row > #' + linkAttr + '').show();
 
@@ -452,7 +473,7 @@ $(document).ready(
 		);
 		$('.navigation-container, section, .header-container').off('mouseenter').on('mouseenter',
 			function () {
-				$('.hide-nav-container').fadeOut('');
+				$('.hide-nav-container').stop(true, true).fadeOut('');
 				$('.nav-list li').removeClass('active');
 			}
 		);

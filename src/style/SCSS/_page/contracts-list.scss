@@ -66,6 +66,11 @@ $image-doc-list-internal: $config-variable + 'image/icon-document-internal.png';
 		width: calc(100% / 4);
 		height: 150px;
 		margin: 10px 0;
+
+
+		&.active {
+			background-color: lightgoldenrodyellow;
+		}
 	}
 
 
@@ -84,6 +89,8 @@ $image-doc-list-internal: $config-variable + 'image/icon-document-internal.png';
 .list-row-content {
 	.btn,
 	.doc {
+		font-size: 15px;
+
 
 		>i.icon {
 			background: url($image-doc-list) no-repeat center;
@@ -127,9 +134,12 @@ $image-doc-list-internal: $config-variable + 'image/icon-document-internal.png';
 }
 
 
-
 [class^=main-block-] {
-	display: inline-block;
+	display: none;
+	border: 1px solid #229fff;
+	padding: 15px 0;
+	margin: 15px 0;
+	width: 100%;
 	background-color: lightgoldenrodyellow;
 
 
