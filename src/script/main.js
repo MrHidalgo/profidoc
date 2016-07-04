@@ -497,11 +497,9 @@ $(document).ready(
 
 		/* click checkbox */
 		{
-			$('input[type="checkbox"]').on('click',
-				function () {
-					customCheckbox(this);
-				}
-			);
+			$(document).on('click', 'input[type="checkbox"]', function () {
+				customCheckbox(this);
+			});
 		}
 
 		/* click radio */
