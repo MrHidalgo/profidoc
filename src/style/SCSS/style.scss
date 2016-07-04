@@ -265,20 +265,10 @@ input.form-control {
 }
 
 
-.radio-item  {
+.radio-item,
+.checkbox-custom {
   position: relative;
   margin-bottom: 10px;
-
-
-  &.active {
-    label {
-
-      > i {
-        background: url($i-radio-a) no-repeat center;
-        background-size: contain;
-      }
-    }
-  }// /-&.active
 
 
   > input {
@@ -295,19 +285,42 @@ input.form-control {
   >label {
     cursor: pointer;
 
-
     > i {
       display: inline-block;
       @include mixinDimensions('', 24px);
-      background: url($i-radio) no-repeat center;
-      background-size: contain;
       margin-right: 5px;
       vertical-align: middle;
     }
 
-    >span.text.text-radio {
+
+    > span {
       vertical-align: middle;
       border: none;  *border: 0;
+    }
+  }
+}
+
+
+.radio-item  {
+
+  &.active {
+    label {
+
+      > i {
+        background: url($i-radio-a) no-repeat center;
+        background-size: contain;
+      }
+    }
+  }// /-&.active
+
+
+  >label {
+    cursor: pointer;
+
+
+    > i {
+      background: url($i-radio) no-repeat center;
+      background-size: contain;
     }
   } // /->label
 }
@@ -315,29 +328,28 @@ input.form-control {
 ///
 /// CHECKBOX
 ///
-.checkbox-custom{
-  position: relative;
-  @include mixinDimensions('', render-pixel(24));
-  background: url($image-nchecked) no-repeat center;
-  background-size: contain;
-  margin: 0 auto;
+.checkbox-custom {
+
+  &.active {
+    label {
+
+      > i.icon.icon-checkbox {
+        background: url($image-checked) no-repeat center;
+        background-size: contain;
+      }
+    }
+  }// /-&.active
 
 
-  input[type='checkbox'] {
-    @include mixinDimensions('', $width-all);
-    @include mixinCenteredBLockAbsolute(0,0,0,0);
-    opacity: 0;
-    cursor: pointer;
+  >label {
+
+
+    > i.icon.icon-checkbox {
+      background: url($image-nchecked) no-repeat center;
+      background-size: contain;
+    }
   }
-}// /-.checkbox-custom
-
-
-.checkbox-custom.check{
-  background: url($image-checked) no-repeat center;
-  background-size: contain;
 }
-
-
 
 
 ///

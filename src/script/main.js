@@ -61,9 +61,9 @@ function searchAllSelectStart(opt) {
  */
 function customCheckbox(elem) {
 	if ($(elem).is(':checked')) {
-		$(elem).closest('.checkbox-custom').addClass('check');
+		$(elem).closest('.checkbox-custom').addClass('active');
 	} else {
-		$(elem).closest('.checkbox-custom').removeClass('check');
+		$(elem).closest('.checkbox-custom').removeClass('active');
 	}
 }
 function searchAllCheckbox() {
@@ -143,32 +143,33 @@ $(document).ready(
 		searchAllRadio();
 
 
-		$('a.btn').each(function () {
-			var linkAttr = $(this).attr('data-list');
+		// $('a.btn').each(function () {
+		// 	var linkAttr = $(this).attr('data-list');
+        //
+		// 	if ($('div#' + linkAttr + ' > *').length < 1) {
+		// 		$(this).addClass('disabled');
+		// 	}
+		// });
 
-			if ($('div#' + linkAttr + ' > *').length < 1) {
-				$(this).addClass('disabled');
-			}
-		});
 
 
-		$('a.btn').on('click', function (e) {
+
+
+
+
+        /*$('a.btn').on('click', function (e) {
 			e.preventDefault();
 
 			
 			var linkAttr  = $(this).attr('data-list'),
-					linkNum   = $(this).attr('data-desktop'),
-					thisBlockLink = $('.main-block-desktop-' + linkNum),
-					selector  = $('[class^="main-block-desktop-"]'),
-					arr = [];
+                linkDevice  = $(this).attr('data-desktop');
 
 
-			console.log(linkNum);
-			console.log(selector);
-			console.log(arr.push(thisBlockLink.find(selector)));
+            console.log(linkDevice);
+            console.log($(this).siblings('[class^="main-block-desktop-"]:not(".main-block-desktop-' + linkDevice + '")'));
 
 
-			if ($('.list-row-content ').hasClass('list-view')) {
+            if ($('.list-row-content ').hasClass('list-view')) {
 				if ($(this).hasClass('active')) {
 					$(this).removeClass('active').siblings('div.list-content').find('a.btn').removeClass('active');
 				} else {
@@ -178,12 +179,12 @@ $(document).ready(
 				}
 			} else {
 
-				console.log(linkAttr);
+				// console.log(linkAttr);
 
 				$('a.btn').removeClass('active');
 				$(this).addClass('active');
 
-				if ($(window).width() >= 1200) {
+				if ($(window).width() >= 991) {
 					var linkDesktop = $(this).attr('data-desktop');
 
 					$('.main-block-desktop-' + linkDesktop).css(
@@ -210,16 +211,20 @@ $(document).ready(
 					$('.main-block-desktop-' + linkDesktop).append($('div').filter('#' + linkAttr));
 				}
 			}
-		});
+		});*/
 
 
 
-		$('a.btn-block-change').on('click', function() {
+		$('a.btn-block-change').on('click', function(e) {
+			e.preventDefault();
+
 			$('a.btn').removeClass('active');
 			$('.list-row-content').removeClass('list-view').addClass('list-block');
 		});
 
-		$('a.btn-list-change').on('click', function() {
+		$('a.btn-list-change').on('click', function(e) {
+			e.preventDefault();
+
 			$('a.btn').removeClass('active');
 			$('.list-row-content').removeClass('list-block').addClass('list-view');
 		});
