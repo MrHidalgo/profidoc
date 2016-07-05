@@ -334,7 +334,7 @@ $image-select-arrow   : $config-variable + 'image/check-tarif-3.png';
             padding: render-pixel(15);
             @include mixinBorder('all', 1px, $color-scopeBorder);
 
-            &.no-border {
+            &.text-radio {
               border: none;
             }
           }
