@@ -238,6 +238,12 @@ $(document).ready(
 			$(this).addClass('active');
 		});
 
+        $('input[type=radio]').each( function () {
+            if($(this).is(':checked')){
+                $(this).closest('div.radio-item').addClass('active');
+            }
+        });
+
 
 		/* SCROLLSPY */
 		{
