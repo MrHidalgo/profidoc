@@ -134,13 +134,23 @@ $image-doc-list-internal: $config-variable + 'image/icon-document-internal.png';
 }
 
 
+.list-block {
+	>[class^=main-block-] {
+		margin-top: 150px;
+	}
+}
+
 [class^=main-block-] {
 	display: none;
 	border: 1px solid #229fff;
 	padding: 15px 0;
-	margin: 15px 0;
+	margin: 15px 0 0;
 	width: 100%;
 	background-color: lightgoldenrodyellow;
+
+	.list-content {
+		display: none;
+	}
 
 
 	>.list-content {
