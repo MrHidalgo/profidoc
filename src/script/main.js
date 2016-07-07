@@ -231,11 +231,14 @@ $(document).ready(
 		$('a.btn-block-change').on('click', function (e) {
 			e.preventDefault();
 
+            
 			$('div.list-content').each( function(index, el)
 			{
 				var linkAttr = $(el).attr('data-desktop');
 
-				$('.main-block-desktop-' + linkAttr).append($('div[data-desktop="' + linkAttr + '"]'));
+                console.log(linkAttr);
+
+                $('.main-block-desktop-' + linkAttr).append($('div.list-content[data-desktop="' + linkAttr + '"]'));
 				$('.wrap-list').find('.list-content').hide();
 			});
 

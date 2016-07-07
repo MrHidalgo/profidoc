@@ -60,7 +60,7 @@ $image-doc-list-internal: $config-variable + 'image/icon-document-internal.png';
 	overflow: hidden;
 
 
-	>a.btn-list {
+	a.btn-list{
 		float: left;
 		position: relative;
 		width: calc(100% / 4);
@@ -135,12 +135,12 @@ $image-doc-list-internal: $config-variable + 'image/icon-document-internal.png';
 
 
 .list-block {
-	>[class^=main-block-] {
+	>.wrap-list {
 		margin-top: 150px;
 	}
 }
 
-[class^=main-block-] {
+.wrap-list {
 	display: none;
 	border: 1px solid #229fff;
 	padding: 15px 0;
