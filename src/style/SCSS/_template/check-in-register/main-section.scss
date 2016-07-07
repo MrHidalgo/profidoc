@@ -534,3 +534,15 @@ $image-select-arrow   : $config-variable + 'image/check-tarif-3.png';
     margin: render-pixel(4) 0 render-pixel(10) !important;
   }
 }
+
+.person-search-result,
+.search-result-item {
+  font: {
+    size: render-pixel(14);
+  }
+  padding: render-pixel(15);
+  margin: render-pixel(5) 0;
+  display: block;
+  cursor: pointer;
+  @include mixinBorder('all', 1px, $color-scopeBorder);
+}
