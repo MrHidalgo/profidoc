@@ -62,7 +62,7 @@ $image-doc-list-internal: $config-variable + 'image/icon-document-internal.png';
 
 
 	a.btn-list{
-		float: left;
+		display: table-cell;
 		position: relative;
 		width: calc(100% / 4);
 		height: 150px;
@@ -137,13 +137,13 @@ $image-doc-list-internal: $config-variable + 'image/icon-document-internal.png';
 
 .list-block {
 	>.wrap-list {
-		margin-top: 150px;
+		//margin-top: 150px;
 	}
 }
 
 .wrap-list {
 	display: none;
-	border: 1px solid #229fff;
+	//border: 1px solid #229fff;
 	padding: 15px 0;
 	margin: 15px 0 0;
 	width: 100%;
