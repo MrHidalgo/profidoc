@@ -25,30 +25,29 @@ html
     body.internal
 
         //- NAVIGATION MENU
-        //include ../_template/_dop/nav
+        include ../_template/_dop/nav
 
         .wrap-container
-            //block sign
+            block sign
                 include ../_template/main/form-sign
 
             //- BREADCRUMBS BLOCK
-            //block breadcrumbs
+            block breadcrumbs
                 include ../_template/contracts-list/breadcrumbs
 
-            //block search
+            block search
                 include ../_template/contracts-list/search
 
-            //block text
+            block text
                 include ../_template/contracts-list/text
 
             block list
                 include ../_template/contracts-list/list
 
-            //block found
+            block found
                 include ../_template/contracts-list/found
 
-
         //- FOOTER MENU
-        //include ../_template/_dop/footer
+        include ../_template/_dop/footer
 
         +htmlTemplateFOOT(scriptName)
