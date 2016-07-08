@@ -159,22 +159,6 @@ $(document).ready(
 					num         = linkAttr.substring(6),
 					linkDevice  = $(this).attr('data-desktop');
 
-			// console.log(linkDevice);
-			// console.log($(this).siblings('.main-block-desktop-' + linkDevice).show());
-
-
-			// $(this).children('[class^="main-block-desktop-"]').hide();
-			// console.log($(this).siblings('.main-block-desktop-' + linkDevice).find('.wrap-desktop'));
-
-
-
-			// console.log($(this).siblings('[class^="main-block-desktop-"]:not(".main-block-desktop-' + linkDevice + '")'));
-			//
-			// if (linkDevice.length > 1) {
-			//     // console.log($(this).siblings('[class^="main-block-desktop-"]'));
-			//     console.log($(this).find('[class^="main-block-desktop-"]'));
-			// }
-
 
 			if ($('.list-row-content ').hasClass('list-view')) {
 				if ($(this).hasClass('active')) {
@@ -192,38 +176,6 @@ $(document).ready(
 
 				$(this).siblings('.main-block-desktop-' + linkDevice).show();
 				$('.main-block-desktop-' + linkDevice).find('#title-' + num).show();
-				//
-				// // console.log(linkAttr);
-				//
-				// $('a.btn-list').removeClass('active');
-				// $(this).addClass('active');
-				//
-				// if ($(window).width() >= 991) {
-				// 	var linkDesktop = $(this).attr('data-desktop');
-				//
-				// 	$('.main-block-desktop-' + linkDesktop).css(
-				// 		'display' , 'inline-block'
-				// 	);
-				//
-				// 	// console.log('linkDesktop: ' + linkDesktop);
-				// 	// console.log($('.main-block-desktop-' + linkDesktop + ' > div').length);
-				//
-				// 	if ($('.main-block-desktop-' + linkDesktop + ' > div').length > 0) {
-				//
-				// 		var appendBlock       = $('.main-block-desktop-' + linkDesktop + ' > div').attr('id'),
-				// 				replacePathBlock  = $('.main-block-desktop-' + linkDesktop + ' > div#' + appendBlock),
-				// 				insertAfterBtn    = $('a.btn-list[data-list=' + appendBlock + ']');
-				//
-				// 		// console.log('linkAttr: ' + linkAttr);
-				// 		// console.log('appendBlock: ' + appendBlock);
-				// 		// console.log('replacePathBlock: ', replacePathBlock);
-				// 		// console.log('insertAfterBtn: ', insertAfterBtn);
-				//
-				// 		insertAfterBtn.after(replacePathBlock);
-				// 	}
-				//
-				// 	$('.main-block-desktop-' + linkDesktop).append($('div').filter('#' + linkAttr));
-				// }
 			}
 		});
 
