@@ -115,7 +115,7 @@ function disableListBtn() {
 	$('.list-view a.btn-list').each(function () {
 		var linkAttr = $(this).attr('data-list');
 
-		console.log(linkAttr);
+		// console.log(linkAttr);
 
 		if ($('div#' + linkAttr + ' > *').length < 1) {
 			$(this).addClass('disabled');
@@ -161,11 +161,12 @@ $(document).ready(
 			disableListBtn();
 
 			var linkAttr    = $(this).attr('data-list'),
-					num         = linkAttr.substring(6),
-					linkDevice  = $(this).attr('data-desktop');
+				num         = linkAttr.substring(6),
+				linkDevice  = $(this).attr('data-desktop');
 
 
 			if ($('.list-row-content ').hasClass('list-view')) {
+
 				if ($(this).hasClass('active')) {
 					$(this).removeClass('active').siblings('div.list-content').find('a.btn-list').removeClass('active');
 				} else {
@@ -173,14 +174,26 @@ $(document).ready(
 					$(this).siblings('a.btn-list').removeClass('active');
 					$(this).addClass('active');
 				}
+
 			} else {
+				if($(this).hasClass('active')) {
+					console.log('if active');
+					$(this).removeClass('active');
+					$(this).siblings('.main-block-desktop-' + linkDevice).find('.wrap-list').hide();
+					$('.main-block-desktop-' + linkDevice).find('[class^="list-content"]').hide();
+				} else {
+					console.log('else active');
+					$(this).siblings('a.btn-list').removeClass('active');
+					$(this).addClass('active');
+					
+					$(this).siblings('.main-block-desktop-' + linkDevice).show();
+					$('.main-block-desktop-' + linkDevice).find('#title-' + num).show();
+				}
 
-				$(this).siblings('.main-block-desktop-' + linkDevice).find('.wrap-list').hide();
-				$('.main-block-desktop-' + linkDevice).find('[class^="list-content"]').hide();
+				// !$('.list-block > .wrap-list').not('.main-block-desktop-' + linkDevice).hide();
 
+				// $(this).siblings('.main-block-desktop-' + linkDevice).find('.wrap-list').hide();
 
-				$(this).siblings('.main-block-desktop-' + linkDevice).show();
-				$('.main-block-desktop-' + linkDevice).find('#title-' + num).show();
 			}
 		});
 
@@ -193,7 +206,7 @@ $(document).ready(
 			{
 				var linkAttr = $(el).attr('data-desktop');
 
-                console.log(linkAttr);
+                // console.log(linkAttr);
 
                 $('.main-block-desktop-' + linkAttr).append($('div.list-content[data-desktop="' + linkAttr + '"]'));
 				$('.wrap-list').find('.list-content').hide();
@@ -211,7 +224,7 @@ $(document).ready(
 			$('a.btn-list').each( function(index, el)
 			{
 				var linkNumWrap = $(el).attr('data-desktop'),
-						linkNumUniq = $(el).attr('data-list');
+					linkNumUniq = $(el).attr('data-list');
 
 				$('a[data-list="' + linkNumUniq + '"]').after($('.main-block-desktop-' + linkNumWrap).find('div#' + linkNumUniq + ''));
 			});
