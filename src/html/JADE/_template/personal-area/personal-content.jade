@@ -1,42 +1,51 @@
 
 section#personal-content.personal-content
+
+    #form-print.form-print
+        header
+            h1!= 'ЗАКАЗАТЬ ПЕЧАТЬ'
+            i.form-close-print
+
+        section
+            form(action='', method='')
+                .field-name
+                    label(for='name')!= 'Имя <span>*</span>'
+                    input(type='text', class='name-input', id='name', required)
+                    p(class='help-block help-block-error')!= ''
+
+                .field-surname
+                    label(for='surname')!= 'Фамилия <span>*</span>'
+                    input(type='text', class='surname-input', id='surname', required)
+                    p(class='help-block help-block-error')!= ''
+
+                .field-phone
+                    label(for='phone')!= 'Телефон'
+                    input(type='tel', class='phone-input', id='phone', required)
+                    p(class='help-block help-block-error')!= ''
+
+                .field-mail
+                    label(for='mail')!= 'E-mail <span>*</span>'
+                    input(type='email', class='mail-input', id='mail', required)
+                    p(class='help-block help-block-error')!= ''
+
+                .field-text
+                    label(for='text')!= 'Текст сообщения <span>*</span>'
+                    textarea(class='text', id='text')
+                    p.info!= '* - поле обязательное для заполнения'
+                    p(class='help-block help-block-error')!= ''
+
+                button(type='submit', class='btn-print')!= 'ОТПРАВИТЬ'
+
     .personal-content-container
+
+        .wrap-menu
+
+        .btn-menu
+            span!= 'ЛИЧНЫЙ КАБИНЕТ'
+            img(src='./image/contentPage-arrow.png', class='img-responsive')
+            span!= 'ДОПОЛНИТЕЛЬНЫЕ ВОЗМОЖНОСТИ'
+
         .personal-content-left
-            #form-print.form-print
-                header
-                    h1!= 'ЗАКАЗАТЬ ПЕЧАТЬ'
-                    i.form-close-print
-
-                section
-                    form(action='', method='')
-                        .field-name
-                            label(for='name')!= 'Имя <span>*</span>'
-                            input(type='text', class='name-input', id='name', required)
-                            p(class='help-block help-block-error')!= ''
-
-                        .field-surname
-                            label(for='surname')!= 'Фамилия <span>*</span>'
-                            input(type='text', class='surname-input', id='surname', required)
-                            p(class='help-block help-block-error')!= ''
-
-                        .field-phone
-                            label(for='phone')!= 'Телефон'
-                            input(type='tel', class='phone-input', id='phone', required)
-                            p(class='help-block help-block-error')!= ''
-
-                        .field-mail
-                            label(for='mail')!= 'E-mail <span>*</span>'
-                            input(type='email', class='mail-input', id='mail', required)
-                            p(class='help-block help-block-error')!= ''
-
-                        .field-text
-                            label(for='text')!= 'Текст сообщения <span>*</span>'
-                            textarea(class='text', id='text')
-                            p.info!= '* - поле обязательное для заполнения'
-                            p(class='help-block help-block-error')!= ''
-
-                        button(type='submit', class='btn-print')!= 'ОТПРАВИТЬ'
-
 
             include navigation-left
 

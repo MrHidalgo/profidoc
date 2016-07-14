@@ -333,44 +333,46 @@
         </div>
       </section>
       <section id="personal-content" class="personal-content">
+        <div id="form-print" class="form-print">
+          <header>
+            <h1>ЗАКАЗАТЬ ПЕЧАТЬ</h1><i class="form-close-print"></i>
+          </header>
+          <section>
+            <form action="" method="">
+              <div class="field-name">
+                <label for="name">Имя <span>*</span></label>
+                <input type="text" id="name" required class="name-input">
+                <p class="help-block help-block-error"></p>
+              </div>
+              <div class="field-surname">
+                <label for="surname">Фамилия <span>*</span></label>
+                <input type="text" id="surname" required class="surname-input">
+                <p class="help-block help-block-error"></p>
+              </div>
+              <div class="field-phone">
+                <label for="phone">Телефон</label>
+                <input type="tel" id="phone" required class="phone-input">
+                <p class="help-block help-block-error"></p>
+              </div>
+              <div class="field-mail">
+                <label for="mail">E-mail <span>*</span></label>
+                <input type="email" id="mail" required class="mail-input">
+                <p class="help-block help-block-error"></p>
+              </div>
+              <div class="field-text">
+                <label for="text">Текст сообщения <span>*</span></label>
+                <textarea id="text" class="text"></textarea>
+                <p class="info">* - поле обязательное для заполнения</p>
+                <p class="help-block help-block-error"></p>
+              </div>
+              <button type="submit" class="btn-print">ОТПРАВИТЬ</button>
+            </form>
+          </section>
+        </div>
         <div class="personal-content-container">
+          <div class="wrap-menu"></div>
+          <div class="btn-menu"><span>ЛИЧНЫЙ КАБИНЕТ</span><img src="./image/contentPage-arrow.png" class="img-responsive"><span>ДОПОЛНИТЕЛЬНЫЕ ВОЗМОЖНОСТИ</span></div>
           <div class="personal-content-left">
-            <div id="form-print" class="form-print">
-              <header>
-                <h1>ЗАКАЗАТЬ ПЕЧАТЬ</h1><i class="form-close-print"></i>
-              </header>
-              <section>
-                <form action="" method="">
-                  <div class="field-name">
-                    <label for="name">Имя <span>*</span></label>
-                    <input type="text" id="name" required class="name-input">
-                    <p class="help-block help-block-error"></p>
-                  </div>
-                  <div class="field-surname">
-                    <label for="surname">Фамилия <span>*</span></label>
-                    <input type="text" id="surname" required class="surname-input">
-                    <p class="help-block help-block-error"></p>
-                  </div>
-                  <div class="field-phone">
-                    <label for="phone">Телефон</label>
-                    <input type="tel" id="phone" required class="phone-input">
-                    <p class="help-block help-block-error"></p>
-                  </div>
-                  <div class="field-mail">
-                    <label for="mail">E-mail <span>*</span></label>
-                    <input type="email" id="mail" required class="mail-input">
-                    <p class="help-block help-block-error"></p>
-                  </div>
-                  <div class="field-text">
-                    <label for="text">Текст сообщения <span>*</span></label>
-                    <textarea id="text" class="text"></textarea>
-                    <p class="info">* - поле обязательное для заполнения</p>
-                    <p class="help-block help-block-error"></p>
-                  </div>
-                  <button type="submit" class="btn-print">ОТПРАВИТЬ</button>
-                </form>
-              </section>
-            </div>
             <section id="nav" class="nav">
               <div class="nav-row">
                 <p class="title">ЛИЧНЫЙ КАБИНЕТ</p>

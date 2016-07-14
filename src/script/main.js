@@ -128,6 +128,18 @@ function disableListBtn() {
 $(document).ready(
 	function () {
 
+
+	    // btn menu personal area
+        $('.btn-menu').on('click', function() {
+            $('.personal-content-left').fadeIn();
+            $('body').addClass('menu-open');
+        });
+
+        $('.wrap-menu').click( function() {
+            $('.personal-content-left').fadeOut();
+            $('body').removeClass('menu-open');
+        });
+
 		// new modal windows
 		$(document).on('click', '[data-modal]', function (e) {
 			e.preventDefault();
