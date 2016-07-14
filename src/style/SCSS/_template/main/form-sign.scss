@@ -36,13 +36,14 @@ $image-icon-od    : $config-variable + 'image/icon-form-od.png';
 section.form-sign {
   display: none;
   position: fixed;
-  top: 0; bottom: 0; left: 0; right: 0;
+  top: 20%; left: 0; right: 0;
   margin: auto;
   padding: render-pixel(15) render-pixel(20);
   z-index: 10001;
   box-shadow: 0 0 10px 1px rgba(0,0,0,0.3);
   background: gray url($image-form-bg) no-repeat center;
-  @include mixinDimensions('', render-pixel(722), render-pixel(353));
+	background-size: cover;
+  @include mixinDimensions('min', render-pixel(722), render-pixel(353));
 
 
   header {
@@ -56,7 +57,6 @@ section.form-sign {
       color: $color-navBlue;
       width: $width-all;
       padding-bottom: render-pixel(10);
-      //@include mixinBorder(bottom, 1px, lighten($color-documentLgray, 15%));
     }
 
 
@@ -75,6 +75,11 @@ section.form-sign {
       }
     }
   }// /-header
+
+
+	> section {
+		display: flex;
+	}
 
 
   footer {
@@ -98,8 +103,6 @@ section.form-sign {
 
 
 section {
-  //padding: render-pixel(20) 0;
-  //@include mixinBorder(bottom, 1px, lighten($color-documentLgray, 15%));
 
 
   .left,
@@ -114,7 +117,6 @@ section {
 
   >.right {
     position: relative;
-    top: render-pixel(-15);
     padding-left: render-pixel(20);
 
 
@@ -181,7 +183,6 @@ section {
 
   .block {
     > .right {
-      text-align: right;
       position: relative;
       top: render-pixel(10);
 
@@ -305,3 +306,36 @@ section {
     }
   }// /-&.right
 }// /-section
+
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+	section#form-sign.form-sign {
+		width: 95%;
+
+		>section {
+			flex-direction: column;
+
+			>.left,
+			>.right {
+				width: 100%;
+				display: block;
+				padding-left: 0;
+			}
+		}
+
+		section>.left {
+			border-right: none;
+			padding-bottom: 10px;
+		}
+
+		section>.right {
+			top: 0;
+		}
+
+		section .block .left,
+		section .block .right {
+			display: block;
+			text-align: left;
+		}
+	}
+}

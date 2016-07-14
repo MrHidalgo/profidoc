@@ -39,12 +39,16 @@ section#form-sign.form-sign
                         button(type='button', class='btn-sign-in') Вход
 
                     .right
-                        label(for='see-pass') Показать пароль
-                        span.checkbox-custom
-                            input(type='checkbox', name='see-pass', id='see-pass')
-                        label(for='remember') Запомнить меня
-                        span.checkbox-custom
-                            input(type='checkbox', name='remember', id='remember')
+                        .checkbox-custom
+                            input(type='checkbox', name='nameInput', class='classInput', id='idInput')
+                            label(for='idInput')
+                                i.icon.icon-checkbox
+                                span.text-checkbox!= 'Показать пароль'
+                        .checkbox-custom
+                            input(type='checkbox', name='nameInput', class='classInput', id='idInput0')
+                            label(for='idInput0')
+                                i.icon.icon-checkbox
+                                span.text-checkbox!= 'Запомнить меня'
 
         .right
             p.main!= 'Вы также можете войти через социальные сети'

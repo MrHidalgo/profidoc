@@ -271,12 +271,12 @@ section.navigation{
               a.btn-menu {
                 display: block;
                 font: {
-                  size: render-pixel(13.5);
+                  size: 12px;
                   weight: 600;
                 }
                 text-transform: uppercase;
                 color: $color-black;
-                line-height: 3.4;
+                line-height: 3.6;
                 text-align: center;
                 @include mixinDimensions('', 279px, 45px);
                 @include mixinBorder('all', 1px, lighten(gray, 30%));
@@ -303,6 +303,30 @@ section.navigation{
 ///
 /// MEDIA QUERIES
 ///
+@media screen and (min-width: 320px) and (max-width: 991px) {
+	section#navigation.navigation {
+		nav.nav {
+			.hide-nav-container {
+				.hide-row>div.container {
+					flex-flow: row wrap;
+
+					[class^=block-] {
+						width: (100 / 3) * 1%;
+					}
+
+					[class^=block-]:last-child {
+						width: 100%;
+
+						a.btn-menu {
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 @media screen and (min-width: 320px) and (max-width: 480px){
   nav#nav.nav{
     .nav-container{
@@ -323,6 +347,15 @@ section.navigation{
       }// /-nav-list
     }// /-nav-container
   }// /-nav#nav.nav
+
+
+	section#navigation.navigation {
+		nav#nav.nav {
+			.hide-nav-container {
+				padding-top: 20em;
+			}
+		}
+	}
 }
 
 @media screen and (min-width: 481px) and (max-width: 767px){
@@ -349,9 +382,36 @@ section.navigation{
       }// /-nav-list
     }// /-nav-container
   }// /-nav#nav.nav
+
+	section#navigation.navigation {
+		nav#nav.nav {
+			.hide-nav-container {
+				padding-top: 9em;
+			}
+		}
+	}
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px){
+	section#navigation.navigation {
+		nav.nav {
+			.hide-nav-container {
+				.hide-row>div.container {
+					flex-flow: row wrap;
+
+					[class^=block-] {
+						width: 100%;
+						border: 1px solid #fff;
+
+						&:after {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+
   section#navigation.navigation{
     .navigation-container{
       .header-row{
@@ -401,6 +461,10 @@ section.navigation{
           }
         }// /-nav-list
       }// /-nav-container
+
+	    .hide-nav-container {
+		    padding-top: 6em;
+	    }
     }// /-nav#nav.nav
   }// /-section.navigation
 }

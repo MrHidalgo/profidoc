@@ -9,7 +9,7 @@
     ];
 
     var menuHash    = [
-        '#', '#', '#', '#', '#', '#'
+        'javascript:void(0);', 'javascript:void(0);', 'javascript:void(0);', 'javascript:void(0);', 'javascript:void(0);', 'javascript:void(0);'
     ];
 
     var menuAttr    = [
@@ -113,9 +113,9 @@ mixin menuContent(val, arr)
         ul.list
             - for(var j = 0; j < arr.length; j++)
                 if (j == 0)
-                    li.title: a(href='#')!= arr[j]
+                    li.title: a(href='javascript:void(0);')!= arr[j]
                 else
-                    li: a(href='#')!= arr[j]
+                    li: a(href='javascript:void(0);')!= arr[j]
 
 
 mixin menuContent1(val, arr, arr1)
@@ -123,21 +123,21 @@ mixin menuContent1(val, arr, arr1)
         ul.list
             - for(var j = 0; j < arr.length; j++)
                 if (j == 0)
-                    li.title: a(href='#')!= arr[j]
+                    li.title: a(href='javascript:void(0);')!= arr[j]
                 else
-                    li: a(href='#')!= arr[j]
+                    li: a(href='javascript:void(0);')!= arr[j]
         ul.list
             - for(var j = 0; j < arr1.length; j++)
                 if (j == 0)
-                    li.title: a(href='#')!= arr1[j]
+                    li.title: a(href='javascript:void(0);')!= arr1[j]
                 else
-                    li: a(href='#')!= arr1[j]
+                    li: a(href='javascript:void(0);')!= arr1[j]
 
 
 mixin menuContentImage(val, img, btn)
     div(class='block-#{val}')
         img(src= img, class='img-responsive')
-        a(href='#', class='btn-menu')!= btn
+        a(href='javascript:void(0);', class='btn-menu')!= btn
 
 
 
