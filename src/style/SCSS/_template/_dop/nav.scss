@@ -3,7 +3,8 @@
 ///
 @import "../../_mixin/mixin";
 @import "../../_function/function";
-@import "../../../../../dist/style/_sprite/sprite";
+
+@import "../../config/config.test.scss";
 
 
 ///
@@ -18,6 +19,7 @@ $color-yellow     : return-value(color, yellow);
 
 $font             : 'Open Sans';
 
+$i-header-phone   : $config-variable + 'image/i-header-phone.png';
 
 ///
 /// NAVIGATION SECTION
@@ -80,7 +82,9 @@ section.navigation{
             &:before{
               content: '';
               display: inline-block;
-              @include sprite($sprite-header-phone);
+              @include mixinDimensions('', 16px);
+              background: url($i-header-phone) no-repeat center;
+              background-size: contain;
               vertical-align: middle;
               margin-right: render-pixel(10);
             }

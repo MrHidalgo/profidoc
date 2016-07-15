@@ -4,7 +4,8 @@
 @import "../../_mixin/mixin";
 @import "../../_function/function";
 @import "../../_extend/extend";
-@import "../../../../../dist/style/_sprite/sprite";
+
+@import "../../config/config.test.scss";
 
 
 ///
@@ -23,6 +24,13 @@ $color-documentDblue  : return-value(color, documentDblue);
 $color-documentDgreen : return-value(color, documentDgreen);
 $color-documentLgray  : return-value(color, documentLgray);
 $color-documentSer    : return-value(color, documentSer);
+
+$doc-sign             : $config-variable + 'image/i-doc-sign.png';
+$doc-homework         : $config-variable + 'image/i-doc-homework.png';
+$doc-register         : $config-variable + 'image/i-doc-register.png';
+$doc-construct        : $config-variable + 'image/i-doc-construct.png';
+$doc-document         : $config-variable + 'image/i-doc-document.png';
+$doc-security         : $config-variable + 'image/i-doc-security.png';
 
 
 ///
@@ -125,12 +133,12 @@ section.document{
           }
 
 
-          @each $className, $color, $iconName in (0, $color-documentBord, $sprite-doc-sign),
-                  (1, $color-documentOrange, $sprite-doc-homework),
-                  (2, $color-documentDblue, $sprite-doc-register),
-                  (3, $color-documentDgreen, $sprite-doc-construct),
-                  (4, $color-documentLgray, $sprite-doc-document),
-                  (5, $color-documentSer, $sprite-doc-security),{
+          @each $className, $color, $iconName in (0, $color-documentBord, $doc-sign),
+                  (1, $color-documentOrange, $doc-homework),
+                  (2, $color-documentDblue, $doc-register),
+                  (3, $color-documentDgreen, $doc-construct),
+                  (4, $color-documentLgray, $doc-document),
+                  (5, $color-documentSer, $doc-security),{
 
             span.icon-block-#{$className}{
               background-color: $color;
@@ -141,7 +149,9 @@ section.document{
               &:before{
                 content: '';
                 display: inline-block;
-                @include sprite($iconName);
+                @include mixinDimensions('', 23px, 26px);
+                background: url($iconName) no-repeat center;
+                background-size: contain;
               }
             }
           }

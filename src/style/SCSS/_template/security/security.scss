@@ -4,7 +4,8 @@
 @import "../../_mixin/mixin";
 @import "../../_function/function";
 @import "../../_extend/extend";
-@import "../../../../../dist/style/_sprite/sprite";
+
+@import "../../config/config.test.scss";
 
 
 ///
@@ -17,11 +18,7 @@ $color-black        : return-value(color, black);
 $color-footerBg     : return-value(color, footerBg);
 $color-scopeBorder  : return-value(color, scopeBorder);
 
-
-/// [navigation, footer]
-//body{
-//  @extend %internalPage;
-//}
+$scope-icon             : $config-variable + 'image/i-scope-icon.png';
 
 
 ///
@@ -138,7 +135,9 @@ section.content {
                 &:before{
                   content: '';
                   display: inline-block;
-                  @include sprite($sprite-scope-icon);
+                  @include mixinDimensions('', 9px);
+                  background: url($scope-icon) no-repeat center;
+                  background-size: contain;
                 }
               }
             }

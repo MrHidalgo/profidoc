@@ -4,7 +4,6 @@
 @import "../../_mixin/mixin";
 @import "../../_function/function";
 @import "../../_extend/extend";
-@import "../../../../../dist/style/_sprite/sprite";
 
 @import "../../config/config.test.scss";
 
@@ -18,6 +17,12 @@ $color-white      : return-value(color, white);
 $color-yellow     : return-value(color, yellow);
 
 $imageBg          : $config-variable + 'image/steps-bg.png';
+
+$steps-arrow      : $config-variable + 'image/i-steps-arrow.png';
+$steps-register   : $config-variable + 'image/i-steps-register.png';
+$steps-choose     : $config-variable + 'image/i-steps-choose.png';
+$steps-pay        : $config-variable + 'image/i-steps-pay.png';
+$steps-fin        : $config-variable + 'image/i-steps-fin.png';
 
 ///
 /// STEPS SECTION
@@ -95,7 +100,9 @@ section.steps{
           position: absolute;
           right: render-pixel(-56);
           top: 47%;
-          @include sprite($sprite-steps-arrow);
+          @include mixinDimensions('', 50px, 8px);
+          background: url($steps-arrow) no-repeat center;
+          background-size: contain;
         }
 
 
@@ -115,15 +122,17 @@ section.steps{
 
 
         @each $className, $image in
-                        (0, $sprite-steps-register),
-                        (1, $sprite-steps-choose),
-                        (2, $sprite-steps-pay),
-                        (3, $sprite-steps-fin) {
+                        (0, $steps-register),
+                        (1, $steps-choose),
+                        (2, $steps-pay),
+                        (3, $steps-fin) {
 
           i.icon-#{$className}{
             display: block;
             margin: 0 auto;
-            @include sprite($image);
+            @include mixinDimensions('', 110px, 120px);
+            background: url($image) no-repeat center;
+            background-size: contain;
             @include mixinCenteredBLockAbsolute(0,0,0,0);
           }
         }

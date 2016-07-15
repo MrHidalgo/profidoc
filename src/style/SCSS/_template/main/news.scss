@@ -4,7 +4,7 @@
 @import "../../_mixin/mixin";
 @import "../../_function/function";
 @import "../../_extend/extend";
-@import "../../../../../dist/style/_sprite/sprite";
+
 
 
 @import "../../config/config.test.scss";
@@ -26,6 +26,9 @@ $imageNew0        : $config-variable + 'image/news-bg-0.png';
 $imageNew1        : $config-variable + 'image/news-bg-1.png';
 $imageNew2        : $config-variable + 'image/news-bg-2.png';
 $imageNew3        : $config-variable + 'image/news-bg-3.png';
+
+$news-like        : $config-variable + 'image/i--news-like.png';
+$news-read        : $config-variable + 'image/i-news-read.png';
 
 
 
@@ -113,7 +116,11 @@ $imageNew3        : $config-variable + 'image/news-bg-3.png';
         &:before{
           content: '';
           display: inline-block;
-          @include sprite($sprite-news-like);
+          position: relative;
+          top: -2px;
+          @include mixinDimensions('', 20px, 18px);
+          background: url($news-like) no-repeat center;
+          background-size: contain;
           vertical-align: middle;
           margin: 0 render-pixel(5);
         }
@@ -123,7 +130,8 @@ $imageNew3        : $config-variable + 'image/news-bg-3.png';
         &:before{
           content: '';
           display: inline-block;
-          @include sprite($sprite-news-read);
+          @include mixinDimensions('', 20px, 18px);
+          background: url($news-read) no-repeat center;
           vertical-align: middle;
           margin: 0 render-pixel(5);
         }

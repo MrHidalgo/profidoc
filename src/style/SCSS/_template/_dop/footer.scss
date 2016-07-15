@@ -3,7 +3,9 @@
 ///
 @import "../../_mixin/mixin";
 @import "../../_function/function";
-@import "../../../../../dist/style/_sprite/sprite";
+
+
+@import "../../config/config.test.scss";
 
 
 ///
@@ -14,6 +16,10 @@ $width-all        : return-value(dimension, all);
 $color-white      : return-value(color, white);
 $color-footerBg   : return-value(color, footerBg);
 $color-navBlue    : return-value(color, navBlue);
+
+$footer-social-0  : $config-variable + 'image/i-footer-social-0.png';
+$footer-social-1  : $config-variable + 'image/i-footer-social-1.png';
+$footer-social-2  : $config-variable + 'image/i-footer-social-2.png';
 
 
 ///
@@ -63,11 +69,6 @@ footer.footer{
 
 
   .footer-section{
-    //position: relative;
-    //top: render-pixel(65);
-    //left: 0;
-    //width: $width-all;
-    //height: auto;
     color: $color-white;
 
 
@@ -109,9 +110,9 @@ footer.footer{
         }
 
         @each $className, $iconName in
-                        (facebook, $sprite-footer-social-0),
-                        (vkontakte, $sprite-footer-social-1),
-                        (youtube, $sprite-footer-social-2) {
+                        (facebook, $footer-social-0),
+                        (vkontakte, $footer-social-1),
+                        (youtube, $footer-social-2) {
           .social-icon{
             li.#{$className}{
               display: inline-block;
@@ -120,7 +121,9 @@ footer.footer{
                 &:before{
                   content: '';
                   display: inline-block;
-                  @include sprite($iconName);
+                  @include mixinDimensions('', 38px);
+                  background: url($iconName) no-repeat center;
+                  background-size: contain;
                   margin-right: render-pixel(10);
                 }
               }

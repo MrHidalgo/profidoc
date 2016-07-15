@@ -29,3 +29,18 @@
   left: 0;
   padding: 4px;
 }
+
+
+@media screen and (min-width: 320px) and (max-width: 1070px) {
+  .wrap-container {
+    .create-document {
+      .create-document-container {
+        overflow-x: auto;
+
+        #admin-panel {
+          width: 1070px;
+        }
+      }
+    }
+  }
+}

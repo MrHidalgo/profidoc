@@ -57,18 +57,21 @@ $image-block-arr        : $config-variable + 'image/i-block-view.png';
 	}
 }
 
-
 .list-block {
 	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+	flex-flow: row wrap;
+	align-items: flex-start;
+	justify-content: flex-start;
 
 
 	a.btn-list{
-		display: inline-block;
 		position: relative;
 		width: (100 / 4) * 1%;
-		height: 150px;
-		margin: 10px 0;
-		margin-left: -.21em;
+		padding: 10px;
+		padding-bottom: 30px;
+		min-height: 150px;
 
 
 		&.active {
@@ -157,13 +160,6 @@ $image-block-arr        : $config-variable + 'image/i-block-view.png';
 	}
 }
 
-
-.list-block {
-	>.wrap-list {
-
-	}
-}
-
 .wrap-list {
 	display: none;
 	padding: 15px 0;
@@ -187,6 +183,59 @@ $image-block-arr        : $config-variable + 'image/i-block-view.png';
 
 		a.btn-list {
 			margin-left: -0.21em;
+		}
+	}
+}
+
+
+
+@media screen and (min-width: 320px) and (max-width: 479px) {
+	.list-row-content.list-block{
+		a.btn-list {
+			width: 100%;
+		}
+	}
+
+	.wrap-list {
+		>.list-content {
+			a.btn-list,
+			a.doc{
+				width: 100%;
+			}
+		}
+	}
+}
+
+
+@media screen and (min-width: 480px) and (max-width: 700px) {
+	.list-row-content.list-block{
+		a.btn-list {
+			width: 50%;
+		}
+	}
+
+	.wrap-list {
+		>.list-content {
+			a.btn-list,
+			a.doc{
+				width: 50%;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+	#search {
+		.search-row {
+			width: 100%;
+
+			>input {
+				width: 70%;
+			}
+
+			button {
+				width: 30%;
+			}
 		}
 	}
 }

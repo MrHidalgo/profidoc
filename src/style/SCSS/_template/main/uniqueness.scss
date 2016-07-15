@@ -3,7 +3,6 @@
 ///
 @import "../../_mixin/mixin";
 @import "../../_function/function";
-@import "../../../../../dist/style/_sprite/sprite";
 
 @import "../../config/config.test.scss";
 
@@ -18,6 +17,16 @@ $color-white      : return-value(color, white);
 $color-navBlue    : return-value(color, navBlue);
 
 $imageBg          : $config-variable + 'image/uniq-bg.png';
+
+$uniq-1          : $config-variable + 'image/i-uniq-1.png';
+$uniq-2          : $config-variable + 'image/i-uniq-2.png';
+$uniq-3          : $config-variable + 'image/i-uniq-3.png';
+$uniq-4          : $config-variable + 'image/i-uniq-4.png';
+$uniq-5          : $config-variable + 'image/i-uniq-5.png';
+$uniq-6          : $config-variable + 'image/i-uniq-6.png';
+$uniq-7          : $config-variable + 'image/i-uniq-7.png';
+$uniq-8          : $config-variable + 'image/i-uniq-8.png';
+$uniq-9          : $config-variable + 'image/i-uniq-9.png';
 
 ///
 /// UNIQUENESS SECTION
@@ -68,19 +77,21 @@ section.uniqueness{
             @include mixinDimensions('normal', render-pixel(219), $width-all);
           }
 
-          @each $className, $image in (0, $sprite-uniq-1),
-                  (1, $sprite-uniq-2),
-                  (2, $sprite-uniq-3),
-                  (3, $sprite-uniq-4),
-                  (4, $sprite-uniq-5),
-                  (5, $sprite-uniq-6),
-                  (6, $sprite-uniq-7),
-                  (7, $sprite-uniq-8),
-                  (8, $sprite-uniq-9) {
+          @each $className, $image in (0, $uniq-1),
+                  (1, $uniq-2),
+                  (2, $uniq-3),
+                  (3, $uniq-4),
+                  (4, $uniq-5),
+                  (5, $uniq-6),
+                  (6, $uniq-7),
+                  (7, $uniq-8),
+                  (8, $uniq-9) {
 
             i.icon-#{$className}{
               display: inline-block;
-              @include sprite($image);
+              @include mixinDimensions('', 68px, 56px);
+              background: url($image) no-repeat center;
+              background-size: contain;
               vertical-align: middle;
             }
           }
