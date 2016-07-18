@@ -4,7 +4,8 @@
 @import "../../_mixin/mixin";
 @import "../../_function/function";
 @import "../../_extend/extend";
-@import "../../../../../dist/style/_sprite/sprite";
+
+@import "../../config/config.test.scss";
 
 
 ///
@@ -18,11 +19,9 @@ $color-gradientYellow3  : return-value(color, gradientYellow3);
 $color-workBlueText     : return-value(color, workBlueText);
 $color-newsText         : return-value(color, newsText);
 
+$scope-icon             : $config-variable + 'image/i-scope-icon.png';
 
-///// [navigation, footer]
-//body{
-//  @extend %internalPage;
-//}
+
 
 
 ///
@@ -227,7 +226,9 @@ section.get{
               &:before{
                 content: '';
                 display: inline-block;
-                @include sprite($sprite-scope-icon);
+                @include mixinDimensions('', 9px);
+                background: url($scope-icon) no-repeat center;
+                background-size: contain;
               }
             }
           }
@@ -320,7 +321,9 @@ section.some{
               &:before{
                 content: '';
                 display: inline-block;
-                @include sprite($sprite-scope-icon);
+                @include mixinDimensions('', 9px);
+                background: url($scope-icon) no-repeat center;
+                background-size: contain;
               }
             }
           }
@@ -451,6 +454,7 @@ section.some{
 
         .some-row{
           &-left{
+            width: $width-all;
             padding: render-pixel(15) 0;
 
 

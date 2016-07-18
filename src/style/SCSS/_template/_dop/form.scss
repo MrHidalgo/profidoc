@@ -27,7 +27,7 @@ $image-arrow-select     : $config-variable + 'image/idea-all-filter-arrow.png';
 section.form{
   margin: 0 auto;
   padding: render-pixel(5);
-  @include mixinDimensions('', render-pixel(255), render-pixel(331));
+  @include mixinDimensions('', render-pixel(255), auto);
   @include mixinBorder('all', 1px, darken($color-scopeBorder, 15%));
 
 
@@ -68,7 +68,7 @@ section.form{
 
 
     [class^='field-'] {
-      height: render-pixel(43);
+      //height: render-pixel(43);
 
 
       >label,
@@ -154,7 +154,7 @@ section.form{
 
     .btn-registration{
       display: block;
-      margin: 0 auto;
+      margin: 17px auto 0;
       background-color: $color-gradientYellow3;
       font: {
         size: render-pixel(13.5);
