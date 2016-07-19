@@ -96,7 +96,7 @@ function searchAllRadio() {
 
 
 $(window).on('click', function (e) {
-	if ($(e.target).closest('.modal-internal-main, .btn-address, .btn-modal, .modal-wrap, .btn-print, #form-print, .sign-in, section#form-sign').length)
+	if ($(e.target).closest('.modal-internal-main, .btn-address, .btn-modal, .modal-wrap, .btn-print, #form-print, .sign-in, section#form-sign .container').length)
 		return;
 
 	$('#form-print').hide();
@@ -142,9 +142,32 @@ function mouseHoverMenu() {
     });
 }
 
+function mouseTouchMenu() {
+    $('.nav-list li a').on('click', function(e) {
+        e.preventDefault();
+
+        var linkAttr = $(this).attr('data-block');
+
+        if ($(e.target).closest('.nav-list li').is('.active')) {
+            $('.hide-nav-container').stop(true, true).fadeOut('');
+            $('.nav-list li').removeClass('active');
+        } else {
+            $('.nav-list li').removeClass('active');
+            $(this).closest('li').addClass('active');
+            $('.hide-nav-container').stop(true, true).fadeIn('');
+            $('.hide-row > div').hide();
+            $('.hide-row > #' + linkAttr + '').show();
+        }
+    });
+}
+
 $(window).on('load resize', function() {
-    if($(this).width() > 767) {
+    if($(this).width() > 1024) {
+        console.log('mouse hover');
         mouseHoverMenu();
+    } else {
+        console.log('mouse click');
+        mouseTouchMenu();
     }
 });
 
@@ -155,22 +178,7 @@ $(window).on('load resize', function() {
 $(document).ready(
 	function () {
 
-	    $('.nav-list li a').on('click', function(e) {
-            e.preventDefault();
-            var linkAttr = $(this).attr('data-block');
 
-
-            if ($(e.target).closest('.nav-list li').is('.active')) {
-                $('.hide-nav-container').fadeOut('');
-                $('.nav-list li').removeClass('active');
-            } else {
-                $('.nav-list li').removeClass('active');
-                $(this).closest('li').addClass('active');
-                $('.hide-nav-container').fadeIn('');
-                $('.hide-row > div').hide();
-                $('.hide-row > #' + linkAttr + '').show();
-            }
-        });
 
 
 	    // btn menu personal area
