@@ -122,11 +122,55 @@ function disableListBtn() {
 		}
 	});
 }
+
+function mouseHoverMenu() {
+    $('.nav-list li a').off('mouseenter tap hover').on('mouseenter tap hover', function (e) {
+        e.preventDefault();
+        var linkAttr = $(this).attr('data-block');
+
+        $('.nav-list li').removeClass('active');
+        $(this).closest('li').addClass('active');
+        $('.hide-nav-container').stop(true, true).fadeIn('');
+        $('.hide-row > div').hide();
+        $('.hide-row > #' + linkAttr + '').show();
+
+    });
+
+    $('.navigation-container, section, .header-container').off('mouseenter tap hover').on('mouseenter tap hover', function () {
+        $('.hide-nav-container').stop(true, true).fadeOut('');
+        $('.nav-list li').removeClass('active');
+    });
+}
+
+$(window).on('load resize', function() {
+    if($(this).width() > 767) {
+        mouseHoverMenu();
+    }
+});
+
+
 /*
  * DOCUMENT READY
  */
 $(document).ready(
 	function () {
+
+	    $('.nav-list li a').on('click', function(e) {
+            e.preventDefault();
+            var linkAttr = $(this).attr('data-block');
+
+
+            if ($(e.target).closest('.nav-list li').is('.active')) {
+                $('.hide-nav-container').fadeOut('');
+                $('.nav-list li').removeClass('active');
+            } else {
+                $('.nav-list li').removeClass('active');
+                $(this).closest('li').addClass('active');
+                $('.hide-nav-container').fadeIn('');
+                $('.hide-row > div').hide();
+                $('.hide-row > #' + linkAttr + '').show();
+            }
+        });
 
 
 	    // btn menu personal area
@@ -436,25 +480,6 @@ $(document).ready(
 				$('.benefits-row>div').filter('.' + linkAttr + '').addClass('active');
 			});
 		}
-
-
-		/* hover main menu */
-		$('.nav-list li a').off('mouseenter tap hover').on('mouseenter tap hover', function (e) {
-            e.preventDefault();
-            var linkAttr = $(this).attr('data-block');
-
-            $('.nav-list li').removeClass('active');
-            $(this).closest('li').addClass('active');
-            $('.hide-nav-container').stop(true, true).fadeIn('');
-            $('.hide-row > div').hide();
-            $('.hide-row > #' + linkAttr + '').show();
-
-        });
-		$('.navigation-container, section, .header-container').off('mouseenter tap hover').on('mouseenter tap hover', function () {
-            $('.hide-nav-container').stop(true, true).fadeOut('');
-            $('.nav-list li').removeClass('active');
-        });
-
 
 		/* onchange select value */
 		{
