@@ -26,10 +26,9 @@ section#header.header
                     p!= 'ИДЕЙ НА ОСНОВЕ КОНКУРСА'
 
                     .wrap-slider
-                        span.circle-0
-                        span.circle-1
-                        span.circle-2
-                        span.circle-3.last!= '$'
+                        div.range-slider
+                            input(class="range-slider__range" type="range" value="100" min="0" max="1000")
+                            span.range-slider__value!= '0'
 
                         .row-text
                             span.txt-0!= '100 тыс'
